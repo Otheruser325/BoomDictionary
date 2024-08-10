@@ -1,9 +1,12 @@
 {
+    "Main": {
+        "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade."
+    },
     "Support": {
         "sentry": "A defensive building in Boom Beach that fires at enemy troops and vehicles."
     },
     "Defences": {
-        "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade."
+        "sniper tower": "The first defensive building you unlock in Boom Beach; basic and reliable."
     },
     "Economy": {
         "resource base": "A special base in Boom Beach that contains resources you can collect and defend."
