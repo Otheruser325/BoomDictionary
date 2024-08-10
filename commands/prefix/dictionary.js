@@ -1,6 +1,7 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
-const { selectCategory, selectTerm } = require('../../handlers');
+const { selectCategory } = require('../../handlers/selectCategory.js');
+const { selectTerm } = require('../../handlers/selectTerm.js');
 
 module.exports = {
     name: 'dictionary',
