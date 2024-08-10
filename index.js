@@ -9,7 +9,7 @@ dotenv.config();
 
 const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
-const guildId = process.env.GUILD_ID;
+const guildId = process.env.GUILD_ID; // Optional: for guild-specific commands
 const prefixes = ['bd!', 'BD!'];
 
 const client = new Client({
@@ -50,12 +50,12 @@ for (const file of interactionFiles) {
     client.interactions.set(interaction.customId, interaction);
 }
 
-client.once('ready', () => {
+client.once('ready', async () => {
     console.log('Bot is online!');
     console.log(`Logged in as ${client.user.tag}`);
 
     // Deploy slash commands
-    deployCommands(clientId, token, client.slashCommands);
+    await deployCommands(clientId, token, client.slashCommands);
 });
 
 client.on('messageCreate', async message => {
