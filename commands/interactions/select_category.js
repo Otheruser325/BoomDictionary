@@ -6,7 +6,7 @@ module.exports = {
     async execute(interaction) {
         const categories = Object.keys(dictionary);
 
-        const categoryOptions = categories.map(category => 
+        const categoryOptions = categories.map(category =>
             new StringSelectMenuOptionBuilder()
                 .setLabel(category)
                 .setValue(category)
