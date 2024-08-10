@@ -98,7 +98,7 @@ client.on(Events.InteractionCreate, async interaction => {
                 await interaction.followUp({ content: 'There was an error executing this command!', ephemeral: true });
             }
         }
-    } else if (interaction.isStringSelectMenu()) {  // Updated to use isStringSelectMenu
+    } else if (interaction.isStringSelectMenu()) {
         const interactionHandler = client.interactions.get(interaction.customId);
         if (!interactionHandler) {
             console.error(`No interaction handler matching ${interaction.customId} was found.`);
