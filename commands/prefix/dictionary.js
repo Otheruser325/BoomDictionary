@@ -1,5 +1,6 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, Events } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
+const { selectCategory, selectTerm } = require('../../handlers');
 
 module.exports = {
     name: 'dictionary',
@@ -8,8 +9,8 @@ module.exports = {
         if (args.length === 0) {
             // No argument provided; show categories
             const categories = Object.keys(dictionary);
-            
-            const categoryOptions = categories.map(category => 
+
+            const categoryOptions = categories.map(category =>
                 new StringSelectMenuOptionBuilder()
                     .setLabel(category)
                     .setValue(category)
