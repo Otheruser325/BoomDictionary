@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const dictionary = require('../../data/dictionary.json'); // Adjust path as necessary
+const dictionary = require('../../data/dictionary.json'); // Load the dictionary file
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -17,23 +17,23 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('categories')
-                .setDescription('Get a list of all categories and terms')
+                .setDescription('View categories and terms')
         ),
     async execute(interaction) {
         const subcommand = interaction.options.getSubcommand();
-        
+
         if (subcommand === 'define') {
             const term = interaction.options.getString('term').toLowerCase();
             let definitionFound = false;
 
+            // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
                 if (terms[term]) {
                     const embed = new EmbedBuilder()
-                        .setColor('#0099ff')
-                        .setTitle(`Definition of ${term}`)
+                        .setTitle(`Boom Dictionary: ${term}`)
                         .setDescription(terms[term])
-                        .addFields({ name: 'Category', value: category })
-                        .setTimestamp();
+                        .addField('Category', category)
+                        .setColor('#0099ff');
 
                     await interaction.reply({ embeds: [embed] });
                     definitionFound = true;
@@ -42,22 +42,22 @@ module.exports = {
             }
 
             if (!definitionFound) {
-                await interaction.reply({ content: `No definition found for "${term}".`, ephemeral: true });
+                await interaction.reply({ content: `No definition found for \`${term}\`.`, ephemeral: true });
             }
         } else if (subcommand === 'categories') {
+            // No argument provided; show categories
             const categories = Object.keys(dictionary);
             const embed = new EmbedBuilder()
-                .setColor('#0099ff')
                 .setTitle('Boom Dictionary Categories')
-                .setDescription('Here are the categories and some terms available:')
+                .setDescription('Select a category to view terms.')
                 .addFields(
                     categories.map(category => ({
                         name: category,
-                        value: Object.keys(dictionary[category]).join(', '),
+                        value: dictionary[category] ? Object.keys(dictionary[category]).join(', ') : 'No terms available',
                         inline: true
                     }))
                 )
-                .setTimestamp();
+                .setColor('#0099ff');
 
             await interaction.reply({ embeds: [embed] });
         }
