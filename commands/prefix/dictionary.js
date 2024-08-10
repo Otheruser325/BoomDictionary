@@ -1,45 +1,48 @@
 const { MessageEmbed } = require('discord.js');
-const dictionary = require('../../data/dictionary.json'); // Load the dictionary data
+const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
     name: 'dictionary',
-    description: 'Look up definitions related to Boom Beach.',
+    description: 'Get definitions for terms related to Boom Beach or view categories.',
     async execute(message, args) {
-        const prefix = process.env.PREFIX;
-
         if (args.length === 0) {
-            // Show categories
-            const categories = Object.keys(dictionary).join('\n');
+            // No argument provided; show categories
+            const categories = Object.keys(dictionary);
             const embed = new MessageEmbed()
-                .setColor('#0099ff')
                 .setTitle('Boom Dictionary Categories')
-                .setDescription(`Available categories:\n${categories}`)
-                .setTimestamp();
+                .setDescription('Select a category to view terms.')
+                .addFields(
+                    categories.map(category => ({
+                        name: category,
+                        value: dictionary[category] ? Object.keys(dictionary[category]).join(', ') : 'No terms available',
+                        inline: true
+                    }))
+                )
+                .setColor('#0099ff');
 
-            return message.channel.send({ embeds: [embed] });
-        }
-
-        // Handle category and term lookups
-        const category = args.shift();
-        const term = args.join(' ').toLowerCase();
-
-        if (Object.keys(dictionary).includes(category)) {
-            const definitions = dictionary[category];
-            const definition = definitions[term];
-
-            if (definition) {
-                const embed = new MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(`Definition of ${term} (${category})`)
-                    .setDescription(definition)
-                    .setTimestamp();
-
-                return message.channel.send({ embeds: [embed] });
-            } else {
-                return message.channel.send(`No definition found for "${term}" in category "${category}".`);
-            }
+            await message.channel.send({ embeds: [embed] });
         } else {
-            return message.channel.send(`Category "${category}" not found. Use \`${prefix}dictionary\` to see available categories.`);
+            // Argument provided; fetch the definition
+            const term = args.join(' ').toLowerCase();
+            let definitionFound = false;
+
+            for (const [category, terms] of Object.entries(dictionary)) {
+                if (terms[term]) {
+                    const embed = new MessageEmbed()
+                        .setTitle(`Boom Dictionary: ${term}`)
+                        .setDescription(terms[term])
+                        .addField('Category', category)
+                        .setColor('#0099ff');
+
+                    await message.channel.send({ embeds: [embed] });
+                    definitionFound = true;
+                    break;
+                }
+            }
+
+            if (!definitionFound) {
+                await message.channel.send(`No definition found for \`${term}\`. Please check the term and try again.`);
+            }
         }
     },
 };
