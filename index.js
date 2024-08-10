@@ -1,81 +1,67 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v10');
+const { Client, Intents, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
+const dotenv = require('dotenv');
+const { deployCommands } = require('./deploy-commands'); // Ensure this function is implemented
+
+// Load environment variables from .env file
+dotenv.config();
+
+const token = process.env.TOKEN;
+const clientId = process.env.CLIENT_ID; // Your bot's client ID
+const guildId = process.env.GUILD_ID; // Your server's guild ID (for guild-specific commands)
+const prefixes = ['bd!', 'BD!']; // Define your prefixes
 
 const client = new Client({
     intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildMessageTyping
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.DIRECT_MESSAGES
     ]
 });
 
 client.commands = new Collection();
+client.slashCommands = new Collection();
 
 // Load prefix commands
 const prefixCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/prefix')).filter(file => file.endsWith('.js'));
 for (const file of prefixCommandFiles) {
-    const command = require(`./commands/prefix/${file}`);
+    const command = require(path.join(__dirname, 'commands/prefix', file));
     client.commands.set(command.name, command);
+    if (command.aliases) {
+        command.aliases.forEach(alias => client.commands.set(alias, command));
+    }
 }
 
 // Load slash commands
 const slashCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash')).filter(file => file.endsWith('.js'));
-const slashCommands = [];
 for (const file of slashCommandFiles) {
-    const command = require(`./commands/slash/${file}`);
-    slashCommands.push(command.data.toJSON());
-    client.commands.set(command.data.name, command);
+    const command = require(path.join(__dirname, 'commands/slash', file));
+    client.slashCommands.set(command.data.name, command);
 }
 
 client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log('Bot is online!');
+    console.log(`Logged in as ${client.user.tag}`);
 
-    const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
-
-    (async () => {
-        try {
-            console.log('Started refreshing application (/) commands.');
-            await rest.put(Routes.applicationCommands(client.user.id), { body: slashCommands });
-            console.log('Successfully reloaded application (/) commands.');
-        } catch (error) {
-            console.error('Error refreshing application (/) commands:', error);
-        }
-    })();
-});
-
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
-
-    const command = client.commands.get(interaction.commandName);
-    if (!command) {
-        console.error(`No command matching ${interaction.commandName} was found.`);
-        return;
-    }
-
-    try {
-        await command.execute(interaction);
-    } catch (error) {
-        console.error('Error executing command:', error);
-        await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-    }
+    // Deploy slash commands
+    deployCommands(clientId, token, client.slashCommands);
 });
 
 client.on('messageCreate', async message => {
-    if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
+    if (message.author.bot) return;
 
-    const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
+    // Determine if message starts with a valid prefix
+    let prefix = prefixes.find(p => message.content.startsWith(p));
+    if (!prefix) return;
+
+    // Extract command and arguments
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
     const command = client.commands.get(commandName);
-    if (!command) {
-        console.error(`No command matching ${commandName} was found.`);
-        return;
-    }
+    if (!command) return;
 
     try {
         await command.execute(message, args);
@@ -85,4 +71,25 @@ client.on('messageCreate', async message => {
     }
 });
 
-client.login(process.env.TOKEN);
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
+
+    const command = client.slashCommands.get(interaction.commandName);
+    if (!command) {
+        console.error(`No command matching ${interaction.commandName} was found.`);
+        return;
+    }
+
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        console.error('Error executing interaction command:', error);
+        if (!interaction.replied) {
+            await interaction.reply({ content: 'There was an error executing this command!', ephemeral: true });
+        } else {
+            await interaction.followUp({ content: 'There was an error executing this command!', ephemeral: true });
+        }
+    }
+});
+
+client.login(token);
