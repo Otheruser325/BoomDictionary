@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:16
+FROM node:18
 
 # Set the working directory
 WORKDIR /app
@@ -13,7 +13,7 @@ RUN npm ci
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port the app runs on
+# Expose the port the app runs on (adjust if necessary)
 EXPOSE 3000
 
 # Define the command to run the application
