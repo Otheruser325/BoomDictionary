@@ -5,16 +5,25 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageTyping] });
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMessageTyping
+    ]
+});
 
 client.commands = new Collection();
 
+// Load prefix commands
 const prefixCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/prefix')).filter(file => file.endsWith('.js'));
 for (const file of prefixCommandFiles) {
     const command = require(`./commands/prefix/${file}`);
     client.commands.set(command.name, command);
 }
 
+// Load slash commands
 const slashCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash')).filter(file => file.endsWith('.js'));
 const slashCommands = [];
 for (const file of slashCommandFiles) {
@@ -31,29 +40,27 @@ client.once('ready', () => {
     (async () => {
         try {
             console.log('Started refreshing application (/) commands.');
-
-            await rest.put(Routes.applicationCommands(client.user.id), {
-                body: slashCommands,
-            });
-
+            await rest.put(Routes.applicationCommands(client.user.id), { body: slashCommands });
             console.log('Successfully reloaded application (/) commands.');
         } catch (error) {
-            console.error(error);
+            console.error('Error refreshing application (/) commands:', error);
         }
     })();
 });
 
 client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand() && !interaction.isContextMenuCommand()) return;
+    if (!interaction.isCommand()) return;
 
     const command = client.commands.get(interaction.commandName);
-
-    if (!command) return;
+    if (!command) {
+        console.error(`No command matching ${interaction.commandName} was found.`);
+        return;
+    }
 
     try {
         await command.execute(interaction);
     } catch (error) {
-        console.error(error);
+        console.error('Error executing command:', error);
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
 });
@@ -65,13 +72,15 @@ client.on('messageCreate', async message => {
     const commandName = args.shift().toLowerCase();
 
     const command = client.commands.get(commandName);
-
-    if (!command) return;
+    if (!command) {
+        console.error(`No command matching ${commandName} was found.`);
+        return;
+    }
 
     try {
         await command.execute(message, args);
     } catch (error) {
-        console.error(error);
+        console.error('Error executing command:', error);
         await message.reply('There was an error trying to execute that command!');
     }
 });
