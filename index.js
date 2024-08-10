@@ -1,16 +1,16 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, Events } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
-const { deployCommands } = require('./deploy-commands'); // Ensure this function is implemented
+const { deployCommands } = require('./deploy-commands');
 
 // Load environment variables from .env file
 dotenv.config();
 
 const token = process.env.TOKEN;
-const clientId = process.env.CLIENT_ID; // Your bot's client ID
-const guildId = process.env.GUILD_ID; // Your server's guild ID (for guild-specific commands)
-const prefixes = ['bd!', 'BD!']; // Define your prefixes
+const clientId = process.env.CLIENT_ID;
+const guildId = process.env.GUILD_ID;
+const prefixes = ['bd!', 'BD!'];
 
 const client = new Client({
     intents: [
@@ -24,6 +24,7 @@ const client = new Client({
 
 client.commands = new Collection();
 client.slashCommands = new Collection();
+client.interactions = new Collection();
 
 // Load prefix commands
 const prefixCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/prefix')).filter(file => file.endsWith('.js'));
@@ -40,6 +41,13 @@ const slashCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash'))
 for (const file of slashCommandFiles) {
     const command = require(path.join(__dirname, 'commands/slash', file));
     client.slashCommands.set(command.data.name, command);
+}
+
+// Load interaction handlers
+const interactionFiles = fs.readdirSync(path.join(__dirname, 'commands/interactions')).filter(file => file.endsWith('.js'));
+for (const file of interactionFiles) {
+    const interaction = require(path.join(__dirname, 'commands/interactions', file));
+    client.interactions.set(interaction.customId, interaction);
 }
 
 client.once('ready', () => {
@@ -72,23 +80,40 @@ client.on('messageCreate', async message => {
     }
 });
 
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
+client.on(Events.InteractionCreate, async interaction => {
+    if (interaction.isCommand()) {
+        const command = client.slashCommands.get(interaction.commandName);
+        if (!command) {
+            console.error(`No command matching ${interaction.commandName} was found.`);
+            return;
+        }
 
-    const command = client.slashCommands.get(interaction.commandName);
-    if (!command) {
-        console.error(`No command matching ${interaction.commandName} was found.`);
-        return;
-    }
+        try {
+            await command.execute(interaction);
+        } catch (error) {
+            console.error('Error executing interaction command:', error);
+            if (!interaction.replied) {
+                await interaction.reply({ content: 'There was an error executing this command!', ephemeral: true });
+            } else {
+                await interaction.followUp({ content: 'There was an error executing this command!', ephemeral: true });
+            }
+        }
+    } else if (interaction.isSelectMenu()) {
+        const interactionHandler = client.interactions.get(interaction.customId);
+        if (!interactionHandler) {
+            console.error(`No interaction handler matching ${interaction.customId} was found.`);
+            return;
+        }
 
-    try {
-        await command.execute(interaction);
-    } catch (error) {
-        console.error('Error executing interaction command:', error);
-        if (!interaction.replied) {
-            await interaction.reply({ content: 'There was an error executing this command!', ephemeral: true });
-        } else {
-            await interaction.followUp({ content: 'There was an error executing this command!', ephemeral: true });
+        try {
+            await interactionHandler.execute(interaction);
+        } catch (error) {
+            console.error('Error executing interaction:', error);
+            if (!interaction.replied) {
+                await interaction.reply({ content: 'There was an error executing this interaction!', ephemeral: true });
+            } else {
+                await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
+            }
         }
     }
 });
