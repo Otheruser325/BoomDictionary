@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js'); // Updated import
 const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
         if (args.length === 0) {
             // No argument provided; show categories
             const categories = Object.keys(dictionary);
-            const embed = new MessageEmbed()
+            const embed = new EmbedBuilder() // Updated to use EmbedBuilder
                 .setTitle('Boom Dictionary Categories')
                 .setDescription('Select a category to view terms.')
                 .addFields(
@@ -29,10 +29,10 @@ module.exports = {
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
                 if (terms[term]) {
-                    const embed = new MessageEmbed()
+                    const embed = new EmbedBuilder() // Updated to use EmbedBuilder
                         .setTitle(`Boom Dictionary: ${term}`)
                         .setDescription(terms[term])
-                        .addField('Category', category)
+                        .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
 
                     await message.channel.send({ embeds: [embed] });
