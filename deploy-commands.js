@@ -9,18 +9,14 @@ dotenv.config();
 const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
 
-const deployCommands = async () => {
+const deployCommands = async (clientId, token, slashCommands) => {
     const rest = new REST({ version: '9' }).setToken(token);
 
     try {
         console.log('Started refreshing global application (/) commands.');
 
-        // Load command files
-        const commandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash')).filter(file => file.endsWith('.js'));
-        const commands = commandFiles.map(file => {
-            const command = require(path.join(__dirname, 'commands/slash', file));
-            return command.data.toJSON();
-        });
+        const commands = [];
+        slashCommands.forEach(command => commands.push(command.data.toJSON()));
 
         // Fetch existing global commands
         const existingCommands = await rest.get(Routes.applicationCommands(clientId));
