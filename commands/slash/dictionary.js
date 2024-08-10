@@ -28,10 +28,15 @@ module.exports = {
 
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
-                if (terms[term]) {
+                // Normalize terms keys to lowercase for case-insensitive search
+                const normalizedTerms = Object.fromEntries(
+                    Object.entries(terms).map(([key, value]) => [key.toLowerCase(), value])
+                );
+
+                if (normalizedTerms[term]) {
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
-                        .setDescription(terms[term])
+                        .setDescription(normalizedTerms[term])
                         .addField('Category', category)
                         .setColor('#0099ff');
 
@@ -45,19 +50,27 @@ module.exports = {
                 await interaction.reply({ content: `No definition found for \`${term}\`.`, ephemeral: true });
             }
         } else if (subcommand === 'categories') {
-            // No argument provided; show categories
+            // Show categories with terms and descriptions
             const categories = Object.keys(dictionary);
+
             const embed = new EmbedBuilder()
                 .setTitle('Boom Dictionary Categories')
-                .setDescription('Select a category to view terms.')
-                .addFields(
-                    categories.map(category => ({
-                        name: category,
-                        value: dictionary[category] ? Object.keys(dictionary[category]).join(', ') : 'No terms available',
-                        inline: true
-                    }))
-                )
+                .setDescription('View categories and select terms.')
                 .setColor('#0099ff');
+
+            // Add fields for each category and its terms
+            categories.forEach(category => {
+                const terms = dictionary[category];
+                const termList = Object.entries(terms)
+                    .map(([term, definition]) => `**${term}**: ${definition}`)
+                    .join('\n');
+
+                embed.addFields({
+                    name: category,
+                    value: termList || 'No terms available',
+                    inline: false
+                });
+            });
 
             await interaction.reply({ embeds: [embed] });
         }
