@@ -4,24 +4,30 @@ const dictionary = require('../../data/dictionary.json');
 module.exports = {
     customId: 'select_category',
     async execute(interaction) {
-        const categories = Object.keys(dictionary);
+        const selectedCategory = interaction.values[0];
+        const terms = dictionary[selectedCategory];
 
-        const categoryOptions = categories.map(category =>
+        if (!terms) {
+            await interaction.reply({ content: 'Category not found!', ephemeral: true });
+            return;
+        }
+
+        const termOptions = Object.keys(terms).map(term =>
             new StringSelectMenuOptionBuilder()
-                .setLabel(category)
-                .setValue(category)
+                .setLabel(term)
+                .setValue(term)
         );
 
-        const categorySelectMenu = new StringSelectMenuBuilder()
-            .setCustomId('select_category')
-            .setPlaceholder('Select a category')
-            .addOptions(categoryOptions);
+        const termSelectMenu = new StringSelectMenuBuilder()
+            .setCustomId('select_term')
+            .setPlaceholder('Select a term')
+            .addOptions(termOptions);
 
-        const row = new ActionRowBuilder().addComponents(categorySelectMenu);
+        const row = new ActionRowBuilder().addComponents(termSelectMenu);
 
         const embed = new EmbedBuilder()
-            .setTitle('Boom Dictionary Categories')
-            .setDescription('Select a category to view terms.')
+            .setTitle(`Terms in ${selectedCategory}`)
+            .setDescription('Select a term to view its definition.')
             .setColor('#0099ff');
 
         await interaction.update({ embeds: [embed], components: [row] });
