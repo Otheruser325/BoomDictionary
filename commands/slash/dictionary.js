@@ -37,7 +37,7 @@ module.exports = {
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
                         .setDescription(normalizedTerms[term])
-                        .addField('Category', category)
+                        .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
 
                     await interaction.reply({ embeds: [embed] });
