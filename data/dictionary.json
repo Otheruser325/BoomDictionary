@@ -1,5 +1,23 @@
 {
-    "sentry": "A defensive building in Boom Beach that fires at enemy troops and vehicles.",
-    "resource base": "A special base in Boom Beach that contains resources you can collect and defend.",
-    "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade."
+    "Support": {
+        "sentry": "A defensive building in Boom Beach that fires at enemy troops and vehicles."
+    },
+    "Defences": {
+        "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade."
+    },
+    "Economy": {
+        "resource base": "A special base in Boom Beach that contains resources you can collect and defend."
+    },
+    "Battle": {
+        "medkit": "An item used to heal troops during battle."
+    },
+    "Events": {
+        "Warships": "A special event in Boom Beach where players use Warships to battle others."
+    },
+    "Funny": {
+        "Boom Beach": "A game where you build a base and attack other bases."
+    },
+    "Miscellaneous": {
+        "scout": "A type of reconnaissance unit used to gather information."
+    }
 }
