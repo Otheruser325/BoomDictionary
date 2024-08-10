@@ -26,17 +26,29 @@ module.exports = {
             const term = args.join(' ').toLowerCase();
             let definitionFound = false;
 
-            for (const [category, terms] of Object.entries(dictionary)) {
-                if (terms[term]) {
-                    const embed = new MessageEmbed()
-                        .setTitle(`Boom Dictionary: ${term}`)
-                        .setDescription(terms[term])
-                        .addField('Category', category)
-                        .setColor('#0099ff');
+            // Check if the term matches a category
+            if (dictionary[term]) {
+                const embed = new MessageEmbed()
+                    .setTitle(`Boom Dictionary: ${term}`)
+                    .setDescription(dictionary[term])
+                    .setColor('#0099ff');
 
-                    await message.channel.send({ embeds: [embed] });
-                    definitionFound = true;
-                    break;
+                await message.channel.send({ embeds: [embed] });
+                definitionFound = true;
+            } else {
+                // Check if the term matches a specific term within a category
+                for (const [category, terms] of Object.entries(dictionary)) {
+                    if (terms[term]) {
+                        const embed = new MessageEmbed()
+                            .setTitle(`Boom Dictionary: ${term}`)
+                            .setDescription(terms[term])
+                            .addField('Category', category)
+                            .setColor('#0099ff');
+
+                        await message.channel.send({ embeds: [embed] });
+                        definitionFound = true;
+                        break;
+                    }
                 }
             }
 
