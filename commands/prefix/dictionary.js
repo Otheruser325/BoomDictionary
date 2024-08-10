@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require('discord.js'); // Updated import
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, Events } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
@@ -8,19 +8,26 @@ module.exports = {
         if (args.length === 0) {
             // No argument provided; show categories
             const categories = Object.keys(dictionary);
-            const embed = new EmbedBuilder() // Updated to use EmbedBuilder
+            
+            const categoryOptions = categories.map(category => 
+                new StringSelectMenuOptionBuilder()
+                    .setLabel(category)
+                    .setValue(category)
+            );
+
+            const categorySelectMenu = new StringSelectMenuBuilder()
+                .setCustomId('select_category')
+                .setPlaceholder('Select a category')
+                .addOptions(categoryOptions);
+
+            const row = new ActionRowBuilder().addComponents(categorySelectMenu);
+
+            const embed = new EmbedBuilder()
                 .setTitle('Boom Dictionary Categories')
                 .setDescription('Select a category to view terms.')
-                .addFields(
-                    categories.map(category => ({
-                        name: category,
-                        value: dictionary[category] ? Object.keys(dictionary[category]).join(', ') : 'No terms available',
-                        inline: true
-                    }))
-                )
                 .setColor('#0099ff');
 
-            await message.channel.send({ embeds: [embed] });
+            await message.channel.send({ embeds: [embed], components: [row] });
         } else {
             // Argument provided; fetch the definition
             const term = args.join(' ').toLowerCase();
@@ -29,7 +36,7 @@ module.exports = {
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
                 if (terms[term]) {
-                    const embed = new EmbedBuilder() // Updated to use EmbedBuilder
+                    const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
                         .setDescription(terms[term])
                         .addFields({ name: 'Category', value: category })
