@@ -2,29 +2,39 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
 
-const deployCommands = async (clientId, token, commands) => {
+dotenv.config();
+
+const token = process.env.TOKEN;
+const clientId = process.env.CLIENT_ID;
+
+const deployCommands = async () => {
     const rest = new REST({ version: '9' }).setToken(token);
 
-    const commandData = commands.map(command => command.data.toJSON());
-
     try {
-        console.log('Started refreshing application (/) commands.');
+        console.log('Started refreshing global application (/) commands.');
+
+        // Load command files
+        const commandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash')).filter(file => file.endsWith('.js'));
+        const commands = commandFiles.map(file => {
+            const command = require(path.join(__dirname, 'commands/slash', file));
+            return command.data.toJSON();
+        });
 
         // Fetch existing global commands
-        const existingCommandsResponse = await rest.get(Routes.applicationCommands(clientId));
-        const existingCommands = await existingCommandsResponse.json();
+        const existingCommands = await rest.get(Routes.applicationCommands(clientId));
 
-        // Delete commands that are not present in the current commands directory
+        // Delete commands that are not in the current commands directory
         for (const existingCommand of existingCommands) {
-            if (!commandData.some(cmd => cmd.name === existingCommand.name)) {
+            if (!commands.some(cmd => cmd.name === existingCommand.name)) {
                 await rest.delete(Routes.applicationCommand(clientId, existingCommand.id));
                 console.log(`Deleted command: ${existingCommand.name}`);
             }
         }
 
         // Register or update current slash commands globally
-        for (const command of commandData) {
+        for (const command of commands) {
             const existingCommand = existingCommands.find(cmd => cmd.name === command.name);
             if (existingCommand) {
                 // Update existing command
@@ -37,9 +47,9 @@ const deployCommands = async (clientId, token, commands) => {
             }
         }
 
-        console.log('Successfully reloaded application (/) commands.');
+        console.log('Successfully reloaded global application (/) commands.');
     } catch (error) {
-        console.error('Error refreshing application (/) commands:', error);
+        console.error('Error refreshing global application (/) commands:', error);
     }
 };
 
