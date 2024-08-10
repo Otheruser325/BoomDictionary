@@ -2,5 +2,4 @@
     "sentry": "A defensive building in Boom Beach that fires at enemy troops and vehicles.",
     "resource base": "A special base in Boom Beach that contains resources you can collect and defend.",
     "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade."
-    // Add more terms and definitions here
 }
