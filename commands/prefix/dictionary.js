@@ -1,7 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
-const { selectCategory } = require('../../commands/interactions/select_category.js');
-const { selectTerm } = require('../../commands/interactions/select_term.js');
 
 module.exports = {
     name: 'dictionary',
@@ -32,15 +30,20 @@ module.exports = {
             await message.channel.send({ embeds: [embed], components: [row] });
         } else {
             // Argument provided; fetch the definition
-            const term = args.join(' ').toLowerCase();
+            const term = args.join(' ').toLowerCase(); // Convert input to lowercase
             let definitionFound = false;
 
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
-                if (terms[term]) {
+                // Normalize terms keys to lowercase for case-insensitive search
+                const normalizedTerms = Object.fromEntries(
+                    Object.entries(terms).map(([key, value]) => [key.toLowerCase(), value])
+                );
+
+                if (normalizedTerms[term]) {
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
-                        .setDescription(terms[term])
+                        .setDescription(normalizedTerms[term])
                         .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
 
