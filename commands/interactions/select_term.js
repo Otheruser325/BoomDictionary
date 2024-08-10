@@ -1,5 +1,5 @@
 const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, EmbedBuilder } = require('discord.js');
-const dictionary = require('../data/dictionary.json');
+const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
     customId: 'select_term',
