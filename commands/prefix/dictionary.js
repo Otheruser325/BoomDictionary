@@ -41,10 +41,11 @@ module.exports = {
                 );
 
                 if (normalizedTerms[term]) {
+                    const { terminology, definition } = normalizedTerms[term];
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
-                        .setDescription(normalizedTerms[term])
-                        .addFields({ name: 'Category', value: category })
+                        .setDescription(definition)
+                        .addFields({ name: 'Category', value: category }, { name: 'Terminology', value: terminology })
                         .setColor('#0099ff');
 
                     await message.channel.send({ embeds: [embed] });
