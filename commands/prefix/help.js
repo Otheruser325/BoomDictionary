@@ -11,9 +11,9 @@ module.exports = {
     async execute(interaction) {
         // Load command files
         const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js') && file !== 'help.js');
-        
+
         const commands = [];
-        
+
         for (const file of commandFiles) {
             const command = require(`./${file}`);
             let commandName = command.data.name;
@@ -71,15 +71,15 @@ module.exports = {
         const filter = (i) => i.user.id === interaction.user.id;
         const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
 
-        collector.on('collect', async (interaction) => {
-            if (interaction.customId === 'previous' && currentPage > 1) {
+        collector.on('collect', async (i) => {
+            if (i.customId === 'previous' && currentPage > 1) {
                 currentPage--;
-            } else if (interaction.customId === 'next' && currentPage < totalPages) {
+            } else if (i.customId === 'next' && currentPage < totalPages) {
                 currentPage++;
             }
 
             const newEmbed = generateEmbed(commands, currentPage);
-            await interaction.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
+            await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
         });
 
         collector.on('end', async () => {
@@ -91,8 +91,8 @@ module.exports = {
         // Specific command help
         const requestedCommand = interaction.options.getString('command');
         if (requestedCommand) {
-            const command = commands.find(cmd => 
-                cmd.command.data.name.toLowerCase() === requestedCommand.toLowerCase() || 
+            const command = commands.find(cmd =>
+                cmd.command.data.name.toLowerCase() === requestedCommand.toLowerCase() ||
                 (cmd.command.data.aliases && cmd.command.data.aliases.map(alias => alias.toLowerCase()).includes(requestedCommand.toLowerCase()))
             );
             if (command) {
