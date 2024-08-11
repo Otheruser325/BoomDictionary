@@ -18,6 +18,11 @@ module.exports = {
             subcommand
                 .setName('categories')
                 .setDescription('View categories and terms')
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('random')
+                .setDescription('Get a random term from any category')
         ),
     async execute(interaction) {
         const subcommand = interaction.options.getSubcommand();
@@ -34,9 +39,10 @@ module.exports = {
                 );
 
                 if (normalizedTerms[term]) {
+                    const termData = normalizedTerms[term];
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${term}`)
-                        .setDescription(normalizedTerms[term])
+                        .setDescription(termData.definition)
                         .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
 
@@ -62,7 +68,7 @@ module.exports = {
             categories.forEach(category => {
                 const terms = dictionary[category];
                 const termList = Object.entries(terms)
-                    .map(([term, definition]) => `**${term}**: ${definition}`)
+                    .map(([term, termData]) => `**${term}**: ${termData.definition}`)
                     .join('\n');
 
                 embed.addFields({
@@ -71,6 +77,28 @@ module.exports = {
                     inline: false
                 });
             });
+
+            await interaction.reply({ embeds: [embed] });
+        } else if (subcommand === 'random') {
+            // Get a random term from any category
+            const allTerms = [];
+            for (const terms of Object.values(dictionary)) {
+                allTerms.push(...Object.entries(terms));
+            }
+
+            if (allTerms.length === 0) {
+                await interaction.reply({ content: 'No terms available.', ephemeral: true });
+                return;
+            }
+
+            const randomTerm = allTerms[Math.floor(Math.random() * allTerms.length)];
+            const [term, termData] = randomTerm;
+
+            const embed = new EmbedBuilder()
+                .setTitle(`Boom Dictionary: ${term}`)
+                .setDescription(termData.definition)
+                .addFields({ name: 'Category', value: 'Random' })
+                .setColor('#0099ff');
 
             await interaction.reply({ embeds: [embed] });
         }
