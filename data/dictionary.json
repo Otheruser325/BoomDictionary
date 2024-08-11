@@ -5,19 +5,22 @@
             "terminology": "Headquarters",
             "definition": "The main building in Boom Beach that you must protect and upgrade.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈhɛdkwɔːrtəz"
         },
         "Boom Beach": {
             "terminology": "Boom Beach",
             "definition": "A game where you build a base and attack other bases.",
             "class": "Noun",
-            "origin": "Game Name"
+            "origin": "Game Name",
+            "pronunciation": "buːm biːtʃ"
         },
         "resource base": {
             "terminology": "Resource Base",
             "definition": "A special base in Boom Beach that contains resources you can collect and defend.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈriːsɔːrs beɪs"
         }
     },
     "Support": {
@@ -26,19 +29,22 @@
             "terminology": "Sentry",
             "definition": "A defensive building in Boom Beach that fires at enemy troops and vehicles.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈsɛntri"
         },
         "medkit": {
             "terminology": "Medkit",
             "definition": "An item used to heal troops during battle.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈmɛdˌkɪt"
         },
         "landing craft": {
             "terminology": "Landing Craft",
             "definition": "A boat used to send in troops in battle.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈlændɪŋ kræft"
         }
     },
     "Economy": {
@@ -47,19 +53,22 @@
             "terminology": "Resource Base",
             "definition": "A special base in Boom Beach that contains resources you can collect and defend.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈriːsɔːrs beɪs"
         },
         "vault": {
             "terminology": "Vault",
             "definition": "A building where you store your resources to protect them from raids.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "vɔːlt"
         },
         "trading post": {
             "terminology": "Trading Post",
             "definition": "A building where you can trade resources with other players or the game.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈtreɪdɪŋ poʊst"
         }
     },
     "Defences": {
@@ -68,43 +77,50 @@
             "terminology": "Sniper Tower",
             "definition": "The first defensive building you unlock in Boom Beach; basic and reliable.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈsnaɪpər ˈtaʊər"
         },
         "flamethrower": {
             "terminology": "Flamethrower",
             "definition": "A defensive building that deals area-of-effect damage to enemy troops.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈfleɪmˌθroʊər"
         },
         "boom cannon": {
             "terminology": "Boom Cannon",
             "definition": "A powerful defensive building that deals high damage to enemy troops and vehicles.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "buːm ˈkænən"
         },
         "shock launcher": {
             "terminology": "Shock Launcher",
             "definition": "A defensive building that temporarily disables enemy defenses with electrical shocks.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ʃɑk ˈlɔːntʃər"
         },
         "rocket launcher": {
             "terminology": "Rocket Launcher",
             "definition": "A defensive building that fires rockets, causing splash damage to enemy troops and vehicles.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈrɒkɪt ˈlɔːntʃər"
         },
         "lazor beam": {
             "terminology": "Lazor Beam",
             "definition": "A prototype defence that fires a penetrative beam at troops, inflicting massive damage to grouped enemies in a line.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈleɪzər biːm"
         },
         "boom surprise": {
             "terminology": "Boom Surprise",
             "definition": "A prototype defence that fires powerful shells at rapid succession at tanky troops, which is protected by an underground bunker until enemies get too close.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "buːm səˈpraɪz"
         }
     },
     "Troops": {
@@ -113,7 +129,8 @@
             "terminology": "Rifleman",
             "definition": "A basic infantry troop that is all-rounded.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈraɪflmən"
         }
     },
     "Battle": {
@@ -122,25 +139,29 @@
             "terminology": "Medkit",
             "definition": "An item used to heal troops during battle.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈmɛdˌkɪt"
         },
         "flares": {
             "terminology": "Flares",
             "definition": "A tactical item used to direct troops to a specific location during battle.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "flerz"
         },
         "smoke screen": {
             "terminology": "Smoke Screen",
             "definition": "An item that hides troops from enemy defenses for a short period.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "smoʊk skriːn"
         },
         "crystal shield projector": {
             "terminology": "Crystal Shield Projector",
             "definition": "A temporary gunboat ability that provides powerful defensive shields to all affected troops.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈkrɪstəl ʃiːld prəˈdʒɛktər"
         }
     },
     "Events": {
@@ -149,19 +170,22 @@
             "terminology": "Warships",
             "definition": "A special event in Boom Beach where players use Warships to battle others.",
             "class": "Noun",
-            "origin": "Game Event"
+            "origin": "Game Event",
+            "pronunciation": "ˈwɔːrʃɪps"
         },
         "Mega Crab": {
             "terminology": "Mega Crab",
             "definition": "A recurring event where players fight a massive crab boss with increasing difficulty.",
             "class": "Noun",
-            "origin": "Game Event"
+            "origin": "Game Event",
+            "pronunciation": "ˈmeɪɡə kræb"
         },
         "Dr. T": {
             "terminology": "Dr. T",
             "definition": "A recurring event where players battle Dr. Terror and his bases.",
             "class": "Noun",
-            "origin": "Game Event"
+            "origin": "Game Event",
+            "pronunciation": "dɒkˈtər tiː"
         }
     },
     "Slang": {
@@ -170,13 +194,15 @@
             "terminology": "Boom Surprise",
             "definition": "A powerful, vigorous, forceful or robust person or thing.",
             "class": "Noun",
-            "origin": "Originated from the prototype defence in Boom Beach"
+            "origin": "Originated from the prototype defence in Boom Beach",
+            "pronunciation": "buːm səˈpraɪz"
         },
         "attack that boom cannon": {
             "terminology": "Attack That Boom Cannon",
             "definition": "(often used with an object) take order aggressively.",
             "class": "Verb (intransitive)",
-            "origin": "Derived from a popular commercial, often used and respected humorously in the community."
+            "origin": "Derived from a popular commercial, often used and respected humorously in the community.",
+            "pronunciation": "əˈtæk ðæt buːm ˈkænən"
         }
     },
     "Miscellaneous": {
@@ -185,13 +211,15 @@
             "terminology": "Scout",
             "definition": "A type of reconnaissance unit used to gather information.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "skaʊt"
         },
         "prototype defence": {
             "terminology": "Prototype Defence",
             "definition": "Advanced defensive buildings with unique abilities, often available during special events.",
             "class": "Noun",
-            "origin": "Game Term"
+            "origin": "Game Term",
+            "pronunciation": "ˈprəʊtəˌtaɪp dɪˈfɛns"
         }
     }
 }
