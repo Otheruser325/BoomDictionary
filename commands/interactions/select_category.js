@@ -4,11 +4,11 @@ const dictionary = require('../../data/dictionary.json');
 module.exports = {
     customId: 'select_category',
     async execute(interaction) {
-        // Get the selected category from the interaction
+        // Retrieve the selected category from the interaction
         const selectedCategory = interaction.values[0];
         const categoryData = dictionary[selectedCategory];
 
-        // Check if category data exists
+        // Check if the category data exists
         if (!categoryData) {
             await interaction.reply({ content: 'Category not found!', ephemeral: true });
             return;
@@ -17,7 +17,7 @@ module.exports = {
         // Extract the description for the selected category
         const description = categoryData.description || 'No description available for this category.';
 
-        // Create the term options from the selected category's terms
+        // Create term options from the selected category's terms
         const termOptions = Object.keys(categoryData)
             .filter(term => typeof categoryData[term] === 'object') // Only include terms that are objects
             .map(term =>
