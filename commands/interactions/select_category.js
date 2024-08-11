@@ -4,18 +4,20 @@ const dictionary = require('../../data/dictionary.json');
 module.exports = {
     customId: 'select_category',
     async execute(interaction) {
+        // Get the selected category from the interaction
         const selectedCategory = interaction.values[0];
         const categoryData = dictionary[selectedCategory];
 
+        // Check if category data exists
         if (!categoryData) {
             await interaction.reply({ content: 'Category not found!', ephemeral: true });
             return;
         }
 
-        // Retrieve the category description
+        // Extract the description for the selected category
         const description = categoryData.description || 'No description available for this category.';
 
-        // Retrieve the term options, filtering out any non-object entries
+        // Create the term options from the selected category's terms
         const termOptions = Object.keys(categoryData)
             .filter(term => typeof categoryData[term] === 'object') // Only include terms that are objects
             .map(term =>
@@ -24,20 +26,20 @@ module.exports = {
                     .setValue(term)
             );
 
-        // Create the select menu for terms
+        // Create a select menu for terms
         const termSelectMenu = new StringSelectMenuBuilder()
             .setCustomId('select_term')
             .setPlaceholder('Select a term')
             .addOptions(termOptions);
 
-        // Create an action row with the select menu
+        // Create an action row to hold the select menu
         const row = new ActionRowBuilder().addComponents(termSelectMenu);
 
-        // Create the embed with the selected category's title and description
+        // Create the embed to display the category title and description
         const embed = new EmbedBuilder()
-            .setTitle(selectedCategory) // Use the category name as the title
-            .setDescription(description)
-            .setColor('#0099ff');
+            .setTitle(selectedCategory) // Set the title to the selected category
+            .setDescription(description) // Set the description from the category data
+            .setColor('#0099ff'); // Set embed color
 
         // Update the interaction with the new embed and components
         await interaction.update({ embeds: [embed], components: [row] });
