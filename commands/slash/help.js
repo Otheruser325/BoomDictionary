@@ -1,20 +1,21 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const fs = require('fs');
+const path = require('path');
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const commandsPerPage = 10; // Number of commands per page
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription('Lists all available commands or provides detailed help for a specific command.'),
+        .setDescription('Lists all available slash commands or provides detailed help for a specific command.'),
     async execute(interaction) {
-        // Load command files
-        const commandFiles = fs.readdirSync('./commands/slash').filter(file => file.endsWith('.js'));
+        // Load slash command files
+        const commandFiles = fs.readdirSync(path.join(__dirname, '../../commands/slash')).filter(file => file.endsWith('.js'));
 
         const defaultCommands = [];
-        
+
         for (const file of commandFiles) {
-            const command = require(`../../commands/slash/${file}`);
+            const command = require(path.join(__dirname, '../../commands/slash', file));
             if (command.data.name === 'help') continue; // Skip the help command
 
             let commandName = command.data.name;
@@ -72,15 +73,15 @@ module.exports = {
         const filter = (i) => i.user.id === interaction.user.id;
         const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
 
-        collector.on('collect', async (interaction) => {
-            if (interaction.customId === 'previous' && currentPage > 1) {
+        collector.on('collect', async (i) => {
+            if (i.customId === 'previous' && currentPage > 1) {
                 currentPage--;
-            } else if (interaction.customId === 'next' && currentPage < totalPages) {
+            } else if (i.customId === 'next' && currentPage < totalPages) {
                 currentPage++;
             }
 
             const newEmbed = generateEmbed(defaultCommands, currentPage);
-            await interaction.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
+            await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
         });
 
         collector.on('end', async () => {
