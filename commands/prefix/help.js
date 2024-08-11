@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 const commandsPerPage = 10; // Number of commands per page
@@ -9,13 +10,34 @@ module.exports = {
         description: 'Lists all available commands or provides detailed help for a specific command.',
     },
     async execute(interaction) {
-        // Load command files
-        const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js') && file !== 'help.js');
+        // Load prefix commands
+        const prefixCommandsDir = path.join(__dirname, '../prefix');
+        const prefixCommandFiles = fs.readdirSync(prefixCommandsDir).filter(file => file.endsWith('.js'));
 
-        const commands = [];
+        const prefixCommands = [];
 
-        for (const file of commandFiles) {
-            const command = require(`./${file}`);
+        for (const file of prefixCommandFiles) {
+            const command = require(path.join(prefixCommandsDir, file));
+            let commandName = command.name;
+            let description = command.description;
+
+            if (command.aliases && command.aliases.length > 0) {
+                commandName += ` (Aliases: ${command.aliases.join(', ')})`;
+            }
+
+            description += `\n${command.usage ? `Usage: ${command.usage}` : ''}`;
+
+            prefixCommands.push({ name: commandName, description: description });
+        }
+
+        // Load slash commands
+        const slashCommandsDir = path.join(__dirname, '../slash');
+        const slashCommandFiles = fs.readdirSync(slashCommandsDir).filter(file => file.endsWith('.js'));
+
+        const slashCommands = [];
+
+        for (const file of slashCommandFiles) {
+            const command = require(path.join(slashCommandsDir, file));
             let commandName = command.data.name;
             let description = command.data.description;
 
@@ -25,8 +47,11 @@ module.exports = {
 
             description += `\n${command.data.usage ? `Usage: ${command.data.usage}` : ''}`;
 
-            commands.push({ name: commandName, description: description, command: command });
+            slashCommands.push({ name: commandName, description: description });
         }
+
+        // Combine both command arrays
+        const commands = [...prefixCommands, ...slashCommands];
 
         const generateEmbed = (commands, page) => {
             const start = (page - 1) * commandsPerPage;
@@ -92,23 +117,14 @@ module.exports = {
         const requestedCommand = interaction.options.getString('command');
         if (requestedCommand) {
             const command = commands.find(cmd =>
-                cmd.command.data.name.toLowerCase() === requestedCommand.toLowerCase() ||
-                (cmd.command.data.aliases && cmd.command.data.aliases.map(alias => alias.toLowerCase()).includes(requestedCommand.toLowerCase()))
+                cmd.name.toLowerCase() === requestedCommand.toLowerCase()
             );
             if (command) {
                 const embed = new EmbedBuilder()
                     .setColor('Blue')
                     .setTitle(`Command: ${command.name}`)
-                    .addFields({ name: 'Description:', value: `**${command.command.data.description}**` })
-                    .addFields({ name: 'Usage:', value: command.command.data.usage || 'No usage information available.' });
-
-                if (command.command.data.note) {
-                    embed.addFields({ name: 'Note:', value: command.command.data.note });
-                }
-
-                if (command.command.data.exampleUsage) {
-                    embed.addFields({ name: 'Example Usage:', value: command.command.data.exampleUsage });
-                }
+                    .addFields({ name: 'Description:', value: `**${command.description}**` })
+                    .addFields({ name: 'Usage:', value: command.usage || 'No usage information available.' });
 
                 return interaction.reply({ embeds: [embed] });
             } else {
