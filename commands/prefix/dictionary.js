@@ -12,6 +12,7 @@ module.exports = {
             const categoryOptions = categories.map(category =>
                 new StringSelectMenuOptionBuilder()
                     .setLabel(category)
+                    .setDescription(dictionary[category].description || 'No description available.')
                     .setValue(category)
             );
 
@@ -35,7 +36,7 @@ module.exports = {
 
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
-                // Normalize terms keys to lowercase for case-insensitive search
+                // Normalize term keys to lowercase for case-insensitive search
                 const normalizedTerms = Object.fromEntries(
                     Object.entries(terms).filter(([key, value]) => typeof value === 'object')
                         .map(([key, value]) => [key.toLowerCase(), value])
