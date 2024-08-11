@@ -10,12 +10,17 @@ module.exports = {
         // Find the category and term
         for (const [category, terms] of Object.entries(dictionary)) {
             if (terms[selectedTerm]) {
-                const definition = terms[selectedTerm];
+                const termData = terms[selectedTerm];
+                const definition = termData.definition;
+                const terminology = termData.terminology;
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Boom Dictionary: ${selectedTerm}`)
                     .setDescription(definition)
-                    .addFields({ name: 'Category', value: category })
+                    .addFields(
+                        { name: 'Category', value: category },
+                        { name: 'Terminology', value: terminology || 'Not provided' }
+                    )
                     .setColor('#0099ff');
 
                 await interaction.update({ embeds: [embed], components: [] });
