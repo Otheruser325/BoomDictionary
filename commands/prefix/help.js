@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const commandsPerPage = 10; // Number of commands per page
@@ -32,12 +32,12 @@ module.exports = {
             const start = (page - 1) * commandsPerPage;
             const currentCommands = commands.slice(start, start + commandsPerPage);
 
-            const embed = new MessageEmbed()
-                .setColor('BLUE')
+            const embed = new EmbedBuilder()
+                .setColor('Blue')
                 .setTimestamp();
 
             currentCommands.forEach(cmd => {
-                embed.addField(cmd.name, cmd.description);
+                embed.addFields({ name: cmd.name, value: cmd.description });
             });
 
             embed.setFooter({ text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}` });
@@ -45,16 +45,16 @@ module.exports = {
         };
 
         const generateButtons = (currentPage, totalPages) => {
-            const row = new MessageActionRow().addComponents(
-                new MessageButton()
+            const row = new ActionRowBuilder().addComponents(
+                new ButtonBuilder()
                     .setCustomId('previous')
                     .setLabel('◀️')
-                    .setStyle('PRIMARY')
+                    .setStyle(ButtonStyle.Primary)
                     .setDisabled(currentPage === 1),
-                new MessageButton()
+                new ButtonBuilder()
                     .setCustomId('next')
                     .setLabel('▶️')
-                    .setStyle('PRIMARY')
+                    .setStyle(ButtonStyle.Primary)
                     .setDisabled(currentPage === totalPages)
             );
             return row;
