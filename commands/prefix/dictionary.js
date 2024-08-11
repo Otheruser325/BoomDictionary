@@ -3,7 +3,7 @@ const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
     name: 'dictionary',
-    description: 'Get definitions for terms related to Boom Beach or view categories.',
+    description: 'Get definitions for terms or view categories.',
     async execute(message, args) {
         if (args.length === 0) {
             // No argument provided; show categories
