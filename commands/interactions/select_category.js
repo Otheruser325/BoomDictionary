@@ -12,12 +12,14 @@ module.exports = {
             return;
         }
 
-        const terms = categoryData.terms || {};
-        const termOptions = Object.keys(terms).map(term =>
-            new StringSelectMenuOptionBuilder()
-                .setLabel(term)
-                .setValue(term)
-        );
+        const terms = categoryData; // Directly use category data since terms are part of the category object
+        const termOptions = Object.keys(terms)
+            .filter(term => typeof terms[term] === 'object') // Only include terms that are objects
+            .map(term =>
+                new StringSelectMenuOptionBuilder()
+                    .setLabel(term)
+                    .setValue(term)
+            );
 
         const termSelectMenu = new StringSelectMenuBuilder()
             .setCustomId('select_term')
