@@ -19,12 +19,18 @@ module.exports = {
 
         // Create term options from the selected category's terms
         const termOptions = Object.keys(categoryData)
-            .filter(term => typeof categoryData[term] === 'object') // Only include terms that are objects
+            .filter(term => typeof categoryData[term] === 'object' && categoryData[term].terminology) // Only include terms that are objects with a "terminology" key
             .map(term =>
                 new StringSelectMenuOptionBuilder()
-                    .setLabel(term)
+                    .setLabel(categoryData[term].terminology)
                     .setValue(term)
             );
+
+        // Check if there are term options available
+        if (termOptions.length === 0) {
+            await interaction.reply({ content: 'No terms available for this category.', ephemeral: true });
+            return;
+        }
 
         // Create a select menu for terms
         const termSelectMenu = new StringSelectMenuBuilder()
