@@ -5,17 +5,16 @@ module.exports = {
     customId: 'select_term',
     async execute(interaction) {
         const selectedTerm = interaction.values[0];
-        let categoryFound = false;
+        let termFound = false;
 
         // Find the category and term
         for (const [category, terms] of Object.entries(dictionary)) {
             if (terms[selectedTerm]) {
                 const termData = terms[selectedTerm];
-                const definition = termData.definition;
-                const terminology = termData.terminology;
+                const { terminology, definition } = termData;
 
                 const embed = new EmbedBuilder()
-                    .setTitle(`Boom Dictionary: ${selectedTerm}`)
+                    .setTitle(`Boom Dictionary: ${terminology || selectedTerm}`)
                     .setDescription(definition)
                     .addFields(
                         { name: 'Category', value: category },
@@ -24,12 +23,12 @@ module.exports = {
                     .setColor('#0099ff');
 
                 await interaction.update({ embeds: [embed], components: [] });
-                categoryFound = true;
+                termFound = true;
                 break;
             }
         }
 
-        if (!categoryFound) {
+        if (!termFound) {
             await interaction.reply({ content: 'Term not found!', ephemeral: true });
         }
     }
