@@ -43,11 +43,16 @@ module.exports = {
                 );
 
                 if (normalizedTerms[term]) {
-                    const { terminology, definition } = normalizedTerms[term];
+                    const { terminology, definition, class: wordClass, origin, pronunciation } = normalizedTerms[term];
                     const embed = new EmbedBuilder()
                         .setTitle(`Boom Dictionary: ${terminology || term}`)
                         .setDescription(definition)
-                        .addFields({ name: 'Category', value: category })
+                        .addFields(
+                            { name: 'Category', value: category },
+                            { name: 'Word Class', value: wordClass || 'Unknown' },
+                            { name: 'Origin', value: origin || 'Unknown' },
+                            { name: 'Pronunciation', value: pronunciation || 'Not available' }
+                        )
                         .setColor('#0099ff');
 
                     await message.channel.send({ embeds: [embed] });
