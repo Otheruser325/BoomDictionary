@@ -63,29 +63,51 @@ module.exports = {
         let currentPage = 1;
         const totalPages = Math.ceil(defaultCommands.length / commandsPerPage);
 
-        const embed = generateEmbed(defaultCommands, currentPage);
-        const row = generateButtons(currentPage, totalPages);
+        try {
+            const messageReply = await message.reply({ embeds: [generateEmbed(defaultCommands, currentPage)], components: [generateButtons(currentPage, totalPages)], fetchReply: true });
 
-        const messageReply = await message.reply({ embeds: [embed], components: [row], fetchReply: true });
+            const filter = (i) => i.user.id === message.author.id;
+            const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
 
-        const filter = (i) => i.user.id === message.author.id;
-        const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
+            collector.on('collect', async (i) => {
+                if (i.customId === 'previous' && currentPage > 1) {
+                    currentPage--;
+                } else if (i.customId === 'next' && currentPage < totalPages) {
+                    currentPage++;
+                }
 
-        collector.on('collect', async (i) => {
-            if (i.customId === 'previous' && currentPage > 1) {
-                currentPage--;
-            } else if (i.customId === 'next' && currentPage < totalPages) {
-                currentPage++;
-            }
+                try {
+                    const newEmbed = generateEmbed(defaultCommands, currentPage);
+                    await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
+                } catch (error) {
+                    if (error.code === 10008) {
+                        // Handle unknown message error (e.g., message was deleted)
+                        console.error('The message was not found or has been deleted.');
+                    } else {
+                        // Handle other errors
+                        console.error('Error updating message:', error);
+                    }
+                }
+            });
 
-            const newEmbed = generateEmbed(defaultCommands, currentPage);
-            await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
-        });
+            collector.on('end', async () => {
+                if (messageReply.editable) {
+                    try {
+                        await messageReply.edit({ components: [] });
+                    } catch (error) {
+                        if (error.code === 10008) {
+                            // Handle unknown message error
+                            console.error('The message was not found or has been deleted.');
+                        } else {
+                            // Handle other errors
+                            console.error('Error removing components:', error);
+                        }
+                    }
+                }
+            });
 
-        collector.on('end', async () => {
-            if (messageReply.editable) {
-                await messageReply.edit({ components: [] });
-            }
-        });
+        } catch (error) {
+            console.error('Error sending initial help message:', error);
+        }
     }
 };
