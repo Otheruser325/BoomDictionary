@@ -12,14 +12,13 @@ module.exports = {
             return;
         }
 
-        const terms = categoryData; // Directly use category data since terms are part of the category object
-        const termOptions = Object.keys(terms)
-            .filter(term => typeof terms[term] === 'object') // Only include terms that are objects
-            .map(term =>
-                new StringSelectMenuOptionBuilder()
-                    .setLabel(term)
-                    .setValue(term)
-            );
+        const description = categoryData.description || 'No description available for this category.';
+        const terms = Object.keys(categoryData).filter(key => typeof categoryData[key] === 'object');
+        const termOptions = terms.map(term =>
+            new StringSelectMenuOptionBuilder()
+                .setLabel(term)
+                .setValue(term)
+        );
 
         const termSelectMenu = new StringSelectMenuBuilder()
             .setCustomId('select_term')
@@ -30,7 +29,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setTitle(`Terms in ${selectedCategory}`)
-            .setDescription(categoryData.description || 'No description available for this category.')
+            .setDescription(description)
             .setColor('#0099ff');
 
         await interaction.update({ embeds: [embed], components: [row] });
