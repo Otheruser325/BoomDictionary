@@ -5,13 +5,14 @@ module.exports = {
     customId: 'select_category',
     async execute(interaction) {
         const selectedCategory = interaction.values[0];
-        const terms = dictionary[selectedCategory];
+        const categoryData = dictionary[selectedCategory];
 
-        if (!terms) {
+        if (!categoryData) {
             await interaction.reply({ content: 'Category not found!', ephemeral: true });
             return;
         }
 
+        const terms = categoryData.terms || {};
         const termOptions = Object.keys(terms).map(term =>
             new StringSelectMenuOptionBuilder()
                 .setLabel(term)
@@ -27,7 +28,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setTitle(`Terms in ${selectedCategory}`)
-            .setDescription('Select a term to view its definition.')
+            .setDescription(categoryData.description || 'No description available for this category.')
             .setColor('#0099ff');
 
         await interaction.update({ embeds: [embed], components: [row] });
