@@ -39,10 +39,17 @@ module.exports = {
 
                 if (normalizedTerms[term]) {
                     const termData = normalizedTerms[term];
+                    const { terminology, definition, class: termClass, origin, pronunciation } = termData;
+
                     const embed = new EmbedBuilder()
-                        .setTitle(`Boom Dictionary: ${termData.terminology || term}`)
-                        .setDescription(termData.definition)
-                        .addFields({ name: 'Category', value: category })
+                        .setTitle(`Boom Dictionary: ${terminology || term}`)
+                        .setDescription(definition)
+                        .addFields(
+                            { name: 'Category', value: category },
+                            { name: 'Class', value: termClass || 'Not provided' },
+                            { name: 'Origin', value: origin || 'Not provided' },
+                            { name: 'Pronunciation', value: pronunciation || 'Not provided' }
+                        )
                         .setColor('#0099ff');
 
                     await interaction.reply({ embeds: [embed] });
@@ -89,10 +96,17 @@ module.exports = {
             const randomTerm = allTerms[Math.floor(Math.random() * allTerms.length)];
             const [term, termData] = randomTerm;
 
+            const { terminology, definition, class: termClass, origin, pronunciation } = termData;
+
             const embed = new EmbedBuilder()
-                .setTitle(`Boom Dictionary: ${termData.terminology || term}`)
-                .setDescription(termData.definition)
-                .addFields({ name: 'Category', value: 'Random' })
+                .setTitle(`Boom Dictionary: ${terminology || term}`)
+                .setDescription(definition)
+                .addFields(
+                    { name: 'Category', value: 'Random' },
+                    { name: 'Class', value: termClass || 'Not provided' },
+                    { name: 'Origin', value: origin || 'Not provided' },
+                    { name: 'Pronunciation', value: pronunciation || 'Not provided' }
+                )
                 .setColor('#0099ff');
 
             await interaction.reply({ embeds: [embed] });
