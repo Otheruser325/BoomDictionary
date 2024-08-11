@@ -35,7 +35,7 @@ module.exports = {
 
         // Create the embed with the selected category's title and description
         const embed = new EmbedBuilder()
-            .setTitle(`Terms in ${selectedCategory}`)
+            .setTitle(selectedCategory) // Use the category name as the title
             .setDescription(description)
             .setColor('#0099ff');
 
