@@ -12,26 +12,34 @@ module.exports = {
             return;
         }
 
+        // Retrieve the category description
         const description = categoryData.description || 'No description available for this category.';
-        const terms = Object.keys(categoryData).filter(key => typeof categoryData[key] === 'object');
-        const termOptions = terms.map(term =>
-            new StringSelectMenuOptionBuilder()
-                .setLabel(term)
-                .setValue(term)
-        );
 
+        // Retrieve the term options, filtering out any non-object entries
+        const termOptions = Object.keys(categoryData)
+            .filter(term => typeof categoryData[term] === 'object') // Only include terms that are objects
+            .map(term =>
+                new StringSelectMenuOptionBuilder()
+                    .setLabel(term)
+                    .setValue(term)
+            );
+
+        // Create the select menu for terms
         const termSelectMenu = new StringSelectMenuBuilder()
             .setCustomId('select_term')
             .setPlaceholder('Select a term')
             .addOptions(termOptions);
 
+        // Create an action row with the select menu
         const row = new ActionRowBuilder().addComponents(termSelectMenu);
 
+        // Create the embed with the selected category's title and description
         const embed = new EmbedBuilder()
             .setTitle(`Terms in ${selectedCategory}`)
             .setDescription(description)
             .setColor('#0099ff');
 
+        // Update the interaction with the new embed and components
         await interaction.update({ embeds: [embed], components: [row] });
     }
 };
