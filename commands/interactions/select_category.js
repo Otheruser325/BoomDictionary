@@ -23,6 +23,7 @@ module.exports = {
             .map(term =>
                 new StringSelectMenuOptionBuilder()
                     .setLabel(categoryData[term].terminology)
+                    .setDescription(categoryData[term].description || 'No description available.') // Include the description for each term
                     .setValue(term)
             );
 
