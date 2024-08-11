@@ -37,15 +37,16 @@ module.exports = {
             for (const [category, terms] of Object.entries(dictionary)) {
                 // Normalize terms keys to lowercase for case-insensitive search
                 const normalizedTerms = Object.fromEntries(
-                    Object.entries(terms).map(([key, value]) => [key.toLowerCase(), value])
+                    Object.entries(terms).filter(([key, value]) => typeof value === 'object')
+                        .map(([key, value]) => [key.toLowerCase(), value])
                 );
 
                 if (normalizedTerms[term]) {
                     const { terminology, definition } = normalizedTerms[term];
                     const embed = new EmbedBuilder()
-                        .setTitle(`Boom Dictionary: ${term}`)
+                        .setTitle(`Boom Dictionary: ${terminology || term}`)
                         .setDescription(definition)
-                        .addFields({ name: 'Category', value: category }, { name: 'Terminology', value: terminology })
+                        .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
 
                     await message.channel.send({ embeds: [embed] });
