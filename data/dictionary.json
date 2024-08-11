@@ -1,42 +1,129 @@
 {
-    "Main": {
-        "HQ": "Headquarters, the main building in Boom Beach that you must protect and upgrade.",
-        "Boom Beach": "A game where you build a base and attack other bases.",
-        "resource base": "A special base in Boom Beach that contains resources you can collect and defend."
+    "General": {
+        "description": "General information about the game, its mechanics, and key elements.",
+        "HQ": {
+            "terminology": "Headquarters",
+            "definition": "The main building in Boom Beach that you must protect and upgrade."
+        },
+        "Boom Beach": {
+            "terminology": "Boom Beach",
+            "definition": "A game where you build a base and attack other bases."
+        },
+        "resource base": {
+            "terminology": "Resource Base",
+            "definition": "A special base in Boom Beach that contains resources you can collect and defend."
+        }
     },
     "Support": {
-        "sentry": "A defensive building in Boom Beach that fires at enemy troops and vehicles.",
-        "medkit": "An item used to heal troops during battle.",
-        "landing craft": "A boat used to send in troops in battle."
-    },
-    "Defences": {
-        "sniper tower": "The first defensive building you unlock in Boom Beach; basic and reliable.",
-        "flamethrower": "A defensive building that deals area-of-effect damage to enemy troops.",
-        "boom cannon": "A powerful defensive building that deals high damage to enemy troops and vehicles.",
-        "shock launcher": "A defensive building that temporarily disables enemy defenses with electrical shocks.",
-        "rocket launcher": "A defensive building that fires rockets, causing splash damage to enemy troops and vehicles."
+        "description": "Items and buildings that provide support during battles.",
+        "sentry": {
+            "terminology": "Sentry",
+            "definition": "A defensive building in Boom Beach that fires at enemy troops and vehicles."
+        },
+        "medkit": {
+            "terminology": "Medkit",
+            "definition": "An item used to heal troops during battle."
+        },
+        "landing craft": {
+            "terminology": "Landing Craft",
+            "definition": "A boat used to send in troops in battle."
+        }
     },
     "Economy": {
-        "resource base": "A special base in Boom Beach that contains resources you can collect and defend.",
-        "vault": "A building where you store your resources to protect them from raids.",
-        "trading post": "A building where you can trade resources with other players or the game."
+        "description": "Buildings and features related to resource management and trading.",
+        "resource base": {
+            "terminology": "Resource Base",
+            "definition": "A special base in Boom Beach that contains resources you can collect and defend."
+        },
+        "vault": {
+            "terminology": "Vault",
+            "definition": "A building where you store your resources to protect them from raids."
+        },
+        "trading post": {
+            "terminology": "Trading Post",
+            "definition": "A building where you can trade resources with other players or the game."
+        }
+    },
+    "Defences": {
+        "description": "Defensive buildings used to protect your base.",
+        "sniper tower": {
+            "terminology": "Sniper Tower",
+            "definition": "The first defensive building you unlock in Boom Beach; basic and reliable."
+        },
+        "flamethrower": {
+            "terminology": "Flamethrower",
+            "definition": "A defensive building that deals area-of-effect damage to enemy troops."
+        },
+        "boom cannon": {
+            "terminology": "Boom Cannon",
+            "definition": "A powerful defensive building that deals high damage to enemy troops and vehicles."
+        },
+        "shock launcher": {
+            "terminology": "Shock Launcher",
+            "definition": "A defensive building that temporarily disables enemy defenses with electrical shocks."
+        },
+        "rocket launcher": {
+            "terminology": "Rocket Launcher",
+            "definition": "A defensive building that fires rockets, causing splash damage to enemy troops and vehicles."
+        }
+    },
+    "Troops": {
+        "description": "Different types of troops available in the game.",
+        "rifleman": {
+            "terminology": "Rifleman",
+            "definition": "A basic infantry troop that is all-rounded."
+        }
     },
     "Battle": {
-        "medkit": "An item used to heal troops during battle.",
-        "flares": "A tactical item used to direct troops to a specific location during battle.",
-        "smoke screen": "An item that hides troops from enemy defenses for a short period."
+        "description": "Items and strategies used during battles.",
+        "medkit": {
+            "terminology": "Medkit",
+            "definition": "An item used to heal troops during battle."
+        },
+        "flares": {
+            "terminology": "Flares",
+            "definition": "A tactical item used to direct troops to a specific location during battle."
+        },
+        "smoke screen": {
+            "terminology": "Smoke Screen",
+            "definition": "An item that hides troops from enemy defenses for a short period."
+        }
     },
     "Events": {
-        "Warships": "A special event in Boom Beach where players use Warships to battle others.",
-        "Mega Crab": "A recurring event where players fight a massive crab boss with increasing difficulty.",
-        "Dr. T": "A recurring event where players battle Dr. Terror and his bases."
+        "description": "Special events and challenges in Boom Beach.",
+        "Warships": {
+            "terminology": "Warships",
+            "definition": "A special event in Boom Beach where players use Warships to battle others."
+        },
+        "Mega Crab": {
+            "terminology": "Mega Crab",
+            "definition": "A recurring event where players fight a massive crab boss with increasing difficulty."
+        },
+        "Dr. T": {
+            "terminology": "Dr. T",
+            "definition": "A recurring event where players battle Dr. Terror and his bases."
+        }
     },
-    "Funny": {
-        "boom surprise": "A term used to describe unexpected moments or surprises in Boom Beach.",
-        "attack that boom cannon": "A phrase derived from a popular commercial, used humorously in the community."
+    "Slang": {
+        "description": "Common phrases and terms used by the community.",
+        "boom surprise": {
+            "terminology": "Boom Surprise",
+            "definition": "A term used to describe unexpected moments or surprises in Boom Beach."
+        },
+        "attack that boom cannon": {
+            "terminology": "Attack That Boom Cannon",
+            "definition": "A phrase derived from a popular commercial, used humorously in the community."
+        }
     },
     "Miscellaneous": {
-        "scout": "A type of reconnaissance unit used to gather information.",
-        "prototype defence": "Advanced defensive buildings with unique abilities, often available during special events."
+        "description": "Other terms and concepts not covered in other categories.",
+        "scout": {
+            "terminology": "Scout",
+            "definition": "A type of reconnaissance unit used to gather information."
+        },
+        "prototype defence": {
+            "terminology": "Prototype Defence",
+            "definition": "Advanced defensive buildings with unique abilities, often available during special events."
+        }
     }
 }
