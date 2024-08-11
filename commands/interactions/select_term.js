@@ -11,14 +11,17 @@ module.exports = {
         for (const [category, terms] of Object.entries(dictionary)) {
             if (terms[selectedTerm]) {
                 const termData = terms[selectedTerm];
-                const { terminology, definition } = termData;
+                const { terminology, definition, class: termClass, origin, pronunciation } = termData;
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Boom Dictionary: ${terminology || selectedTerm}`)
                     .setDescription(definition)
                     .addFields(
                         { name: 'Category', value: category },
-                        { name: 'Terminology', value: terminology || 'Not provided' }
+                        { name: 'Terminology', value: terminology || 'Not provided' },
+                        { name: 'Class', value: termClass || 'Not provided' },
+                        { name: 'Origin', value: origin || 'Not provided' },
+                        { name: 'Pronunciation', value: pronunciation || 'Not provided' }
                     )
                     .setColor('#0099ff');
 
