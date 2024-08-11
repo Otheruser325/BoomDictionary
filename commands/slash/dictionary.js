@@ -17,7 +17,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('categories')
-                .setDescription('View categories and terms')
+                .setDescription('View categories and their descriptions')
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -33,7 +33,6 @@ module.exports = {
 
             // Check each category for the term
             for (const [category, terms] of Object.entries(dictionary)) {
-                // Normalize terms keys to lowercase for case-insensitive search
                 const normalizedTerms = Object.fromEntries(
                     Object.entries(terms).map(([key, value]) => [key.toLowerCase(), value])
                 );
@@ -41,7 +40,7 @@ module.exports = {
                 if (normalizedTerms[term]) {
                     const termData = normalizedTerms[term];
                     const embed = new EmbedBuilder()
-                        .setTitle(`Boom Dictionary: ${term}`)
+                        .setTitle(`Boom Dictionary: ${termData.terminology || term}`)
                         .setDescription(termData.definition)
                         .addFields({ name: 'Category', value: category })
                         .setColor('#0099ff');
@@ -56,24 +55,20 @@ module.exports = {
                 await interaction.reply({ content: `No definition found for \`${term}\`.`, ephemeral: true });
             }
         } else if (subcommand === 'categories') {
-            // Show categories with terms and descriptions
+            // Show categories with their descriptions
             const categories = Object.keys(dictionary);
 
             const embed = new EmbedBuilder()
                 .setTitle('Boom Dictionary Categories')
-                .setDescription('View categories and select terms.')
+                .setDescription('Select a category to view its terms.')
                 .setColor('#0099ff');
 
-            // Add fields for each category and its terms
+            // Add fields for each category and its description
             categories.forEach(category => {
-                const terms = dictionary[category];
-                const termList = Object.entries(terms)
-                    .map(([term, termData]) => `**${term}**: ${termData.definition}`)
-                    .join('\n');
-
+                const description = dictionary[category].description;
                 embed.addFields({
                     name: category,
-                    value: termList || 'No terms available',
+                    value: description || 'No description available',
                     inline: false
                 });
             });
@@ -83,7 +78,7 @@ module.exports = {
             // Get a random term from any category
             const allTerms = [];
             for (const terms of Object.values(dictionary)) {
-                allTerms.push(...Object.entries(terms));
+                allTerms.push(...Object.entries(terms).filter(([key, value]) => typeof value === 'object'));
             }
 
             if (allTerms.length === 0) {
@@ -95,7 +90,7 @@ module.exports = {
             const [term, termData] = randomTerm;
 
             const embed = new EmbedBuilder()
-                .setTitle(`Boom Dictionary: ${term}`)
+                .setTitle(`Boom Dictionary: ${termData.terminology || term}`)
                 .setDescription(termData.definition)
                 .addFields({ name: 'Category', value: 'Random' })
                 .setColor('#0099ff');
