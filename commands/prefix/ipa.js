@@ -25,7 +25,7 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                // Convert spaces and special characters to underscores for filename
+                // Convert term to filename format
                 const fileName = term
                     .replace(/\s+/g, '_') // Replace spaces with underscores
                     .replace(/[^a-zA-Z0-9_]/g, '') // Remove special characters
@@ -43,11 +43,12 @@ module.exports = {
                     .setColor('#0099ff');
 
                 if (fs.existsSync(mp3FilePath)) {
+                    // Serve the MP3 file correctly
                     const components = [
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/${fileName}`) // Adjust URL based on your hosting setup
+                                    .setURL(`/pronunciations/${fileName}`) // Adjust URL based on your setup
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
