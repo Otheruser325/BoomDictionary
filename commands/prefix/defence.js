@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-// Map user-friendly names to actual keys in defences.json
+// Mapping user-friendly names to actual keys in defences.json
 const validDefenceTypes = {
     'sniper tower': 'sniper_tower',
     'mortar': 'mortar',
@@ -25,9 +25,8 @@ module.exports = {
             return message.reply('Please provide both the defence type and level. Usage: `bd!defence <defence_type> <level>`');
         }
 
-        // Normalize the defence type input
-        const userFriendlyDefenceType = args[0].toLowerCase().trim();
-        const level = parseInt(args[1], 10);
+        const userFriendlyDefenceType = args.slice(0, -1).join(' ').toLowerCase().trim(); // Join all but the last argument as the type
+        const level = parseInt(args[args.length - 1], 10); // Last argument as the level
 
         // Map user-friendly name to actual key
         const defenceType = validDefenceTypes[userFriendlyDefenceType];
