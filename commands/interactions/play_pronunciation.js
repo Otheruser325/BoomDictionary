@@ -1,7 +1,7 @@
 const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
 const path = require('path');
 const fs = require('fs');
-const { getVoiceChannel } = require('../../utils/voiceChannelConfig'); // Update this line
+const { getVoiceChannel } = require('../../utils/voiceChannelConfig');
 
 module.exports = {
     customId: /^play_pronunciation_.+/,
@@ -12,7 +12,7 @@ module.exports = {
         const fileName = `${term}.mp3`;
         const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
-        // Check if the file exists
+        // Check if the pronunciation file exists
         if (fs.existsSync(mp3FilePath)) {
             const voiceChannelId = getVoiceChannel(interaction.guild.id);
             const voiceChannel = interaction.guild.channels.cache.get(voiceChannelId);
