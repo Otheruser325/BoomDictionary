@@ -1,6 +1,7 @@
-const { AudioPlayer, AudioResource, createAudioPlayer, createAudioResource, joinVoiceChannel } = require('@discordjs/voice');
+const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
 const path = require('path');
 const fs = require('fs');
+const { getVoiceChannel } = require('../utils/getVoiceChannel'); // Adjust the path as needed
 
 module.exports = {
     customId: /^play_pronunciation_.+/,
@@ -8,16 +9,17 @@ module.exports = {
         if (!interaction.isButton()) return;
 
         const term = interaction.customId.split('_')[2];
-        const fileName = `${term}.mp3`; // Ensure the file name matches
+        const fileName = `${term}.mp3`;
         const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
         // Check if the file exists
         if (fs.existsSync(mp3FilePath)) {
-            // Join the voice channel of the user who clicked the button
-            const voiceChannel = interaction.member.voice.channel;
+            const voiceChannelId = getVoiceChannel(interaction.guild.id);
+            const voiceChannel = interaction.guild.channels.cache.get(voiceChannelId);
+
             if (voiceChannel) {
                 const connection = joinVoiceChannel({
-                    channelId: voiceChannel.id,
+                    channelId: voiceChannelId,
                     guildId: interaction.guild.id,
                     adapterCreator: interaction.guild.voiceAdapterCreator,
                 });
@@ -30,7 +32,7 @@ module.exports = {
 
                 await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
             } else {
-                await interaction.reply({ content: 'You need to be in a voice channel to play pronunciation.', ephemeral: true });
+                await interaction.reply({ content: 'No voice channel configured. Please set one using the `/config` command.', ephemeral: true });
             }
         } else {
             await interaction.reply({ content: `Pronunciation file not found for \`${term}\`.`, ephemeral: true });
