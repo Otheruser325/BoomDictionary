@@ -66,5 +66,73 @@
                 "researchCost": { "gold": 83000 }
             }
         }
+    },
+    "heavy": {
+        "name": "Heavy",
+        "description": "Hey, great! The HQ is finally big enough for us Heavies. We're tough enough to walk straight into the line of fire. Let's go get them!",
+        "maxLevel": 26,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 1000,
+                    "damage": 2.6,
+                    "unitSize": 4,
+                    "trainingTime": "6m",
+                    "movementSpeed": "230",
+                    "attackRange": 4.7,
+                    "attackSpeed": "0.1s"
+                },
+                "trainingCost": { "gold": 300 },
+                "researchCost": { "gold": 0 }
+            },
+            "2": {
+                "stats": {
+                    "health": 1080,
+                    "damage": 2.8,
+                    "unitSize": 4,
+                    "trainingTime": "6m",
+                    "movementSpeed": "230",
+                    "attackSpeed": "0.1s"
+                },
+                "trainingCost": { "gold": 500 },
+                "researchCost": { "gold": 10400 }
+            },
+            "3": {
+                "stats": {
+                    "health": 1166,
+                    "damage": 3.1,
+                    "unitSize": 1,
+                    "trainingTime": "6m",
+                    "movementSpeed": "230",
+                    "attackSpeed": "0.1s"
+                },
+                "trainingCost": { "gold": 700 },
+                "researchCost": { "gold": 21800 }
+            },
+            "4": {
+                "stats": {
+                    "health": 1260,
+                    "damage": 3.3,
+                    "unitSize": 1,
+                    "trainingTime": "6m",
+                    "movementSpeed": "230",
+                    "attackSpeed": "0.1s"
+                },
+                "trainingCost": { "gold": 900 },
+                "researchCost": { "gold": 47000 }
+            },
+            "5": {
+                "stats": {
+                    "health": 1360,
+                    "damage": 3.6,
+                    "unitSize": 1,
+                    "trainingTime": "6m",
+                    "movementSpeed": "230",
+                    "attackSpeed": "0.1s"
+                },
+                "trainingCost": { "gold": 1100 },
+                "researchCost": { "gold": 94000 }
+            }
+        }
     }
 }
