@@ -8,7 +8,6 @@
                 "stats": {
                     "health": 140,
                     "damage": 30,
-                    "range": 4.7,
                     "unitSize": 1,
                     "trainingTime": "10s",
                     "movementSpeed": "220",
@@ -16,20 +15,55 @@
                     "attackSpeed": "1s"
                 },
                 "trainingCost": { "gold": 20 },
-                "researchCost": { "gold": 9500 }
+                "researchCost": { "gold": 0 }
             },
             "2": {
                 "stats": {
                     "health": 150,
                     "damage": 32,
-                    "range": 4.7,
                     "unitSize": 1,
                     "trainingTime": "10s",
                     "movementSpeed": "220",
                     "attackSpeed": "1s"
                 },
                 "trainingCost": { "gold": 50 },
+                "researchCost": { "gold": 9500 }
+            },
+            "3": {
+                "stats": {
+                    "health": 160,
+                    "damage": 35,
+                    "unitSize": 1,
+                    "trainingTime": "10s",
+                    "movementSpeed": "220",
+                    "attackSpeed": "1s"
+                },
+                "trainingCost": { "gold": 100 },
                 "researchCost": { "gold": 19500 }
+            },
+            "4": {
+                "stats": {
+                    "health": 172,
+                    "damage": 38,
+                    "unitSize": 1,
+                    "trainingTime": "10s",
+                    "movementSpeed": "220",
+                    "attackSpeed": "1s"
+                },
+                "trainingCost": { "gold": 150 },
+                "researchCost": { "gold": 42000 }
+            },
+            "5": {
+                "stats": {
+                    "health": 184,
+                    "damage": 41,
+                    "unitSize": 1,
+                    "trainingTime": "10s",
+                    "movementSpeed": "220",
+                    "attackSpeed": "1s"
+                },
+                "trainingCost": { "gold": 200 },
+                "researchCost": { "gold": 83000 }
             }
         }
     }
