@@ -11,13 +11,13 @@ module.exports = {
             return message.channel.send({ content: 'Please provide a word to get the pronunciation.', ephemeral: true });
         }
 
-        const term = args.join(' ').toLowerCase(); // Convert input to lowercase
+        const term = args.join(' ').toLowerCase();
         let pronunciationFound = false;
 
-        // Check each category for the term
         for (const [category, terms] of Object.entries(dictionary)) {
             const normalizedTerms = Object.fromEntries(
-                Object.entries(terms).filter(([key, value]) => typeof value === 'object')
+                Object.entries(terms)
+                    .filter(([key, value]) => typeof value === 'object')
                     .map(([key, value]) => [key.toLowerCase(), value])
             );
 
@@ -25,14 +25,11 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                // Convert term to filename format
-                const fileName = term
-                    .replace(/\s+/g, '_') // Replace spaces with underscores
-                    .replace(/[^a-zA-Z0-9_]/g, '') // Remove special characters
-                    + '.mp3';
+                const fileName = term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '') + '.mp3';
                 const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
-                // Create the embed with pronunciation details
+                console.log('MP3 File Path:', mp3FilePath); // Debugging line
+
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
                     .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
@@ -43,12 +40,11 @@ module.exports = {
                     .setColor('#0099ff');
 
                 if (fs.existsSync(mp3FilePath)) {
-                    // Serve the MP3 file correctly
                     const components = [
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/pronunciations/${fileName}`) // Adjust URL based on your setup
+                                    .setURL(`/pronunciations/${fileName}`) // Adjust this URL as needed
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
@@ -56,7 +52,6 @@ module.exports = {
 
                     await message.channel.send({ embeds: [embed], components: components });
                 } else {
-                    // Pronunciation file not available
                     await message.channel.send({ content: 'This pronunciation file is currently unavailable.', ephemeral: true });
                 }
 
