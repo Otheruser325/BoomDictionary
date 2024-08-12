@@ -283,5 +283,50 @@
                 "hqRequired": 8
             }
         }
+    },
+    "cannon": {
+        "name": "Cannon",
+        "description": "Cannons fire powerful, large caliber shells towards one target at a time. This makes them ideal against heavy and armored enemies, but less effective against massed infantry.",
+        "maxLevel": 26,
+        "attackSpeed": 3000,
+        "range": 10,
+        "levels": {
+            "1": {
+                "stats": { "health": 2000, "damage": 420 },
+                "upgradeCost": { "wood": 11600, "stone": 2030, "iron": 0 },
+                "upgradeTime": "2h",
+                "hqRequired": 6
+            },
+            "2": {
+                "stats": { "health": 2180, "damage": 462 },
+                "upgradeCost": { "wood": 13200, "stone": 2320, "iron": 0 },
+                "upgradeTime": "2h 15h",
+                "hqRequired": 6
+            },
+            "3": {
+                "stats": { "health": 2370, "damage": 507 },
+                "upgradeCost": { "wood": 19600, "stone": 3900, "iron": 0 },
+                "upgradeTime": "2h 45m",
+                "hqRequired": 7
+            },
+            "4": {
+                "stats": { "health": 2600, "damage": 558 },
+                "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 },
+                "upgradeTime": "3h 30m",
+                "hqRequired": 8
+            },
+            "5": {
+                "stats": { "health": 2800, "damage": 615 },
+                "upgradeCost": { "wood": 50000, "stone": 12000, "iron": 3200 },
+                "upgradeTime": "4h",
+                "hqRequired": 9
+            },
+            "6": {
+                "stats": { "health": 3000, "damage": 675 },
+                "upgradeCost": { "wood": 79000, "stone": 19800, "iron": 6400 },
+                "upgradeTime": "5h",
+                "hqRequired": 10
+            }
+        }
     }
 }
