@@ -2,12 +2,10 @@
     "rifleman": {
         "name": "Rifleman",
         "description": "Basic infantry unit.",
-        "maxLevel": 20,
+        "maxLevel": 26,
         "levels": {
             "1": { "stats": { "health": 100, "damage": 10, "range": 5 } },
             "2": { "stats": { "health": 120, "damage": 12, "range": 5 } }
-            // Add more levels...
         }
     }
-    // Add more troops...
 }
