@@ -15,7 +15,8 @@
                     "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 20 },
-                "researchCost": { "gold": 0 }
+                "researchCost": { "gold": 0 },
+                "armoryRequired": 1
             },
             "2": {
                 "stats": {
@@ -26,7 +27,8 @@
                     "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 50 },
-                "researchCost": { "gold": 9500 }
+                "researchCost": { "gold": 9500 },
+                "armoryRequired": 2
             },
             "3": {
                 "stats": {
@@ -37,7 +39,8 @@
                     "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 100 },
-                "researchCost": { "gold": 19500 }
+                "researchCost": { "gold": 19500 },
+                "armoryRequired": 3
             },
             "4": {
                 "stats": {
@@ -48,7 +51,8 @@
                     "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 150 },
-                "researchCost": { "gold": 42000 }
+                "researchCost": { "gold": 42000 },
+                "armoryRequired": 4
             },
             "5": {
                 "stats": {
@@ -59,7 +63,8 @@
                     "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 200 },
-                "researchCost": { "gold": 83000 }
+                "researchCost": { "gold": 83000 },
+                "armoryRequired": 5
             }
         }
     },
@@ -79,7 +84,8 @@
                     "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 300 },
-                "researchCost": { "gold": 0 }
+                "researchCost": { "gold": 0 },
+                "armoryRequired": 1
             },
             "2": {
                 "stats": {
@@ -90,7 +96,8 @@
                     "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 500 },
-                "researchCost": { "gold": 10400 }
+                "researchCost": { "gold": 10400 },
+                "armoryRequired": 2
             },
             "3": {
                 "stats": {
@@ -101,7 +108,8 @@
                     "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 700 },
-                "researchCost": { "gold": 21800 }
+                "researchCost": { "gold": 21800 },
+                "armoryRequired": 3
             },
             "4": {
                 "stats": {
@@ -112,7 +120,8 @@
                     "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 900 },
-                "researchCost": { "gold": 47000 }
+                "researchCost": { "gold": 47000 },
+                "armoryRequired": 4
             },
             "5": {
                 "stats": {
@@ -123,7 +132,8 @@
                     "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 1100 },
-                "researchCost": { "gold": 94000 }
+                "researchCost": { "gold": 94000 },
+                "armoryRequired": 5
             }
         }
     }
