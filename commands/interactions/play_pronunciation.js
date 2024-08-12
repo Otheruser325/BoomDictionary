@@ -1,24 +1,12 @@
-const { path } = require('path');
-const fs = require('fs');
-
 module.exports = {
-    customId: 'play_pronunciation',
+    customId: /^play_pronunciation_.+/,
     async execute(interaction) {
         if (interaction.isButton()) {
-            const term = interaction.message.embeds[0].title.split('Pronunciation for ')[1];
-            const formattedFileName = term
-                .split(' ')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ')
-                + '.mp3';
+            const term = interaction.customId.split('_')[2];
 
-            const mp3FilePath = path.join(__dirname, '../../pronunciations', formattedFileName);
+            const message = `The pronunciation for the word "${term}" is now being played.`;
 
-            if (fs.existsSync(mp3FilePath)) {
-                await interaction.reply({ content: 'Playing pronunciation...', files: [mp3FilePath] });
-            } else {
-                await interaction.reply({ content: `Pronunciation file not found for \`${term}\`.`, ephemeral: true });
-            }
+            await interaction.reply({ content: message, tts: true, ephemeral: false });
         }
     }
 };
