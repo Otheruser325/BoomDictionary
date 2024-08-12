@@ -48,7 +48,8 @@ module.exports = {
                     .setColor('#0099ff');
 
                 if (fs.existsSync(mp3FilePath)) {
-                    const mp3URL = `${BASE_URL}/${formattedFileName}`;
+                    // URL encode the file name
+                    const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
                     
                     const components = [
                         new ActionRowBuilder()
