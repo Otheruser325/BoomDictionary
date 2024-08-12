@@ -350,6 +350,24 @@
                 "upgradeCost": { "wood": 314000, "stone": 274000, "iron": 76000 },
                 "upgradeTime": "9h",
                 "hqRequired": 14
+            },
+            "11": {
+                "stats": { "health": 4600, "damage": 1089 },
+                "upgradeCost": { "wood": 540000, "stone": 410000, "iron": 149000 },
+                "upgradeTime": "10h",
+                "hqRequired": 15
+            },
+            "12": {
+                "stats": { "health": 5100, "damage": 1197 },
+                "upgradeCost": { "wood": 610000, "stone": 460000, "iron": 168000 },
+                "upgradeTime": "12h",
+                "hqRequired": 15
+            },
+            "13": {
+                "stats": { "health": 5500, "damage": 1317 },
+                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "upgradeTime": "14h",
+                "hqRequired": 16
             }
         }
     }
