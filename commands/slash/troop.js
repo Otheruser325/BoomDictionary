@@ -14,8 +14,7 @@ module.exports = {
                     { name: 'Rifleman', value: 'rifleman' },
                     { name: 'Heavy', value: 'heavy' },
                     { name: 'Zooka', value: 'zooka' },
-                    { name: 'Tank', value: 'tank' },
-                    { name: 'Grenadier', value: 'grenadier' }
+                    { name: 'Tank', value: 'tank' }
                 )
         )
         .addIntegerOption(option =>
@@ -42,8 +41,8 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const trainingCost = levelData.trainingCost || { wood: 0, stone: 0, iron: 0 };
-        const researchCost = levelData.researchCost || { wood: 0, stone: 0, iron: 0 };
+        const trainingCost = levelData.trainingCost || { gold: 0 };
+        const researchCost = levelData.researchCost || { gold: 0 };
 
         const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${level}`)
@@ -52,8 +51,8 @@ module.exports = {
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
                 { name: 'DPS', value: formatNumber(stats.dps), inline: true },
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Training Cost', value: `Wood: ${formatNumber(trainingCost.wood)}\nStone: ${formatNumber(trainingCost.stone)}\nIron: ${formatNumber(trainingCost.iron)}`, inline: true },
-                { name: 'Research Cost', value: `Wood: ${formatNumber(researchCost.wood)}\nStone: ${formatNumber(researchCost.stone)}\nIron: ${formatNumber(researchCost.iron)}`, inline: true },
+                { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
                 { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
