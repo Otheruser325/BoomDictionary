@@ -46,14 +46,20 @@ module.exports = {
 
         const stats = levelData.stats;
         const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
+        const attackSpeed = levelData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
+
+        // Calculate DPS
+        const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
+
         const embed = new EmbedBuilder()
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: stats.health.toString(), inline: true },
-                { name: 'DPS', value: stats.damage.toString(), inline: true },
+                { name: 'DPS', value: dps, inline: true },
                 { name: 'Damage Per Shot', value: stats.damage.toString(), inline: true },
                 { name: 'Range', value: stats.range.toString(), inline: true },
+                { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
                 { name: 'Upgrade Cost', value: `Wood: ${upgradeCost.wood}\nStone: ${upgradeCost.stone}\nIron: ${upgradeCost.iron}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true }
             )
