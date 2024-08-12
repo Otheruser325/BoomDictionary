@@ -45,7 +45,7 @@ module.exports = {
         const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
         const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
         const range = defenceData.range || 'Unknown'; // Range in game units
-        const hqRequired = levelData.hq_required || 'Not specified'; // HQ level required
+        const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
 
         // Calculate DPS
         const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
