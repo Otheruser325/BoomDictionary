@@ -25,7 +25,8 @@ module.exports = {
             return message.reply('Please provide both the defence type and level. Usage: `bd!defence <defence_type> <level>`');
         }
 
-        const userFriendlyDefenceType = args[0].toLowerCase();
+        // Normalize the defence type input
+        const userFriendlyDefenceType = args[0].toLowerCase().trim();
         const level = parseInt(args[1], 10);
 
         // Map user-friendly name to actual key
@@ -54,7 +55,7 @@ module.exports = {
         const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
         const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
         const range = defenceData.range || 'Unknown'; // Range in game units
-        const hqRequired = levelData.hqRequired || 'Not specified'; // Armory level required
+        const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
 
         // Calculate DPS
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
