@@ -7,8 +7,10 @@ module.exports = {
         .setDescription('Configure the voice channel for pronunciation playback.')
         .addChannelOption(option =>
             option.setName('channel')
-                .setDescription('The voice channel for the bot to join')
-                .setRequired(true)),
+                .setDescription('Select the voice channel for the bot to join')
+                .setRequired(true)
+                .addChannelTypes(2) // Only allows voice channels (2 = GUILD_VOICE)
+        ),
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel');
 
@@ -18,10 +20,7 @@ module.exports = {
             return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
         }
 
-        if (channel.type !== 'GUILD_VOICE') {
-            return interaction.reply({ content: 'Please select a valid voice channel.', ephemeral: true });
-        }
-
+        // No need to check if the channel is a voice channel as we restrict the options
         setVoiceChannel(interaction.guild.id, channel.id);
 
         await interaction.reply({ content: `Configured the bot to join ${channel.name} for pronunciation playback.`, ephemeral: true });
