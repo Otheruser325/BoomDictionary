@@ -3,6 +3,8 @@
         "name": "Rifleman",
         "description": "Rifleman ready! Let's take the fight to the enemy!",
         "maxLevel": 26,
+        "attackSpeed": "1s",
+        "attackRange": 4.7,
         "levels": {
             "1": {
                 "stats": {
@@ -10,9 +12,7 @@
                     "damage": 30,
                     "unitSize": 1,
                     "trainingTime": "10s",
-                    "movementSpeed": "220",
-                    "attackRange": 4.7,
-                    "attackSpeed": "1s"
+                    "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 20 },
                 "researchCost": { "gold": 0 }
@@ -23,8 +23,7 @@
                     "damage": 32,
                     "unitSize": 1,
                     "trainingTime": "10s",
-                    "movementSpeed": "220",
-                    "attackSpeed": "1s"
+                    "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 50 },
                 "researchCost": { "gold": 9500 }
@@ -35,8 +34,7 @@
                     "damage": 35,
                     "unitSize": 1,
                     "trainingTime": "10s",
-                    "movementSpeed": "220",
-                    "attackSpeed": "1s"
+                    "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 100 },
                 "researchCost": { "gold": 19500 }
@@ -47,8 +45,7 @@
                     "damage": 38,
                     "unitSize": 1,
                     "trainingTime": "10s",
-                    "movementSpeed": "220",
-                    "attackSpeed": "1s"
+                    "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 150 },
                 "researchCost": { "gold": 42000 }
@@ -59,8 +56,7 @@
                     "damage": 41,
                     "unitSize": 1,
                     "trainingTime": "10s",
-                    "movementSpeed": "220",
-                    "attackSpeed": "1s"
+                    "movementSpeed": "220"
                 },
                 "trainingCost": { "gold": 200 },
                 "researchCost": { "gold": 83000 }
@@ -71,6 +67,8 @@
         "name": "Heavy",
         "description": "Hey, great! The HQ is finally big enough for us Heavies. We're tough enough to walk straight into the line of fire. Let's go get them!",
         "maxLevel": 26,
+        "attackSpeed": "0.1s",
+        "attackRange": 4.7,
         "levels": {
             "1": {
                 "stats": {
@@ -78,9 +76,7 @@
                     "damage": 2.6,
                     "unitSize": 4,
                     "trainingTime": "6m",
-                    "movementSpeed": "230",
-                    "attackRange": 4.7,
-                    "attackSpeed": "0.1s"
+                    "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 300 },
                 "researchCost": { "gold": 0 }
@@ -91,8 +87,7 @@
                     "damage": 2.8,
                     "unitSize": 4,
                     "trainingTime": "6m",
-                    "movementSpeed": "230",
-                    "attackSpeed": "0.1s"
+                    "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 500 },
                 "researchCost": { "gold": 10400 }
@@ -103,8 +98,7 @@
                     "damage": 3.1,
                     "unitSize": 1,
                     "trainingTime": "6m",
-                    "movementSpeed": "230",
-                    "attackSpeed": "0.1s"
+                    "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 700 },
                 "researchCost": { "gold": 21800 }
@@ -115,8 +109,7 @@
                     "damage": 3.3,
                     "unitSize": 1,
                     "trainingTime": "6m",
-                    "movementSpeed": "230",
-                    "attackSpeed": "0.1s"
+                    "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 900 },
                 "researchCost": { "gold": 47000 }
@@ -127,8 +120,7 @@
                     "damage": 3.6,
                     "unitSize": 1,
                     "trainingTime": "6m",
-                    "movementSpeed": "230",
-                    "attackSpeed": "0.1s"
+                    "movementSpeed": "230"
                 },
                 "trainingCost": { "gold": 1100 },
                 "researchCost": { "gold": 94000 }
