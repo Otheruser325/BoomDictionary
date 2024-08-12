@@ -3,7 +3,7 @@
         "name": "Rifleman",
         "description": "Rifleman ready! Let's take the fight to the enemy!",
         "maxLevel": 26,
-        "attackSpeed": "1s",
+        "attackSpeed": 1000,
         "attackRange": 4.7,
         "levels": {
             "1": {
@@ -67,7 +67,7 @@
         "name": "Heavy",
         "description": "Hey, great! The HQ is finally big enough for us Heavies. We're tough enough to walk straight into the line of fire. Let's go get them!",
         "maxLevel": 26,
-        "attackSpeed": "0.1s",
+        "attackSpeed": 100,
         "attackRange": 4.7,
         "levels": {
             "1": {
