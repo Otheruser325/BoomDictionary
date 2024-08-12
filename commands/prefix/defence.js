@@ -70,7 +70,7 @@ module.exports = {
                 { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
                 { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
-                { name: 'HQ Required', value: hqRequired.toString(), inline: true } // Display Armory Required
+                { name: 'HQ Required', value: hqRequired.toString(), inline: true }
             )
             .setColor('#0099ff');
 
