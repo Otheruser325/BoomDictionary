@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        const term = interaction.customId.split('_')[2];
+        const term = interaction.customId.split('_')[2]; // Extract term from custom ID
         const fileName = `${term}.mp3`;
         const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
