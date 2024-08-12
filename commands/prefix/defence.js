@@ -1,5 +1,11 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
+
+const validDefenceTypes = [
+    'sniper_tower', 'mortar', 'machine_gun', 'cannon',
+    'flamethrower', 'boom_cannon', 'critter_launcher',
+    'rocket_launcher', 'shock_launcher'
+];
 
 module.exports = {
     name: 'defence',
@@ -8,16 +14,21 @@ module.exports = {
     usage: '<defence_type> <level>',
     async execute(message, args) {
         if (args.length < 2) {
-            return message.reply('Please provide both the defence type and level. Usage: `!defence <defence_type> <level>`');
+            return message.reply('Please provide both the defence type and level. Usage: `bd!defence <defence_type> <level>`');
         }
 
         const defenceType = args[0].toLowerCase();
         const level = parseInt(args[1], 10);
 
+        // Check for valid defence type
+        if (!validDefenceTypes.includes(defenceType)) {
+            return message.reply(`Invalid defence type! Available types are: ${validDefenceTypes.join(', ')}.`);
+        }
+
         const defenceData = defences[defenceType];
 
         if (!defenceData) {
-            return message.reply('Invalid defence type! Please provide a valid defence type.');
+            return message.reply('No data found for the provided defence type.');
         }
 
         if (isNaN(level) || level < 1 || level > defenceData.maxLevel) {
@@ -37,7 +48,7 @@ module.exports = {
         // Calculate DPS
         const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
