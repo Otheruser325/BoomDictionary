@@ -43,7 +43,7 @@ module.exports = {
 
             if (fs.existsSync(mp3FilePath)) {
                 // URL encode the file name
-                const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
+                const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}.mp3`;
                 const components = [
                     new ActionRowBuilder()
                         .addComponents(
