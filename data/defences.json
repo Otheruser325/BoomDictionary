@@ -3,17 +3,59 @@
         "name": "Sniper Tower",
         "description": "The Sniper in the tower shoots at enemy attackers. He's armed with a long-range rifle that deals good damage.",
         "maxLevel": 26,
+        "attackSpeed": 1400,
+        "range": 12,
         "levels": {
-            "1": { "stats": { "health": 1700, "damage": 40, "range": 12 }, "upgradeCost": { "wood": 100, "stone": 0, "iron": 0 }, "upgradeTime": "3s" },
-            "2": { "stats": { "health": 1850, "damage": 44, "range": 12 }, "upgradeCost": { "wood": 200, "stone": 0, "iron": 0 }, "upgradeTime": "5m" },
-            "3": { "stats": { "health": 2010, "damage": 48, "range": 12 }, "upgradeCost": { "wood": 860, "stone": 0, "iron": 0 }, "upgradeTime": "20m" },
-            "4": { "stats": { "health": 2190, "damage": 53, "range": 12 }, "upgradeCost": { "wood": 2070, "stone": 0, "iron": 0 }, "upgradeTime": "1h" },
-            "5": { "stats": { "health": 2380, "damage": 59, "range": 12 }, "upgradeCost": { "wood": 4700, "stone": 0, "iron": 0 }, "upgradeTime": "1h 15m" },
-            "6": { "stats": { "health": 2600, "damage": 64, "range": 12 }, "upgradeCost": { "wood": 9300, "stone": 0, "iron": 0 }, "upgradeTime": "1h 45m" },
-            "7": { "stats": { "health": 2800, "damage": 71, "range": 12 }, "upgradeCost": { "wood": 12500, "stone": 2200, "iron": 0 }, "upgradeTime": "2h 15m" },
-            "8": { "stats": { "health": 3100, "damage": 78, "range": 12 }, "upgradeCost": { "wood": 19100, "stone": 3800, "iron": 0 }, "upgradeTime": "2h 30m" },
-            "9": { "stats": { "health": 3300, "damage": 86, "range": 12 }, "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 }, "upgradeTime": "3h 30m" },
-            "10": { "stats": { "health": 3600, "damage": 94, "range": 12 }, "upgradeCost": { "wood": 52000, "stone": 12300, "iron": 3300 }, "upgradeTime": "4h" }
+            "1": {
+                "stats": { "health": 1700, "damage": 40 },
+                "upgradeCost": { "wood": 100, "stone": 0, "iron": 0 },
+                "upgradeTime": "3s"
+            },
+            "2": {
+                "stats": { "health": 1850, "damage": 44 },
+                "upgradeCost": { "wood": 200, "stone": 0, "iron": 0 },
+                "upgradeTime": "5m"
+            },
+            "3": {
+                "stats": { "health": 2010, "damage": 48 },
+                "upgradeCost": { "wood": 860, "stone": 0, "iron": 0 },
+                "upgradeTime": "20m"
+            },
+            "4": {
+                "stats": { "health": 2190, "damage": 53 },
+                "upgradeCost": { "wood": 2070, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h"
+            },
+            "5": {
+                "stats": { "health": 2380, "damage": 59 },
+                "upgradeCost": { "wood": 4700, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h 15m"
+            },
+            "6": {
+                "stats": { "health": 2600, "damage": 64 },
+                "upgradeCost": { "wood": 9300, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h 45m"
+            },
+            "7": {
+                "stats": { "health": 2800, "damage": 71 },
+                "upgradeCost": { "wood": 12500, "stone": 2200, "iron": 0 },
+                "upgradeTime": "2h 15m"
+            },
+            "8": {
+                "stats": { "health": 3100, "damage": 78 },
+                "upgradeCost": { "wood": 19100, "stone": 3800, "iron": 0 },
+                "upgradeTime": "2h 30m"
+            },
+            "9": {
+                "stats": { "health": 3300, "damage": 86 },
+                "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 },
+                "upgradeTime": "3h 30m"
+            },
+            "10": {
+                "stats": { "health": 3600, "damage": 94 },
+                "upgradeCost": { "wood": 52000, "stone": 12300, "iron": 3300 },
+                "upgradeTime": "4h"
+            }
         }
     }
 }
