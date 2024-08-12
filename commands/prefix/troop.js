@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const troops = require('../../data/troops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -34,10 +34,10 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
 
         // Calculate DPS
-        const attackSpeed = parseFloat(troopData.attackSpeed); // Ensure attackSpeed is a number
-        const dps = attackSpeed ? (stats.damage / (parseFloat(attackSpeed) / 1000)).toFixed(2) : 'Unknown';
+        const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
+        const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
