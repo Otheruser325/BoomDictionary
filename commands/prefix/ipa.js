@@ -25,8 +25,11 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                // Convert spaces to underscores for filename
-                const fileName = term.replace(/\s+/g, '_') + '.mp3';
+                // Convert spaces and special characters to underscores for filename
+                const fileName = term
+                    .replace(/\s+/g, '_') // Replace spaces with underscores
+                    .replace(/[^a-zA-Z0-9_]/g, '') // Remove special characters
+                    + '.mp3';
                 const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
                 // Create the embed with pronunciation details
