@@ -82,5 +82,64 @@
                 "upgradeTime": "10h"
             }
         }
+    },
+    "mortar": {
+        "name": "Mortar",
+        "description": "The Mortar is an artillery piece that is effective at medium to long range, but can't target enemies right next to it. Mortar shells explode and deal damage to all troops in the area of effect.",
+        "maxLevel": 28,
+        "attackSpeed": 5000,
+        "range": 12,
+        "levels": {
+            "1": {
+                "stats": { "health": 2000, "damage": 65 },
+                "upgradeCost": { "wood": 1180, "stone": 0, "iron": 0 },
+                "upgradeTime": "30m"
+            },
+            "2": {
+                "stats": { "health": 2180, "damage": 70 },
+                "upgradeCost": { "wood": 2360, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h"
+            },
+            "3": {
+                "stats": { "health": 2370, "damage": 80 },
+                "upgradeCost": { "wood": 5900, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h 45m"
+            },
+            "4": {
+                "stats": { "health": 2600, "damage": 85 },
+                "upgradeCost": { "wood": 11500, "stone": 0, "iron": 0 },
+                "upgradeTime": "2h 15m"
+            },
+            "5": {
+                "stats": { "health": 2800, "damage": 95 },
+                "upgradeCost": { "wood": 15500, "stone": 2730, "iron": 0 },
+                "upgradeTime": "2h 45m"
+            },
+            "6": {
+                "stats": { "health": 3000, "damage": 105 },
+                "upgradeCost": { "wood": 23500, "stone": 4700, "iron": 0 },
+                "upgradeTime": "3h 15m"
+            },
+            "7": {
+                "stats": { "health": 3300, "damage": 115 },
+                "upgradeCost": { "wood": 40000, "stone": 8700, "iron": 0 },
+                "upgradeTime": "4h"
+            },
+            "8": {
+                "stats": { "health": 3600, "damage": 125 },
+                "upgradeCost": { "wood": 63000, "stone": 15000, "iron": 4000 },
+                "upgradeTime": "4h"
+            },
+            "9": {
+                "stats": { "health": 3900, "damage": 140 },
+                "upgradeCost": { "wood": 101000, "stone": 25200, "iron": 8200 },
+                "upgradeTime": "6h"
+            },
+            "10": {
+                "stats": { "health": 4300, "damage": 155 },
+                "upgradeCost": { "wood": 140000, "stone": 50000, "iron": 14600 },
+                "upgradeTime": "7h"
+            }
+        }
     }
 }
