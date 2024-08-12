@@ -1,5 +1,5 @@
 {
-    "sniper_tower": {
+    "sniper tower": {
         "name": "Sniper Tower",
         "description": "The Sniper in the tower shoots at enemy attackers. He's armed with a long-range rifle that deals good damage.",
         "maxLevel": 26,
@@ -224,6 +224,63 @@
                 "upgradeCost": { "wood": 1720000, "stone": 1420000, "iron": 900000 },
                 "upgradeTime": "18h",
                 "hqRequired": 17
+            }
+        }
+    },
+    "machine gun": {
+        "name": "Machine Gun",
+        "description": "The Machine Gun turret sprays bullets at the enemy, rapidly dealing damage to massed infantry at close to medium range.",
+        "maxLevel": 26,
+        "attackSpeed": 100,
+        "range": 9,
+        "levels": {
+            "1": {
+                "stats": { "health": 1600, "damage": 8.7 },
+                "upgradeCost": { "wood": 3300, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h",
+                "hqRequired": 4
+            },
+            "2": {
+                "stats": { "health": 1740, "damage": 9.9 },
+                "upgradeCost": { "wood": 4600, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h 15m",
+                "hqRequired": 4
+            },
+            "3": {
+                "stats": { "health": 1890, "damage": 11.1 },
+                "upgradeCost": { "wood": 8800, "stone": 0, "iron": 0 },
+                "upgradeTime": "1h 45m",
+                "hqRequired": 5
+            },
+            "4": {
+                "stats": { "health": 2060, "damage": 12.6 },
+                "upgradeCost": { "wood": 10000, "stone": 0, "iron": 0 },
+                "upgradeTime": "2h",
+                "hqRequired": 5
+            },
+            "5": {
+                "stats": { "health": 2240, "damage": 14.2 },
+                "upgradeCost": { "wood": 13200, "stone": 2320, "iron": 0 },
+                "upgradeTime": "2h 15m",
+                "hqRequired": 6
+            },
+            "6": {
+                "stats": { "health": 2440, "damage": 16.0 },
+                "upgradeCost": { "wood": 14900, "stone": 2610, "iron": 0 },
+                "upgradeTime": "2h 30m",
+                "hqRequired": 6
+            },
+            "7": {
+                "stats": { "health": 2700, "damage": 18.0 },
+                "upgradeCost": { "wood": 22500, "stone": 4500, "iron": 0 },
+                "upgradeTime": "3h",
+                "hqRequired": 7
+            },
+            "8": {
+                "stats": { "health": 2900, "damage": 20.3 },
+                "upgradeCost": { "wood": 38000, "stone": 8400, "iron": 0 },
+                "upgradeTime": "4h",
+                "hqRequired": 8
             }
         }
     }
