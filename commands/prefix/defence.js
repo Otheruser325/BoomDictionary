@@ -3,9 +3,9 @@ const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 const validDefenceTypes = [
-    'sniper_tower', 'mortar', 'machine_gun', 'cannon',
-    'flamethrower', 'boom_cannon', 'critter_launcher',
-    'rocket_launcher', 'shock_launcher'
+    'sniper tower', 'mortar', 'machine gun', 'cannon',
+    'flamethrower', 'boom cannon', 'critter launcher',
+    'rocket launcher', 'shock launcher'
 ];
 
 module.exports = {
