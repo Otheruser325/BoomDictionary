@@ -1,6 +1,7 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const path = require('path');
 const fs = require('fs');
+const dictionary = require('../../data/dictionary.json');
 
 module.exports = {
     name: 'ipa',
@@ -10,29 +11,55 @@ module.exports = {
             return message.channel.send({ content: 'Please provide a word to get the pronunciation.', ephemeral: true });
         }
 
-        const word = args.join(' ').toLowerCase();
-        const mp3FilePath = path.join(__dirname, '../../pronunciations', `${word}.mp3`);
+        const term = args.join(' ').toLowerCase(); // Convert input to lowercase
+        let pronunciationFound = false;
 
-        // Check if the MP3 file exists
-        if (fs.existsSync(mp3FilePath)) {
-            const embed = new EmbedBuilder()
-                .setTitle(`Pronunciation for ${word}`)
-                .setDescription(`Here is the pronunciation for the word \`${word}\`, generated with Microsoft Hazel.`)
-                .setColor('#0099ff');
+        // Check each category for the term
+        for (const [category, terms] of Object.entries(dictionary)) {
+            const normalizedTerms = Object.fromEntries(
+                Object.entries(terms).filter(([key, value]) => typeof value === 'object')
+                    .map(([key, value]) => [key.toLowerCase(), value])
+            );
 
-            const components = [
-                new ActionRowBuilder()
-                    .addComponents(
-                        new ButtonBuilder()
-                            .setURL(`/pronunciations/${word}.mp3`) // Adjust URL based on your hosting setup
-                            .setLabel('Download MP3')
-                            .setStyle(ButtonStyle.Link)
+            if (normalizedTerms[term]) {
+                const termData = normalizedTerms[term];
+                const { terminology, pronunciation } = termData;
+                const mp3FilePath = path.join(__dirname, '../../pronunciations', `${term}.mp3`);
+
+                // Create the embed with pronunciation details
+                const embed = new EmbedBuilder()
+                    .setTitle(`Pronunciation for ${terminology || term}`)
+                    .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
+                    .addFields(
+                        { name: 'Category', value: category },
+                        { name: 'Pronunciation', value: pronunciation || 'Not available' }
                     )
-            ];
+                    .setColor('#0099ff');
 
-            await message.channel.send({ embeds: [embed], components: components });
-        } else {
-            await message.channel.send({ content: `No pronunciation found for \`${word}\`.`, ephemeral: true });
+                if (fs.existsSync(mp3FilePath)) {
+                    const components = [
+                        new ActionRowBuilder()
+                            .addComponents(
+                                new ButtonBuilder()
+                                    .setURL(`/pronunciations/${term}.mp3`) // Adjust URL based on your hosting setup
+                                    .setLabel('Download MP3')
+                                    .setStyle(ButtonStyle.Link)
+                            )
+                    ];
+
+                    await message.channel.send({ embeds: [embed], components: components });
+                } else {
+                    // Pronunciation file not available
+                    await message.channel.send({ content: 'This pronunciation file is currently unavailable.', ephemeral: true });
+                }
+
+                pronunciationFound = true;
+                break;
+            }
+        }
+
+        if (!pronunciationFound) {
+            await message.channel.send({ content: `No pronunciation found for \`${term}\`.`, ephemeral: true });
         }
     },
 };
