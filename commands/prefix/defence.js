@@ -1,15 +1,12 @@
 const { EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
+const { formatNumber } = require('../../utils/formatNumber');
 
 const validDefenceTypes = [
     'sniper_tower', 'mortar', 'machine_gun', 'cannon',
     'flamethrower', 'boom_cannon', 'critter_launcher',
     'rocket_launcher', 'shock_launcher'
 ];
-
-function formatNumber(number) {
-    return new Intl.NumberFormat().format(number);
-}
 
 module.exports = {
     name: 'defence',
