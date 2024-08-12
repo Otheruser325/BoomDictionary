@@ -6,9 +6,9 @@
         "levels": {
             "1": {
                 "stats": {
-                    "health": 100,
-                    "damage": 10,
-                    "dps": 30,
+                    "health": 140,
+                    "damage": 30,
+                    "range": 4.7,
                     "unitSize": 1,
                     "trainingTime": "10s",
                     "movementSpeed": "220",
@@ -20,38 +20,16 @@
             },
             "2": {
                 "stats": {
-                    "health": 120,
-                    "damage": 12,
-                    "dps": 32,
+                    "health": 150,
+                    "damage": 32,
+                    "range": 4.7,
                     "unitSize": 1,
                     "trainingTime": "10s",
                     "movementSpeed": "220",
-                    "attackRange": 4.7,
                     "attackSpeed": "1s"
                 },
                 "trainingCost": { "gold": 50 },
                 "researchCost": { "gold": 19500 }
-            }
-        }
-    },
-    "heavy": {
-        "name": "Heavy",
-        "description": "Heavily armored unit.",
-        "maxLevel": 26,
-        "levels": {
-            "1": {
-                "stats": {
-                    "health": 200,
-                    "damage": 20,
-                    "dps": 20,
-                    "unitSize": 1,
-                    "trainingTime": "1m",
-                    "movementSpeed": "4",
-                    "attackRange": 6,
-                    "attackSpeed": "1s"
-                },
-                "trainingCost": { "gold": 300 },
-                "researchCost": { "gold": 150 }
             }
         }
     }
