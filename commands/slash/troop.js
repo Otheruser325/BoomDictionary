@@ -44,9 +44,12 @@ module.exports = {
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
 
-        // Calculate DPS
-        const attackSpeed = troopData.attackSpeed || 'Unknown';
-        const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
+        // Handle potential undefined or invalid attackSpeed
+        const attackSpeed = troopData.attackSpeed;
+        const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+
+        // Handle potential undefined armoryRequired
+        const armoryRequired = levelData.armoryRequired || 'Not specified';
 
         const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${level}`)
@@ -61,7 +64,8 @@ module.exports = {
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
                 { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
-                { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
+                { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true },
+                { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true } // Display Armory Required
             )
             .setColor('#0099ff');
 
