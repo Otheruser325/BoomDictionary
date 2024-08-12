@@ -24,7 +24,10 @@ module.exports = {
             if (normalizedTerms[term]) {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
-                const mp3FilePath = path.join(__dirname, '../../pronunciations', `${term}.mp3`);
+
+                // Convert spaces to underscores for filename
+                const fileName = term.replace(/\s+/g, '_') + '.mp3';
+                const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
                 // Create the embed with pronunciation details
                 const embed = new EmbedBuilder()
@@ -41,7 +44,7 @@ module.exports = {
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/pronunciations/${term}.mp3`) // Adjust URL based on your hosting setup
+                                    .setURL(`/pronunciations/${fileName}`) // Adjust URL based on your hosting setup
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
