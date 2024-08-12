@@ -14,6 +14,7 @@ module.exports = {
         const term = args.join(' ').toLowerCase();
         let pronunciationFound = false;
 
+        // Check each category for the term
         for (const [category, terms] of Object.entries(dictionary)) {
             const normalizedTerms = Object.fromEntries(
                 Object.entries(terms)
@@ -25,8 +26,17 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                const fileName = term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '') + '.mp3';
-                const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
+                // Generate the filename without changing spaces to underscores
+                const fileName = termData.terminology || term; // Use the original terminology for the filename
+
+                // Capitalize the first letter of each word (if necessary)
+                const formattedFileName = fileName
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ')
+                    + '.mp3';
+
+                const mp3FilePath = path.join(__dirname, '../../pronunciations', formattedFileName);
 
                 console.log('MP3 File Path:', mp3FilePath); // Debugging line
 
@@ -44,7 +54,7 @@ module.exports = {
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/pronunciations/${fileName}`) // Adjust this URL as needed
+                                    .setURL(`/pronunciations/${formattedFileName}`) // Adjust the URL to match your setup
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
