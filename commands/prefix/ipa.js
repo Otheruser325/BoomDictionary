@@ -1,6 +1,4 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const path = require('path');
-const fs = require('fs');
 const dictionary = require('../../data/dictionary.json');
 const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
 
@@ -34,10 +32,6 @@ module.exports = {
                     .join(' ')
                     + '.mp3';
 
-                const mp3FilePath = path.join(__dirname, '../../pronunciations', formattedFileName);
-
-                console.log('MP3 File Path:', mp3FilePath); // Debugging line
-
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
                     .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
@@ -47,24 +41,20 @@ module.exports = {
                     )
                     .setColor('#0099ff');
 
-                if (fs.existsSync(mp3FilePath)) {
-                    // URL encode the file name
-                    const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
-                    
-                    const components = [
-                        new ActionRowBuilder()
-                            .addComponents(
-                                new ButtonBuilder()
-                                    .setURL(mp3URL)
-                                    .setLabel('Download MP3')
-                                    .setStyle(ButtonStyle.Link)
-                            )
-                    ];
+                const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
+                
+                const components = new ActionRowBuilder().addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(`play_pronunciation_${term}`)
+                        .setLabel('Play Pronunciation')
+                        .setStyle(ButtonStyle.Primary),
+                    new ButtonBuilder()
+                        .setURL(mp3URL)
+                        .setLabel('Download MP3')
+                        .setStyle(ButtonStyle.Link)
+                );
 
-                    await message.channel.send({ embeds: [embed], components: components });
-                } else {
-                    await message.channel.send({ content: 'This pronunciation file is currently unavailable.', ephemeral: true });
-                }
+                await message.channel.send({ embeds: [embed], components: [components] });
 
                 pronunciationFound = true;
                 break;
