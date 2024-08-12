@@ -33,12 +33,16 @@ module.exports = {
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
 
+        // Calculate DPS
+        const attackSpeed = parseFloat(stats.attackSpeed); // Ensure attackSpeed is a number
+        const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+
         const embed = new MessageEmbed()
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(stats.dps), inline: true },
+                { name: 'DPS', value: formatNumber(dps), inline: true },
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                 { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                 { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
