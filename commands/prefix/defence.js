@@ -7,6 +7,10 @@ const validDefenceTypes = [
     'rocket_launcher', 'shock_launcher'
 ];
 
+function formatNumber(number) {
+    return new Intl.NumberFormat().format(number);
+}
+
 module.exports = {
     name: 'defence',
     description: 'Get statistics for a specific type of defence.',
@@ -52,12 +56,12 @@ module.exports = {
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
-                { name: 'Health', value: stats.health.toString(), inline: true },
-                { name: 'DPS', value: dps, inline: true },
-                { name: 'Damage Per Shot', value: stats.damage.toString(), inline: true },
-                { name: 'Range', value: range.toString(), inline: true },
+                { name: 'Health', value: formatNumber(stats.health), inline: true },
+                { name: 'DPS', value: formatNumber(dps), inline: true },
+                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                { name: 'Range', value: formatNumber(range), inline: true },
                 { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
-                { name: 'Upgrade Cost', value: `Wood: ${upgradeCost.wood}\nStone: ${upgradeCost.stone}\nIron: ${upgradeCost.iron}`, inline: true },
+                { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true }
             )
             .setColor('#0099ff');
