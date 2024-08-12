@@ -41,16 +41,17 @@ module.exports = {
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
-                { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(dps), inline: true },
-                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
-                { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
-                { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
+                { name: 'Health', value: formatNumber(stats.health).toString(), inline: true },
+                { name: 'DPS', value: formatNumber(dps).toString(), inline: true },
+                { name: 'Damage Per Shot', value: formatNumber(stats.damage).toString(), inline: true },
+                { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold).toString()}`, inline: true },
+                { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold).toString()}`, inline: true },
+                { name: 'Unit Size', value: formatNumber(stats.unitSize).toString(), inline: true },
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
-                { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
+                { name: 'Attack Range', value: formatNumber(troopData.attackRange).toString(), inline: true },
+                { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
+                { name: 'Armory Level Required', value: levelData.armoryRequired.toString(), inline: true }
             )
             .setColor('#0099ff');
 
