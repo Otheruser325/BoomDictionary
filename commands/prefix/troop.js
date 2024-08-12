@@ -34,8 +34,8 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
 
         // Calculate DPS
-        const attackSpeed = parseFloat(stats.attackSpeed); // Ensure attackSpeed is a number
-        const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+        const attackSpeed = parseFloat(troopData.attackSpeed); // Ensure attackSpeed is a number
+        const dps = attackSpeed ? (stats.damage / (parseFloat(attackSpeed) / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new MessageEmbed()
             .setTitle(`${troopData.name} - Level ${level}`)
@@ -49,8 +49,8 @@ module.exports = {
                 { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: formatNumber(stats.attackRange), inline: true },
-                { name: 'Attack Speed', value: stats.attackSpeed || 'Unknown', inline: true }
+                { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
+                { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
             )
             .setColor('#0099ff');
 
