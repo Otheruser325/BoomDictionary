@@ -47,7 +47,7 @@ module.exports = {
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/pronunciations/${fileName}`) // Adjust URL based on your hosting setup
+                                    .setURL(`/${fileName}`) // Adjust URL based on your hosting setup
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
