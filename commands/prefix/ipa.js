@@ -2,6 +2,7 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 const path = require('path');
 const fs = require('fs');
 const dictionary = require('../../data/dictionary.json');
+const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
 
 module.exports = {
     name: 'ipa',
@@ -14,7 +15,6 @@ module.exports = {
         const term = args.join(' ').toLowerCase();
         let pronunciationFound = false;
 
-        // Check each category for the term
         for (const [category, terms] of Object.entries(dictionary)) {
             const normalizedTerms = Object.fromEntries(
                 Object.entries(terms)
@@ -26,10 +26,8 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                // Generate the filename without changing spaces to underscores
-                const fileName = termData.terminology || term; // Use the original terminology for the filename
+                const fileName = termData.terminology || term;
 
-                // Capitalize the first letter of each word (if necessary)
                 const formattedFileName = fileName
                     .split(' ')
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -50,11 +48,13 @@ module.exports = {
                     .setColor('#0099ff');
 
                 if (fs.existsSync(mp3FilePath)) {
+                    const mp3URL = `${BASE_URL}/${formattedFileName}`;
+                    
                     const components = [
                         new ActionRowBuilder()
                             .addComponents(
                                 new ButtonBuilder()
-                                    .setURL(`/pronunciations/${formattedFileName}`) // Adjust the URL to match your setup
+                                    .setURL(mp3URL)
                                     .setLabel('Download MP3')
                                     .setStyle(ButtonStyle.Link)
                             )
