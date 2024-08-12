@@ -1,5 +1,5 @@
 {
-    "sniper tower": {
+    "sniper_tower": {
         "name": "Sniper Tower",
         "description": "The Sniper in the tower shoots at enemy attackers. He's armed with a long-range rifle that deals good damage.",
         "maxLevel": 26,
@@ -227,7 +227,7 @@
             }
         }
     },
-    "machine gun": {
+    "machine_gun": {
         "name": "Machine Gun",
         "description": "The Machine Gun turret sprays bullets at the enemy, rapidly dealing damage to massed infantry at close to medium range.",
         "maxLevel": 26,
