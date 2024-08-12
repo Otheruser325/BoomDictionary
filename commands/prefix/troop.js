@@ -34,7 +34,7 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
 
         // Calculate DPS
-        const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
+        const attackSpeed = troopData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
         const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
 
         const embed = new EmbedBuilder()
