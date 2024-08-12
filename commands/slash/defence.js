@@ -11,15 +11,15 @@ module.exports = {
                 .setDescription('Type of defence')
                 .setRequired(true)
                 .addChoices(
-                    { name: 'Sniper Tower', value: 'sniper_tower' },
-                    { name: 'Machine Gun', value: 'machine_gun' },
+                    { name: 'Sniper Tower', value: 'sniper tower' },
+                    { name: 'Machine Gun', value: 'machine gun' },
                     { name: 'Mortar', value: 'mortar' },
                     { name: 'Cannon', value: 'cannon' },
                     { name: 'Flamethrower', value: 'flamethrower' },
-                    { name: 'Boom Cannon', value: 'boom_cannon' },
-                    { name: 'Critter Launcher', value: 'critter_launcher' },
-                    { name: 'Rocket Launcher', value: 'rocket_launcher' },
-                    { name: 'Shock Launcher', value: 'shock_launcher' }
+                    { name: 'Boom Cannon', value: 'boom cannon' },
+                    { name: 'Critter Launcher', value: 'critter launcher' },
+                    { name: 'Rocket Launcher', value: 'rocket launcher' },
+                    { name: 'Shock Launcher', value: 'shock launcher' }
                 )
         )
         .addIntegerOption(option =>
