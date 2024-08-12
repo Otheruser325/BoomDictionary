@@ -1,7 +1,7 @@
 const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
 const path = require('path');
 const fs = require('fs');
-const { getVoiceChannel } = require('../utils/voiceChannelConfig');
+const { getVoiceChannel } = require('../../utils/voiceChannelConfig'); // Update this line
 
 module.exports = {
     customId: /^play_pronunciation_.+/,
