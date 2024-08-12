@@ -1,8 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { getVoiceChannel } = require('../utils/getVoiceChannel'); // Adjust the path as needed
-
-// A simple in-memory store for the configured voice channel
-const voiceChannelStore = {};
+const { setVoiceChannel } = require('../../utils/voiceChannelConfig');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -19,15 +16,8 @@ module.exports = {
             return interaction.reply({ content: 'Please select a valid voice channel.', ephemeral: true });
         }
 
-        voiceChannelStore[interaction.guild.id] = channel.id;
+        setVoiceChannel(interaction.guild.id, channel.id);
 
         await interaction.reply({ content: `Configured the bot to join ${channel.name} for pronunciation playback.`, ephemeral: true });
     },
 };
-
-// Utility function to get the voice channel for the guild
-const getVoiceChannel = (guildId) => {
-    return voiceChannelStore[guildId] ? voiceChannelStore[guildId] : null;
-};
-
-module.exports.getVoiceChannel = getVoiceChannel;
