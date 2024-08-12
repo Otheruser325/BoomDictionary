@@ -18,7 +18,7 @@ module.exports = {
                     { name: 'Boom Cannon', value: 'boom_cannon' },
                     { name: 'Critter Launcher', value: 'critter_launcher' },
                     { name: 'Rocket Launcher', value: 'rocket_launcher' },
-                    { name: 'Shock Launcher', value: 'shock_launcher' },
+                    { name: 'Shock Launcher', value: 'shock_launcher' }
                 )
         )
         .addIntegerOption(option =>
