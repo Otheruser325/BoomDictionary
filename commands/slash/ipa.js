@@ -25,12 +25,10 @@ module.exports = {
                 const { terminology, pronunciation } = termData;
 
                 const fileName = termData.terminology || term;
-
                 const formattedFileName = fileName
                     .split(' ')
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ')
-                    + '.mp3';
+                    .join(' ') + '.mp3';
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
@@ -41,7 +39,7 @@ module.exports = {
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${term}`)
+                        .setCustomId(`play_pronunciation_${term}`) // Use a custom ID for interaction
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
