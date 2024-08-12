@@ -46,7 +46,8 @@ module.exports = {
 
         const stats = levelData.stats;
         const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
-        const attackSpeed = levelData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
+        const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
+        const range = defenceData.range || 'Unknown'; // Range in game units
 
         // Calculate DPS
         const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
@@ -58,7 +59,7 @@ module.exports = {
                 { name: 'Health', value: stats.health.toString(), inline: true },
                 { name: 'DPS', value: dps, inline: true },
                 { name: 'Damage Per Shot', value: stats.damage.toString(), inline: true },
-                { name: 'Range', value: stats.range.toString(), inline: true },
+                { name: 'Range', value: range.toString(), inline: true },
                 { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
                 { name: 'Upgrade Cost', value: `Wood: ${upgradeCost.wood}\nStone: ${upgradeCost.stone}\nIron: ${upgradeCost.iron}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true }
