@@ -1,0 +1,16 @@
+{
+    "sniper_tower": {
+        "name": "Sniper Tower",
+        "description": "The Sniper in the tower shoots at enemy attackers. He's armed with a long-range rifle that deals good damage.",
+        "maxLevel": 26,
+        "levels": {
+            "1": { "stats": { "health": 1700, "damage": 40, "range": 12 } },
+            "2": { "stats": { "health": 1850, "damage": 44, "range": 12 } },
+            "3": { "stats": { "health": 2010, "damage": 48, "range": 12 } },
+            "4": { "stats": { "health": 2190, "damage": 53, "range": 12 } },
+            "5": { "stats": { "health": 2380, "damage": 59, "range": 12 } },
+            "6": { "stats": { "health": 2600, "damage": 64, "range": 12 } },
+            "7": { "stats": { "health": 2800, "damage": 71, "range": 12 } }
+        }
+    }
+}
