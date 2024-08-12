@@ -44,20 +44,24 @@ module.exports = {
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
 
+        // Calculate DPS
+        const attackSpeed = troopData.attackSpeed || 'Unknown';
+        const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
+
         const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(stats.dps), inline: true },
+                { name: 'DPS', value: formatNumber(dps), inline: true },
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                 { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                 { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
                 { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: formatNumber(stats.attackRange), inline: true },
-                { name: 'Attack Speed', value: stats.attackSpeed || 'Unknown', inline: true }
+                { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
+                { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
             )
             .setColor('#0099ff');
 
