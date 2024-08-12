@@ -154,6 +154,16 @@
                 "stats": { "health": 5500, "damage": 205 },
                 "upgradeCost": { "wood": 460000, "stone": 400000, "iron": 110000 },
                 "upgradeTime": "12h"
+            },
+            "14": {
+                "stats": { "health": 6000, "damage": 225 },
+                "upgradeCost": { "wood": 810000, "stone": 610000, "iron": 224000 },
+                "upgradeTime": "14h"
+            },
+            "15": {
+                "stats": { "health": 6500, "damage": 245 },
+                "upgradeCost": { "wood": 1180000, "stone": 1050000, "iron": 460000 },
+                "upgradeTime": "16h"
             }
         }
     }
