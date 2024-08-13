@@ -17,7 +17,7 @@
                     "iron": 1000
                 },
                 "upgradeTime": "1h",
-                "marks": "Tier 1"
+                "marks": "Tier 1 (I)"
             },
             "2": {
                 "stats": {
@@ -30,7 +30,7 @@
                     "iron": 1500
                 },
                 "upgradeTime": "4h",
-                "marks": "Tier 2"
+                "marks": "Tier 2 (II)"
             },
             "3": {
                 "stats": {
@@ -43,7 +43,7 @@
                     "iron": 2000
                 },
                 "upgradeTime": "12h",
-                "marks": "Tier 3"
+                "marks": "Tier 3 (III)"
             }
         }
     },
@@ -65,7 +65,7 @@
                     "iron": 800
                 },
                 "upgradeTime": "1h",
-                "marks": "Tier 1"
+                "marks": "Tier 1 (I)"
             },
             "2": {
                 "stats": {
@@ -78,7 +78,7 @@
                     "iron": 1200
                 },
                 "upgradeTime": "4h",
-                "marks": "Tier 2"
+                "marks": "Tier 2 (II)"
             },
             "3": {
                 "stats": {
@@ -91,7 +91,7 @@
                     "iron": 1600
                 },
                 "upgradeTime": "12h",
-                "marks": "Tier 3"
+                "marks": "Tier 3 (III)"
             }
         }
     }
