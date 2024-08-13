@@ -1,1 +1,110 @@
-
+{
+    "rain_maker": {
+        "name": "Rain Maker",
+        "description": "A prototype troop that calls down a powerful rain of missiles.",
+        "maxLevel": 26,
+        "attackSpeed": 1000,
+        "attackRange": 20,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 1000,
+                    "damage": 100,
+                    "unitSize": 2,
+                    "trainingTime": "30m",
+                    "movementSpeed": "Fast"
+                },
+                "trainingCost": {
+                    "gold": 1000
+                },
+                "researchCost": {
+                    "gold": 500
+                }
+            },
+            "2": {
+                "stats": {
+                    "health": 1200,
+                    "damage": 120,
+                    "unitSize": 2,
+                    "trainingTime": "35m",
+                    "movementSpeed": "Fast"
+                },
+                "trainingCost": {
+                    "gold": 1200
+                },
+                "researchCost": {
+                    "gold": 600
+                }
+            },
+            "3": {
+                "stats": {
+                    "health": 1400,
+                    "damage": 140,
+                    "unitSize": 2,
+                    "trainingTime": "40m",
+                    "movementSpeed": "Fast"
+                },
+                "trainingCost": {
+                    "gold": 1400
+                },
+                "researchCost": {
+                    "gold": 700
+                }
+            }
+        }
+    },
+    "lazortron": {
+        "name": "Lazortron",
+        "description": "A prototype troop equipped with a laser weapon for high precision attacks.",
+        "maxLevel": 26,
+        "attackSpeed": 800, // in milliseconds
+        "attackRange": 25, // in tiles
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 900,
+                    "damage": 90,
+                    "unitSize": 1,
+                    "trainingTime": "20m",
+                    "movementSpeed": "Very Fast"
+                },
+                "trainingCost": {
+                    "gold": 800
+                },
+                "researchCost": {
+                    "gold": 400
+                }
+            },
+            "2": {
+                "stats": {
+                    "health": 1100,
+                    "damage": 110,
+                    "unitSize": 1,
+                    "trainingTime": "25m",
+                    "movementSpeed": "Very Fast"
+                },
+                "trainingCost": {
+                    "gold": 1000
+                },
+                "researchCost": {
+                    "gold": 500
+                }
+            },
+            "3": {
+                "stats": {
+                    "health": 1300,
+                    "damage": 130,
+                    "unitSize": 1,
+                    "trainingTime": "30m",
+                    "movementSpeed": "Very Fast"
+                },
+                "trainingCost": {
+                    "gold": 1200
+                },
+                "researchCost": {
+                    "gold": 600
+                }
+            }
+        }
+    }
+}
