@@ -2,6 +2,18 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
+const defenceNameMap = {
+    'sniper tower': 'sniper_tower',
+    'machine gun': 'machine_gun',
+    'mortar': 'mortar',
+    'cannon': 'cannon',
+    'flamethrower': 'flamethrower',
+    'boom cannon': 'boom_cannon',
+    'critter launcher': 'critter_launcher',
+    'rocket launcher': 'rocket_launcher',
+    'shock launcher': 'shock_launcher'
+};
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('defence')
@@ -30,10 +42,18 @@ module.exports = {
     async execute(interaction) {
         const defenceType = interaction.options.getString('defence_type');
         const level = interaction.options.getInteger('level');
-        const defenceData = defences[defenceType];
+
+        // Convert spaced name to codename
+        const defenceCodename = defenceNameMap[defenceType];
+
+        if (!defenceCodename) {
+            return interaction.reply({ content: 'Invalid defence type!', ephemeral: true });
+        }
+
+        const defenceData = defences[defenceCodename];
 
         if (!defenceData) {
-            return interaction.reply({ content: 'Invalid defence type!', ephemeral: true });
+            return interaction.reply({ content: 'No data found for the provided defence type.', ephemeral: true });
         }
 
         if (level < 1 || level > (defenceData.maxLevel || 1)) {
@@ -61,7 +81,7 @@ module.exports = {
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
                 { name: 'DPS', value: formatNumber(dps), inline: true },
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Range', value: formatNumber(range), inline: true },
+                { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
                 { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
                 { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
