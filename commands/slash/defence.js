@@ -9,8 +9,8 @@ const defenceNameMap = {
     'cannon': 'cannon',
     'flamethrower': 'flamethrower',
     'boom cannon': 'boom_cannon',
-    'critter launcher': 'critter_launcher',
     'rocket launcher': 'rocket_launcher',
+    'critter launcher': 'critter_launcher',
     'shock launcher': 'shock_launcher'
 };
 
@@ -29,8 +29,8 @@ module.exports = {
                     { name: 'Cannon', value: 'cannon' },
                     { name: 'Flamethrower', value: 'flamethrower' },
                     { name: 'Boom Cannon', value: 'boom cannon' },
-                    { name: 'Critter Launcher', value: 'critter launcher' },
                     { name: 'Rocket Launcher', value: 'rocket launcher' },
+                    { name: 'Critter Launcher', value: 'critter launcher' },
                     { name: 'Shock Launcher', value: 'shock launcher' }
                 )
         )
