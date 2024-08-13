@@ -66,7 +66,7 @@ module.exports = {
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
                 { name: 'DPS', value: formatNumber(dps), inline: true },
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Range', value: formatNumber(range), inline: true },
+                { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
                 { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
                 { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
                 { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
