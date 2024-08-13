@@ -1,96 +1,96 @@
 {
     "doom_cannon": {
         "name": "Doom Cannon",
-        "description": "A powerful prototype cannon with devastating firepower.",
+        "description": "Shoots a Doom Ray that destroys most targets outright. Very slow rate of fire.",
         "maxLevel": 3,
         "attackSpeed": 3500, 
         "range": 18,
         "levels": {
             "1": {
                 "stats": {
-                    "health": 5000,
-                    "damage": 500
+                    "health": 15000,
+                    "damage": 5250
                 },
                 "upgradeCost": {
                     "wood": 2000,
                     "stone": 1500,
                     "iron": 1000
                 },
-                "upgradeTime": "2h",
+                "upgradeTime": "1h",
                 "marks": "Tier 1"
             },
             "2": {
                 "stats": {
-                    "health": 6000,
-                    "damage": 600
+                    "health": 20000,
+                    "damage": 8750
                 },
                 "upgradeCost": {
                     "wood": 2500,
                     "stone": 2000,
                     "iron": 1500
                 },
-                "upgradeTime": "3h",
+                "upgradeTime": "4h",
                 "marks": "Tier 2"
             },
             "3": {
                 "stats": {
-                    "health": 7000,
-                    "damage": 700
+                    "health": 25000,
+                    "damage": 15750
                 },
                 "upgradeCost": {
                     "wood": 3000,
                     "stone": 2500,
                     "iron": 2000
                 },
-                "upgradeTime": "4h",
+                "upgradeTime": "12h",
                 "marks": "Tier 3"
             }
         }
     },
     "shock_blaster": {
         "name": "Shock Blaster",
-        "description": "A high-tech blaster that can stun enemies.",
+        "description": "The Shock Blaster shoots shock bullets at a high rate of fire, dealing heavy damage and stunning the target.",
         "maxLevel": 3,
-        "attackSpeed": 1500,
+        "attackSpeed": 80,
         "range": 18,
         "levels": {
             "1": {
                 "stats": {
-                    "health": 4000,
-                    "damage": 400
+                    "health": 15000,
+                    "damage": 64
                 },
                 "upgradeCost": {
                     "wood": 1500,
                     "stone": 1000,
                     "iron": 800
                 },
-                "upgradeTime": "1h 30m",
+                "upgradeTime": "1h",
                 "marks": "Tier 1"
             },
             "2": {
                 "stats": {
-                    "health": 5000,
-                    "damage": 500
+                    "health": 20000,
+                    "damage": 104
                 },
                 "upgradeCost": {
                     "wood": 2000,
                     "stone": 1500,
                     "iron": 1200
                 },
-                "upgradeTime": "2h",
+                "upgradeTime": "4h",
                 "marks": "Tier 2"
             },
             "3": {
                 "stats": {
-                    "health": 6000,
-                    "damage": 600
+                    "health": 25000,
+                    "damage": 144
                 },
                 "upgradeCost": {
                     "wood": 2500,
                     "stone": 2000,
                     "iron": 1600
                 },
-                "upgradeTime": "2h 30m",
+                "upgradeTime": "12h",
                 "marks": "Tier 3"
             }
         }
