@@ -10,8 +10,8 @@ const validDefenceTypes = {
     'cannon': 'cannon',
     'flamethrower': 'flamethrower',
     'boom cannon': 'boom_cannon',
-    'critter launcher': 'critter_launcher',
     'rocket launcher': 'rocket_launcher',
+    'critter launcher': 'critter_launcher',
     'shock launcher': 'shock_launcher'
 };
 
