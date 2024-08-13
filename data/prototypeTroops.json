@@ -57,8 +57,8 @@
         "name": "Lazortron",
         "description": "A prototype troop equipped with a laser weapon for high precision attacks.",
         "maxLevel": 26,
-        "attackSpeed": 800, // in milliseconds
-        "attackRange": 25, // in tiles
+        "attackSpeed": 800,
+        "attackRange": 25,
         "levels": {
             "1": {
                 "stats": {
