@@ -454,5 +454,56 @@
                 "hqRequired": 16
             }
         }
+    },
+    "flamethrower": {
+        "name": "Flamethrower",
+        "description": "The Flamethrower is a close range weapon that deals huge amounts of damage. It's especially deadly against massed infantry. Enemies will also burn for a while after being attacked by the Flamethrower.",
+        "maxLevel": 24,
+        "attackSpeed": 150,
+        "range": 6.5,
+        "levels": {
+            "1": {
+                "stats": { "health": 2300, "damage": 12 },
+                "upgradeCost": { "wood": 31500, "stone": 7500, "iron": 2000 },
+                "upgradeTime": "2h 45m",
+                "hqRequired": 9
+            },
+            "2": {
+                "stats": { "health": 2500, "damage": 13.2 },
+                "upgradeCost": { "wood": 44000, "stone": 10500, "iron": 2800 },
+                "upgradeTime": "3h 45h",
+                "hqRequired": 9
+            },
+            "3": {
+                "stats": { "health": 2700, "damage": 14.6 },
+                "upgradeCost": { "wood": 69000, "stone": 17300, "iron": 5600 },
+                "upgradeTime": "4h",
+                "hqRequired": 10
+            },
+            "4": {
+                "stats": { "health": 3000, "damage": 16 },
+                "upgradeCost": { "wood": 94000, "stone": 34000, "iron": 9800 },
+                "upgradeTime": "5h",
+                "hqRequired": 11
+            },
+            "5": {
+                "stats": { "health": 3200, "damage": 17.6 },
+                "upgradeCost": { "wood": 107000, "stone": 39000, "iron": 11200 },
+                "upgradeTime": "6h",
+                "hqRequired": 11
+            },
+            "6": {
+                "stats": { "health": 3500, "damage": 19.4 },
+                "upgradeCost": { "wood": 161000, "stone": 76000, "iron": 19800 },
+                "upgradeTime": "7h",
+                "hqRequired": 12
+            },
+            "7": {
+                "stats": { "health": 3800, "damage": 21.2 },
+                "upgradeCost": { "wood": 244000, "stone": 147000, "iron": 42000 },
+                "upgradeTime": "8h",
+                "hqRequired": 13
+            }
+        }
     }
 }
