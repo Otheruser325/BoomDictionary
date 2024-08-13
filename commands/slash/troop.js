@@ -44,7 +44,7 @@ module.exports = {
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
         const attackSpeed = troopData.attackSpeed;
-        const range = troopData.range || 'Unknown';
+        const range = troopData.attackRange || 'Unknown';
         const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
         const armoryRequired = levelData.armoryRequired || 'Not specified';
 
