@@ -17,7 +17,7 @@ module.exports = {
             if (command.name === 'help') continue; // Skip the help command
 
             let commandName = command.name;
-            let description = command.description;
+            let description = command.description || 'No description available'; // Provide default description
 
             if (command.aliases && command.aliases.length > 0) {
                 commandName += ` (Aliases: ${command.aliases.join(', ')})`;
@@ -37,7 +37,7 @@ module.exports = {
                 .setTimestamp();
 
             currentCommands.forEach(cmd => {
-                embed.addFields({ name: cmd.name, value: cmd.description });
+                embed.addFields({ name: cmd.name || 'No name', value: cmd.description || 'No description' });
             });
 
             embed.setFooter({ text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}` });
