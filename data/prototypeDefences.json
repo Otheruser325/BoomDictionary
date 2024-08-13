@@ -94,5 +94,53 @@
                 "marks": "Tier 3 (III)"
             }
         }
+    },
+    "lazor_beam": {
+        "name": "Lazor Beam",
+        "description": "Future warfare! Lazor beams burn through any target, causing moderate damage to all enemies in its path.",
+        "maxLevel": 3,
+        "attackSpeed": 4000,
+        "range": 18,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 15000,
+                    "damage": 128
+                },
+                "upgradeCost": {
+                    "wood": 1500,
+                    "stone": 1000,
+                    "iron": 800
+                },
+                "upgradeTime": "1h",
+                "marks": "Tier 1 (I)"
+            },
+            "2": {
+                "stats": {
+                    "health": 20000,
+                    "damage": 256
+                },
+                "upgradeCost": {
+                    "wood": 2000,
+                    "stone": 1500,
+                    "iron": 1200
+                },
+                "upgradeTime": "4h",
+                "marks": "Tier 2 (II)"
+            },
+            "3": {
+                "stats": {
+                    "health": 25000,
+                    "damage": 384
+                },
+                "upgradeCost": {
+                    "wood": 2500,
+                    "stone": 2000,
+                    "iron": 1600
+                },
+                "upgradeTime": "12h",
+                "marks": "Tier 3 (III)"
+            }
+        }
     }
 }
