@@ -17,7 +17,11 @@ module.exports = {
                         .setRequired(true)
                         .addChoices(
                             { name: 'Doom Cannon', value: 'doom_cannon' },
-                            { name: 'Shock Blaster', value: 'shock_blaster' }
+                            { name: 'Shock Blaster', value: 'shock_blaster' },
+                            { name: 'Lazor Beam', value: 'lazor_beam' },
+                            { name: 'Hot Pot', value: 'hot_pot' },
+                            { name: 'Shield Generator', value: 'shield_generator' },
+                            { name: 'Damage Amplifier', value: 'damage_amplifier' }
                             // Add other prototype defences here
                         )
                 )
