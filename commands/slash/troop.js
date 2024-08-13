@@ -43,12 +43,9 @@ module.exports = {
         const stats = levelData.stats;
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
-
-        // Handle potential undefined or invalid attackSpeed
         const attackSpeed = troopData.attackSpeed;
+        const range = troopData.range || 'Unknown';
         const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
-
-        // Handle potential undefined armoryRequired
         const armoryRequired = levelData.armoryRequired || 'Not specified';
 
         const embed = new EmbedBuilder()
@@ -63,7 +60,7 @@ module.exports = {
                 { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
                 { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
+                { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
                 { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true },
                 { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true } // Display Armory Required
             )
