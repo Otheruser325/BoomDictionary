@@ -81,6 +81,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
                 .setDescription(defenceData.description || 'No description available.')
+                .setThumbnail(image)
                 .addFields(
                     { name: 'Health', value: formatNumber(stats.health), inline: true },
                     { name: 'DPS', value: formatNumber(dps), inline: true },
