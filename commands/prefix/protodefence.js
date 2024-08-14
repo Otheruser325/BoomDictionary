@@ -1,8 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const prototypeDefences = require('../../data/prototypeDefences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-// Mapping user-friendly names to actual keys in prototypeDefences.json
 const validDefenceTypes = {
     'doom cannon': 'doom_cannon',
     'shock blaster': 'shock_blaster',
@@ -10,56 +9,41 @@ const validDefenceTypes = {
     'hot pot': 'hot_pot',
     'shield generator': 'shield_generator',
     'damage amplifier': 'damage_amplifier'
-    // Add other prototype defences here
 };
 
 module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('protodefence')
-        .setDescription('Get statistics for a prototype defence.')
-        .addStringOption(option =>
-            option.setName('defence_type')
-                .setDescription('Type of prototype defence')
-                .setRequired(true)
-                .addChoices(
-                    { name: 'Doom Cannon', value: 'doom cannon' },
-                    { name: 'Shock Blaster', value: 'shock blaster' },
-                    { name: 'Lazor Beam', value: 'lazor beam' },
-                    { name: 'Hot Pot', value: 'hot pot' },
-                    { name: 'Shield Generator', value: 'shield generator' },
-                    { name: 'Damage Amplifier', value: 'damage amplifier' }
-                    // Add other prototype defences here
-                )
-        )
-        .addIntegerOption(option =>
-            option.setName('level')
-                .setDescription('Level of the prototype defence')
-                .setRequired(true)
-        ),
-    async execute(interaction) {
-        const defenceType = interaction.options.getString('defence_type');
-        const level = interaction.options.getInteger('level');
+    name: 'protodefence',
+    description: 'Get statistics for a prototype defence.',
+    aliases: ['defence', 'defense'],
+    usage: '<defence_type> <level>',
+    async execute(message, args) {
+        if (args.length < 2) {
+            return message.reply('Please provide both the defence type and level. Usage: `!protodefence <defence_type> <level>`');
+        }
+
+        const defenceType = args[0].toLowerCase();
+        const level = parseInt(args[1], 10);
 
         // Map user-friendly name to actual key
         const mappedDefenceType = validDefenceTypes[defenceType];
 
         if (!mappedDefenceType) {
-            return interaction.reply({ content: 'Invalid prototype defence type!', ephemeral: true });
+            return message.reply('Invalid prototype defence type!');
         }
 
         const defenceData = prototypeDefences[mappedDefenceType];
 
         if (!defenceData) {
-            return interaction.reply({ content: 'No data found for the provided prototype defence type.', ephemeral: true });
+            return message.reply('No data found for the provided prototype defence type.');
         }
 
         if (level < 1 || level > (defenceData.maxLevel || 3)) {
-            return interaction.reply({ content: `Invalid level! Please provide a level between 1 and ${defenceData.maxLevel || 3}.`, ephemeral: true });
+            return message.reply(`Invalid level! Please provide a level between 1 and ${defenceData.maxLevel || 3}.`);
         }
 
         const levelData = defenceData.levels[level];
         if (!levelData) {
-            return interaction.reply({ content: `No data available for level ${level}.`, ephemeral: true });
+            return message.reply(`No data available for level ${level}.`);
         }
 
         const stats = levelData.stats;
@@ -70,7 +54,7 @@ module.exports = {
 
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
-        const embed = new EmbedBuilder()
+        const embed = new MessageEmbed()
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
@@ -85,6 +69,6 @@ module.exports = {
             )
             .setColor('#0099ff');
 
-        await interaction.reply({ embeds: [embed] });
+        await message.reply({ embeds: [embed] });
     },
 };
