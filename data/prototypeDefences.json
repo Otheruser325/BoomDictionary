@@ -226,5 +226,62 @@
                 "weaponLabRequired": 4
             }
         }
+    },
+    "damage_amplifier": {
+        "name": "Damage Amplifier",
+        "description": "Amplifies the damage output of all nearby defenses using a high voltage hyperbolic gauss overdrive field.",
+        "maxLevel": 3,
+        "attackSpeed": null,
+        "range": 7.6,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1e/DamageAmplifierI.png/revision/latest/scale-to-width-down/120?cb=20150506153721",
+                "stats": {
+                    "health": 20000,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 0, 
+                    "rods": 3, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/DamageAmplifierII.png/revision/latest/scale-to-width-down/120?cb=20150506153744",
+                "stats": {
+                    "health": 27500,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 6
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/DamageAmplifierIII.png/revision/latest/scale-to-width-down/120?cb=20150506153832",
+                "stats": {
+                    "health": 35000,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 9, 
+                    "gears": 3, 
+                    "rods": 6, 
+                    "capacitors": 0
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
     }
 }
