@@ -41,7 +41,8 @@ module.exports = {
                         .addChoices(
                             { name: 'Rain Maker', value: 'rain_maker' },
                             { name: 'Lazortron', value: 'lazortron' },
-                            { name: 'Critter Cannon', value: 'critter_cannon' }
+                            { name: 'Critter Cannon', value: 'critter_cannon' },
+                            { name: 'Heavy Choppa', value: 'heavy_choppa' }
                         )
                 )
                 .addIntegerOption(option =>
