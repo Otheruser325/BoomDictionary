@@ -184,6 +184,7 @@
                 },
                 "trainingCost": { "gold": 11000 },
                 "researchCost": { "gold": 5200000 },
+                "upgradeTime": "4d 4h",
                 "armoryRequired": 18
             },
             "5": {
@@ -193,6 +194,7 @@
                 },
                 "trainingCost": { "gold": 12000 },
                 "researchCost": { "gold": 5500000 },
+                "upgradeTime": "4d 6h",
                 "armoryRequired": 18
             }
         }
