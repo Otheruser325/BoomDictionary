@@ -1,18 +1,18 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, EmbedBuilder } = require('discord.js');
-const troops = require('../../data/troops.json');
+const prototypeTroops = require('../../data/prototypeTroops.json');
 
 module.exports = {
     customId: 'select_prototype_troop_type',
     async execute(interaction) {
         const selectedTroopType = interaction.values[0];
-        const troopData = troops[selectedTroopType];
+        const troopData = prototypeTroops[selectedTroopType];
 
         if (!troopData) {
             return interaction.reply({ content: 'No data found for the selected troop type.', ephemeral: true });
         }
 
         const maxOptions = 25;
-        const levels = Array.from({ length: troopData.maxLevel }, (_, i) => i + 1);
+        const levels = Array.from({ length: troopData.maxLevel - 11 }, (_, i) => i + 12); // Levels start from 12
         const levelOptions = levels.slice(0, maxOptions).map(level => {
             return new StringSelectMenuOptionBuilder()
                 .setLabel(`Level ${level}`)
