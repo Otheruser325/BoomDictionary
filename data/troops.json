@@ -145,7 +145,7 @@
         "attackRange": 11.3,
         "unitSize": 6,
         "trainingTime": "6m",
-        "movementSpeed": "230"
+        "movementSpeed": "230",
         "levels": {
             "1": {
                 "stats": {
