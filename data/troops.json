@@ -185,6 +185,46 @@
                 "researchCost": { "gold": 1100000 },
                 "upgradeTime": "1d 13h",
                 "armoryRequired": 11
+            },
+            "13": {
+                "stats": {
+                    "health": 2518,
+                    "damage": 6.9
+                },
+                "trainingCost": { "gold": 4000 },
+                "researchCost": { "gold": 1500000 },
+                "upgradeTime": "1d 17h",
+                "armoryRequired": 12
+            },
+            "14": {
+                "stats": {
+                    "health": 2720,
+                    "damage": 7.5
+                },
+                "trainingCost": { "gold": 4400 },
+                "researchCost": { "gold": 1700000 },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 13
+            },
+            "15": {
+                "stats": {
+                    "health": 2937,
+                    "damage": 8.1
+                },
+                "trainingCost": { "gold": 4800 },
+                "researchCost": { "gold": 2040000 },
+                "upgradeTime": "2d 6h",
+                "armoryRequired": 14
+            },
+            "16": {
+                "stats": {
+                    "health": 3172,
+                    "damage": 8.8
+                },
+                "trainingCost": { "gold": 5200 },
+                "researchCost": { "gold": 2810000 },
+                "upgradeTime": "2d 10h",
+                "armoryRequired": 15
             }
         }
     },
