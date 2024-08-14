@@ -29,7 +29,7 @@ module.exports = {
             return interaction.reply({ content: 'No data found for the selected defence type.', ephemeral: true });
         }
 
-        // Limit the number of options to 25
+        // Create the level options menu
         const maxOptions = 25;
         const levels = Array.from({ length: defenceData.maxLevel }, (_, i) => i + 1);
         const levelOptions = levels.slice(0, maxOptions).map(level => {
@@ -40,7 +40,7 @@ module.exports = {
         });
 
         const levelSelectMenu = new StringSelectMenuBuilder()
-            .setCustomId(`select_defence_level_${defenceType}`)
+            .setCustomId('select_defence_level')
             .setPlaceholder('Select a level')
             .addOptions(levelOptions);
 
