@@ -283,5 +283,62 @@
                 "weaponLabRequired": 5
             }
         }
+    },
+    "boom_surprise": {
+        "name": "Boom Surprise",
+        "description": "Powerful 2-shot cannon with good range. Stays protected in an underground bunker until enemies are in range.",
+        "maxLevel": 3,
+        "attackSpeed": 1500,
+        "range": 9,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/BoomSurpriseI.png/revision/latest/scale-to-width-down/110?cb=20180514122347",
+                "stats": {
+                    "health": 15000,
+                    "damage": 1000
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 0, 
+                    "rods": 3, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/71/BoomSurpriseII.png/revision/latest/scale-to-width-down/110?cb=20180514122348",
+                "stats": {
+                    "health": 20000,
+                    "damage": 1500
+                },
+                "buildCost": {
+                    "fuses": 2, 
+                    "gears": 2, 
+                    "rods": 6, 
+                    "capacitors": 2
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f6/BoomSurpriseIII.png/revision/latest/scale-to-width-down/110?cb=20180514122349",
+                "stats": {
+                    "health": 25000,
+                    "damage": 2000
+                },
+                "buildCost": {
+                    "fuses": 8, 
+                    "gears": 4, 
+                    "rods": 0, 
+                    "capacitors": 6
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
     }
 }
