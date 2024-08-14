@@ -60,7 +60,7 @@
             "12": {
                 "stats": {
                     "health": 900,
-                    "damage": 90,
+                    "damage": 90
                 },
                 "trainingCost": {
                     "gold": 800
