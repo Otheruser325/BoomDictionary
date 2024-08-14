@@ -6,7 +6,8 @@ const validTroopTypes = {
     'rifleman': 'rifleman',
     'heavy': 'heavy',
     'zooka': 'zooka',
-    'tank': 'tank'
+    'tank': 'tank',
+    // Add more troop types as needed
 };
 
 module.exports = {
@@ -14,18 +15,24 @@ module.exports = {
     description: 'Get statistics for a specific type of troop.',
     args: false,
     usage: '<troop_type> <level>',
-
+    
     async execute(message, args) {
         if (args.length === 0) {
             const troopOptions = Object.keys(validTroopTypes).map(troopKey => {
                 const troop = troops[validTroopTypes[troopKey]];
+                
+                // Guard clause to handle undefined troop data
+                if (!troop) {
+                    return null;
+                }
+
                 const description = (troop && troop.description) ? troop.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
                     .setLabel(troop.name.charAt(0).toUpperCase() + troop.name.slice(1))
                     .setValue(troopKey)
                     .setDescription(description);
-            });
-
+            }).filter(option => option !== null); // Filter out null values
+            
             const selectMenu = new StringSelectMenuBuilder()
                 .setCustomId('select_troop_type')
                 .setPlaceholder('Select a troop type')
@@ -92,5 +99,5 @@ module.exports = {
 
             await message.channel.send({ embeds: [embed] });
         }
-    },
+    }
 };
