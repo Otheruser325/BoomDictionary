@@ -1,4 +1,4 @@
-const { StringSelectMenuOptionBuilder, ActionRowBuilder, EmbedBuilder } = require('discord.js');
+const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 
 // Mapping user-friendly names to actual keys in defences.json
@@ -25,6 +25,11 @@ module.exports = {
         }
 
         const defenceData = defences[defenceType];
+
+        if (!defenceData) {
+            return interaction.reply({ content: 'No data found for the selected defence type.', ephemeral: true });
+        }
+
         const levelOptions = Array.from({ length: defenceData.maxLevel }, (_, i) => i + 1).map(level => {
             return new StringSelectMenuOptionBuilder()
                 .setLabel(`Level ${level}`)
