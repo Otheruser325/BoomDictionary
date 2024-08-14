@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, Events, InteractionType } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -26,10 +26,11 @@ module.exports = {
         if (args.length === 0) {
             // No arguments; show select menu for defence types
             const defenceOptions = Object.keys(validDefenceTypes).map(defenceKey => {
+                const description = (defences[validDefenceTypes[defenceKey]].description || 'No description available.').substring(0, 100);
                 return new StringSelectMenuOptionBuilder()
                     .setLabel(defenceKey.charAt(0).toUpperCase() + defenceKey.slice(1))
                     .setValue(defenceKey)
-                    .setDescription(defences[validDefenceTypes[defenceKey]].description || 'No description available.');
+                    .setDescription(description);
             });
 
             const selectMenu = new StringSelectMenuBuilder()
