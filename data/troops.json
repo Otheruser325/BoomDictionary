@@ -136,5 +136,65 @@
                 "armoryRequired": 5
             }
         }
+    },
+    "grenadier": {
+        "name": "Grenadier",
+        "description": "I hear you chaps have been looking for an explosives expert. Well, you struck lucky! I'll toss a few mashers their way, and Bob's your uncle - those Blaggards go up in smoke!",
+        "maxLevel": 16,
+        "attackSpeed": 2000,
+        "attackRange": 11.3,
+        "unitSize": 6,
+        "trainingTime": "6m",
+        "movementSpeed": "230"
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 450,
+                    "damage": 200
+                },
+                "trainingCost": { "gold": 8000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "3d 16h",
+                "armoryRequired": 16
+            },
+            "2": {
+                "stats": {
+                    "health": 477,
+                    "damage": 216
+                },
+                "trainingCost": { "gold": 9000 },
+                "researchCost": { "gold": 4000000 },
+                "upgradeTime": "3d 33h",
+                "armoryRequired": 17
+            },
+            "3": {
+                "stats": {
+                    "health": 506,
+                    "damage": 232
+                },
+                "trainingCost": { "gold": 10000 },
+                "researchCost": { "gold": 4600000 },
+                "upgradeTime": "4d 3h",
+                "armoryRequired": 17
+            },
+            "4": {
+                "stats": {
+                    "health": 536,
+                    "damage": 248
+                },
+                "trainingCost": { "gold": 11000 },
+                "researchCost": { "gold": 5200000 },
+                "armoryRequired": 18
+            },
+            "5": {
+                "stats": {
+                    "health": 568,
+                    "damage": 268
+                },
+                "trainingCost": { "gold": 12000 },
+                "researchCost": { "gold": 5500000 },
+                "armoryRequired": 18
+            }
+        }
     }
 }
