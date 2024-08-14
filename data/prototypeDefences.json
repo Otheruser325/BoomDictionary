@@ -7,6 +7,7 @@
         "range": 18,
         "levels": {
             "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/17/DoomCannon1.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
                 "stats": {
                     "health": 15000,
                     "damage": 5250
@@ -22,6 +23,7 @@
                 "weaponLabRequired": 1
             },
             "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e0/DoomCannon2.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
                 "stats": {
                     "health": 20000,
                     "damage": 8750
@@ -37,6 +39,7 @@
                 "weaponLabRequired": 3
             },
             "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/68/DoomCannon3.png/revision/latest/scale-to-width-down/120?cb=20150515220524",
                 "stats": {
                     "health": 25000,
                     "damage": 15750
@@ -61,6 +64,7 @@
         "range": 18,
         "levels": {
             "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/ShockBlasterI.png/revision/latest/scale-to-width-down/120?cb=20150506154605",
                 "stats": {
                     "health": 15000,
                     "damage": 64
@@ -76,6 +80,7 @@
                 "weaponLabRequired": 1
             },
             "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/ShockBlasterII.png/revision/latest/scale-to-width-down/120?cb=20150506154628",
                 "stats": {
                     "health": 20000,
                     "damage": 104
@@ -91,6 +96,7 @@
                 "weaponLabRequired": 2
             },
             "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/51/ShockBlasterIII.png/revision/latest/scale-to-width-down/120?cb=20150506154652",
                 "stats": {
                     "health": 25000,
                     "damage": 144
@@ -115,6 +121,7 @@
         "range": 18,
         "levels": {
             "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/ce/LazorBeamI.png/revision/latest/scale-to-width-down/120?cb=20150506195253",
                 "stats": {
                     "health": 15000,
                     "damage": 128
@@ -130,6 +137,7 @@
                 "weaponLabRequired": 1
             },
             "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/29/LazorBeamII.png/revision/latest/scale-to-width-down/120?cb=20150506195329",
                 "stats": {
                     "health": 20000,
                     "damage": 256
@@ -145,6 +153,7 @@
                 "weaponLabRequired": 2
             },
             "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/41/LazorBeamIII.png/revision/latest/scale-to-width-down/120?cb=20150506195441",
                 "stats": {
                     "health": 25000,
                     "damage": 384
