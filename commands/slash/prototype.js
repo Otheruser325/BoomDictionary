@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const prototypeDefences = require('../../data/prototypeDefences.json');
-const prototypeTroops = require('../../data/prototypeTroops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 module.exports = {
@@ -76,7 +75,7 @@ module.exports = {
 
             const stats = levelData.stats;
             const buildCost = levelData.buildCost || { fuses: 0, gears: 0, rods: 0, capacitors: 0 };
-            const attackSpeed = defenceData.attackSpeed || 'Unknown';
+            const attackSpeed = defenceType === 'grappler' ? (levelData.special ? 3000 - (level - 1) * 1000 : defenceData.attackSpeed) : defenceData.attackSpeed || 'Unknown';
             const range = defenceData.range || 'Unknown';
             const marks = levelData.marks || 'Not specified';
             const image = levelData.image || '';
@@ -92,7 +91,7 @@ module.exports = {
                     { name: 'DPS', value: formatNumber(dps), inline: true },
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                     { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
                     { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
                     { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
                     { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
@@ -101,6 +100,7 @@ module.exports = {
                 .setColor('#0099ff');
 
             await interaction.reply({ embeds: [embed] });
+
         } else if (subcommand === 'troop') {
             const troopType = interaction.options.getString('troop_type');
             const level = interaction.options.getInteger('level');
