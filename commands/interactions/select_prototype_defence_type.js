@@ -3,7 +3,7 @@ const prototypeDefences = require('../../data/prototypeDefences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 module.exports = {
-    name: 'interactionCreate',
+    customId: 'select_prototype_defence_type',
     async execute(interaction) {
         if (!interaction.isStringSelectMenu()) return;
 
