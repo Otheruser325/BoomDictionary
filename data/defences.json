@@ -566,5 +566,56 @@
                 "hqRequired": 14
             }
         }
+    },
+    "rocket_launcher": {
+        "name": "Rocket Launcher",
+        "description": "The Rocket Launcher is a long distance artillery piece. It fires a salvo of rockets, followed by a significant reload time.",
+        "maxLevel": 18,
+        "attackSpeed": 5000,
+        "range": 25,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/RocketLauncher1.png/revision/latest/scale-to-width-down/105?cb=20140528174119",
+                "stats": { "health": 4000, "damage": 22.75 },
+                "upgradeCost": { "wood": 142000, "stone": 85000, "iron": 24300 },
+                "upgradeTime": "5h",
+                "hqRequired": 13
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/c3/RocketLauncher2.png/revision/latest/scale-to-width-down/105?cb=20140528174134",
+                "stats": { "health": 4400, "damage": 25.2 },
+                "upgradeCost": { "wood": 198000, "stone": 119000, "iron": 34000 },
+                "upgradeTime": "6h",
+                "hqRequired": 13
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/85/RocketLauncher3.png/revision/latest/scale-to-width-down/105?cb=20140528181507",
+                "stats": { "health": 4800, "damage": 27.65 },
+                "upgradeCost": { "wood": 275000, "stone": 240000, "iron": 66000 },
+                "upgradeTime": "7h",
+                "hqRequired": 14
+            },
+            "4": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/85/RocketLauncher3.png/revision/latest/scale-to-width-down/105?cb=20140528181507",
+                "stats": { "health": 5200, "damage": 30.45 },
+                "upgradeCost": { "wood": 314000, "stone": 274000, "iron": 76000 },
+                "upgradeTime": "8h",
+                "hqRequired": 14
+            },
+            "5": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/7b/RocketLauncher5.png/revision/latest/scale-to-width-down/120?cb=20140528174154",
+                "stats": { "health": 5700, "damage": 33.25 },
+                "upgradeCost": { "wood": 540000, "stone": 410000, "iron": 149000 },
+                "upgradeTime": "10h",
+                "hqRequired": 15
+            },
+            "6": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/RocketLauncher6.png/revision/latest?cb=20141211074900",
+                "stats": { "health": 6300, "damage": 36.75 },
+                "upgradeCost": { "wood": 760000, "stone": 680000, "iron": 298000 },
+                "upgradeTime": "12h",
+                "hqRequired": 16
+            }
+        }
     }
 }
