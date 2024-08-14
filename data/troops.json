@@ -113,6 +113,108 @@
             }
         }
     },
+    "tank": {
+        "name": "Tank",
+        "description": "Tank ready for battle! This baby has a long range cannon and thick armor to boot.",
+        "maxLevel": 21,
+        "attackSpeed": 3500,
+        "attackRange": 8.2,
+        "unitSize": 8,
+        "trainingTime": "24m",
+        "movementSpeed": "150",
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 2000,
+                    "damage": 490
+                },
+                "trainingCost": { "gold": 8000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 9
+            },
+            "2": {
+                "stats": {
+                    "health": 2156,
+                    "damage": 535.5
+                },
+                "trainingCost": { "gold": 9000 },
+                "researchCost": { "gold": 620000 },
+                "upgradeTime": "1d 18h",
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "health": 2320,
+                    "damage": 581
+                },
+                "trainingCost": { "gold": 10000 },
+                "researchCost": { "gold": 1030000 },
+                "upgradeTime": "1d 23h",
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "health": 2510,
+                    "damage": 633.5
+                },
+                "trainingCost": { "gold": 11000 },
+                "researchCost": { "gold": 1890000 },
+                "upgradeTime": "2d 6h",
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "health": 2700,
+                    "damage": 693
+                },
+                "trainingCost": { "gold": 12000 },
+                "researchCost": { "gold": 2480000 },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "health": 2910,
+                    "damage": 752.5
+                },
+                "trainingCost": { "gold": 13000 },
+                "researchCost": { "gold": 2570000 },
+                "upgradeTime": "2d 16h",
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "health": 3140,
+                    "damage": 822.5
+                },
+                "trainingCost": { "gold": 14000 },
+                "researchCost": { "gold": 3900000 },
+                "upgradeTime": "3d 8h",
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "health": 3380,
+                    "damage": 896
+                },
+                "trainingCost": { "gold": 15000 },
+                "researchCost": { "gold": 5000000 },
+                "upgradeTime": "3d 11h",
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "health": 3650,
+                    "damage": 976.5
+                },
+                "trainingCost": { "gold": 16000 },
+                "researchCost": { "gold": 5200000 },
+                "upgradeTime": "3d 14h",
+                "armoryRequired": 15
+            }
+        }
+    },
     "grenadier": {
         "name": "Grenadier",
         "description": "I hear you chaps have been looking for an explosives expert. Well, you struck lucky! I'll toss a few mashers their way, and Bob's your uncle - those Blaggards go up in smoke!",
