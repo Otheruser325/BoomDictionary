@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const prototypeDefences = require('../../data/prototypeDefences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -54,7 +54,7 @@ module.exports = {
 
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
