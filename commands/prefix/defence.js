@@ -18,6 +18,7 @@ const validDefenceTypes = {
 module.exports = {
     name: 'defence',
     description: 'Get statistics for a specific type of defence.',
+    aliases: ['defense'],
     args: false,
     usage: '<defence_type> <level>',
 
