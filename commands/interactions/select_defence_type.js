@@ -40,7 +40,7 @@ module.exports = {
         });
 
         const levelSelectMenu = new StringSelectMenuBuilder()
-            .setCustomId('select_defence_level')
+            .setCustomId(`select_defence_level_${defenceType}`)
             .setPlaceholder('Select a level')
             .addOptions(levelOptions);
 
