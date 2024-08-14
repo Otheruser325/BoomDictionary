@@ -169,5 +169,62 @@
                 "weaponLabRequired": 4
             }
         }
+    },
+    "grappler": {
+        "name": "Grappler",
+        "description": "Shoots a long range grappling hook that pulls a single enemy unit close.",
+        "maxLevel": 3,
+        "attackSpeed": 5000,
+        "range": 25,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/3a/GrapplerI.png/revision/latest/scale-to-width-down/110?cb=20160907011052",
+                "stats": {
+                    "health": 20000,
+                    "damage": 120
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 0, 
+                    "rods": 3, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f1/GrapplerII.png/revision/latest/scale-to-width-down/120?cb=20160907011053",
+                "stats": {
+                    "health": 25000,
+                    "damage": 120
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 3
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/de/GrapplerIII.png/revision/latest/scale-to-width-down/130?cb=20160907011053",
+                "stats": {
+                    "health": 30000,
+                    "damage": 120
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 9
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
+            }
+        }
     }
 }
