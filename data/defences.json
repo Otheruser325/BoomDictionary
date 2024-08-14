@@ -56,36 +56,42 @@
                 "hqRequired": 6
             },
             "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/SniperTower8.png/revision/latest/scale-to-width-down/80?cb=20150715172128",
                 "stats": { "health": 3100, "damage": 109.2 },
                 "upgradeCost": { "wood": 19100, "stone": 3800, "iron": 0 },
                 "upgradeTime": "2h 30m",
                 "hqRequired": 7
             },
             "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/SniperTower9.png/revision/latest/scale-to-width-down/72?cb=20150625150924",
                 "stats": { "health": 3300, "damage": 120.4 },
                 "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 },
                 "upgradeTime": "3h 30m",
                 "hqRequired": 8
             },
             "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/58/SniperTower10.png/revision/latest/scale-to-width-down/100?cb=20150624172601",
                 "stats": { "health": 3600, "damage": 131.6 },
                 "upgradeCost": { "wood": 52000, "stone": 12300, "iron": 3300 },
                 "upgradeTime": "4h",
                 "hqRequired": 9
             },
             "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/01/SniperTower11.png/revision/latest/scale-to-width-down/70?cb=20150625150949",
                 "stats": { "health": 4000, "damage": 145.6 },
                 "upgradeCost": { "wood": 83000, "stone": 20800, "iron": 6700 },
                 "upgradeTime": "5h",
                 "hqRequired": 10
             },
             "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/a/a3/SniperTower12.png/revision/latest/scale-to-width-down/80?cb=20150625151009",
                 "stats": { "health": 4300, "damage": 159.6 },
                 "upgradeCost": { "wood": 115000, "stone": 42000, "iron": 12000 },
                 "upgradeTime": "6h",
                 "hqRequired": 11
             },
             "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/74/SniperTower13.png/revision/latest/scale-to-width-down/75?cb=20150625150203",
                 "stats": { "health": 4700, "damage": 176.4 },
                 "upgradeCost": { "wood": 177000, "stone": 83000, "iron": 21800 },
                 "upgradeTime": "7h",
