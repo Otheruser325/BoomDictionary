@@ -1,7 +1,6 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 
-// Mapping user-friendly names to actual keys in defences.json
 const validDefenceTypes = {
     'sniper tower': 'sniper_tower',
     'mortar': 'mortar',
@@ -41,7 +40,7 @@ module.exports = {
         });
 
         const levelSelectMenu = new StringSelectMenuBuilder()
-            .setCustomId('select_defence_level')
+            .setCustomId(`select_defence_level_${defenceType}`)
             .setPlaceholder('Select a level')
             .addOptions(levelOptions);
 
