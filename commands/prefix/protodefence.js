@@ -80,16 +80,20 @@ module.exports = {
             if (defenceType === 'grappler') {
                 // Special handling for Grappler
                 if (level >= 2) {
-                    attackSpeed = 3000 - (level - 1) * 1000; // Reduces by 1s per level from level 2
+                    attackSpeed = 5000 - (level - 1) * 1000; // Reduces by 1s per level from level 2
                 }
             }
 
             // Calculate DPS if attackSpeed is known
             const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
-            // Special handling for Damage Amplifier
+            // Handle special stats for certain prototype defences
             let special = '';
-            if (defenceType === 'damage_amplifier') {
+            if (defenceType === 'shock_blaster') {
+                special = level === 1 ? 'Stuns enemies for 0.6s with each hit; reapplies' :
+                         level === 2 ? 'Stuns enemies for 0.8s with each hit; reapplies' :
+                         'Stuns enemies for 1s with each hit; reapplies';
+            } else if (defenceType === 'damage_amplifier') {
                 special = level === 1 ? 'Provides 50% damage boost to nearby defences' :
                          level === 2 ? 'Provides 75% damage boost to nearby defences' :
                          'Provides 100% damage boost to nearby defences';
