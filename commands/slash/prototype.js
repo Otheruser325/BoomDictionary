@@ -120,7 +120,7 @@ module.exports = {
 
             const stats = levelData.stats;
             const trainingCost = levelData.trainingCost || { gold: 0 };
-            const researchCost = levelData.researchCost || { gold: 0 };
+            const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
@@ -130,10 +130,10 @@ module.exports = {
                     { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2)), inline: true },
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                     { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
-                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
-                    { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
-                    { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
-                    { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
                     { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
                 )
