@@ -88,6 +88,7 @@ module.exports = {
                     { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
                     { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
                     { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
+                    { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
                     { name: 'Marks', value: marks.toString(), inline: true }
                 )
                 .setColor('#0099ff');
