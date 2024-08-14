@@ -81,7 +81,7 @@ module.exports = {
                     { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: formatNumber(troopData.attackRange.toString()), inline: true },
-                    { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
+                    { name: 'Attack Speed', value: troopData.attackSpeed.toString() || 'Unknown', inline: true }
                 )
                 .setColor('#0099ff');
 
