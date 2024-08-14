@@ -48,7 +48,7 @@ module.exports = {
             await interaction.update({ embeds: [embed], components: [row] });
         } catch (error) {
             console.error('Error updating interaction:', error);
-            if (error.code === 10062 || error.code === 40060) { 
+            if (error.code === 10062 || error.code === 40060) {
                 return interaction.followUp({ content: 'There was an issue processing your request. Please try again.', ephemeral: true });
             }
         }
