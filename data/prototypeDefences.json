@@ -340,5 +340,62 @@
                 "weaponLabRequired": 5
             }
         }
+    },
+    "simo": {
+        "name": "S.I.M.O.",
+        "description": "Sniper tower that sniffs out and targets low health enemies within range. Can see through smoke with the help of infra-red sensors.",
+        "maxLevel": 3,
+        "attackSpeed": 2000,
+        "range": 15,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/13/SIMOI.png/revision/latest/scale-to-width-down/110?cb=20180330092744",
+                "stats": {
+                    "health": 15000,
+                    "damage": 1600
+                },
+                "buildCost": {
+                    "fuses": 1, 
+                    "gears": 3, 
+                    "rods": 0, 
+                    "capacitors": 2
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9b/SIMOII.png/revision/latest/scale-to-width-down/120?cb=20180330092830",
+                "stats": {
+                    "health": 20000,
+                    "damage": 1500
+                },
+                "buildCost": {
+                    "fuses": 4, 
+                    "gears": 4, 
+                    "rods": 4, 
+                    "capacitors": 0
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/SIMOIII.png/revision/latest/scale-to-width-down/130?cb=20180330092917",
+                "stats": {
+                    "health": 25000,
+                    "damage": 1500
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 6, 
+                    "rods": 3, 
+                    "capacitors": 9
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
+            }
+        }
     }
 }
