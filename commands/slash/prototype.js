@@ -127,16 +127,16 @@ module.exports = {
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
                 .addFields(
-                    { name: 'Health', value: formatNumber(stats.health), inline: true },
-                    { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2)), inline: true },
-                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
+                    { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2).toString()), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage.toString()), inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
                     { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
-                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
-                    { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
-                    { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
+                    { name: 'Attack Range', value: formatNumber(troopData.attackRange.toString()), inline: true },
+                    { name: 'Attack Speed', value: troopData.attackSpeed.toString() || 'Unknown', inline: true }
                 )
                 .setColor('#0099ff');
 
