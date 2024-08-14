@@ -38,9 +38,9 @@ module.exports = {
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                 { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                 { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost)}`, inline: true },
-                { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
-                { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
-                { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
+                { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                 { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
                 { name: 'Attack Speed', value: troopData.attackSpeed ? `${troopData.attackSpeed} ms` : 'Unknown', inline: true },
                 { name: 'Armory Level Required', value: levelData.armoryRequired ? `Armory Level ${levelData.armoryRequired}` : 'Not specified', inline: true }
