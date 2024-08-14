@@ -28,7 +28,7 @@ module.exports = {
                 const description = (defence && defence.description) ? defence.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
                     .setLabel(defenceKey.charAt(0).toUpperCase() + defenceKey.slice(1))
-                    .setValue(defenceKey)
+                    .setValue(validDefenceTypes[defenceKey]) // Use the internal key
                     .setDescription(description);
             });
 
