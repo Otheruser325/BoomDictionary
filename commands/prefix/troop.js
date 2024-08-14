@@ -7,7 +7,7 @@ const validTroopTypes = {
     'heavy': 'heavy',
     'zooka': 'zooka',
     'tank': 'tank',
-    // Add more troop types as needed
+    'grenadier': 'grenadier'
 };
 
 module.exports = {
@@ -18,6 +18,7 @@ module.exports = {
     
     async execute(message, args) {
         if (args.length === 0) {
+            // Display list of troop types
             const troopOptions = Object.keys(validTroopTypes).map(troopKey => {
                 const troop = troops[validTroopTypes[troopKey]];
                 const description = (troop && troop.description) ? troop.description.substring(0, 100) : 'No description available.';
@@ -72,6 +73,7 @@ module.exports = {
             const attackSpeed = troopData.attackSpeed;
             const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
             const armoryRequired = levelData.armoryRequired || 'Not specified';
+            const upgradeTime = levelData.upgradeTime || 'Not specified';
 
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
