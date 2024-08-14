@@ -3,10 +3,10 @@ const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 module.exports = {
-    customId: /^select_defence_level_.+/,
+    customId: 'select_defence_level',
     async execute(interaction) {
-        const selectedLevel = parseInt(interaction.values[0], 10);
-        const defenceType = interaction.customId.split('_').slice(3).join('_'); // Extract the defence type from the customId
+        const [defenceType, level] = interaction.values[0].split('-');
+        const levelNum = parseInt(level, 10);
 
         const defenceData = defences[defenceType];
 
@@ -14,13 +14,13 @@ module.exports = {
             return interaction.reply({ content: 'No data found for the selected defence type.', ephemeral: true });
         }
 
-        if (selectedLevel < 1 || selectedLevel > defenceData.maxLevel) {
+        if (isNaN(levelNum) || levelNum < 1 || levelNum > defenceData.maxLevel) {
             return interaction.reply({ content: `Invalid level! Please provide a level between 1 and ${defenceData.maxLevel}.`, ephemeral: true });
         }
 
-        const levelData = defenceData.levels[selectedLevel];
+        const levelData = defenceData.levels[levelNum];
         if (!levelData) {
-            return interaction.reply({ content: `No data available for level ${selectedLevel}.`, ephemeral: true });
+            return interaction.reply({ content: `No data available for level ${levelNum}.`, ephemeral: true });
         }
 
         const stats = levelData.stats;
@@ -32,7 +32,7 @@ module.exports = {
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
-            .setTitle(`${defenceData.name} - Level ${selectedLevel}`)
+            .setTitle(`${defenceData.name} - Level ${levelNum}`)
             .setDescription(defenceData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
