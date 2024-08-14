@@ -14,7 +14,7 @@ const validDefenceTypes = {
 module.exports = {
     name: 'protodefence',
     description: 'Get statistics for a prototype defence.',
-    aliases: ['defence', 'defense'],
+    aliases: ['protodefense', 'prototypeDefence', 'prototypeDefense'],
     usage: '<defence_type> <level>',
     async execute(message, args) {
         if (args.length < 2) {
