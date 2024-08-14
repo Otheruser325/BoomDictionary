@@ -106,5 +106,62 @@
                 }
             }
         }
+    },
+    "heavy_choppa": {
+        "name": "Heavy Choppa",
+        "description": "TBA",
+        "maxLevel": 26,
+        "attackSpeed": 100,
+        "attackRange": 5.5,
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 16800,
+                    "damage": 18,
+                    "unitSize": 14,
+                    "trainingTime": "30m",
+                    "movementSpeed": "350"
+                },
+                "trainingCost": { "gold": 300 },
+                "researchCost": { "gold": 0 },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 17555,
+                    "damage": 19,
+                    "unitSize": 14,
+                    "trainingTime": "30m",
+                    "movementSpeed": "350"
+                },
+                "trainingCost": { "gold": 500 },
+                "researchCost": { "gold": 10400 },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 18300,
+                    "damage": 20,
+                    "unitSize": 14,
+                    "trainingTime": "30m",
+                    "movementSpeed": "350"
+                },
+                "trainingCost": { "gold": 700 },
+                "researchCost": { "gold": 21800 },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 19100,
+                    "damage": 21,
+                    "unitSize": 14,
+                    "trainingTime": "30m",
+                    "movementSpeed": "350"
+                },
+                "trainingCost": { "gold": 900 },
+                "researchCost": { "gold": 47000 },
+                "armoryRequired": 15
+            }
+        }
     }
 }
