@@ -35,12 +35,12 @@ module.exports = {
         const levelOptions = levels.slice(0, maxOptions).map(level => {
             return new StringSelectMenuOptionBuilder()
                 .setLabel(`Level ${level}`)
-                .setValue(level.toString())
+                .setValue(`${defenceType}-${level}`)
                 .setDescription(defenceData.levels[level]?.upgradeTime || 'No details available.');
         });
 
         const levelSelectMenu = new StringSelectMenuBuilder()
-            .setCustomId(`select_defence_level_${defenceType}`)
+            .setCustomId('select_defence_level')
             .setPlaceholder('Select a level')
             .addOptions(levelOptions);
 
