@@ -17,7 +17,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "1h",
+                "buildTime": "1h",
                 "marks": "Tier 1 (I)",
                 "weaponLabRequired": 1
             },
@@ -32,7 +32,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "4h",
+                "buildTime": "4h",
                 "marks": "Tier 2 (II)",
                 "weaponLabRequired": 3
             },
@@ -47,7 +47,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "12h",
+                "buildTime": "12h",
                 "marks": "Tier 3 (III)",
                 "weaponLabRequired": 5
             }
@@ -71,7 +71,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "1h",
+                "buildTime": "1h",
                 "marks": "Tier 1 (I)",
                 "weaponLabRequired": 1
             },
@@ -86,7 +86,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "4h",
+                "buildTime": "4h",
                 "marks": "Tier 2 (II)",
                 "weaponLabRequired": 2
             },
@@ -101,7 +101,7 @@
                     "rods": 0, 
                     "capacitors": 0
                 },
-                "upgradeTime": "12h",
+                "buildTime": "12h",
                 "marks": "Tier 3 (III)",
                 "weaponLabRequired": 4
             }
@@ -125,7 +125,7 @@
                     "rods": 3, 
                     "capacitors": 3
                 },
-                "upgradeTime": "1h",
+                "buildTime": "1h",
                 "marks": "Tier 1 (I)",
                 "weaponLabRequired": 1
             },
@@ -140,7 +140,7 @@
                     "rods": 3, 
                     "capacitors": 0
                 },
-                "upgradeTime": "4h",
+                "buildTime": "4h",
                 "marks": "Tier 2 (II)",
                 "weaponLabRequired": 2
             },
@@ -155,7 +155,7 @@
                     "rods": 0, 
                     "capacitors": 9
                 },
-                "upgradeTime": "12h",
+                "buildTime": "12h",
                 "marks": "Tier 3 (III)",
                 "weaponLabRequired": 4
             }
