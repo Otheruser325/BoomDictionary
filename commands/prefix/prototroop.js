@@ -6,7 +6,7 @@ const validTroopTypes = {
     'rain maker': 'rain_maker',
     'lazortron': 'lazortron',
     'critter cannon': 'critter_cannon',
-    // Add more prototype troop types as needed
+    'heavy choppa': 'heavy_choppa'
 };
 
 module.exports = {
