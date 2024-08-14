@@ -6,6 +6,7 @@ const validDefenceTypes = {
     'doom cannon': 'doom_cannon',
     'shock blaster': 'shock_blaster',
     'lazor beam': 'lazor_beam',
+    'grappler': 'grappler',
     'hot pot': 'hot_pot',
     'shield generator': 'shield_generator',
     'damage amplifier': 'damage_amplifier'
