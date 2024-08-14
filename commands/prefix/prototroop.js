@@ -5,7 +5,6 @@ const { formatNumber } = require('../../utils/formatNumber');
 const validTroopTypes = {
     'rain maker': 'rain_maker',
     'lazortron': 'lazortron',
-    'critter cannon': 'critter_cannon',
     'heavy choppa': 'heavy_choppa'
 };
 
@@ -23,7 +22,7 @@ module.exports = {
                 const description = (troop && troop.description) ? troop.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
                     .setLabel(troopKey.charAt(0).toUpperCase() + troopKey.slice(1))
-                    .setValue(troopKey)
+                    .setValue(validTroopTypes[troopKey]) // Use the JSON key here
                     .setDescription(description);
             });
 
@@ -73,15 +72,15 @@ module.exports = {
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
                 .addFields(
-                    { name: 'Health', value: formatNumber(stats.health), inline: true },
-                    { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2)), inline: true },
-                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
-                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost)}`, inline: true },
-                    { name: 'Unit Size', value: formatNumber(stats.unitSize), inline: true },
+                    { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
+                    { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2).toString()), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage.toString()), inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
+                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(stats.unitSize.toString()), inline: true },
                     { name: 'Training Time', value: stats.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: stats.movementSpeed || 'Unknown', inline: true },
-                    { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
+                    { name: 'Attack Range', value: formatNumber(troopData.attackRange.toString()), inline: true },
                     { name: 'Attack Speed', value: troopData.attackSpeed || 'Unknown', inline: true }
                 )
                 .setColor('#0099ff');
