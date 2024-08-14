@@ -8,7 +8,9 @@ const validPrototypeDefenceTypes = {
     'grappler': 'grappler',
     'hot pot': 'hot_pot',
     'shield generator': 'shield_generator',
-    'damage amplifier': 'damage_amplifier'
+    'damage amplifier': 'damage_amplifier',
+    'boom surprise': 'boom_surprise',
+    's.i.m.o.': 'simo'
 };
 
 module.exports = {
