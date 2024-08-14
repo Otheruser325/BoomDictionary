@@ -1,7 +1,5 @@
 const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-const fs = require('fs');
-const path = require('path');
+const { Routes } = require('discord-api-types/v10'); // Updated to v10
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -10,13 +8,12 @@ const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
 
 const deployCommands = async (clientId, token, slashCommands) => {
-    const rest = new REST({ version: '9' }).setToken(token);
+    const rest = new REST({ version: '10' }).setToken(token); // Updated to v10
 
     try {
         console.log('Started refreshing global application (/) commands.');
 
-        const commands = [];
-        slashCommands.forEach(command => commands.push(command.data.toJSON()));
+        const commands = [...slashCommands.values()].map(command => command.data.toJSON());
 
         // Fetch existing global commands
         const existingCommands = await rest.get(Routes.applicationCommands(clientId));
