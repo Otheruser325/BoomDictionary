@@ -140,7 +140,7 @@
                 },
                 "trainingCost": { "gold": 9000 },
                 "researchCost": { "gold": 4000000 },
-                "upgradeTime": "3d 33h",
+                "upgradeTime": "3d 22h",
                 "armoryRequired": 17
             },
             "3": {
@@ -172,6 +172,26 @@
                 "researchCost": { "gold": 5500000 },
                 "upgradeTime": "4d 6h",
                 "armoryRequired": 18
+            },
+            "6": {
+                "stats": {
+                    "health": 602,
+                    "damage": 288
+                },
+                "trainingCost": { "gold": 13000 },
+                "researchCost": { "gold": 5900000 },
+                "upgradeTime": "4d 9h",
+                "armoryRequired": 19
+            },
+            "7": {
+                "stats": {
+                    "health": 638,
+                    "damage": 308
+                },
+                "trainingCost": { "gold": 14000 },
+                "researchCost": { "gold": 6500000 },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 19
             }
         }
     }
