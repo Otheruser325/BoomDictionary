@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const prototypeTroops = require('../../data/prototypeTroops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -46,7 +46,7 @@ module.exports = {
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
