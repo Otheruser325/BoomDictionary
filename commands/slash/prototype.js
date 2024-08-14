@@ -86,6 +86,11 @@ module.exports = {
                 if (level >= 2) {
                     attackSpeed = 5000 - (level - 1) * 1000; // Reduces by 1s per level from level 2
                 }
+            } else if (defenceType === 'simo') {
+                // Special handling for S.I.M.O.
+                if (level >= 2) {
+                    attackSpeed = 2000 - (level - 1) * 500; // Reduces by 0.5s per level from level 2
+                }
             }
 
             const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
@@ -100,6 +105,10 @@ module.exports = {
                 special = level === 1 ? 'Provides 50% damage boost to nearby defences' :
                          level === 2 ? 'Provides 75% damage boost to nearby defences' :
                          'Provides 100% damage boost to nearby defences';
+            } else if (defenceType === 'simo') {
+                special = level === 1 ? 'Can see through smokescreens; targets low-health enemies' :
+                         level === 2 ? 'Can see through smokescreens; targets low-health enemies' :
+                         'Can see through smokescreens; targets low-health enemies';
             }
 
             const embed = new EmbedBuilder()
