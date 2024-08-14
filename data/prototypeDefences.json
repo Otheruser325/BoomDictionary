@@ -11,10 +11,11 @@
                     "health": 15000,
                     "damage": 5250
                 },
-                "upgradeCost": {
-                    "wood": 2000,
-                    "stone": 1500,
-                    "iron": 1000
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "1h",
                 "marks": "Tier 1 (I)"
@@ -24,10 +25,11 @@
                     "health": 20000,
                     "damage": 8750
                 },
-                "upgradeCost": {
-                    "wood": 2500,
-                    "stone": 2000,
-                    "iron": 1500
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "4h",
                 "marks": "Tier 2 (II)"
@@ -37,10 +39,11 @@
                     "health": 25000,
                     "damage": 15750
                 },
-                "upgradeCost": {
-                    "wood": 3000,
-                    "stone": 2500,
-                    "iron": 2000
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "12h",
                 "marks": "Tier 3 (III)"
@@ -59,10 +62,11 @@
                     "health": 15000,
                     "damage": 64
                 },
-                "upgradeCost": {
-                    "wood": 1500,
-                    "stone": 1000,
-                    "iron": 800
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "1h",
                 "marks": "Tier 1 (I)"
@@ -72,10 +76,11 @@
                     "health": 20000,
                     "damage": 104
                 },
-                "upgradeCost": {
-                    "wood": 2000,
-                    "stone": 1500,
-                    "iron": 1200
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "4h",
                 "marks": "Tier 2 (II)"
@@ -85,10 +90,11 @@
                     "health": 25000,
                     "damage": 144
                 },
-                "upgradeCost": {
-                    "wood": 2500,
-                    "stone": 2000,
-                    "iron": 1600
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "12h",
                 "marks": "Tier 3 (III)"
@@ -107,10 +113,11 @@
                     "health": 15000,
                     "damage": 128
                 },
-                "upgradeCost": {
-                    "wood": 1500,
-                    "stone": 1000,
-                    "iron": 800
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 3, 
+                    "capacitors": 3
                 },
                 "upgradeTime": "1h",
                 "marks": "Tier 1 (I)"
@@ -120,10 +127,11 @@
                     "health": 20000,
                     "damage": 256
                 },
-                "upgradeCost": {
-                    "wood": 2000,
-                    "stone": 1500,
-                    "iron": 1200
+                "buildCost": {
+                    "fuses": 6, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 0
                 },
                 "upgradeTime": "4h",
                 "marks": "Tier 2 (II)"
@@ -133,10 +141,11 @@
                     "health": 25000,
                     "damage": 384
                 },
-                "upgradeCost": {
-                    "wood": 2500,
-                    "stone": 2000,
-                    "iron": 1600
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 6, 
+                    "rods": 0, 
+                    "capacitors": 9
                 },
                 "upgradeTime": "12h",
                 "marks": "Tier 3 (III)"
