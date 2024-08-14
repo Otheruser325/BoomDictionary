@@ -18,7 +18,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "1h",
-                "marks": "Tier 1 (I)"
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
             },
             "2": {
                 "stats": {
@@ -32,7 +33,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "4h",
-                "marks": "Tier 2 (II)"
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
             },
             "3": {
                 "stats": {
@@ -46,7 +48,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "12h",
-                "marks": "Tier 3 (III)"
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
             }
         }
     },
@@ -69,7 +72,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "1h",
-                "marks": "Tier 1 (I)"
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
             },
             "2": {
                 "stats": {
@@ -83,7 +87,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "4h",
-                "marks": "Tier 2 (II)"
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 2
             },
             "3": {
                 "stats": {
@@ -97,7 +102,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "12h",
-                "marks": "Tier 3 (III)"
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
             }
         }
     },
@@ -120,7 +126,8 @@
                     "capacitors": 3
                 },
                 "upgradeTime": "1h",
-                "marks": "Tier 1 (I)"
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
             },
             "2": {
                 "stats": {
@@ -134,7 +141,8 @@
                     "capacitors": 0
                 },
                 "upgradeTime": "4h",
-                "marks": "Tier 2 (II)"
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 2
             },
             "3": {
                 "stats": {
@@ -148,7 +156,8 @@
                     "capacitors": 9
                 },
                 "upgradeTime": "12h",
-                "marks": "Tier 3 (III)"
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
             }
         }
     }
