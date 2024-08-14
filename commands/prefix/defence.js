@@ -26,7 +26,8 @@ module.exports = {
         if (args.length === 0) {
             // No arguments; show select menu for defence types
             const defenceOptions = Object.keys(validDefenceTypes).map(defenceKey => {
-                const description = (defences[validDefenceTypes[defenceKey]].description || 'No description available.').substring(0, 100);
+                const defence = defences[validDefenceTypes[defenceKey]];
+                const description = (defence && defence.description) ? defence.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
                     .setLabel(defenceKey.charAt(0).toUpperCase() + defenceKey.slice(1))
                     .setValue(defenceKey)
