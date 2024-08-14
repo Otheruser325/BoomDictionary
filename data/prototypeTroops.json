@@ -5,14 +5,14 @@
         "maxLevel": 26,
         "attackSpeed": 1000,
         "attackRange": 20,
+        "unitSize": 14,
+        "trainingTime": "30m",
+        "movementSpeed": "Fast",
         "levels": {
             "12": {
                 "stats": {
                     "health": 1000,
-                    "damage": 100,
-                    "unitSize": 2,
-                    "trainingTime": "30m",
-                    "movementSpeed": "Fast"
+                    "damage": 100
                 },
                 "trainingCost": {
                     "gold": 1000
@@ -24,10 +24,7 @@
             "13": {
                 "stats": {
                     "health": 1200,
-                    "damage": 120,
-                    "unitSize": 2,
-                    "trainingTime": "35m",
-                    "movementSpeed": "Fast"
+                    "damage": 120
                 },
                 "trainingCost": {
                     "gold": 1200
@@ -39,10 +36,7 @@
             "14": {
                 "stats": {
                     "health": 1400,
-                    "damage": 140,
-                    "unitSize": 2,
-                    "trainingTime": "40m",
-                    "movementSpeed": "Fast"
+                    "damage": 140
                 },
                 "trainingCost": {
                     "gold": 1400
@@ -59,14 +53,14 @@
         "maxLevel": 26,
         "attackSpeed": 800,
         "attackRange": 25,
+        "unitSize": 14,
+        "trainingTime": "30m",
+        "movementSpeed": "Very Fast",
         "levels": {
             "12": {
                 "stats": {
                     "health": 900,
                     "damage": 90,
-                    "unitSize": 1,
-                    "trainingTime": "20m",
-                    "movementSpeed": "Very Fast"
                 },
                 "trainingCost": {
                     "gold": 800
@@ -78,10 +72,7 @@
             "13": {
                 "stats": {
                     "health": 1100,
-                    "damage": 110,
-                    "unitSize": 1,
-                    "trainingTime": "25m",
-                    "movementSpeed": "Very Fast"
+                    "damage": 110
                 },
                 "trainingCost": {
                     "gold": 1000
@@ -93,10 +84,7 @@
             "14": {
                 "stats": {
                     "health": 1300,
-                    "damage": 130,
-                    "unitSize": 1,
-                    "trainingTime": "30m",
-                    "movementSpeed": "Very Fast"
+                    "damage": 130
                 },
                 "trainingCost": {
                     "gold": 1200
@@ -113,14 +101,14 @@
         "maxLevel": 26,
         "attackSpeed": 100,
         "attackRange": 5.5,
+        "unitSize": 14,
+        "trainingTime": "30m",
+        "movementSpeed": "350"
         "levels": {
             "12": {
                 "stats": {
                     "health": 16800,
-                    "damage": 18,
-                    "unitSize": 14,
-                    "trainingTime": "30m",
-                    "movementSpeed": "350"
+                    "damage": 18
                 },
                 "trainingCost": {
                     "gold": 300
@@ -133,10 +121,7 @@
             "13": {
                 "stats": {
                     "health": 17555,
-                    "damage": 19,
-                    "unitSize": 14,
-                    "trainingTime": "30m",
-                    "movementSpeed": "350"
+                    "damage": 19
                 },
                 "trainingCost": {
                     "gold": 500
@@ -146,10 +131,7 @@
             "14": {
                 "stats": {
                     "health": 18300,
-                    "damage": 20,
-                    "unitSize": 14,
-                    "trainingTime": "30m",
-                    "movementSpeed": "350"
+                    "damage": 20
                 },
                 "trainingCost": {
                     "gold": 700
@@ -162,10 +144,7 @@
             "15": {
                 "stats": {
                     "health": 19100,
-                    "damage": 21,
-                    "unitSize": 14,
-                    "trainingTime": "30m",
-                    "movementSpeed": "350"
+                    "damage": 21
                 },
                 "trainingCost": {
                     "gold": 900
