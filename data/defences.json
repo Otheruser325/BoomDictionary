@@ -543,6 +543,20 @@
                 "upgradeCost": { "wood": 1970000, "stone": 1800000, "iron": 1180000 },
                 "upgradeTime": "1d",
                 "hqRequired": 18
+            },
+            "19": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/23/Cannon19.png/revision/latest/scale-to-width-down/120?cb=20150624172931",
+                "stats": { "health": 9100, "damage": 2334 },
+                "upgradeCost": { "wood": 2220000, "stone": 2160000, "iron": 1700000 },
+                "upgradeTime": "1d 4h",
+                "hqRequired": 19
+            },
+            "20": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/23/Cannon19.png/revision/latest/scale-to-width-down/120?cb=20150624172931",
+                "stats": { "health": 9900, "damage": 2568 },
+                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "upgradeTime": "1d 8h",
+                "hqRequired": 20
             }
         }
     },
