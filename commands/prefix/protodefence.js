@@ -47,7 +47,7 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
+        const buildCost = levelData.buildCost || { fuses: 0, gears: 0, rods: 0, capacitors: 0 };
         const attackSpeed = defenceData.attackSpeed || 'Unknown';
         const range = defenceData.range || 'Unknown';
         const marks = levelData.marks || 'Not specified';
@@ -63,8 +63,8 @@ module.exports = {
                 { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                 { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
                 { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
-                { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
-                { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
+                { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
+                { name: 'Build Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
                 { name: 'Marks', value: marks.toString(), inline: true }
             )
             .setColor('#0099ff');
