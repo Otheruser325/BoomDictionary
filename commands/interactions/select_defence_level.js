@@ -2,31 +2,11 @@ const { EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-const validDefenceTypes = {
-    'sniper tower': 'sniper_tower',
-    'mortar': 'mortar',
-    'machine gun': 'machine_gun',
-    'cannon': 'cannon',
-    'flamethrower': 'flamethrower',
-    'boom cannon': 'boom_cannon',
-    'rocket launcher': 'rocket_launcher',
-    'critter launcher': 'critter_launcher',
-    'shock launcher': 'shock_launcher'
-};
-
 module.exports = {
-    customId: 'select_defence_level',
+    customId: /^select_defence_level_.+/,
     async execute(interaction) {
         const selectedLevel = parseInt(interaction.values[0], 10);
-        const message = interaction.message;
-        const originalInteraction = message.interaction;
-        const selectedDefenceType = originalInteraction?.customId;
-
-        const defenceType = validDefenceTypes[selectedDefenceType];
-
-        if (!defenceType) {
-            return interaction.reply({ content: 'Invalid defence type selected!', ephemeral: true });
-        }
+        const defenceType = interaction.customId.split('_').slice(3).join('_'); // Extract the defence type from the customId
 
         const defenceData = defences[defenceType];
 
