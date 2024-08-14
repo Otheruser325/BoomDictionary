@@ -10,7 +10,7 @@ const validTroopTypes = {
 module.exports = {
     name: 'prototroop',
     description: 'Get statistics for a prototype troop.',
-    aliases: ['troop', 'prototypeTroop'],
+    aliases: ['prototypeTroop'],
     usage: '<troop_type> <level>',
     async execute(message, args) {
         if (args.length < 2) {
