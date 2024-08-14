@@ -22,7 +22,6 @@ module.exports = {
                             { name: 'Hot Pot', value: 'hot_pot' },
                             { name: 'Shield Generator', value: 'shield_generator' },
                             { name: 'Damage Amplifier', value: 'damage_amplifier' }
-                            // Add other prototype defences here
                         )
                 )
                 .addIntegerOption(option =>
@@ -41,8 +40,8 @@ module.exports = {
                         .setRequired(true)
                         .addChoices(
                             { name: 'Rain Maker', value: 'rain_maker' },
-                            { name: 'Lazortron', value: 'lazortron' }
-                            // Add other prototype troops here
+                            { name: 'Lazortron', value: 'lazortron' },
+                            { name: 'Critter Cannon', value: 'critter_cannon' }
                         )
                 )
                 .addIntegerOption(option =>
@@ -74,22 +73,27 @@ module.exports = {
             }
 
             const stats = levelData.stats;
-            const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
+            const buildCost = levelData.buildCost || { fuses: 0, gears: 0, rods: 0, capacitors: 0 };
             const attackSpeed = defenceData.attackSpeed || 'Unknown';
             const range = defenceData.range || 'Unknown';
             const marks = levelData.marks || 'Not specified';
+            const image = levelData.image || '';
+
+            const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
                 .setDescription(defenceData.description || 'No description available.')
+                .setThumbnail(image)
                 .addFields(
                     { name: 'Health', value: formatNumber(stats.health), inline: true },
-                    { name: 'DPS', value: formatNumber((stats.damage / (attackSpeed / 1000)).toFixed(2)), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                     { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: `${attackSpeed} ms`, inline: true },
-                    { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
-                    { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
+                    { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
+                    { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
+                    { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
                     { name: 'Marks', value: marks.toString(), inline: true }
                 )
                 .setColor('#0099ff');
@@ -105,8 +109,8 @@ module.exports = {
                 return interaction.reply({ content: 'Invalid prototype troop type!', ephemeral: true });
             }
 
-            if (level < 1 || level > (troopData.maxLevel || 26)) {
-                return interaction.reply({ content: `Invalid level! Please provide a level between 1 and ${troopData.maxLevel || 26}.`, ephemeral: true });
+            if (level < 12 || level > (troopData.maxLevel || 26)) {
+                return interaction.reply({ content: `Invalid level! Please provide a level between 12 and ${troopData.maxLevel || 26}.`, ephemeral: true });
             }
 
             const levelData = troopData.levels[level];
