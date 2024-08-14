@@ -2,7 +2,12 @@ const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMen
 const troops = require('../../data/troops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-const validTroopTypes = ['rifleman', 'heavy', 'zooka', 'tank'];
+const validTroopTypes = {
+    'rifleman': 'rifleman',
+    'heavy': 'heavy',
+    'zooka': 'zooka',
+    'tank': 'tank'
+};
 
 module.exports = {
     name: 'troop',
@@ -12,12 +17,13 @@ module.exports = {
 
     async execute(message, args) {
         if (args.length === 0) {
-            const troopOptions = validTroopTypes.map(troopType => {
-                const troop = troops[troopType];
+            const troopOptions = Object.keys(validTroopTypes).map(troopKey => {
+                const troop = troops[validTroopTypes[troopKey]];
+                const description = (troop && troop.description) ? troop.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
-                    .setLabel(troop.name)
-                    .setValue(troopType)
-                    .setDescription(troop.description || 'No description available.');
+                    .setLabel(troop.name.charAt(0).toUpperCase() + troop.name.slice(1))
+                    .setValue(troopKey)
+                    .setDescription(description);
             });
 
             const selectMenu = new StringSelectMenuBuilder()
@@ -34,12 +40,13 @@ module.exports = {
 
             await message.channel.send({ embeds: [embed], components: [row] });
         } else {
-            const troopType = args[0].toLowerCase();
-            const level = parseInt(args[1], 10);
+            const userFriendlyTroopType = args.slice(0, -1).join(' ').toLowerCase().trim();
+            const level = parseInt(args[args.length - 1], 10);
 
-            // Check for valid troop type
-            if (!validTroopTypes.includes(troopType)) {
-                return message.reply(`Invalid troop type! Available types are: ${validTroopTypes.join(', ')}.`);
+            const troopType = validTroopTypes[userFriendlyTroopType];
+
+            if (!troopType) {
+                return message.reply(`Invalid troop type! Available types are: ${Object.keys(validTroopTypes).join(', ')}.`);
             }
 
             const troopData = troops[troopType];
