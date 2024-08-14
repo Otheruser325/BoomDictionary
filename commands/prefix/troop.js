@@ -20,19 +20,13 @@ module.exports = {
         if (args.length === 0) {
             const troopOptions = Object.keys(validTroopTypes).map(troopKey => {
                 const troop = troops[validTroopTypes[troopKey]];
-                
-                // Guard clause to handle undefined troop data
-                if (!troop) {
-                    return null;
-                }
-
                 const description = (troop && troop.description) ? troop.description.substring(0, 100) : 'No description available.';
                 return new StringSelectMenuOptionBuilder()
-                    .setLabel(troop.name.charAt(0).toUpperCase() + troop.name.slice(1))
+                    .setLabel(troopKey.charAt(0).toUpperCase() + troopKey.slice(1))
                     .setValue(troopKey)
                     .setDescription(description);
-            }).filter(option => option !== null); // Filter out null values
-            
+            });
+
             const selectMenu = new StringSelectMenuBuilder()
                 .setCustomId('select_troop_type')
                 .setPlaceholder('Select a troop type')
