@@ -2,7 +2,6 @@ const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMen
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-// Mapping user-friendly names to actual keys in defences.json
 const validDefenceTypes = {
     'sniper tower': 'sniper_tower',
     'mortar': 'mortar',
@@ -24,7 +23,6 @@ module.exports = {
 
     async execute(message, args) {
         if (args.length === 0) {
-            // No arguments; show select menu for defence types
             const defenceOptions = Object.keys(validDefenceTypes).map(defenceKey => {
                 const defence = defences[validDefenceTypes[defenceKey]];
                 const description = (defence && defence.description) ? defence.description.substring(0, 100) : 'No description available.';
@@ -48,11 +46,9 @@ module.exports = {
 
             await message.channel.send({ embeds: [embed], components: [row] });
         } else {
-            // Arguments provided; process defence type and level
             const userFriendlyDefenceType = args.slice(0, -1).join(' ').toLowerCase().trim();
             const level = parseInt(args[args.length - 1], 10);
 
-            // Map user-friendly name to actual key
             const defenceType = validDefenceTypes[userFriendlyDefenceType];
 
             if (!defenceType) {
@@ -76,11 +72,10 @@ module.exports = {
 
             const stats = levelData.stats;
             const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
-            const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
-            const range = defenceData.range || 'Unknown'; // Range in game units
-            const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
+            const attackSpeed = defenceData.attackSpeed || 'Unknown';
+            const range = defenceData.range || 'Unknown';
+            const hqRequired = levelData.hqRequired || 'Not specified';
 
-            // Calculate DPS
             const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
             const embed = new EmbedBuilder()
