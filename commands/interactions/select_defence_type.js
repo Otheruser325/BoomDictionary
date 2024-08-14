@@ -17,25 +17,18 @@ module.exports = {
     customId: 'select_defence_type',
     async execute(interaction) {
         const selectedDefenceType = interaction.values[0];
-        const defenceType = validDefenceTypes[selectedDefenceType];
+        const defenceData = defences[selectedDefenceType];
 
-        if (!defenceType) {
+        if (!defenceData) {
             return interaction.reply({ content: 'Invalid defence type selected!', ephemeral: true });
         }
 
-        const defenceData = defences[defenceType];
-
-        if (!defenceData) {
-            return interaction.reply({ content: 'No data found for the selected defence type.', ephemeral: true });
-        }
-
-        // Create the level options menu
         const maxOptions = 25;
         const levels = Array.from({ length: defenceData.maxLevel }, (_, i) => i + 1);
         const levelOptions = levels.slice(0, maxOptions).map(level => {
             return new StringSelectMenuOptionBuilder()
                 .setLabel(`Level ${level}`)
-                .setValue(`${defenceType}-${level}`)
+                .setValue(`${selectedDefenceType}-${level}`)
                 .setDescription(defenceData.levels[level]?.upgradeTime || 'No details available.');
         });
 
@@ -51,6 +44,13 @@ module.exports = {
             .setDescription('Please choose a level to view its details.')
             .setColor('#0099ff');
 
-        await interaction.update({ embeds: [embed], components: [row] });
+        try {
+            await interaction.update({ embeds: [embed], components: [row] });
+        } catch (error) {
+            console.error('Error updating interaction:', error);
+            if (error.code === 10062 || error.code === 40060) { 
+                return interaction.followUp({ content: 'There was an issue processing your request. Please try again.', ephemeral: true });
+            }
+        }
     }
 };
