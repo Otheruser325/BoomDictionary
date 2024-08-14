@@ -15,7 +15,7 @@ const validDefenceTypes = {
 };
 
 module.exports = {
-    name: 'select_defence_type',
+    customId: 'select_defence_type',
     async execute(interaction) {
         const selectedDefenceType = interaction.values[0];
         const defenceType = validDefenceTypes[selectedDefenceType];
