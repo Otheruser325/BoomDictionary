@@ -3,7 +3,7 @@ const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 module.exports = {
-    name: 'select_defence_level',
+    customId: 'select_defence_level',
     async execute(interaction) {
         const selectedLevel = parseInt(interaction.values[0], 10);
         const selectedDefenceType = interaction.message.interaction?.customId;
