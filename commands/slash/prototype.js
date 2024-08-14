@@ -21,7 +21,9 @@ module.exports = {
                             { name: 'Grappler', value: 'grappler' },
                             { name: 'Hot Pot', value: 'hot_pot' },
                             { name: 'Shield Generator', value: 'shield_generator' },
-                            { name: 'Damage Amplifier', value: 'damage_amplifier' }
+                            { name: 'Damage Amplifier', value: 'damage_amplifier' },
+                            { name: 'Boom Surprise', value: 'boom_surprise' },
+                            { name: 'S.I.M.O.', value: 'simo' }
                         )
                 )
                 .addIntegerOption(option =>
