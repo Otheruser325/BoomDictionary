@@ -75,12 +75,30 @@ module.exports = {
 
             const stats = levelData.stats;
             const buildCost = levelData.buildCost || { fuses: 0, gears: 0, rods: 0, capacitors: 0 };
-            const attackSpeed = defenceType === 'grappler' ? (levelData.special ? 3000 - (level - 1) * 1000 : defenceData.attackSpeed) : defenceData.attackSpeed || 'Unknown';
             const range = defenceData.range || 'Unknown';
             const marks = levelData.marks || 'Not specified';
             const image = levelData.image || '';
+            let attackSpeed = defenceData.attackSpeed || 'Unknown';
+            if (defenceType === 'grappler') {
+                // Special handling for Grappler
+                if (level >= 2) {
+                    attackSpeed = 5000 - (level - 1) * 1000; // Reduces by 1s per level from level 2
+                }
+            }
 
             const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+
+            // Handle special stats for certain prototype defences
+            let special = '';
+            if (defenceType === 'shock_blaster') {
+                special = level === 1 ? 'Stuns enemies for 0.6s with each hit; reapplies' :
+                         level === 2 ? 'Stuns enemies for 0.8s with each hit; reapplies' :
+                         'Stuns enemies for 1s with each hit; reapplies';
+            } else if (defenceType === 'damage_amplifier') {
+                special = level === 1 ? 'Provides 50% damage boost to nearby defences' :
+                         level === 2 ? 'Provides 75% damage boost to nearby defences' :
+                         'Provides 100% damage boost to nearby defences';
+            }
 
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
@@ -95,7 +113,8 @@ module.exports = {
                     { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
                     { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
                     { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
-                    { name: 'Marks', value: marks.toString(), inline: true }
+                    { name: 'Marks', value: marks.toString(), inline: true },
+                    { name: 'Special', value: special || 'None', inline: true }
                 )
                 .setColor('#0099ff');
 
