@@ -6,7 +6,7 @@
         "attackSpeed": 1000,
         "attackRange": 20,
         "levels": {
-            "1": {
+            "12": {
                 "stats": {
                     "health": 1000,
                     "damage": 100,
@@ -21,7 +21,7 @@
                     "gold": 500
                 }
             },
-            "2": {
+            "13": {
                 "stats": {
                     "health": 1200,
                     "damage": 120,
@@ -36,7 +36,7 @@
                     "gold": 600
                 }
             },
-            "3": {
+            "14": {
                 "stats": {
                     "health": 1400,
                     "damage": 140,
@@ -60,7 +60,7 @@
         "attackSpeed": 800,
         "attackRange": 25,
         "levels": {
-            "1": {
+            "12": {
                 "stats": {
                     "health": 900,
                     "damage": 90,
@@ -75,7 +75,7 @@
                     "gold": 400
                 }
             },
-            "2": {
+            "13": {
                 "stats": {
                     "health": 1100,
                     "damage": 110,
@@ -90,7 +90,7 @@
                     "gold": 500
                 }
             },
-            "3": {
+            "14": {
                 "stats": {
                     "health": 1300,
                     "damage": 130,
@@ -109,7 +109,7 @@
     },
     "heavy_choppa": {
         "name": "Heavy Choppa",
-        "description": "TBA",
+        "description": "A powerful troop with significant health and damage output.",
         "maxLevel": 26,
         "attackSpeed": 100,
         "attackRange": 5.5,
@@ -122,8 +122,12 @@
                     "trainingTime": "30m",
                     "movementSpeed": "350"
                 },
-                "trainingCost": { "gold": 300 },
-                "researchCost": { "gold": 0 },
+                "trainingCost": {
+                    "gold": 300
+                },
+                "researchCost": {
+                    "gold": 0
+                },
                 "armoryRequired": 12
             },
             "13": {
@@ -134,8 +138,9 @@
                     "trainingTime": "30m",
                     "movementSpeed": "350"
                 },
-                "trainingCost": { "gold": 500 },
-                "researchCost": { "gold": 10400 },
+                "trainingCost": {
+                    "gold": 500
+                },
                 "armoryRequired": 13
             },
             "14": {
@@ -146,8 +151,12 @@
                     "trainingTime": "30m",
                     "movementSpeed": "350"
                 },
-                "trainingCost": { "gold": 700 },
-                "researchCost": { "gold": 21800 },
+                "trainingCost": {
+                    "gold": 700
+                },
+                "researchCost": {
+                    "gold": 21800
+                },
                 "armoryRequired": 14
             },
             "15": {
@@ -158,8 +167,12 @@
                     "trainingTime": "30m",
                     "movementSpeed": "350"
                 },
-                "trainingCost": { "gold": 900 },
-                "researchCost": { "gold": 47000 },
+                "trainingCost": {
+                    "gold": 900
+                },
+                "researchCost": {
+                    "gold": 47000
+                },
                 "armoryRequired": 15
             }
         }
