@@ -30,7 +30,10 @@ module.exports = {
             return interaction.reply({ content: 'No data found for the selected defence type.', ephemeral: true });
         }
 
-        const levelOptions = Array.from({ length: defenceData.maxLevel }, (_, i) => i + 1).map(level => {
+        // Limit the number of options to 25
+        const maxOptions = 25;
+        const levels = Array.from({ length: defenceData.maxLevel }, (_, i) => i + 1);
+        const levelOptions = levels.slice(0, maxOptions).map(level => {
             return new StringSelectMenuOptionBuilder()
                 .setLabel(`Level ${level}`)
                 .setValue(level.toString())
