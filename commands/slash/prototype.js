@@ -19,6 +19,7 @@ module.exports = {
                             { name: 'Doom Cannon', value: 'doom_cannon' },
                             { name: 'Shock Blaster', value: 'shock_blaster' },
                             { name: 'Lazor Beam', value: 'lazor_beam' },
+                            { name: 'Grappler', value: 'grappler' },
                             { name: 'Hot Pot', value: 'hot_pot' },
                             { name: 'Shield Generator', value: 'shield_generator' },
                             { name: 'Damage Amplifier', value: 'damage_amplifier' }
