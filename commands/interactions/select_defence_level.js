@@ -2,18 +2,31 @@ const { EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-module.exports = {
-    customId: /^select_defence_level_/,
-    async execute(interaction) {
-        // Extract the defenceType from the customId
-        const customId = interaction.customId;
-        const match = customId.match(/^select_defence_level_(.+)$/);
-        if (!match) {
-            return interaction.reply({ content: 'Invalid interaction ID!', ephemeral: true });
-        }
-        const defenceType = match[1];
+const validDefenceTypes = {
+    'sniper tower': 'sniper_tower',
+    'mortar': 'mortar',
+    'machine gun': 'machine_gun',
+    'cannon': 'cannon',
+    'flamethrower': 'flamethrower',
+    'boom cannon': 'boom_cannon',
+    'rocket launcher': 'rocket_launcher',
+    'critter launcher': 'critter_launcher',
+    'shock launcher': 'shock_launcher'
+};
 
+module.exports = {
+    customId: 'select_defence_level',
+    async execute(interaction) {
         const selectedLevel = parseInt(interaction.values[0], 10);
+        const message = interaction.message;
+        const originalInteraction = message.interaction;
+        const selectedDefenceType = originalInteraction?.customId;
+
+        const defenceType = validDefenceTypes[selectedDefenceType];
+
+        if (!defenceType) {
+            return interaction.reply({ content: 'Invalid defence type selected!', ephemeral: true });
+        }
 
         const defenceData = defences[defenceType];
 
@@ -32,11 +45,10 @@ module.exports = {
 
         const stats = levelData.stats;
         const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
-        const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
-        const range = defenceData.range || 'Unknown'; // Range in game units
-        const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
+        const attackSpeed = defenceData.attackSpeed || 'Unknown';
+        const range = defenceData.range || 'Unknown';
+        const hqRequired = levelData.hqRequired || 'Not specified';
 
-        // Calculate DPS
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
