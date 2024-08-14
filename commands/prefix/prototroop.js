@@ -1,64 +1,52 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const prototypeTroops = require('../../data/prototypeTroops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
-// Mapping user-friendly names to actual keys in prototypeTroops.json
 const validTroopTypes = {
     'rain maker': 'rain_maker',
     'lazortron': 'lazortron'
-    // Add other prototype troops here
 };
 
 module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('prototroop')
-        .setDescription('Get statistics for a prototype troop.')
-        .addStringOption(option =>
-            option.setName('troop_type')
-                .setDescription('Type of prototype troop')
-                .setRequired(true)
-                .addChoices(
-                    { name: 'Rain Maker', value: 'rain maker' },
-                    { name: 'Lazortron', value: 'lazortron' }
-                    // Add other prototype troops here
-                )
-        )
-        .addIntegerOption(option =>
-            option.setName('level')
-                .setDescription('Level of the prototype troop')
-                .setRequired(true)
-        ),
-    async execute(interaction) {
-        const troopType = interaction.options.getString('troop_type');
-        const level = interaction.options.getInteger('level');
+    name: 'prototroop',
+    description: 'Get statistics for a prototype troop.',
+    aliases: ['troop', 'prototypeTroop'],
+    usage: '<troop_type> <level>',
+    async execute(message, args) {
+        if (args.length < 2) {
+            return message.reply('Please provide both the troop type and level. Usage: `!prototroop <troop_type> <level>`');
+        }
+
+        const troopType = args[0].toLowerCase();
+        const level = parseInt(args[1], 10);
 
         // Map user-friendly name to actual key
         const mappedTroopType = validTroopTypes[troopType];
 
         if (!mappedTroopType) {
-            return interaction.reply({ content: 'Invalid prototype troop type!', ephemeral: true });
+            return message.reply('Invalid prototype troop type!');
         }
 
         const troopData = prototypeTroops[mappedTroopType];
 
         if (!troopData) {
-            return interaction.reply({ content: 'No data found for the provided prototype troop type.', ephemeral: true });
+            return message.reply('No data found for the provided prototype troop type.');
         }
 
         if (level < 1 || level > (troopData.maxLevel || 26)) {
-            return interaction.reply({ content: `Invalid level! Please provide a level between 1 and ${troopData.maxLevel || 26}.`, ephemeral: true });
+            return message.reply(`Invalid level! Please provide a level between 1 and ${troopData.maxLevel || 26}.`);
         }
 
         const levelData = troopData.levels[level];
         if (!levelData) {
-            return interaction.reply({ content: `No data available for level ${level}.`, ephemeral: true });
+            return message.reply(`No data available for level ${level}.`);
         }
 
         const stats = levelData.stats;
         const trainingCost = levelData.trainingCost || { gold: 0 };
         const researchCost = levelData.researchCost || { gold: 0 };
 
-        const embed = new EmbedBuilder()
+        const embed = new MessageEmbed()
             .setTitle(`${troopData.name} - Level ${level}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
@@ -75,6 +63,6 @@ module.exports = {
             )
             .setColor('#0099ff');
 
-        await interaction.reply({ embeds: [embed] });
+        await message.reply({ embeds: [embed] });
     },
 };
