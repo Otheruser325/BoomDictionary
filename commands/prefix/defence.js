@@ -1,8 +1,8 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
-const selectDefenceType = require('../interactions/select_defence_type');
-const selectDefenceLevel = require('../interactions/select_defence_level');
+const selectDefenceType = require('../../commands/interactions/select_defence_type.js');
+const selectDefenceLevel = require('../../commands/interactions/select_defence_level.js');
 
 // Mapping user-friendly names to actual keys in defences.json
 const validDefenceTypes = {
