@@ -233,72 +233,84 @@
                 "hqRequired": 11
             },
             "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/ba/Mortar11.png/revision/latest/scale-to-width-down/100?cb=20160314173319",
                 "stats": { "health": 4600, "damage": 170 },
                 "upgradeCost": { "wood": 217000, "stone": 102000, "iron": 26700 },
                 "upgradeTime": "8h",
                 "hqRequired": 12
             },
             "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d5/Mortar12.png/revision/latest/scale-to-width-down/115?cb=20160314173401",
                 "stats": { "health": 5100, "damage": 185 },
                 "upgradeCost": { "wood": 320000, "stone": 191000, "iron": 54000 },
                 "upgradeTime": "10h",
                 "hqRequired": 13
             },
             "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/2a/Mortar13.png/revision/latest/scale-to-width-down/105?cb=20160314173744",
                 "stats": { "health": 5500, "damage": 205 },
                 "upgradeCost": { "wood": 460000, "stone": 400000, "iron": 110000 },
                 "upgradeTime": "12h",
                 "hqRequired": 14
             },
             "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f7/Mortar14.png/revision/latest/scale-to-width-down/100?cb=20160320121024",
                 "stats": { "health": 6000, "damage": 225 },
                 "upgradeCost": { "wood": 810000, "stone": 610000, "iron": 224000 },
                 "upgradeTime": "14h",
                 "hqRequired": 15
             },
             "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f7/Mortar14.png/revision/latest/scale-to-width-down/100?cb=20160320121024",
                 "stats": { "health": 6500, "damage": 245 },
                 "upgradeCost": { "wood": 1180000, "stone": 1050000, "iron": 460000 },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
                 "stats": { "health": 7100, "damage": 270 },
                 "upgradeCost": { "wood": 1720000, "stone": 1420000, "iron": 900000 },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
                 "stats": { "health": 7700, "damage": 300 },
                 "upgradeCost": { "wood": 2170000, "stone": 1980000, "iron": 1300000 },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "18": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
                 "stats": { "health": 8400, "damage": 330 },
                 "upgradeCost": { "wood": 2520000, "stone": 2450000, "iron": 1920000 },
                 "upgradeTime": "1d",
                 "hqRequired": 19
             },
             "19": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
                 "stats": { "health": 9100, "damage": 360 },
                 "upgradeCost": { "wood": 2880000, "stone": 2880000, "iron": 2870000 },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 20
             },
             "20": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
                 "stats": { "health": 9900, "damage": 400 },
                 "upgradeCost": { "wood": 2960000, "stone": 2970000, "iron": 2950000 },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
             },
             "21": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/37/Mortar21.png/revision/latest/scale-to-width-down/130?cb=20160315214349",
                 "stats": { "health": 10800, "damage": 435 },
                 "upgradeCost": { "wood": 3420000, "stone": 3100000, "iron": 3070000 },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 21
             },
             "22": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
                 "stats": { "health": 11880, "damage": 480 },
                 "upgradeCost": { "wood": 3750000, "stone": 3400000, "iron": 3360000 },
                 "upgradeTime": "1d 12h",
