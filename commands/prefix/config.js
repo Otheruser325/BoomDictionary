@@ -1,4 +1,5 @@
 const { setVoiceChannel } = require('../../utils/voiceChannelConfig');
+const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
     name: 'config',
@@ -6,7 +7,7 @@ module.exports = {
     async execute(message, args) {
         // Check if the user has the necessary permissions
         const member = message.member;
-        if (!member.permissions.has('ADMINISTRATOR') && !member.permissions.has('MANAGE_CHANNELS')) {
+        if (!member.permissions.has(PermissionsBitField.Flags.Administrator) && !member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
             return message.channel.send('You do not have permission to use this command.');
         }
 
@@ -20,7 +21,7 @@ module.exports = {
         const channel = message.guild.channels.cache.get(channelId);
 
         // Check if the channel is valid and of type GUILD_VOICE
-        if (!channel || channel.type !== 'GUILD_VOICE') {
+        if (!channel || channel.type !== 2) { // 2 represents GUILD_VOICE in Discord.js v14
             return message.channel.send('Please select a valid voice channel.');
         }
 
