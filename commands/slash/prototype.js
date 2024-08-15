@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const prototypeDefences = require('../../data/prototypeDefences.json');
+const prototypeTroops = require('../../data/prototypeTroops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 module.exports = {
