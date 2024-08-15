@@ -196,6 +196,7 @@ module.exports = {
                     { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
                 );
             } else if (troopType === 'turret_engineer') {
+                const spawnSpeed = level < 26 ? 7000 - (level - 12) * 100 : 5600;
                 const turretHealth = stats.turretHealth || 0;
                 const turretDamage = stats.turretDamage || 0;
                 const turretDPS = (turretDamage / (attackSpeed / 1000)).toFixed(2);
@@ -211,7 +212,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Spawn Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
+                    { name: 'Spawn Speed', value: spawnSpeed ? `${spawnSpeed} ms` : 'Unknown', inline: true }
                 );
             } else {
                 // Handle general troop stats
