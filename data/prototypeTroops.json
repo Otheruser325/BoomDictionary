@@ -2,6 +2,7 @@
     "lazortron": {
         "name": "Lazortron MK II.",
         "description": "Breakthrough in the battery tech has allowed Blackguard to mount Lazor Beams on tanks. It will burn its way through enemy defenses with pinpoint precision.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/9/9b/Lazortron.png/revision/latest/scale-to-width-down/250?cb=20180414060132",
         "maxLevel": 26,
         "attackSpeed": 64,
         "attackRange": 12.5,
@@ -164,6 +165,7 @@
     "rain_maker": {
         "name": "Rain Maker",
         "description": "This experimental long range artillery will outrange all but the most far-reaching defenses and rain down with its badaboom shells.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/2/22/RainMaker.png/revision/latest/scale-to-width-down/240?cb=20180106105759",
         "maxLevel": 26,
         "attackSpeed": 10000,
         "attackRange": 17,
@@ -326,6 +328,7 @@
     "critter_cannon": {
         "name": "Critter Cannon MK II.",
         "description": "The critters' popularity and success on the battlefield inspired the creation of this prototype. Swamp enemies with these cute and deadly machines!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/f/f9/Critter_Cannon.png/revision/latest/scale-to-width-down/300?cb=20240307085840",
         "maxLevel": 26,
         "attackSpeed": 7600,
         "attackRange": 14.5,
@@ -503,6 +506,7 @@
     "rocket_choppa": {
         "name": "Rocket Choppa",
         "description": "Like a buzzing wasp on a hot summer day, small and annoying and fires rockets at you!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/0/01/Rocket_Choppa.png/revision/latest/scale-to-width-down/300?cb=20191211191545",
         "maxLevel": 26,
         "attackSpeed": 1500,
         "attackRange": 9.5,
@@ -665,6 +669,7 @@
     "heavy_choppa": {
         "name": "Heavy Choppa",
         "description": "A powerful troop with significant health and damage output.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/a/a6/Heavy_Choppa.png/revision/latest/scale-to-width-down/300?cb=20191211191513",
         "maxLevel": 26,
         "attackSpeed": 100,
         "attackRange": 5.5,
@@ -827,6 +832,7 @@
     "turret_engineer": {
         "name": "Turret Engineer",
         "description": "This crafty Engineer has designed compact turrets that expand upon hitting the ground and attack enemy buildings.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/Turret_Engineer_2.png/revision/latest/scale-to-width-down/95?cb=20220608162139",
         "maxLevel": 26,
         "attackSpeed": 7000,
         "attackRange": 8.2,
@@ -1021,6 +1027,7 @@
     "cryobombardier": {
         "name": "Cryobombardier",
         "description": "These Bombardiers throw ice bombs against enemy buildings, slowing them down and dealing moderate damage. They require extra energy to deploy as they are slightly older (but more experienced) than most troops.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/7/75/Cryobombardier.png/revision/latest/scale-to-width-down/250?cb=20200610125034",
         "maxLevel": 26,
         "attackSpeed": 2200,
         "attackRange": 12,
