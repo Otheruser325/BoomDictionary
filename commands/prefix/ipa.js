@@ -24,7 +24,7 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                const fileName = termData.terminology || term;
+                const fileName = (termData.terminology || term).toLowerCase();
                 const formattedFileName = fileName
                     .split(' ')
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -43,7 +43,7 @@ module.exports = {
                 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${term}`) // Use a custom ID for interaction
+                        .setCustomId(fileName)
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
