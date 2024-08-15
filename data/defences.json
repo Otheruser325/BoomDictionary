@@ -874,6 +874,34 @@
                 "upgradeCost": { "wood": 1400000, "stone": 1150000, "iron": 730000 },
                 "upgradeTime": "18h",
                 "hqRequired": 17
+            },
+            "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/21/Flamethrower14.png/revision/latest/scale-to-width-down/100?cb=20151105050636",
+                "stats": { "health": 6900, "damage": 41.4 },
+                "upgradeCost": { "wood": 1710000, "stone": 1560000, "iron": 1020000 },
+                "upgradeTime": "20h",
+                "hqRequired": 18
+            },
+            "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
+                "stats": { "health": 7500, "damage": 45.6 },
+                "upgradeCost": { "wood": 1920000, "stone": 1870000, "iron": 1470000 },
+                "upgradeTime": "22h",
+                "hqRequired": 19
+            },
+            "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
+                "stats": { "health": 8200, "damage": 50.2 },
+                "upgradeCost": { "wood": 2140000, "stone": 2140000, "iron": 2130000 },
+                "upgradeTime": "1d",
+                "hqRequired": 20
+            },
+            "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
+                "stats": { "health": 8900, "damage": 55.2 },
+                "upgradeCost": { "wood": 2260000, "stone": 2270000, "iron": 2260000 },
+                "upgradeTime": "1d 4h",
+                "hqRequired": 20
             }
         }
     },
