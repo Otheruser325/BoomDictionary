@@ -74,22 +74,12 @@ module.exports = {
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
-            let dps = 'N/A';
-            let damagePerShot = 'N/A';
-
-            // Check if the troop has direct damage or not (like Critter Cannon)
-            if (stats.damage !== null) {
-                dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
-                damagePerShot = formatNumber(stats.damage.toString());
-            }
-
-            const embed = new EmbedBuilder()
+            let embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
+                .setColor('#0099ff')
                 .addFields(
                     { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
-                    { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
-                    { name: 'Damage Per Shot', value: damagePerShot, inline: true },
                     { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
                     { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
                     { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
@@ -97,8 +87,32 @@ module.exports = {
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: formatNumber(troopData.attackRange.toString()), inline: true },
                     { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
-                )
-                .setColor('#0099ff');
+                );
+
+            // Handle Critter Cannon's unique stats
+            if (troopType === 'critter_cannon') {
+                const crittersPerSalvo = levelData.crittersPerSalvo || 0;
+                const crittersPerSecond = (crittersPerSalvo / (attackSpeed / 1000)).toFixed(2); // crittersPerSalvo divided by attackSpeed in seconds
+
+                embed.addFields(
+                    { name: 'Critters Per Salvo', value: formatNumber(crittersPerSalvo.toString()), inline: true },
+                    { name: 'Critters Per Second', value: crittersPerSecond, inline: true }
+                );
+            } else {
+                // Handle general troop stats
+                let dps = 'N/A';
+                let damagePerShot = 'N/A';
+
+                if (stats.damage !== null) {
+                    dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+                    damagePerShot = stats.damage.toString();
+                }
+
+                embed.addFields(
+                    { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
+                    { name: 'Damage Per Shot', value: damagePerShot, inline: true }
+                );
+            }
 
             await message.channel.send({ embeds: [embed] });
         }
