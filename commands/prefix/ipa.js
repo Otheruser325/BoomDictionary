@@ -24,23 +24,24 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology, pronunciation } = termData;
 
-                const fileName = (termData.terminology || term).toLowerCase().replace(/ /g, '_'); // Use underscores instead of spaces
-                const formattedFileName = encodeURIComponent(fileName) + '.mp3';
+                // Format the file name for the pronunciation audio
+                const fileName = terminology.toLowerCase().replace(/ /g, '_');
+                const mp3FileName = `${fileName}.mp3`; // Name of the file in the server
 
                 const embed = new EmbedBuilder()
-                    .setTitle(`Pronunciation for ${terminology || term}`)
-                    .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
+                    .setTitle(`Pronunciation for ${terminology}`)
+                    .setDescription(`Here is the pronunciation for the word \`${terminology}\`, generated with Microsoft Hazel.`)
                     .addFields(
                         { name: 'Category', value: category },
                         { name: 'Pronunciation', value: pronunciation || 'Not available' }
                     )
                     .setColor('#0099ff');
 
-                const mp3URL = `${BASE_URL}/${formattedFileName}`;
+                const mp3URL = `${BASE_URL}/${mp3FileName}`; // URL to the pronunciation file
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${fileName}`) // Set customId without .mp3
+                        .setCustomId(`play_pronunciation_${fileName}`) // Correct customId
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
@@ -52,7 +53,7 @@ module.exports = {
                 await message.channel.send({ embeds: [embed], components: [components] });
 
                 pronunciationFound = true;
-                break;
+                break; // Exit the loop once the term is found
             }
         }
 
