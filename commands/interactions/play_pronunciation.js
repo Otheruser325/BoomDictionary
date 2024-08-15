@@ -8,7 +8,14 @@ module.exports = {
         if (!interaction.isButton()) return;
 
         // Extract the term from the customId JSON object
-        const { term } = JSON.parse(interaction.customId);
+        let term;
+        try {
+            const { term: parsedTerm } = JSON.parse(interaction.customId);
+            term = parsedTerm;
+        } catch (error) {
+            console.error('Error parsing customId:', error);
+            return interaction.reply({ content: 'There was an error processing your request.', ephemeral: true });
+        }
 
         // Base URL for fetching MP3 files
         const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
@@ -17,7 +24,6 @@ module.exports = {
         // Retrieve the voice channel either from configuration or the user's current voice channel
         let voiceChannelId = getVoiceChannel(interaction.guild.id);
         if (!voiceChannelId) {
-            // If no configured voice channel, use the voice channel the user is currently in
             const memberVoiceChannel = interaction.member.voice.channel;
             if (!memberVoiceChannel) {
                 await interaction.reply({ content: 'You are not in a voice channel, and no channel is configured. Please join a voice channel or configure one with the `/config` command.', ephemeral: true });
@@ -44,18 +50,22 @@ module.exports = {
         const player = createAudioPlayer();
 
         // Stream the MP3 from the URL and create an audio resource
-        const stream = await fetchStreamFromUrl(mp3Url);
-        const resource = createAudioResource(stream);
+        try {
+            const stream = await fetchStreamFromUrl(mp3Url);
+            const resource = createAudioResource(stream);
+            player.play(resource);
+            connection.subscribe(player);
 
-        // Play the resource
-        player.play(resource);
-        connection.subscribe(player);
+            player.on(AudioPlayerStatus.Idle, () => {
+                connection.destroy();  // Leave the voice channel when done
+            });
 
-        player.on(AudioPlayerStatus.Idle, () => {
-            connection.destroy();  // Leave the voice channel when done
-        });
-
-        await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
+            await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
+        } catch (error) {
+            console.error('Error fetching or playing audio:', error);
+            await interaction.reply({ content: 'There was an error fetching or playing the pronunciation.', ephemeral: true });
+            connection.destroy(); // Ensure the bot leaves the channel on failure
+        }
     }
 };
 
