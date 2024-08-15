@@ -769,6 +769,55 @@
                 "upgradeCost": { "wood": 760000, "stone": 680000, "iron": 298000 },
                 "upgradeTime": "12h",
                 "hqRequired": 16
+            },
+            "7": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 6900, "damage": 40.25 },
+                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "upgradeTime": "14h",
+                "hqRequired": 16
+            },
+            "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 6900, "damage": 44.45 },
+                "upgradeCost": { "wood": 1210000, "stone": 1000000, "iron": 630000 },
+                "upgradeTime": "16h",
+                "hqRequired": 17
+            },
+            "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 8200, "damage": 48.65 },
+                "upgradeCost": { "wood": 1480000, "stone": 1350000, "iron": 890000 },
+                "upgradeTime": "18h",
+                "hqRequired": 18
+            },
+            "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 9000, "damage": 53.55 },
+                "upgradeCost": { "wood": 1850000, "stone": 1800000, "iron": 1420000 },
+                "upgradeTime": "20h",
+                "hqRequired": 19
+            },
+            "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 9800, "damage": 59.15 },
+                "upgradeCost": { "wood": 1920000, "stone": 1870000, "iron": 1470000 },
+                "upgradeTime": "1d",
+                "hqRequired": 19
+            },
+            "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
+                "stats": { "health": 10700, "damage": 64.75 },
+                "upgradeCost": { "wood": 2060000, "stone": 2060000, "iron": 2050000 },
+                "upgradeTime": "1d 4h",
+                "hqRequired": 20
+            },
+            "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8c/RocketLauncher13.png/revision/latest/scale-to-width-down/150?cb=20160319191036",
+                "stats": { "health": 11800, "damage": 71.4 },
+                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "upgradeTime": "1d 8h",
+                "hqRequired": 20
             }
         }
     }
