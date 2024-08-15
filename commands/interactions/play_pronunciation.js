@@ -1,29 +1,26 @@
 const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
 const { get } = require('https');
+const path = require('path');
 
 module.exports = {
-    customIdPrefix: 'play_pronunciation', // Prefix used in customId
+    customIdPrefix: 'play_pronunciation',
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        // Extract the term from the customId by removing the prefix
-        let term;
-        try {
-            const [prefix, parsedTerm] = interaction.customId.split('_');
-            if (prefix !== this.customIdPrefix) return; // Ensure the prefix matches
-            term = parsedTerm;
-        } catch (error) {
-            console.error('Error parsing customId:', error);
-            return interaction.reply({ content: 'There was an error processing your request.', ephemeral: true });
-        }
+        const { customId } = interaction;
 
-        const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
-        const mp3Url = `${BASE_URL}/${encodeURIComponent(term)}.mp3`;
+        if (!customId.startsWith(this.customIdPrefix)) return;
+
+        // Extract the file name from the customId
+        const fileName = customId.slice(this.customIdPrefix.length + 1); // +1 to remove the underscore
 
         const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
             return interaction.reply({ content: 'You need to be in a voice channel to play the pronunciation.', ephemeral: true });
         }
+
+        const filePath = path.join(__dirname, '../../pronunciations', fileName);
+        const fileUrl = `https://your-host-url/${fileName}`;
 
         try {
             const connection = joinVoiceChannel({
@@ -33,7 +30,7 @@ module.exports = {
             });
 
             const player = createAudioPlayer();
-            const stream = await fetchStreamFromUrl(mp3Url);
+            const stream = await fetchStreamFromUrl(fileUrl);
             const resource = createAudioResource(stream);
 
             player.play(resource);
@@ -43,7 +40,7 @@ module.exports = {
                 connection.destroy();
             });
 
-            await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
+            await interaction.reply({ content: `Now playing pronunciation for: **${fileName.replace(/_/g, ' ').replace('.mp3', '')}**`, ephemeral: true });
         } catch (error) {
             console.error('Error handling voice interaction:', error);
             await interaction.reply({ content: 'Failed to play pronunciation. Please try again later.', ephemeral: true });
@@ -62,4 +59,4 @@ function fetchStreamFromUrl(url) {
             resolve(res);
         }).on('error', reject);
     });
-};
+}
