@@ -199,7 +199,7 @@ module.exports = {
                 const spawnSpeed = level < 26 ? 7000 - (level - 12) * 100 : 5600;
                 const turretHealth = stats.turretHealth || 0;
                 const turretDamage = stats.turretDamage || 0;
-                const turretDPS = (turretDamage / (attackSpeed / 1000)).toFixed(2);
+                const turretDPS = (turretDamage / (troopData.turretAttackSpeed / 1000)).toFixed(2);
 
                 embed.addFields(
                     { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
