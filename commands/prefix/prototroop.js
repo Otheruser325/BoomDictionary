@@ -5,7 +5,12 @@ const { formatNumber } = require('../../utils/formatNumber');
 const validTroopTypes = {
     'rain maker': 'rain_maker',
     'lazortron': 'lazortron',
-    'heavy choppa': 'heavy_choppa'
+    'critter cannon': 'critter_cannon',
+    'rocket choppa': 'rocket_choppa',
+    'heavy choppa': 'heavy_choppa',
+    'turret engineer': 'turret_engineer',
+    'critter engineer': 'critter_engineer',
+    'cryobombardier': 'cryobombardier'
 };
 
 module.exports = {
