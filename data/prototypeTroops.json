@@ -238,5 +238,167 @@
                 "armoryRequired": 26
             }
         }
+    },
+    "cryobombardier": {
+        "name": "Cryobombardier",
+        "description": "These Bombardiers throw ice bombs against enemy buildings, slowing them down and dealing moderate damage. They require extra energy to deploy as they are slightly older (but more experienced) than most troops.",
+        "maxLevel": 26,
+        "attackSpeed": 2200,
+        "attackRange": 12,
+        "unitSize": 8,
+        "trainingTime": "15m",
+        "movementSpeed": "200",
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 410,
+                    "damage": 1430
+                },
+                "trainingCost": {
+                    "gold": 18000
+                },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 420,
+                    "damage": 1540
+                },
+                "trainingCost": {
+                    "gold": 20000
+                },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 430,
+                    "damage": 1650
+                },
+                "trainingCost": {
+                    "gold": 22000
+                },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 440,
+                    "damage": 1760
+                },
+                "trainingCost": {
+                    "gold": 24000
+                },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 450,
+                    "damage": 1870
+                },
+                "trainingCost": {
+                    "gold": 26000
+                },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 460,
+                    "damage": 1980
+                },
+                "trainingCost": {
+                    "gold": 28000
+                },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 470,
+                    "damage": 2090
+                },
+                "trainingCost": {
+                    "gold": 30000
+                },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 480,
+                    "damage": 2200
+                },
+                "trainingCost": {
+                    "gold": 32000
+                },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 490,
+                    "damage": 2310
+                },
+                "trainingCost": {
+                    "gold": 34000
+                },
+                "armoryRequired": 20
+            },
+            "21": {
+                "stats": {
+                    "health": 500,
+                    "damage": 2420
+                },
+                "trainingCost": {
+                    "gold": 36000
+                },
+                "armoryRequired": 21
+            },
+            "22": {
+                "stats": {
+                    "health": 510,
+                    "damage": 2530
+                },
+                "trainingCost": {
+                    "gold": 3800
+                },
+                "armoryRequired": 22
+            },
+            "23": {
+                "stats": {
+                    "health": 520,
+                    "damage": 2640
+                },
+                "trainingCost": {
+                    "gold": 40000
+                },
+                "armoryRequired": 23
+            },
+            "24": {
+                "stats": {
+                    "health": 530,
+                    "damage": 2750
+                },
+                "trainingCost": {
+                    "gold": 42000
+                },
+                "armoryRequired": 24
+            },
+            "25": {
+                "stats": {
+                    "health": 540,
+                    "damage": 2860
+                },
+                "trainingCost": {
+                    "gold": 44000
+                },
+                "armoryRequired": 25
+            },
+            "26": {
+                "stats": {
+                    "health": 550,
+                    "damage": 2970
+                },
+                "trainingCost": {
+                    "gold": 46000
+                },
+                "armoryRequired": 26
+            }
+        }
     }
 }
