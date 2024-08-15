@@ -1,6 +1,5 @@
 const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
 const { get } = require('https');
-const path = require('path');
 
 module.exports = {
     customIdPrefix: 'play_pronunciation',
@@ -19,8 +18,7 @@ module.exports = {
             return interaction.reply({ content: 'You need to be in a voice channel to play the pronunciation.', ephemeral: true });
         }
 
-        const filePath = path.join(__dirname, '../../pronunciations', fileName);
-        const fileUrl = `https://your-host-url/${fileName}`;
+        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName}`;
 
         try {
             const connection = joinVoiceChannel({
