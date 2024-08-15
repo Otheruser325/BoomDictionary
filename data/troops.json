@@ -435,5 +435,152 @@
                 "armoryRequired": 20
             }
         }
+    },
+    "cryoneer": {
+        "name": "Cryoneer",
+        "description": "Nice to meet you, Commander! Cryoneer reporting in. My Freeze Beam can seriously reduce the firepower of enemy defenses. It's also great for cooling beverages and making ice sculptures!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/0/02/Cryoneer.png/revision/latest/scale-to-width-down/280?cb=20160714141646",
+        "maxLevel": 12,
+        "attackSpeed": 3500,
+        "attackRange": 6,
+        "unitSize": 4,
+        "trainingTime": "8m",
+        "movementSpeed": "250",
+        "speedReduction": 50,
+        "freezeDuration": 7.12,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 700,
+                    "damage": 7.12,
+                    "beamExtension": 0
+                },
+                "trainingCost": { "gold": 7000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 20
+            },
+            "2": {
+                "stats": {
+                    "health": 763,
+                    "damage": 7.5,
+                    "beamExtension": 6
+                },
+                "trainingCost": { "gold": 8000 },
+                "researchCost": { "gold": 7400000 },
+                "upgradeTime": "4d 4h",
+                "armoryRequired": 20
+            },
+            "3": {
+                "stats": {
+                    "health": 832,
+                    "damage": 7.87,
+                    "beamExtension": 12
+                },
+                "trainingCost": { "gold": 9000 },
+                "researchCost": { "gold": 7600000 },
+                "upgradeTime": "4d 6h",
+                "armoryRequired": 20
+            },
+            "4": {
+                "stats": {
+                    "health": 907,
+                    "damage": 8.25,
+                    "beamExtension": 18
+                },
+                "trainingCost": { "gold": 10000 },
+                "researchCost": { "gold": 7800000 },
+                "upgradeTime": "4d 8h",
+                "armoryRequired": 20
+            },
+            "5": {
+                "stats": {
+                    "health": 988,
+                    "damage": 8.62,
+                    "beamExtension": 24
+                },
+                "trainingCost": { "gold": 11000 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "4d 10h",
+                "armoryRequired": 20
+            },
+            "6": {
+                "stats": {
+                    "health": 1077,
+                    "damage": 9.07,
+                    "beamExtension": 30
+                },
+                "trainingCost": { "gold": 12000 },
+                "researchCost": { "gold": 8200000 },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 20
+            },
+            "7": {
+                "stats": {
+                    "health": 1174,
+                    "damage": 9.52,
+                    "beamExtension": 36
+                },
+                "trainingCost": { "gold": 13000 },
+                "researchCost": { "gold": 8400000 },
+                "upgradeTime": "4d 14h",
+                "armoryRequired": 21
+            },
+            "8": {
+                "stats": {
+                    "health": 1280,
+                    "damage": 10.05,
+                    "beamExtension": 42
+                },
+                "trainingCost": { "gold": 14000 },
+                "researchCost": { "gold": 8600000 },
+                "upgradeTime": "4d 16h",
+                "armoryRequired": 22
+            },
+            "9": {
+                "stats": {
+                    "health": 1395,
+                    "damage": 10.57,
+                    "beamExtension": 48
+                },
+                "trainingCost": { "gold": 15000 },
+                "researchCost": { "gold": 8800000 },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 23
+            },
+            "10": {
+                "stats": {
+                    "health": 1519,
+                    "damage": 11.10,
+                    "beamExtension": 54
+                },
+                "trainingCost": { "gold": 16000 },
+                "researchCost": { "gold": 9000000 },
+                "upgradeTime": "4d 20h",
+                "armoryRequired": 24
+            },
+            "11": {
+                "stats": {
+                    "health": 1652,
+                    "damage": 11.70,
+                    "beamExtension": 66
+                },
+                "trainingCost": { "gold": 17000 },
+                "researchCost": { "gold": 9200000 },
+                "upgradeTime": "4d 22h",
+                "armoryRequired": 25
+            },
+            "12": {
+                "stats": {
+                    "health": 1800,
+                    "damage": 11.70,
+                    "beamExtension": 73
+                },
+                "trainingCost": { "gold": 18000 },
+                "researchCost": { "gold": 9400000 },
+                "upgradeTime": "5d",
+                "armoryRequired": 26
+            }
+        }
     }
 }
