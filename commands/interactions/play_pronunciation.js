@@ -2,23 +2,24 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const { get } = require('https');
 
 module.exports = {
-    customIdPrefix: 'play_pronunciation',
+    customIdPrefix: 'play_pronunciation', // Ensure this is the prefix you use
+
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
         const { customId } = interaction;
 
+        // Check if the customId starts with the correct prefix
         if (!customId.startsWith(this.customIdPrefix)) return;
 
         // Extract the file name from the customId
-        const fileName = customId.slice(this.customIdPrefix.length + 1); // +1 to remove the underscore
+        const fileName = customId.slice(this.customIdPrefix.length + 1); // Remove the prefix to get the file name
+        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName}`; // Full URL to fetch the MP3
 
         const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
             return interaction.reply({ content: 'You need to be in a voice channel to play the pronunciation.', ephemeral: true });
         }
-
-        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName}`;
 
         try {
             const connection = joinVoiceChannel({
