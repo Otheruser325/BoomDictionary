@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
-const BASE_URL = '../../pronunciations';
+const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
 
 module.exports = {
     name: 'ipa',
@@ -24,7 +24,7 @@ module.exports = {
                 const termData = normalizedTerms[term];
                 const { terminology } = termData;
 
-                // Sanitize file name for URL use
+                // Create file name based on terminology
                 const fileName = encodeURIComponent((termData.terminology || term).toLowerCase().replace(/\s+/g, '_')) + '.mp3';
 
                 const embed = new EmbedBuilder()
@@ -36,13 +36,15 @@ module.exports = {
                     )
                     .setColor('#0099ff');
 
+                const mp3URL = `${BASE_URL}/${fileName}`;  // Proper URL
+
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${fileName}`) // CustomId is now based on the filename
+                        .setCustomId(`play_pronunciation_${fileName}`)  // CustomId is based on the file name
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
-                        .setURL(`${BASE_URL}/${fileName}`)
+                        .setURL(mp3URL)
                         .setLabel('Download MP3')
                         .setStyle(ButtonStyle.Link)
                 );
