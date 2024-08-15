@@ -72,12 +72,14 @@ module.exports = {
             const stats = levelData.stats;
             const attackSpeed = troopData.attackSpeed;
             const range = troopData.attackRange || 'Unknown';
+            const image = troopData.image || '';
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
+                .setThumbnail(image)
                 .setColor('#0099ff');
 
             // Handle unique stats for certain prototroops
