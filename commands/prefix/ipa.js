@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const dictionary = require('../../data/dictionary.json');
-const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
+const BASE_URL = '../../pronunciations';
 
 module.exports = {
     name: 'ipa',
@@ -22,32 +22,27 @@ module.exports = {
 
             if (normalizedTerms[term]) {
                 const termData = normalizedTerms[term];
-                const { terminology, pronunciation } = termData;
+                const { terminology } = termData;
 
-                const fileName = (termData.terminology || term).toLowerCase();
-                const formattedFileName = encodeURIComponent(fileName) + '.mp3';
+                // Sanitize file name for URL use
+                const fileName = encodeURIComponent((termData.terminology || term).toLowerCase().replace(/\s+/g, '_')) + '.mp3';
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
                     .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
                     .addFields(
                         { name: 'Category', value: category },
-                        { name: 'Pronunciation', value: pronunciation || 'Not available' }
+                        { name: 'Pronunciation', value: termData.pronunciation || 'Not available' }
                     )
                     .setColor('#0099ff');
 
-                const mp3URL = `${BASE_URL}/${formattedFileName}`;
-
-                // Use a simple string for customId
-                const customId = `play_pronunciation_${fileName}`;
-
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(customId)
+                        .setCustomId(`play_pronunciation_${fileName}`) // CustomId is now based on the filename
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
-                        .setURL(mp3URL)
+                        .setURL(`${BASE_URL}/${fileName}`)
                         .setLabel('Download MP3')
                         .setStyle(ButtonStyle.Link)
                 );
