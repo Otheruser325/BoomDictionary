@@ -336,7 +336,8 @@
             "12": {
                 "stats": {
                     "health": 1200,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 4
                 },
                 "trainingCost": {
                     "gold": 35000
@@ -346,7 +347,8 @@
             "13": {
                 "stats": {
                     "health": 1300,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 4
                 },
                 "trainingCost": {
                     "gold": 40000
@@ -356,7 +358,8 @@
             "14": {
                 "stats": {
                     "health": 1400,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 5
                 },
                 "trainingCost": {
                     "gold": 45000
@@ -366,7 +369,8 @@
             "15": {
                 "stats": {
                     "health": 1500,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 5
                 },
                 "trainingCost": {
                     "gold": 50000
@@ -376,7 +380,8 @@
             "16": {
                 "stats": {
                     "health": 1600,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 5
                 },
                 "trainingCost": {
                     "gold": 55000
@@ -386,7 +391,8 @@
             "17": {
                 "stats": {
                     "health": 1700,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 5
                 },
                 "trainingCost": {
                     "gold": 60000
@@ -396,7 +402,8 @@
             "18": {
                 "stats": {
                     "health": 1800,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 6
                 },
                 "trainingCost": {
                     "gold": 65000
@@ -406,7 +413,8 @@
             "19": {
                 "stats": {
                     "health": 1900,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 6
                 },
                 "trainingCost": {
                     "gold": 70000
@@ -416,7 +424,8 @@
             "20": {
                 "stats": {
                     "health": 2000,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 7
                 },
                 "trainingCost": {
                     "gold": 75000
@@ -426,7 +435,8 @@
             "21": {
                 "stats": {
                     "health": 2100,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 7
                 },
                 "trainingCost": {
                     "gold": 80000
@@ -436,7 +446,8 @@
             "22": {
                 "stats": {
                     "health": 2200,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 8
                 },
                 "trainingCost": {
                     "gold": 85000
@@ -446,27 +457,30 @@
             "23": {
                 "stats": {
                     "health": 2300,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 8
                 },
                 "trainingCost": {
                     "gold": 90000
                 },
                 "armoryRequired": 23
             },
-            "25": {
+            "24": {
                 "stats": {
                     "health": 2400,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 9
                 },
                 "trainingCost": {
                     "gold": 95000
                 },
                 "armoryRequired": 24
             },
-            "24": {
+            "25": {
                 "stats": {
                     "health": 2500,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 9
                 },
                 "trainingCost": {
                     "gold": 100000
@@ -476,7 +490,8 @@
             "26": {
                 "stats": {
                     "health": 2600,
-                    "damage": null
+                    "damage": null,
+                    "crittersPerSalvo": 10
                 },
                 "trainingCost": {
                     "gold": 105000
