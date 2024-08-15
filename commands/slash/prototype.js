@@ -160,7 +160,7 @@ module.exports = {
 
             const stats = levelData.stats;
             const attackSpeed = troopData.attackSpeed;
-            const range = troopData.range || 'Unknown';
+            const range = troopData.attackRange || 'Unknown';
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
