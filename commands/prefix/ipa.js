@@ -22,25 +22,25 @@ module.exports = {
 
             if (normalizedTerms[term]) {
                 const termData = normalizedTerms[term];
-                const { terminology } = termData;
+                const { terminology, pronunciation } = termData;
 
-                // Create file name based on terminology
-                const fileName = encodeURIComponent((termData.terminology || term).toLowerCase().replace(/\s+/g, '_')) + '.mp3';
+                const fileName = (termData.terminology || term).toLowerCase().replace(/ /g, '_'); // Use underscores instead of spaces
+                const formattedFileName = encodeURIComponent(fileName) + '.mp3';
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
                     .setDescription(`Here is the pronunciation for the word \`${terminology || term}\`, generated with Microsoft Hazel.`)
                     .addFields(
                         { name: 'Category', value: category },
-                        { name: 'Pronunciation', value: termData.pronunciation || 'Not available' }
+                        { name: 'Pronunciation', value: pronunciation || 'Not available' }
                     )
                     .setColor('#0099ff');
 
-                const mp3URL = `${BASE_URL}/${fileName}`;  // Proper URL
+                const mp3URL = `${BASE_URL}/${formattedFileName}`;
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${fileName}`)  // CustomId is based on the file name
+                        .setCustomId(`play_pronunciation_${fileName}`) // Set customId without .mp3
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
