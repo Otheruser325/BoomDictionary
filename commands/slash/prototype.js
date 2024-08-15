@@ -45,7 +45,11 @@ module.exports = {
                             { name: 'Rain Maker', value: 'rain_maker' },
                             { name: 'Lazortron', value: 'lazortron' },
                             { name: 'Critter Cannon', value: 'critter_cannon' },
-                            { name: 'Heavy Choppa', value: 'heavy_choppa' }
+                            { name: 'Rocket Choppa', value: 'rocket_choppa' },
+                            { name: 'Heavy Choppa', value: 'heavy_choppa' },
+                            { name: 'Turret Engineer', value: 'turret_engineer' },
+                            { name: 'Critter Engineer', value: 'critter_engineer' },
+                            { name: 'Cryobombardier', value: 'cryobombardier' }
                         )
                 )
                 .addIntegerOption(option =>
