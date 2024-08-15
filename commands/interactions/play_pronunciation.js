@@ -2,12 +2,20 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const { get } = require('https');
 
 module.exports = {
-    customId: 'play_pronunciation',
+    customId: 'play_pronunciation', // Matches the action in the customId
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        // Retrieve the term from the custom data
-        const term = interaction.customData;
+        // Extract and parse the term from the customId
+        let term;
+        try {
+            const { action, term: parsedTerm } = JSON.parse(interaction.customId);
+            if (action !== 'play_pronunciation') return; // Ensure the action matches
+            term = parsedTerm;
+        } catch (error) {
+            console.error('Error parsing customId:', error);
+            return interaction.reply({ content: 'There was an error processing your request.', ephemeral: true });
+        }
 
         const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
         const mp3Url = `${BASE_URL}/${encodeURIComponent(term)}.mp3`;
