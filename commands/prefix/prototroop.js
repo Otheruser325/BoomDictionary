@@ -91,7 +91,7 @@ module.exports = {
 
             // Handle Critter Cannon's unique stats
             if (troopType === 'critter_cannon') {
-                const crittersPerSalvo = levelData.crittersPerSalvo || 0;
+                const crittersPerSalvo = stats.crittersPerSalvo || 0;
                 const crittersPerSecond = (crittersPerSalvo / (attackSpeed / 1000)).toFixed(2); // crittersPerSalvo divided by attackSpeed in seconds
 
                 embed.addFields(
