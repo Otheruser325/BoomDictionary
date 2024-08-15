@@ -4,11 +4,11 @@ const fs = require('fs');
 const { getVoiceChannel } = require('../../utils/voiceChannelConfig');
 
 module.exports = {
-    customId: /^play_pronunciation_.+/,
+    customId: /^[a-zA-Z0-9\s]+$/,  // Matches the file name directly without extra prefix
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        const term = interaction.customId.split('_')[2]; // Extract term from custom ID
+        const term = interaction.customId;  // Extract term directly from custom ID (which is the file name)
         const fileName = `${term}.mp3`;
         const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
@@ -50,7 +50,7 @@ module.exports = {
         connection.subscribe(player);
 
         player.on(AudioPlayerStatus.Idle, () => {
-            connection.destroy(); // Leave the voice channel when done
+            connection.destroy();  // Leave the voice channel when done
         });
 
         await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
