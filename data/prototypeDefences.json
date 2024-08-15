@@ -398,6 +398,63 @@
             }
         }
     },
+    "flotsam_cannon": {
+        "name": "Flotsam Cannon",
+        "description": "The mine wasn't dangerous enough, so they put a cannon on it! Potent defensive cannon that when destroyed detonates with a powerful explosion, causing damage in an area.",
+        "maxLevel": 3,
+        "attackSpeed": 1000,
+        "range": 10,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/FlotsamCannonI.png/revision/latest/scale-to-width-down/110?cb=20180605130839",
+                "stats": {
+                    "health": 15000,
+                    "damage": 500
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 2, 
+                    "rods": 0, 
+                    "capacitors": 4
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 2
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/FlotsamCannonII.png/revision/latest/scale-to-width-down/110?cb=20180605130840",
+                "stats": {
+                    "health": 20000,
+                    "damage": 650
+                },
+                "buildCost": {
+                    "fuses": 2, 
+                    "gears": 6, 
+                    "rods": 4, 
+                    "capacitors": 0
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 4
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/FlotsamCannonIII.png/revision/latest/scale-to-width-down/110?cb=20180605130841",
+                "stats": {
+                    "health": 25000,
+                    "damage": 800
+                },
+                "buildCost": {
+                    "fuses": 5, 
+                    "gears": 2, 
+                    "rods": 8, 
+                    "capacitors": 3
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
+    },
     "simo": {
         "name": "S.I.M.O.",
         "description": "Sniper tower that sniffs out and targets low health enemies within range. Can see through smoke with the help of infra-red sensors.",
