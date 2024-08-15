@@ -485,6 +485,168 @@
             }
         }
     },
+    "rocket_choppa": {
+        "name": "Rocket Choppa",
+        "description": "Like a buzzing wasp on a hot summer day, small and annoying and fires rockets at you!",
+        "maxLevel": 26,
+        "attackSpeed": 1500,
+        "attackRange": 9.5,
+        "unitSize": 14,
+        "trainingTime": "33m 20s",
+        "movementSpeed": "500",
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 1450,
+                    "damage": 370.65
+                },
+                "trainingCost": {
+                    "gold": 35000
+                },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 1500,
+                    "damage": 384.65
+                },
+                "trainingCost": {
+                    "gold": 40000
+                },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 1550,
+                    "damage": 398.3
+                },
+                "trainingCost": {
+                    "gold": 45000
+                },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 1600,
+                    "damage": 412.3
+                },
+                "trainingCost": {
+                    "gold": 50000
+                },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 1650,
+                    "damage": 426.3
+                },
+                "trainingCost": {
+                    "gold": 55000
+                },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 1700,
+                    "damage": 440.3
+                },
+                "trainingCost": {
+                    "gold": 60000
+                },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 1750,
+                    "damage": 453.95
+                },
+                "trainingCost": {
+                    "gold": 65000
+                },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 1800,
+                    "damage": 467.95
+                },
+                "trainingCost": {
+                    "gold": 70000
+                },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 1850,
+                    "damage": 481.95
+                },
+                "trainingCost": {
+                    "gold": 75000
+                },
+                "armoryRequired": 20
+            },
+            "21": {
+                "stats": {
+                    "health": 1900,
+                    "damage": 495.6
+                },
+                "trainingCost": {
+                    "gold": 80000
+                },
+                "armoryRequired": 21
+            },
+            "22": {
+                "stats": {
+                    "health": 1950,
+                    "damage": 509.6
+                },
+                "trainingCost": {
+                    "gold": 85000
+                },
+                "armoryRequired": 22
+            },
+            "23": {
+                "stats": {
+                    "health": 2000,
+                    "damage": 523.6
+                },
+                "trainingCost": {
+                    "gold": 90000
+                },
+                "armoryRequired": 23
+            },
+            "24": {
+                "stats": {
+                    "health": 2050,
+                    "damage": 537.25
+                },
+                "trainingCost": {
+                    "gold": 95000
+                },
+                "armoryRequired": 24
+            },
+            "25": {
+                "stats": {
+                    "health": 2100,
+                    "damage": 551.25
+                },
+                "trainingCost": {
+                    "gold": 100000
+                },
+                "armoryRequired": 25
+            },
+            "26": {
+                "stats": {
+                    "health": 2150,
+                    "damage": 565.25
+                },
+                "trainingCost": {
+                    "gold": 105000
+                },
+                "armoryRequired": 26
+            }
+        }
+    },
     "heavy_choppa": {
         "name": "Heavy Choppa",
         "description": "A powerful troop with significant health and damage output.",
