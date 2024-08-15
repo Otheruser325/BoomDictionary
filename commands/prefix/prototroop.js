@@ -65,6 +65,7 @@ module.exports = {
             }
 
             const stats = levelData.stats;
+            const attackSpeed = troopData.attackSpeed;
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
@@ -81,7 +82,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: formatNumber(troopData.attackRange.toString()), inline: true },
-                    { name: 'Attack Speed', value: troopData.attackSpeed.toString() || 'Unknown', inline: true }
+                    { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
                 )
                 .setColor('#0099ff');
 
