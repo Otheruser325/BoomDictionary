@@ -1,4 +1,166 @@
 {
+    "lazortron": {
+        "name": "Lazortron MK II.",
+        "description": "Breakthrough in the battery tech has allowed Blackguard to mount Lazor Beams on tanks. It will burn its way through enemy defenses with pinpoint precision.",
+        "maxLevel": 26,
+        "attackSpeed": 64,
+        "attackRange": 12.5,
+        "unitSize": 14,
+        "trainingTime": "24m",
+        "movementSpeed": "180",
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 1400,
+                    "damage": 87.04
+                },
+                "trainingCost": {
+                    "gold": 35000
+                },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 1500,
+                    "damage": 90.88
+                },
+                "trainingCost": {
+                    "gold": 40000
+                },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 1600,
+                    "damage": 96
+                },
+                "trainingCost": {
+                    "gold": 45000
+                },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 1700,
+                    "damage": 102.4
+                },
+                "trainingCost": {
+                    "gold": 50000
+                },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 1800,
+                    "damage": 110.08
+                },
+                "trainingCost": {
+                    "gold": 55000
+                },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 1900,
+                    "damage": 119.04
+                },
+                "trainingCost": {
+                    "gold": 60000
+                },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 2000,
+                    "damage": 129.28
+                },
+                "trainingCost": {
+                    "gold": 65000
+                },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 2100,
+                    "damage": 140.8
+                },
+                "trainingCost": {
+                    "gold": 70000
+                },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 2200,
+                    "damage": 153.6
+                },
+                "trainingCost": {
+                    "gold": 75000
+                },
+                "armoryRequired": 20
+            },
+            "21": {
+                "stats": {
+                    "health": 2300,
+                    "damage": 167.68
+                },
+                "trainingCost": {
+                    "gold": 80000
+                },
+                "armoryRequired": 21
+            },
+            "22": {
+                "stats": {
+                    "health": 2400,
+                    "damage": 183.04
+                },
+                "trainingCost": {
+                    "gold": 85000
+                },
+                "armoryRequired": 22
+            },
+            "23": {
+                "stats": {
+                    "health": 2500,
+                    "damage": 199.68
+                },
+                "trainingCost": {
+                    "gold": 90000
+                },
+                "armoryRequired": 23
+            },
+            "25": {
+                "stats": {
+                    "health": 2600,
+                    "damage": 217.6
+                },
+                "trainingCost": {
+                    "gold": 95000
+                },
+                "armoryRequired": 24
+            },
+            "24": {
+                "stats": {
+                    "health": 2700,
+                    "damage": 236.8
+                },
+                "trainingCost": {
+                    "gold": 100000
+                },
+                "armoryRequired": 25
+            },
+            "26": {
+                "stats": {
+                    "health": 2800,
+                    "damage": 257.28
+                },
+                "trainingCost": {
+                    "gold": 105000
+                },
+                "armoryRequired": 26
+            }
+        }
+    },
     "rain_maker": {
         "name": "Rain Maker",
         "description": "This experimental long range artillery will outrange all but the most far-reaching defenses and rain down with its badaboom shells.",
@@ -158,48 +320,6 @@
                     "gold": 105000
                 },
                 "armoryRequired": 26
-            }
-        }
-    },
-    "lazortron": {
-        "name": "Lazortron",
-        "description": "A prototype troop equipped with a laser weapon for high precision attacks.",
-        "maxLevel": 26,
-        "attackSpeed": 800,
-        "attackRange": 25,
-        "unitSize": 14,
-        "trainingTime": "30m",
-        "movementSpeed": "Very Fast",
-        "levels": {
-            "12": {
-                "stats": {
-                    "health": 900,
-                    "damage": 90
-                },
-                "trainingCost": {
-                    "gold": 800
-                },
-                "armoryRequired": 12
-            },
-            "13": {
-                "stats": {
-                    "health": 1100,
-                    "damage": 110
-                },
-                "trainingCost": {
-                    "gold": 1000
-                },
-                "armoryRequired": 13
-            },
-            "14": {
-                "stats": {
-                    "health": 1300,
-                    "damage": 130
-                },
-                "trainingCost": {
-                    "gold": 1200
-                },
-                "armoryRequired": 14
             }
         }
     },
