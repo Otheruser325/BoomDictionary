@@ -10,6 +10,7 @@ const validPrototypeDefenceTypes = {
     'shield generator': 'shield_generator',
     'damage amplifier': 'damage_amplifier',
     'boom surprise': 'boom_surprise',
+    'flotsam cannon': 'flotsam_cannon',
     's.i.m.o.': 'simo'
 };
 
