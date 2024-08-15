@@ -24,26 +24,33 @@ module.exports = {
         }
 
         const stats = levelData.stats;
+        const attackSpeed = troopData.attackSpeed;
         const trainingCost = levelData.trainingCost || { gold: 0 };
-
-        // Calculate proto tokens cost
         const protoTokenCost = levelNum < 26 ? 250 + (levelNum - 12) * 100 : 2500;
+
+        let dps = 'N/A';
+        let damagePerShot = 'N/A';
+
+        // Check if the troop has direct damage or not (like Critter Cannon)
+        if (stats.damage !== null) {
+            dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+            damagePerShot = formatNumber(stats.damage.toString());
+        }
 
         const embed = new EmbedBuilder()
             .setTitle(`${troopData.name} - Level ${levelNum}`)
             .setDescription(troopData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2)), inline: true },
-                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
+                { name: 'Damage Per Shot', value: damagePerShot, inline: true },
                 { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                 { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost)}`, inline: true },
                 { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
                 { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                 { name: 'Attack Range', value: formatNumber(troopData.attackRange), inline: true },
-                { name: 'Attack Speed', value: troopData.attackSpeed ? `${troopData.attackSpeed} ms` : 'Unknown', inline: true },
-                { name: 'Armory Level Required', value: levelData.armoryRequired ? `Armory Level ${levelData.armoryRequired}` : 'Not specified', inline: true }
+                { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
             )
             .setColor('#0099ff');
 
