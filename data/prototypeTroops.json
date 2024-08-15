@@ -834,7 +834,7 @@
         "trainingTime": "10m",
         "movementSpeed": "170",
         "turretAttackSpeed": 3500,
-        "turretAttackRange": 8.2
+        "turretAttackRange": 8.2,
         "levels": {
             "12": {
                 "stats": {
