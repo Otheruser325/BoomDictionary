@@ -1,7 +1,6 @@
-const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
-const path = require('path');
-const fs = require('fs');
+const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, createAudioResource } = require('@discordjs/voice');
 const { getVoiceChannel } = require('../../utils/voiceChannelConfig');
+const { get } = require('https');
 
 module.exports = {
     customId: 'play_pronunciation',  // Static ID for the interaction
@@ -11,14 +10,9 @@ module.exports = {
         // Extract the term from the customId JSON object
         const { term } = JSON.parse(interaction.customId);
 
-        const fileName = `${term}.mp3`;
-        const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
-
-        // Check if the pronunciation file exists
-        if (!fs.existsSync(mp3FilePath)) {
-            await interaction.reply({ content: `Pronunciation file not found for \`${term}\`.`, ephemeral: true });
-            return;
-        }
+        // Base URL for fetching MP3 files
+        const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
+        const mp3Url = `${BASE_URL}/${encodeURIComponent(term)}.mp3`;
 
         // Retrieve the voice channel either from configuration or the user's current voice channel
         let voiceChannelId = getVoiceChannel(interaction.guild.id);
@@ -39,15 +33,21 @@ module.exports = {
             return;
         }
 
+        // Join the voice channel
         const connection = joinVoiceChannel({
             channelId: voiceChannelId,
             guildId: interaction.guild.id,
             adapterCreator: interaction.guild.voiceAdapterCreator,
         });
 
+        // Create an audio player
         const player = createAudioPlayer();
-        const resource = createAudioResource(mp3FilePath);
 
+        // Stream the MP3 from the URL and create an audio resource
+        const stream = await fetchStreamFromUrl(mp3Url);
+        const resource = createAudioResource(stream);
+
+        // Play the resource
         player.play(resource);
         connection.subscribe(player);
 
@@ -58,3 +58,16 @@ module.exports = {
         await interaction.reply({ content: `Now playing pronunciation for: **${term}**`, ephemeral: true });
     }
 };
+
+// Helper function to fetch the stream from a remote URL
+function fetchStreamFromUrl(url) {
+    return new Promise((resolve, reject) => {
+        get(url, (res) => {
+            if (res.statusCode !== 200) {
+                reject(new Error(`Failed to get file: ${res.statusCode}`));
+                return;
+            }
+            resolve(res);
+        }).on('error', reject);
+    });
+}
