@@ -4,11 +4,13 @@ const fs = require('fs');
 const { getVoiceChannel } = require('../../utils/voiceChannelConfig');
 
 module.exports = {
-    customId: /^[a-zA-Z0-9\s]+$/,  // Matches the file name directly without extra prefix
+    customId: 'play_pronunciation',  // Static ID for the interaction
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        const term = interaction.customId;  // Extract term directly from custom ID (which is the file name)
+        // Extract the term from the customId JSON object
+        const { term } = JSON.parse(interaction.customId);
+
         const fileName = `${term}.mp3`;
         const mp3FilePath = path.join(__dirname, '../../pronunciations', fileName);
 
