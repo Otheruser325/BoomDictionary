@@ -70,6 +70,7 @@ module.exports = {
         const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
         const range = defenceData.range || 'Unknown'; // Range in game units
         const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
+        const image = levelData.image || '';
 
         // Calculate DPS
         const dps = (stats.damage / (attackSpeed / 1000)).toFixed(2);
@@ -77,6 +78,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle(`${defenceData.name} - Level ${level}`)
             .setDescription(defenceData.description || 'No description available.')
+            .setThumbnail(image)
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
                 { name: 'DPS', value: formatNumber(dps), inline: true },
