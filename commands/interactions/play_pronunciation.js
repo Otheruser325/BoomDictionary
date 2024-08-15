@@ -14,7 +14,7 @@ module.exports = {
 
         // Extract the file name from the customId (without the prefix)
         const fileName = customId.slice(this.customIdPrefix.length + 1); // Get file name by removing the prefix
-        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName.replace(/_/g, ' ')}.mp3`; // Adjust URL
+        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName}.mp3`; // Adjust URL
 
         const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
