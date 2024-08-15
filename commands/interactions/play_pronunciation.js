@@ -2,7 +2,7 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const { get } = require('https');
 
 module.exports = {
-    customIdPrefix: 'play_pronunciation',
+    customIdPrefix: 'play_pronunciation_',
 
     async execute(interaction) {
         if (!interaction.isButton()) return;
