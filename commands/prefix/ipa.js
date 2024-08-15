@@ -40,10 +40,10 @@ module.exports = {
                     .setColor('#0099ff');
 
                 const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
-                
+
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(JSON.stringify({ action: 'play_pronunciation', term: fileName }))
+                        .setCustomId(JSON.stringify({ term: fileName }))  // Ensure customId matches what the interaction handler expects
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
