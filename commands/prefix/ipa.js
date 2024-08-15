@@ -43,7 +43,7 @@ module.exports = {
                         .setCustomId('play_pronunciation')
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary)
-                        .setCustomData(term)
+                        .setCustomData(term),
                     new ButtonBuilder()
                         .setURL(mp3URL)
                         .setLabel('Download MP3')
