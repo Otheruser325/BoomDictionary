@@ -40,9 +40,10 @@ module.exports = {
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(JSON.stringify({ action: 'play_pronunciation', term: fileName }))
+                        .setCustomId('play_pronunciation')
                         .setLabel('Play Pronunciation')
-                        .setStyle(ButtonStyle.Primary),
+                        .setStyle(ButtonStyle.Primary)
+                        .setCustomData(term)
                     new ButtonBuilder()
                         .setURL(mp3URL)
                         .setLabel('Download MP3')
