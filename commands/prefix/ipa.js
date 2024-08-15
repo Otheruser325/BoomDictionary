@@ -38,12 +38,12 @@ module.exports = {
 
                 const mp3URL = `${BASE_URL}/${formattedFileName}`;
 
-                // Encode the term directly in the customId
-                const customId = JSON.stringify({ action: 'play_pronunciation', term: fileName });
+                // Use a simple string for customId
+                const customId = `play_pronunciation_${fileName}`;
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(customId) // Set the customId with the JSON string
+                        .setCustomId(customId)
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
