@@ -74,13 +74,24 @@ module.exports = {
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
 
+            let dps = 'N/A';
+            let damagePerShot = 'N/A';
+
+            // Check if the troop has direct damage or not (like Critter Cannon)
+            if (stats.damage !== null) {
+                dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+                damagePerShot = formatNumber(stats.damage.toString());
+            } else {
+                return 'N/A';
+            }
+
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
                 .addFields(
                     { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
-                    { name: 'DPS', value: formatNumber((stats.damage / (troopData.attackSpeed / 1000)).toFixed(2).toString()), inline: true },
-                    { name: 'Damage Per Shot', value: formatNumber(stats.damage.toString()), inline: true },
+                    { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
+                    { name: 'Damage Per Shot', value: damagePerShot, inline: true },
                     { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
                     { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
                     { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
