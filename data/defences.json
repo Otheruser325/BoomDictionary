@@ -877,6 +877,155 @@
             }
         }
     },
+    "boom_cannon": {
+        "name": "Boom Cannon",
+        "description": "Cannons fire powerful, large caliber shells towards one target at a time. This makes them ideal against heavy and armored enemies, but less effective against massed infantry.",
+        "maxLevel": 20,
+        "attackSpeed": 4000,
+        "range": 14,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/47/Boom_Cannon1new.png/revision/latest/scale-to-width-down/100?cb=20180630101902",
+                "stats": { "health": 3500, "damage": 1160 },
+                "upgradeCost": { "wood": 121000, "stone": 57000, "iron": 14900 },
+                "upgradeTime": "5h",
+                "hqRequired": 12
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/Boom_Cannon2new.png/revision/latest/scale-to-width-down/100?cb=20180630101903",
+                "stats": { "health": 3850, "damage": 1276 },
+                "upgradeCost": { "wood": 141000, "stone": 66000, "iron": 17300 },
+                "upgradeTime": "6h",
+                "hqRequired": 12
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/eb/Boom_Cannon3new.png/revision/latest/scale-to-width-down/100?cb=20180630101903",
+                "stats": { "health": 4200, "damage": 1404 },
+                "upgradeCost": { "wood": 198000, "stone": 11900, "iron": 34000 },
+                "upgradeTime": "7h",
+                "hqRequired": 13
+            },
+            "4": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d7/Boom_Cannon4new.png/revision/latest/scale-to-width-down/100?cb=20180630101904",
+                "stats": { "health": 4700, "damage": 1544 },
+                "upgradeCost": { "wood": 255000, "stone": 153000, "iron": 44000 },
+                "upgradeTime": "8h",
+                "hqRequired": 13
+            },
+            "5": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/cb/Boom_Cannon5new.png/revision/latest/scale-to-width-down/100?cb=20180630101904",
+                "stats": { "health": 5100, "damage": 1700 },
+                "upgradeCost": { "wood": 350000, "stone": 308000, "iron": 85000 },
+                "upgradeTime": "10h",
+                "hqRequired": 14
+            },
+            "6": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/da/Boom_Cannon6new.png/revision/latest/scale-to-width-down/100?cb=20180630105718",
+                "stats": { "health": 5600, "damage": 1868 },
+                "upgradeCost": { "wood": 610000, "stone": 460000, "iron": 168000 },
+                "upgradeTime": "12h",
+                "hqRequired": 15
+            },
+            "7": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/98/Boom_Cannon7new.png/revision/latest/scale-to-width-down/100?cb=20180630101905",
+                "stats": { "health": 6200, "damage": 2056 },
+                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "upgradeTime": "14h",
+                "hqRequired": 16
+            },
+            "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/c2/Boom_Cannon8new.png/revision/latest/scale-to-width-down/100?cb=20180630101906",
+                "stats": { "health": 6800, "damage": 2260 },
+                "upgradeCost": { "wood": 950000, "stone": 850000, "iron": 370000 },
+                "upgradeTime": "16h",
+                "hqRequired": 16
+            },
+            "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Boom_Cannon9new.png/revision/latest/scale-to-width-down/100?cb=20180630102020",
+                "stats": { "health": 7500, "damage": 2488 },
+                "upgradeCost": { "wood": 1350000, "stone": 1110000, "iron": 700000 },
+                "upgradeTime": "18h",
+                "hqRequired": 17
+            },
+            "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/36/Boom_Cannon10new.png/revision/latest/scale-to-width-down/100?cb=20180630102021",
+                "stats": { "health": 8300, "damage": 2736 },
+                "upgradeCost": { "wood": 1650000, "stone": 1500000, "iron": 990000 },
+                "upgradeTime": "20h",
+                "hqRequired": 18
+            },
+            "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/Boom_Cannon11new.png/revision/latest/scale-to-width-down/100?cb=20180630102022",
+                "stats": { "health": 9100, "damage": 3008 },
+                "upgradeCost": { "wood": 1810000, "stone": 1650000, "iron": 1080000 },
+                "upgradeTime": "22h",
+                "hqRequired": 18
+            },
+            "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/Boom_Cannon12new.png/revision/latest/scale-to-width-down/100?cb=20180630102022",
+                "stats": { "health": 10000, "damage": 3308 },
+                "upgradeCost": { "wood": 2040000, "stone": 1980000, "iron": 1560000 },
+                "upgradeTime": "1d",
+                "hqRequired": 19
+            },
+            "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/42/Boom_Cannon13new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
+                "stats": { "health": 11000, "damage": 3640 },
+                "upgradeCost": { "wood": 2260000, "stone": 2270000, "iron": 2260000 },
+                "upgradeTime": "1d 6h",
+                "hqRequired": 20
+            },
+            "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/42/Boom_Cannon13new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
+                "stats": { "health": 12100, "damage": 4000 },
+                "upgradeCost": { "wood": 2460000, "stone": 2470000, "iron": 2460000 },
+                "upgradeTime": "1d 12h",
+                "hqRequired": 20
+            },
+            "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/Boom_Cannon15new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
+                "stats": { "health": 13300, "damage": 4400 },
+                "upgradeCost": { "wood": 3200000, "stone": 3460000, "iron": 2940000 },
+                "upgradeTime": "1d 14h",
+                "hqRequired": 21
+            },
+            "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": { "health": 14630, "damage": 4840 },
+                "upgradeCost": { "wood": 3900000, "stone": 4210000, "iron": 3590000 },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 22
+            },
+            "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": { "health": 16030, "damage": 5320 },
+                "upgradeCost": { "wood": 4680000, "stone": 5050000, "iron": 4310000 },
+                "upgradeTime": "1d 18h",
+                "hqRequired": 23
+            },
+            "18": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": { "health": 17530, "damage": 5840 },
+                "upgradeCost": { "wood": 5620000, "stone": 6060000, "iron": 5170000 },
+                "upgradeTime": "1d 20h",
+                "hqRequired": 24
+            },
+            "19": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": { "health": 19130, "damage": 6400 },
+                "upgradeCost": { "wood": 6740000, "stone": 7270000, "iron": 6200000 },
+                "upgradeTime": "1d 22h",
+                "hqRequired": 25
+            },
+            "20": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": { "health": 21040, "damage": 7040 },
+                "upgradeCost": { "wood": 7750000, "stone": 8360000, "iron": 7130000 },
+                "upgradeTime": "2d 4h",
+                "hqRequired": 26
+            }
+        }
+    },
     "rocket_launcher": {
         "name": "Rocket Launcher",
         "description": "The Rocket Launcher is a long distance artillery piece. It fires a salvo of rockets, followed by a significant reload time.",
