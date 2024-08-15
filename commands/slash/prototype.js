@@ -196,7 +196,6 @@ module.exports = {
                     { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
                 );
             } else if (troopType === 'turret_engineer') {
-                const protoTokenCost = level < 26 ? 250 + (level - 12) * 100 : 2500;
                 const turretHealth = stats.turretHealth || 0;
                 const turretDamage = stats.turretDamage || 0;
                 const turretDPS = (turretDamage / (attackSpeed / 1000)).toFixed(2);
