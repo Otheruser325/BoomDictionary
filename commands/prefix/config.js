@@ -26,8 +26,12 @@ module.exports = {
         }
 
         // Set the voice channel in the configuration
-        setVoiceChannel(message.guild.id, channel.id);
-
-        await message.channel.send(`Configured the bot to join ${channel.name} for pronunciation playback.`);
+        try {
+            setVoiceChannel(message.guild.id, channel.id);
+            await message.channel.send(`Configured the bot to join ${channel.name} for pronunciation playback.`);
+        } catch (error) {
+            console.error('Error setting voice channel:', error);
+            await message.channel.send('There was an error saving the voice channel configuration.');
+        }
     },
 };
