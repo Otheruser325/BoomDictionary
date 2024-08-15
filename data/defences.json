@@ -690,6 +690,48 @@
                 "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
+            },
+            "21": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon21.png/revision/latest/scale-to-width-down/130?cb=20151021142645",
+                "stats": { "health": 10800, "damage": 2826 },
+                "upgradeCost": { "wood": 2750000, "stone": 2990000, "iron": 3230000 },
+                "upgradeTime": "1d 10h",
+                "hqRequired": 21
+            },
+            "22": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": { "health": 11880, "damage": 3108 },
+                "upgradeCost": { "wood": 3130000, "stone": 3400000, "iron": 3670000 },
+                "upgradeTime": "1d 12h",
+                "hqRequired": 22
+            },
+            "23": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": { "health": 12980, "damage": 3414 },
+                "upgradeCost": { "wood": 3500000, "stone": 3800000, "iron": 4110000 },
+                "upgradeTime": "1d 14h",
+                "hqRequired": 23
+            },
+            "24": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": { "health": 14180, "damage": 3744 },
+                "upgradeCost": { "wood": 3930000, "stone": 4260000, "iron": 4600000 },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 24
+            },
+            "25": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": { "health": 15480, "damage": 4098 },
+                "upgradeCost": { "wood": 4400000, "stone": 4780000, "iron": 5160000 },
+                "upgradeTime": "1d 18h",
+                "hqRequired": 25
+            },
+            "26": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": { "health": 16870, "damage": 4500 },
+                "upgradeCost": { "wood": 4930000, "stone": 5350000, "iron": 5780000 },
+                "upgradeTime": "1d 20h",
+                "hqRequired": 26
             }
         }
     },
