@@ -2,6 +2,7 @@
     "rifleman": {
         "name": "Rifleman",
         "description": "Rifleman ready! Let's take the fight to the enemy!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/RiflemanD.png/revision/latest/scale-to-width-down/210?cb=20150803213044",
         "maxLevel": 26,
         "attackSpeed": 1000,
         "attackRange": 4.7,
@@ -59,6 +60,7 @@
     "heavy": {
         "name": "Heavy",
         "description": "Hey, great! The HQ is finally big enough for us Heavies. We're tough enough to walk straight into the line of fire. Let's go get them!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/1/1e/HeavyD.png/revision/latest/scale-to-width-down/250?cb=20150803213729",
         "maxLevel": 26,
         "attackSpeed": 100,
         "attackRange": 4.7,
@@ -231,6 +233,7 @@
     "tank": {
         "name": "Tank",
         "description": "Tank ready for battle! This baby has a long range cannon and thick armor to boot.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/6/67/Tanknew.png/revision/latest/scale-to-width-down/250?cb=20140415193510",
         "maxLevel": 21,
         "attackSpeed": 3500,
         "attackRange": 8.2,
@@ -333,6 +336,7 @@
     "grenadier": {
         "name": "Grenadier",
         "description": "I hear you chaps have been looking for an explosives expert. Well, you struck lucky! I'll toss a few mashers their way, and Bob's your uncle - those Blaggards go up in smoke!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/c/c5/GrenadierB.png/revision/latest/scale-to-width-down/250?cb=20150803213922",
         "maxLevel": 16,
         "attackSpeed": 2000,
         "attackRange": 11.3,
