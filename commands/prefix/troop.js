@@ -70,6 +70,7 @@ module.exports = {
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const researchCost = levelData.researchCost || { gold: 0 };
             const range = troopData.attackRange;
+            const image = troopData.image || '';
             const attackSpeed = troopData.attackSpeed;
             const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
             const armoryRequired = levelData.armoryRequired || 'Not specified';
@@ -78,6 +79,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
+                .setThumbnail(image)
                 .addFields(
                     { name: 'Health', value: formatNumber(stats.health), inline: true },
                     { name: 'DPS', value: formatNumber(dps), inline: true },
