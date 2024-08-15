@@ -54,6 +54,31 @@ module.exports = {
             )
             .setColor('#0099ff');
 
+        // Handle Critter Cannon's unique stats
+        if (troopType === 'critter_cannon') {
+            const crittersPerSalvo = levelData.crittersPerSalvo || 0;
+            const crittersPerSecond = (crittersPerSalvo / (attackSpeed / 1000)).toFixed(2); // crittersPerSalvo divided by attackSpeed in seconds
+
+            embed.addFields(
+                { name: 'Critters Per Salvo', value: formatNumber(crittersPerSalvo.toString()), inline: true },
+                { name: 'Critters Per Second', value: crittersPerSecond, inline: true }
+            );
+        } else {
+            // Handle general troop stats
+            let dps = 'N/A';
+            let damagePerShot = 'N/A';
+
+            if (stats.damage !== null) {
+                dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+                damagePerShot = stats.damage.toString();
+            }
+
+            embed.addFields(
+                { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
+                { name: 'Damage Per Shot', value: damagePerShot, inline: true }
+            );
+        }
+
         await interaction.update({ embeds: [embed], components: [] });
     }
 };
