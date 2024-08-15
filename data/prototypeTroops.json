@@ -293,7 +293,7 @@
                 },
                 "armoryRequired": 23
             },
-            "25": {
+            "24": {
                 "stats": {
                     "health": 2400,
                     "damage": 450
@@ -303,7 +303,7 @@
                 },
                 "armoryRequired": 24
             },
-            "24": {
+            "25": {
                 "stats": {
                     "health": 2500,
                     "damage": 475
