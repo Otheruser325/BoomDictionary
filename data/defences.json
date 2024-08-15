@@ -1151,6 +1151,41 @@
                 "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
+            },
+            "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": { "health": 12989, "damage": 78.4 },
+                "upgradeCost": { "wood": 4210000, "stone": 3590000, "iron": 3900000 },
+                "upgradeTime": "1d 10h",
+                "hqRequired": 21
+            },
+            "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": { "health": 14180, "damage": 85.4 },
+                "upgradeCost": { "wood": 5050000, "stone": 4310000, "iron": 4680000 },
+                "upgradeTime": "1d 12h",
+                "hqRequired": 23
+            },
+            "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": { "health": 15480, "damage": 92.75 },
+                "upgradeCost": { "wood": 6060000, "stone": 5170000, "iron": 5620000 },
+                "upgradeTime": "1d 14h",
+                "hqRequired": 24
+            },
+            "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": { "health": 16880, "damage": 100.45 },
+                "upgradeCost": { "wood": 7270000, "stone": 6200000, "iron": 6000000 },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 25
+            },
+            "18": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": { "health": 18480, "damage": 110.85 },
+                "upgradeCost": { "wood": 8360000, "stone": 7130000, "iron": 7750000 },
+                "upgradeTime": "1d 18h",
+                "hqRequired": 26
             }
         }
     }
