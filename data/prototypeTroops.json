@@ -824,6 +824,200 @@
             }
         }
     },
+    "turret_engineer": {
+        "name": "Turret Engineer",
+        "description": "This crafty Engineer has designed compact turrets that expand upon hitting the ground and attack enemy buildings.",
+        "maxLevel": 26,
+        "attackSpeed": 7000,
+        "attackRange": 8.2,
+        "unitSize": 15,
+        "trainingTime": "10m",
+        "movementSpeed": "170",
+        "turretAttackSpeed": 3500,
+        "turretAttackRange": 8.2
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 592,
+                    "damage": null,
+                    "turretHealth": 8470,
+                    "turretDamage": 717.5
+                },
+                "trainingCost": {
+                    "gold": 12000
+                },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 644,
+                    "damage": null,
+                    "turretHealth": 9230,
+                    "turretDamage": 787.5
+                },
+                "trainingCost": {
+                    "gold": 13000
+                },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 701,
+                    "damage": null,
+                    "turretHealth": 10060,
+                    "turretDamage": 868
+                },
+                "trainingCost": {
+                    "gold": 14000
+                },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 762,
+                    "damage": null,
+                    "turretHealth": 10970,
+                    "turretDamage": 955.5
+                },
+                "trainingCost": {
+                    "gold": 15000
+                },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 829,
+                    "damage": null,
+                    "turretHealth": 11960,
+                    "turretDamage": 1050
+                },
+                "trainingCost": {
+                    "gold": 16000
+                },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 902,
+                    "damage": null,
+                    "turretHealth": 13020,
+                    "turretDamage": 1155
+                },
+                "trainingCost": {
+                    "gold": 17000
+                },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 982,
+                    "damage": null,
+                    "turretHealth": 14200,
+                    "turretDamage": 1270.5
+                },
+                "trainingCost": {
+                    "gold": 18000
+                },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 1068,
+                    "damage": null,
+                    "turretHealth": 15480,
+                    "turretDamage": 1396.5
+                },
+                "trainingCost": {
+                    "gold": 19000
+                },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 1162,
+                    "damage": null,
+                    "turretHealth": 16880,
+                    "turretDamage": 1536.5
+                },
+                "trainingCost": {
+                    "gold": 20000
+                },
+                "armoryRequired": 20
+            },
+            "21": {
+                "stats": {
+                    "health": 1264,
+                    "damage": null,
+                    "turretHealth": 18390,
+                    "turretDamage": 1690.5
+                },
+                "trainingCost": {
+                    "gold": 21000
+                },
+                "armoryRequired": 21
+            },
+            "22": {
+                "stats": {
+                    "health": 1376,
+                    "damage": null,
+                    "turretHealth": 20050,
+                    "turretDamage": 1862
+                },
+                "trainingCost": {
+                    "gold": 22000
+                },
+                "armoryRequired": 22
+            },
+            "23": {
+                "stats": {
+                    "health": 1498,
+                    "damage": null,
+                    "turretHealth": 21750,
+                    "turretDamage": 2047.5
+                },
+                "trainingCost": {
+                    "gold": 23000
+                },
+                "armoryRequired": 23
+            },
+            "24": {
+                "stats": {
+                    "health": 1630,
+                    "damage": null,
+                    "turretHealth": 23350,
+                    "turretDamage": 2247
+                },
+                "trainingCost": {
+                    "gold": 24000
+                },
+                "armoryRequired": 24
+            },
+            "25": {
+                "stats": {
+                    "health": 1772,
+                    "damage": null,
+                    "turretHealth": 25350,
+                    "turretDamage": 2446.5
+                },
+                "trainingCost": {
+                    "gold": 25000
+                },
+                "armoryRequired": 25
+            },
+            "26": {
+                "stats": {
+                    "health": 1924,
+                    "damage": null,
+                    "turretHealth": 25350,
+                    "turretDamage": 2446.5
+                },
+                "trainingCost": {
+                    "gold": 26000
+                },
+                "armoryRequired": 26
+            }
+        }
+    },
     "cryobombardier": {
         "name": "Cryobombardier",
         "description": "These Bombardiers throw ice bombs against enemy buildings, slowing them down and dealing moderate damage. They require extra energy to deploy as they are slightly older (but more experienced) than most troops.",
