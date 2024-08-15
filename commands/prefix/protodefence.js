@@ -11,6 +11,7 @@ const validDefenceTypes = {
     'shield generator': 'shield_generator',
     'damage amplifier': 'damage_amplifier',
     'boom surprise': 'boom_surprise',
+    'flotsam cannon': 'flotsam_cannon',
     's.i.m.o.': 'simo'
 };
 
@@ -104,6 +105,10 @@ module.exports = {
                 special = level === 1 ? 'Provides 50% damage boost to nearby defences' :
                          level === 2 ? 'Provides 75% damage boost to nearby defences' :
                          'Provides 100% damage boost to nearby defences';
+            } else if (defenceType === 'flotsam_cannon') {
+                special = level === 1 ? 'Deals 2,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                         level === 2 ? 'Deals 2,400 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                         'Deals 3,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay';
             } else if (defenceType === 'simo') {
                 special = level === 1 ? 'Can see through smokescreens; targets low-health enemies' :
                          level === 2 ? 'Can see through smokescreens; targets low-health enemies' :
