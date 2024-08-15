@@ -116,6 +116,25 @@ client.on(Events.InteractionCreate, async interaction => {
                 await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
             }
         }
+    } else if (interaction.isButton()) {
+        const interactionHandler = client.interactions.get(interaction.customId);
+        if (!interactionHandler) {
+            console.error(`No interaction handler matching ${interaction.customId} was found.`);
+            return;
+        }
+
+        try {
+            await interactionHandler.execute(interaction);
+        } catch (error) {
+            console.error('Error executing button interaction:', error);
+            if (!interaction.replied) {
+                await interaction.reply({ content: 'There was an error executing this interaction!', ephemeral: true });
+            } else {
+                await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
+            }
+        }
+    } else {
+        console.error('Received an unhandled interaction type.');
     }
 });
 
