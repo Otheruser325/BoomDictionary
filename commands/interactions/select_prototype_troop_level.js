@@ -39,44 +39,68 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setTitle(`${troopData.name} - Level ${levelNum}`)
-            .setDescription(troopData.description || 'No description available.')
-            .addFields(
-                { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
-                { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost)}`, inline: true },
-                { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
-                { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
-                { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
-            )
-            .setColor('#0099ff');
+                .setTitle(`${troopData.name} - Level ${level}`)
+                .setDescription(troopData.description || 'No description available.')
+                .setColor('#0099ff');
 
-        // Handle Critter Cannon's unique stats
-        if (troopType === 'critter_cannon') {
-            const crittersPerSalvo = stats.crittersPerSalvo || 0;
-            const crittersPerSecond = (crittersPerSalvo / (attackSpeed / 1000)).toFixed(2); // crittersPerSalvo divided by attackSpeed in seconds
+            // Handle unique stats for certain prototroops
+            if (troopType === 'critter_cannon') {
+                const crittersPerSalvo = stats.crittersPerSalvo || 0;
+                const crittersPerSecond = (crittersPerSalvo / (attackSpeed / 1000)).toFixed(2); // crittersPerSalvo divided by attackSpeed in seconds
 
-            embed.addFields(
-                { name: 'Critters Per Salvo', value: formatNumber(crittersPerSalvo.toString()), inline: true },
-                { name: 'Critters Per Second', value: crittersPerSecond, inline: true }
-            );
-        } else {
-            // Handle general troop stats
-            let dps = 'N/A';
-            let damagePerShot = 'N/A';
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
+                    { name: 'Critters Per Salvo', value: formatNumber(crittersPerSalvo.toString()), inline: true },
+                    { name: 'Critters Per Second', value: crittersPerSecond, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
+                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
+                );
+            } else if (troopType === 'turret_engineer') {
+                const spawnSpeed = level < 26 ? 7000 - (level - 12) * 100 : 5600;
+                const turretHealth = stats.turretHealth || 0;
+                const turretDamage = stats.turretDamage || 0;
+                const turretDPS = (turretDamage / (attackSpeed / 1000)).toFixed(2);
 
-            if (stats.damage !== null) {
-                dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
-                damagePerShot = stats.damage.toString();
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
+                    { name: 'Turret Hitpoints', value: formatNumber(turretHealth.toString()), inline: true },
+                    { name: 'Turret Damage', value: formatNumber(turretDamage.toString()), inline: true },
+                    { name: 'Turret DPS', value: turretDPS, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
+                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Spawn Speed', value: spawnSpeed ? `${spawnSpeed} ms` : 'Unknown', inline: true }
+                );
+            } else {
+                // Handle general troop stats
+                let dps = 'N/A';
+                let damagePerShot = 'N/A';
+
+                if (stats.damage !== null) {
+                    dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+                    damagePerShot = stats.damage.toString();
+                }
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health.toString()), inline: true },
+                    { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
+                    { name: 'Damage Per Shot', value: damagePerShot, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold.toString())}`, inline: true },
+                    { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost.toString())}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize.toString()), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
+                );
             }
-
-            embed.addFields(
-                { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
-                { name: 'Damage Per Shot', value: damagePerShot, inline: true }
-            );
-        }
 
         await interaction.update({ embeds: [embed], components: [] });
     }
