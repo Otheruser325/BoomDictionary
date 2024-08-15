@@ -53,6 +53,10 @@ module.exports = {
             special = levelNum === 1 ? 'Provides 50% damage boost to nearby defences' :
                     levelNum === 2 ? 'Provides 75% damage boost to nearby defences' :
                     'Provides 100% damage boost to nearby defences';
+        } else if (defenceType === 'flotsam_cannon') {
+            special = level === 1 ? 'Deals 2,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                    level === 2 ? 'Deals 2,400 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                    'Deals 3,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay';
         } else if (defenceType === 'simo') {
             special = levelNum === 1 ? 'Can see through smokescreens; targets low-health enemies' :
                     levelNum === 2 ? 'Can see through smokescreens; targets low-health enemies' :
