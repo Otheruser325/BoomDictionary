@@ -239,7 +239,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed ? `${attackSpeed} ms` : 'Unknown', inline: true }
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true }
                 );
             }
 
