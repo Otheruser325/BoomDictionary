@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
 const { setVoiceChannel } = require('../../utils/voiceChannelConfig');
 
 module.exports = {
@@ -16,8 +16,8 @@ module.exports = {
 
         // Check if the user has the necessary permissions
         const member = interaction.member;
-        if (!member.permissions.has('ADMINISTRATOR') && !member.permissions.has('MANAGE_CHANNELS')) {
-            return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
+        if (!member.permissions.has(PermissionsBitField.Flags.Administrator) && !member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
+            return interaction.channel.send('You do not have permission to use this command.');
         }
 
         // No need to check if the channel is a voice channel as we restrict the options
