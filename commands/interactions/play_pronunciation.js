@@ -6,20 +6,8 @@ module.exports = {
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        // Extract the action and term from the customId JSON object
-        let action, term;
-        try {
-            const customIdObject = JSON.parse(interaction.customId);
-            action = customIdObject.action;
-            term = customIdObject.term;
-
-            if (action !== 'play_pronunciation') {
-                throw new Error('Action does not match');
-            }
-        } catch (error) {
-            console.error('Error parsing customId:', error);
-            return interaction.reply({ content: 'There was an error processing your request.', ephemeral: true });
-        }
+        // Retrieve the term from the custom data
+        const term = interaction.customData;
 
         const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
         const mp3Url = `${BASE_URL}/${encodeURIComponent(term)}.mp3`;
@@ -66,4 +54,4 @@ function fetchStreamFromUrl(url) {
             resolve(res);
         }).on('error', reject);
     });
-}
+};
