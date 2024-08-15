@@ -879,7 +879,7 @@
     },
     "boom_cannon": {
         "name": "Boom Cannon",
-        "description": "Cannons fire powerful, large caliber shells towards one target at a time. This makes them ideal against heavy and armored enemies, but less effective against massed infantry.",
+        "description": "The Boom Cannon fires devastating shots but takes a while to reload. Even the strongest armor is no match for the Boom!",
         "maxLevel": 20,
         "attackSpeed": 4000,
         "range": 14,
