@@ -2,7 +2,7 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const { get } = require('https');
 
 module.exports = {
-    customIdPrefix: 'play_pronunciation', // Ensure this is the prefix you use
+    customIdPrefix: 'play_pronunciation',
 
     async execute(interaction) {
         if (!interaction.isButton()) return;
@@ -12,9 +12,9 @@ module.exports = {
         // Check if the customId starts with the correct prefix
         if (!customId.startsWith(this.customIdPrefix)) return;
 
-        // Extract the file name from the customId
-        const fileName = customId.slice(this.customIdPrefix.length + 1); // Remove the prefix to get the file name
-        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName}`; // Full URL to fetch the MP3
+        // Extract the file name from the customId (without the prefix)
+        const fileName = customId.slice(this.customIdPrefix.length + 1); // Get file name by removing the prefix
+        const fileUrl = `https://funny-eclair-d437ee.netlify.app/${fileName.replace(/_/g, ' ')}.mp3`; // Adjust URL
 
         const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
@@ -39,7 +39,7 @@ module.exports = {
                 connection.destroy();
             });
 
-            await interaction.reply({ content: `Now playing pronunciation for: **${fileName.replace(/_/g, ' ').replace('.mp3', '')}**`, ephemeral: true });
+            await interaction.reply({ content: `Now playing pronunciation for: **${fileName.replace(/_/g, ' ')}**`, ephemeral: true });
         } catch (error) {
             console.error('Error handling voice interaction:', error);
             await interaction.reply({ content: 'Failed to play pronunciation. Please try again later.', ephemeral: true });
