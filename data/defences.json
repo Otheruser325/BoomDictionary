@@ -368,88 +368,123 @@
         "range": 9,
         "levels": {
             "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/cb/MachineGun1.png/revision/latest/scale-to-width-down/95?cb=20150529190213",
                 "stats": { "health": 1600, "damage": 8.7 },
                 "upgradeCost": { "wood": 3300, "stone": 0, "iron": 0 },
                 "upgradeTime": "1h",
                 "hqRequired": 4
             },
             "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8a/MachineGun2.png/revision/latest/scale-to-width-down/100?cb=20150529190213",
                 "stats": { "health": 1740, "damage": 9.9 },
                 "upgradeCost": { "wood": 4600, "stone": 0, "iron": 0 },
                 "upgradeTime": "1h 15m",
                 "hqRequired": 4
             },
             "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/a/a7/MachineGun3.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
                 "stats": { "health": 1890, "damage": 11.1 },
                 "upgradeCost": { "wood": 8800, "stone": 0, "iron": 0 },
                 "upgradeTime": "1h 45m",
                 "hqRequired": 5
             },
             "4": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f6/MachineGun4.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
                 "stats": { "health": 2060, "damage": 12.6 },
                 "upgradeCost": { "wood": 10000, "stone": 0, "iron": 0 },
                 "upgradeTime": "2h",
                 "hqRequired": 5
             },
             "5": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/dd/MachineGun5.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
                 "stats": { "health": 2240, "damage": 14.2 },
                 "upgradeCost": { "wood": 13200, "stone": 2320, "iron": 0 },
                 "upgradeTime": "2h 15m",
                 "hqRequired": 6
             },
             "6": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/41/MachineGun6.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
                 "stats": { "health": 2440, "damage": 16.0 },
                 "upgradeCost": { "wood": 14900, "stone": 2610, "iron": 0 },
                 "upgradeTime": "2h 30m",
                 "hqRequired": 6
             },
             "7": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/41/MachineGun6.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
                 "stats": { "health": 2700, "damage": 18.0 },
                 "upgradeCost": { "wood": 22500, "stone": 4500, "iron": 0 },
                 "upgradeTime": "3h",
                 "hqRequired": 7
             },
             "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/MachineGun8.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
                 "stats": { "health": 2900, "damage": 20.3 },
                 "upgradeCost": { "wood": 38000, "stone": 8400, "iron": 0 },
                 "upgradeTime": "4h",
                 "hqRequired": 8
             },
             "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/MachineGun9.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
                 "stats": { "health": 3100, "damage": 22.9 },
                 "upgradeCost": { "wood": 60000, "stone": 14400, "iron": 3800 },
                 "upgradeTime": "5h",
                 "hqRequired": 9
             },
             "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/MachineGun9.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
                 "stats": { "health": 3400, "damage": 25.8 },
                 "upgradeCost": { "wood": 97000, "stone": 24300, "iron": 7800 },
                 "upgradeTime": "6h",
                 "hqRequired": 10
             },
             "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
                 "stats": { "health": 3700, "damage": 29.1 },
                 "upgradeCost": { "wood": 134000, "stone": 49000, "iron": 14000 },
                 "upgradeTime": "7h",
                 "hqRequired": 11
             },
             "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
                 "stats": { "health": 4000, "damage": 32.9 },
                 "upgradeCost": { "wood": 205000, "stone": 96000, "iron": 25200 },
                 "upgradeTime": "8h",
                 "hqRequired": 12
             },
             "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
                 "stats": { "health": 4400, "damage": 37.1 },
                 "upgradeCost": { "wood": 295000, "stone": 177000, "iron": 50000 },
                 "upgradeTime": "10h",
                 "hqRequired": 13
             },
             "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
                 "stats": { "health": 4800, "damage": 41.8 },
                 "upgradeCost": { "wood": 420000, "stone": 360000, "iron": 100000 },
                 "upgradeTime": "12h",
                 "hqRequired": 14
+            },
+            "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
+                "stats": { "health": 5200, "damage": 47.1 },
+                "upgradeCost": { "wood": 730000, "stone": 550000, "iron": 201000 },
+                "upgradeTime": "14h",
+                "hqRequired": 15
+            },
+            "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
+                "stats": { "health": 5700, "damage": 53.2 },
+                "upgradeCost": { "wood": 1040000, "stone": 930000, "iron": 410000 },
+                "upgradeTime": "16h",
+                "hqRequired": 16
+            },
+            "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
+                "stats": { "health": 6200, "damage": 59.9 },
+                "upgradeCost": { "wood": 1510000, "stone": 1240000, "iron": 790000 },
+                "upgradeTime": "18h",
+                "hqRequired": 17
             }
         }
     },
