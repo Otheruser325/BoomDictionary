@@ -227,6 +227,63 @@
             }
         }
     },
+    "hot_pot": {
+        "name": "Hot Pot",
+        "description": "Powerful flamethrower with improved reach. Stays protected in an underground bunker until enemies are in range.",
+        "maxLevel": 3,
+        "attackSpeed": 150,
+        "range": 8.5,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/c/ca/HotPotI.png/revision/latest/scale-to-width-down/120?cb=20160906213936",
+                "stats": {
+                    "health": 10000,
+                    "damage": 500
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 2
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/HotPotII.png/revision/latest/scale-to-width-down/120?cb=20160906213936",
+                "stats": {
+                    "health": 15000,
+                    "damage": 850
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 3
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f0/HotPotIII.png/revision/latest/scale-to-width-down/120?cb=20160906213938",
+                "stats": {
+                    "health": 20000,
+                    "damage": 1200
+                },
+                "buildCost": {
+                    "fuses": 6, 
+                    "gears": 6, 
+                    "rods": 3, 
+                    "capacitors": 3
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
+            }
+        }
+    },
     "damage_amplifier": {
         "name": "Damage Amplifier",
         "description": "Amplifies the damage output of all nearby defenses using a high voltage hyperbolic gauss overdrive field.",
@@ -362,7 +419,7 @@
                 },
                 "buildTime": "1h",
                 "marks": "Tier 1 (I)",
-                "weaponLabRequired": 1
+                "weaponLabRequired": 2
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9b/SIMOII.png/revision/latest/scale-to-width-down/120?cb=20180330092830",
