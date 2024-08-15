@@ -1,4 +1,4 @@
-const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, createAudioResource } = require('@discordjs/voice');
+const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
 const { getVoiceChannel } = require('../../utils/voiceChannelConfig');
 const { get } = require('https');
 
