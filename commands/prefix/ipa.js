@@ -25,10 +25,7 @@ module.exports = {
                 const { terminology, pronunciation } = termData;
 
                 const fileName = (termData.terminology || term).toLowerCase();
-                const formattedFileName = fileName
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ') + '.mp3';
+                const formattedFileName = encodeURIComponent(fileName) + '.mp3';
 
                 const embed = new EmbedBuilder()
                     .setTitle(`Pronunciation for ${terminology || term}`)
@@ -39,11 +36,11 @@ module.exports = {
                     )
                     .setColor('#0099ff');
 
-                const mp3URL = `${BASE_URL}/${encodeURIComponent(formattedFileName)}`;
+                const mp3URL = `${BASE_URL}/${formattedFileName}`;
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(JSON.stringify({ term: fileName }))  // Ensure customId matches what the interaction handler expects
+                        .setCustomId(JSON.stringify({ action: 'play_pronunciation', term: fileName }))
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()
