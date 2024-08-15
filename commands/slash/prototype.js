@@ -23,8 +23,11 @@ module.exports = {
                             { name: 'Hot Pot', value: 'hot_pot' },
                             { name: 'Shield Generator', value: 'shield_generator' },
                             { name: 'Damage Amplifier', value: 'damage_amplifier' },
+                            { name: 'Flotsam Cannon', value: 'flotsam_cannon' },
                             { name: 'Boom Surprise', value: 'boom_surprise' },
-                            { name: 'S.I.M.O.', value: 'simo' }
+                            { name: `Microwav\'r`, value: 'microwavr' },
+                            { name: 'S.I.M.O.', value: 'simo' },
+                            { name: 'Shy Shield', value: 'sky_shield' }
                         )
                 )
                 .addIntegerOption(option =>
