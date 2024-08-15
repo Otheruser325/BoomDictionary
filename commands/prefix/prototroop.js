@@ -81,8 +81,6 @@ module.exports = {
             if (stats.damage !== null) {
                 dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
                 damagePerShot = formatNumber(stats.damage.toString());
-            } else {
-                return 'N/A';
             }
 
             const embed = new EmbedBuilder()
