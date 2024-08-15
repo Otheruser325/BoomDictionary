@@ -42,8 +42,6 @@ module.exports = {
             .setDescription(troopData.description || 'No description available.')
             .addFields(
                 { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: dps !== 'N/A' ? formatNumber(dps) : dps, inline: true },
-                { name: 'Damage Per Shot', value: damagePerShot, inline: true },
                 { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                 { name: 'Upgrade Cost', value: `Proto Tokens: ${formatNumber(protoTokenCost)}`, inline: true },
                 { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
