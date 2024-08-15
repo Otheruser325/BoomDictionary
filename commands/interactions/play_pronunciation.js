@@ -2,15 +2,15 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const { get } = require('https');
 
 module.exports = {
-    customId: 'play_pronunciation', // Matches the action in the customId
+    customIdPrefix: 'play_pronunciation', // Prefix used in customId
     async execute(interaction) {
         if (!interaction.isButton()) return;
 
-        // Extract and parse the term from the customId
+        // Extract the term from the customId by removing the prefix
         let term;
         try {
-            const { action, term: parsedTerm } = JSON.parse(interaction.customId);
-            if (action !== 'play_pronunciation') return; // Ensure the action matches
+            const [prefix, parsedTerm] = interaction.customId.split('_');
+            if (prefix !== this.customIdPrefix) return; // Ensure the prefix matches
             term = parsedTerm;
         } catch (error) {
             console.error('Error parsing customId:', error);
