@@ -1,61 +1,4 @@
 {
-    "doom_cannon": {
-        "name": "Doom Cannon",
-        "description": "Shoots a Doom Ray that destroys most targets outright. Very slow rate of fire.",
-        "maxLevel": 3,
-        "attackSpeed": 3500, 
-        "range": 18,
-        "levels": {
-            "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/1/17/DoomCannon1.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
-                "stats": {
-                    "health": 15000,
-                    "damage": 5250
-                },
-                "buildCost": {
-                    "fuses": 0, 
-                    "gears": 0, 
-                    "rods": 0, 
-                    "capacitors": 0
-                },
-                "buildTime": "1h",
-                "marks": "Tier 1 (I)",
-                "weaponLabRequired": 1
-            },
-            "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e0/DoomCannon2.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
-                "stats": {
-                    "health": 20000,
-                    "damage": 8750
-                },
-                "buildCost": {
-                    "fuses": 0, 
-                    "gears": 0, 
-                    "rods": 0, 
-                    "capacitors": 0
-                },
-                "buildTime": "4h",
-                "marks": "Tier 2 (II)",
-                "weaponLabRequired": 3
-            },
-            "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/6/68/DoomCannon3.png/revision/latest/scale-to-width-down/120?cb=20150515220524",
-                "stats": {
-                    "health": 25000,
-                    "damage": 15750
-                },
-                "buildCost": {
-                    "fuses": 0, 
-                    "gears": 0, 
-                    "rods": 0, 
-                    "capacitors": 0
-                },
-                "buildTime": "12h",
-                "marks": "Tier 3 (III)",
-                "weaponLabRequired": 5
-            }
-        }
-    },
     "shock_blaster": {
         "name": "Shock Blaster",
         "description": "The Shock Blaster shoots shock bullets at a high rate of fire, dealing heavy damage and stunning the target.",
@@ -170,18 +113,75 @@
             }
         }
     },
-    "grappler": {
-        "name": "Grappler",
-        "description": "Shoots a long range grappling hook that pulls a single enemy unit close.",
+    "doom_cannon": {
+        "name": "Doom Cannon",
+        "description": "Shoots a Doom Ray that destroys most targets outright. Very slow rate of fire.",
         "maxLevel": 3,
-        "attackSpeed": 5000,
-        "range": 25,
+        "attackSpeed": 3500, 
+        "range": 18,
         "levels": {
             "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/3/3a/GrapplerI.png/revision/latest/scale-to-width-down/110?cb=20160907011052",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/17/DoomCannon1.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
+                "stats": {
+                    "health": 15000,
+                    "damage": 5250
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e0/DoomCannon2.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
                 "stats": {
                     "health": 20000,
-                    "damage": 120
+                    "damage": 8750
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/68/DoomCannon3.png/revision/latest/scale-to-width-down/120?cb=20150515220524",
+                "stats": {
+                    "health": 25000,
+                    "damage": 15750
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 0, 
+                    "rods": 0, 
+                    "capacitors": 0
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
+    },
+    "damage_amplifier": {
+        "name": "Damage Amplifier",
+        "description": "Amplifies the damage output of all nearby defenses using a high voltage hyperbolic gauss overdrive field.",
+        "maxLevel": 3,
+        "attackSpeed": null,
+        "range": 7.6,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1e/DamageAmplifierI.png/revision/latest/scale-to-width-down/120?cb=20150506153721",
+                "stats": {
+                    "health": 20000,
+                    "damage": null
                 },
                 "buildCost": {
                     "fuses": 3, 
@@ -194,15 +194,72 @@
                 "weaponLabRequired": 1
             },
             "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f1/GrapplerII.png/revision/latest/scale-to-width-down/120?cb=20160907011053",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/DamageAmplifierII.png/revision/latest/scale-to-width-down/120?cb=20150506153744",
                 "stats": {
-                    "health": 25000,
-                    "damage": 120
+                    "health": 27500,
+                    "damage": null
                 },
                 "buildCost": {
-                    "fuses": 3, 
+                    "fuses": 0, 
                     "gears": 3, 
                     "rods": 3, 
+                    "capacitors": 6
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/DamageAmplifierIII.png/revision/latest/scale-to-width-down/120?cb=20150506153832",
+                "stats": {
+                    "health": 35000,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 9, 
+                    "gears": 3, 
+                    "rods": 6, 
+                    "capacitors": 0
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
+    },
+    "shield_generator": {
+        "name": "Shield Generator",
+        "description": "Generates a force field around the Headquarters that shields it from damage. If the generator is destroyed, the shield dissipates.",
+        "maxLevel": 3,
+        "attackSpeed": null,
+        "range": null,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9d/ShieldGeneratorI.png/revision/latest/scale-to-width-down/120?cb=20151021124228",
+                "stats": {
+                    "health": 20000,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 0
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/89/ShieldGeneratorII.png/revision/latest/scale-to-width-down/120?cb=20151021124227",
+                "stats": {
+                    "health": 27500,
+                    "damage": null
+                },
+                "buildCost": {
+                    "fuses": 6, 
+                    "gears": 3, 
+                    "rods": 0, 
                     "capacitors": 3
                 },
                 "buildTime": "4h",
@@ -210,20 +267,20 @@
                 "weaponLabRequired": 3
             },
             "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/d/de/GrapplerIII.png/revision/latest/scale-to-width-down/130?cb=20160907011053",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8e/ShieldGeneratorIII.png/revision/latest/scale-to-width-down/140?cb=20151021124227",
                 "stats": {
-                    "health": 30000,
-                    "damage": 120
+                    "health": 35000,
+                    "damage": null
                 },
                 "buildCost": {
-                    "fuses": 3, 
-                    "gears": 3, 
+                    "fuses": 9, 
+                    "gears": 0, 
                     "rods": 3, 
-                    "capacitors": 9
+                    "capacitors": 6
                 },
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",
-                "weaponLabRequired": 4
+                "weaponLabRequired": 5
             }
         }
     },
@@ -284,18 +341,18 @@
             }
         }
     },
-    "damage_amplifier": {
-        "name": "Damage Amplifier",
-        "description": "Amplifies the damage output of all nearby defenses using a high voltage hyperbolic gauss overdrive field.",
+    "grappler": {
+        "name": "Grappler",
+        "description": "Shoots a long range grappling hook that pulls a single enemy unit close.",
         "maxLevel": 3,
-        "attackSpeed": null,
-        "range": 7.6,
+        "attackSpeed": 5000,
+        "range": 25,
         "levels": {
             "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1e/DamageAmplifierI.png/revision/latest/scale-to-width-down/120?cb=20150506153721",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/3a/GrapplerI.png/revision/latest/scale-to-width-down/110?cb=20160907011052",
                 "stats": {
                     "health": 20000,
-                    "damage": null
+                    "damage": 120
                 },
                 "buildCost": {
                     "fuses": 3, 
@@ -308,36 +365,150 @@
                 "weaponLabRequired": 1
             },
             "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/DamageAmplifierII.png/revision/latest/scale-to-width-down/120?cb=20150506153744",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f1/GrapplerII.png/revision/latest/scale-to-width-down/120?cb=20160907011053",
                 "stats": {
-                    "health": 27500,
-                    "damage": null
+                    "health": 25000,
+                    "damage": 120
                 },
                 "buildCost": {
-                    "fuses": 0, 
+                    "fuses": 3, 
                     "gears": 3, 
                     "rods": 3, 
-                    "capacitors": 6
+                    "capacitors": 3
                 },
                 "buildTime": "4h",
                 "marks": "Tier 2 (II)",
                 "weaponLabRequired": 3
             },
             "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/DamageAmplifierIII.png/revision/latest/scale-to-width-down/120?cb=20150506153832",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/de/GrapplerIII.png/revision/latest/scale-to-width-down/130?cb=20160907011053",
                 "stats": {
-                    "health": 35000,
-                    "damage": null
+                    "health": 30000,
+                    "damage": 120
                 },
                 "buildCost": {
-                    "fuses": 9, 
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 9
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
+            }
+        }
+    },
+    "simo": {
+        "name": "S.I.M.O.",
+        "description": "Sniper tower that sniffs out and targets low health enemies within range. Can see through smoke with the help of infra-red sensors.",
+        "maxLevel": 3,
+        "attackSpeed": 2000,
+        "range": 15,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/13/SIMOI.png/revision/latest/scale-to-width-down/110?cb=20180330092744",
+                "stats": {
+                    "health": 15000,
+                    "damage": 1600
+                },
+                "buildCost": {
+                    "fuses": 1, 
+                    "gears": 3, 
+                    "rods": 0, 
+                    "capacitors": 2
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 2
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9b/SIMOII.png/revision/latest/scale-to-width-down/120?cb=20180330092830",
+                "stats": {
+                    "health": 20000,
+                    "damage": 1500
+                },
+                "buildCost": {
+                    "fuses": 4, 
+                    "gears": 4, 
+                    "rods": 4, 
+                    "capacitors": 0
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/SIMOIII.png/revision/latest/scale-to-width-down/130?cb=20180330092917",
+                "stats": {
+                    "health": 25000,
+                    "damage": 1500
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 6, 
+                    "rods": 3, 
+                    "capacitors": 9
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 4
+            }
+        }
+    },
+    "microwavr": {
+        "name": "Microwav'r",
+        "description": "Burns all enemies within range with dangerous microwave radiation. Can also be used to make popcorn.",
+        "maxLevel": 3,
+        "attackSpeed": 200,
+        "range": 15,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e7/MicrowavrI.png/revision/latest/scale-to-width-down/70?cb=20180430142415",
+                "stats": {
+                    "health": 20000,
+                    "damage": 60
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 3, 
+                    "rods": 2, 
+                    "capacitors": 1
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 2
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f8/MicrowavrII.png/revision/latest/scale-to-width-down/70?cb=20180430142454",
+                "stats": {
+                    "health": 25000,
+                    "damage": 100
+                },
+                "buildCost": {
+                    "fuses": 3, 
                     "gears": 3, 
                     "rods": 6, 
                     "capacitors": 0
                 },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 3
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/be/MicrowavrIII.png/revision/latest/scale-to-width-down/70?cb=20180430142508",
+                "stats": {
+                    "health": 30000,
+                    "damage": 140
+                },
+                "buildCost": {
+                    "fuses": 6, 
+                    "gears": 3, 
+                    "rods": 0, 
+                    "capacitors": 9
+                },
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",
-                "weaponLabRequired": 5
+                "weaponLabRequired": 4
             }
         }
     },
@@ -452,120 +623,6 @@
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",
                 "weaponLabRequired": 5
-            }
-        }
-    },
-    "microwavr": {
-        "name": "Microwav'r",
-        "description": "Burns all enemies within range with dangerous microwave radiation. Can also be used to make popcorn.",
-        "maxLevel": 3,
-        "attackSpeed": 200,
-        "range": 15,
-        "levels": {
-            "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e7/MicrowavrI.png/revision/latest/scale-to-width-down/70?cb=20180430142415",
-                "stats": {
-                    "health": 20000,
-                    "damage": 60
-                },
-                "buildCost": {
-                    "fuses": 0, 
-                    "gears": 3, 
-                    "rods": 2, 
-                    "capacitors": 1
-                },
-                "buildTime": "1h",
-                "marks": "Tier 1 (I)",
-                "weaponLabRequired": 2
-            },
-            "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f8/MicrowavrII.png/revision/latest/scale-to-width-down/70?cb=20180430142454",
-                "stats": {
-                    "health": 25000,
-                    "damage": 100
-                },
-                "buildCost": {
-                    "fuses": 3, 
-                    "gears": 3, 
-                    "rods": 6, 
-                    "capacitors": 0
-                },
-                "buildTime": "4h",
-                "marks": "Tier 2 (II)",
-                "weaponLabRequired": 3
-            },
-            "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/b/be/MicrowavrIII.png/revision/latest/scale-to-width-down/70?cb=20180430142508",
-                "stats": {
-                    "health": 30000,
-                    "damage": 140
-                },
-                "buildCost": {
-                    "fuses": 6, 
-                    "gears": 3, 
-                    "rods": 0, 
-                    "capacitors": 9
-                },
-                "buildTime": "12h",
-                "marks": "Tier 3 (III)",
-                "weaponLabRequired": 4
-            }
-        }
-    },
-    "simo": {
-        "name": "S.I.M.O.",
-        "description": "Sniper tower that sniffs out and targets low health enemies within range. Can see through smoke with the help of infra-red sensors.",
-        "maxLevel": 3,
-        "attackSpeed": 2000,
-        "range": 15,
-        "levels": {
-            "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/1/13/SIMOI.png/revision/latest/scale-to-width-down/110?cb=20180330092744",
-                "stats": {
-                    "health": 15000,
-                    "damage": 1600
-                },
-                "buildCost": {
-                    "fuses": 1, 
-                    "gears": 3, 
-                    "rods": 0, 
-                    "capacitors": 2
-                },
-                "buildTime": "1h",
-                "marks": "Tier 1 (I)",
-                "weaponLabRequired": 2
-            },
-            "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9b/SIMOII.png/revision/latest/scale-to-width-down/120?cb=20180330092830",
-                "stats": {
-                    "health": 20000,
-                    "damage": 1500
-                },
-                "buildCost": {
-                    "fuses": 4, 
-                    "gears": 4, 
-                    "rods": 4, 
-                    "capacitors": 0
-                },
-                "buildTime": "4h",
-                "marks": "Tier 2 (II)",
-                "weaponLabRequired": 3
-            },
-            "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/SIMOIII.png/revision/latest/scale-to-width-down/130?cb=20180330092917",
-                "stats": {
-                    "health": 25000,
-                    "damage": 1500
-                },
-                "buildCost": {
-                    "fuses": 0, 
-                    "gears": 6, 
-                    "rods": 3, 
-                    "capacitors": 9
-                },
-                "buildTime": "12h",
-                "marks": "Tier 3 (III)",
-                "weaponLabRequired": 4
             }
         }
     }
