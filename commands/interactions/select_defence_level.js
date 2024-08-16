@@ -33,20 +33,44 @@ module.exports = {
         const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
-            .setTitle(`${defenceData.name} - Level ${levelNum}`)
-            .setDescription(defenceData.description || 'No description available.')
-            .setThumbnail(image)
-            .addFields(
-                { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(dps), inline: true },
-                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
-                { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
-                { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
-                { name: 'HQ Required', value: hqRequired.toString(), inline: true }
-            )
-            .setColor('#0099ff');
+                .setTitle(`${defenceData.name} - Level ${level}`)
+                .setDescription(defenceData.description || 'No description available.')
+                .setThumbnail(image)
+                .setColor('#0099ff');
+
+            // Handle unique stats for certain defences
+            if (defenceType === 'shock_launcher') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
+                    { name: 'Shock Duration', value: formatNumber(stats.shockDuration), inline: true },
+                    { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
+                    { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
+                    { name: 'HQ Required', value: hqRequired.toString(), inline: true }
+                );
+            } else {
+                // Handle general defence stats
+                let dps = 'N/A';
+                let damagePerShot = 'N/A';
+
+                if (stats.damage !== null) {
+                    dps = (stats.damage / (defenceData.attackSpeed / 1000)).toFixed(2);
+                    damagePerShot = stats.damage.toString();
+                }
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
+                    { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
+                    { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
+                    { name: 'HQ Required', value: hqRequired.toString(), inline: true }
+                );
+            }
 
         await interaction.update({ embeds: [embed], components: [] });
     }
