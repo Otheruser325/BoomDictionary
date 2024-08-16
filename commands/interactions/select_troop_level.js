@@ -46,7 +46,7 @@ module.exports = {
                 { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                 { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                 { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
+                { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
                 { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
             )
             .setColor('#0099ff');
