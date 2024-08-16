@@ -455,6 +455,66 @@
             }
         }
     },
+    "sky_shield": {
+        "name": "Shy Shield",
+        "description": "Sets up a defensive shield around itself, protecting all buildings under the shield from gunboat projectiles. The shield dissipates if it's bombarded enough or if the building is destroyed.",
+        "maxLevel": 3,
+        "attackSpeed": null,
+        "range": 6,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d1/SkyShieldI.png/revision/latest/scale-to-width-down/80?cb=20180409095709",
+                "stats": {
+                    "health": 20000,
+                    "damage": null,
+                    "shieldHealth": 20000
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 2, 
+                    "rods": 0, 
+                    "capacitors": 4
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 1
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/74/SkyShieldII.png/revision/latest/scale-to-width-down/80?cb=20180409095709",
+                "stats": {
+                    "health": 27500,
+                    "damage": null,
+                    "shieldHealth": 22500
+                },
+                "buildCost": {
+                    "fuses": 8, 
+                    "gears": 2, 
+                    "rods": 0, 
+                    "capacitors": 2
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 4
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/b2/SkyShieldIII.png/revision/latest/scale-to-width-down/80?cb=20180409095710",
+                "stats": {
+                    "health": 35000,
+                    "damage": null,
+                    "shieldHealth": 25000
+                },
+                "buildCost": {
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 9, 
+                    "capacitors": 3
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
+    },
     "microwavr": {
         "name": "Microwav'r",
         "description": "Burns all enemies within range with dangerous microwave radiation. Can also be used to make popcorn.",
