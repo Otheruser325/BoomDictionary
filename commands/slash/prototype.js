@@ -24,7 +24,7 @@ module.exports = {
                             { name: 'Hot Pot', value: 'hot_pot' },
                             { name: 'Grappler', value: 'grappler' },
                             { name: 'S.I.M.O.', value: 'simo' },
-                            { name: 'Shy Shield', value: 'sky_shield' },
+                            { name: 'Sky Shield', value: 'sky_shield' },
                             { name: "Microwav'r", value: 'microwavr' },
                             { name: 'Boom Surprise', value: 'boom_surprise' },
                             { name: 'Flotsam Cannon', value: 'flotsam_cannon' }
