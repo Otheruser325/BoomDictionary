@@ -94,7 +94,7 @@ module.exports = {
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                     { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
                     { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${attackSpeed} ms` : 'Unknown', inline: true },
-                    { name: 'Shock Duration', value: formatNumber(stats.shockDuration), inline: true },
+                    { name: 'Shock Duration', value: formatNumber(stats.stunDuration), inline: true },
                     { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
                     { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
                     { name: 'HQ Required', value: hqRequired.toString(), inline: true }
