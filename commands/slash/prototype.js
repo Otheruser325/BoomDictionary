@@ -121,7 +121,7 @@ module.exports = {
                 special = level === 1 ? 'Can see through smokescreens; targets low-health enemies' :
                          level === 2 ? 'Can see through smokescreens; targets low-health enemies' :
                          'Can see through smokescreens; targets low-health enemies';
-            } else if (defenceType === 'shy_shield') {
+            } else if (defenceType === 'sky_shield') {
                 special = level === 1 ? 'Creates a shield around itself against Gunboat Weaponry' :
                          level === 2 ? 'Creates a shield around itself against Gunboat Weaponry' :
                          'Creates a shield around itself against Gunboat Weaponry';
@@ -138,12 +138,20 @@ module.exports = {
                 .setColor('#0099ff');
 
             // Handle unique stats for certain protodefences
-            if (defenceType === 'sky_shield') {
+            if (defenceType === 'shield_generator') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
+                    { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
+                    { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
+                    { name: 'Marks', value: marks.toString(), inline: true },
+                    { name: 'Special', value: special || 'None', inline: true }
+                );
+            } else if (defenceType === 'sky_shield') {
                 embed.addFields(
                     { name: 'Health', value: formatNumber(stats.health), inline: true },
                     { name: 'Shield Health', value: formatNumber(stats.shieldHealth), inline: true },
                     { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
                     { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
                     { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
                     { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
@@ -172,7 +180,7 @@ module.exports = {
                     { name: 'Special', value: special || 'None', inline: true }
                 );
             }
-
+            
             await interaction.reply({ embeds: [embed] });
 
         } else if (subcommand === 'troop') {
