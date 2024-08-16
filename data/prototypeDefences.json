@@ -341,6 +341,63 @@
             }
         }
     },
+    "flotsam_cannon": {
+        "name": "Flotsam Cannon",
+        "description": "The mine wasn't dangerous enough, so they put a cannon on it! Potent defensive cannon that when destroyed detonates with a powerful explosion, causing damage in an area.",
+        "maxLevel": 3,
+        "attackSpeed": 1000,
+        "range": 10,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/FlotsamCannonI.png/revision/latest/scale-to-width-down/110?cb=20180605130839",
+                "stats": {
+                    "health": 15000,
+                    "damage": 500
+                },
+                "buildCost": {
+                    "fuses": 0, 
+                    "gears": 2, 
+                    "rods": 0, 
+                    "capacitors": 4
+                },
+                "buildTime": "1h",
+                "marks": "Tier 1 (I)",
+                "weaponLabRequired": 2
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/FlotsamCannonII.png/revision/latest/scale-to-width-down/110?cb=20180605130840",
+                "stats": {
+                    "health": 20000,
+                    "damage": 650
+                },
+                "buildCost": {
+                    "fuses": 2, 
+                    "gears": 6, 
+                    "rods": 4, 
+                    "capacitors": 0
+                },
+                "buildTime": "4h",
+                "marks": "Tier 2 (II)",
+                "weaponLabRequired": 4
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/FlotsamCannonIII.png/revision/latest/scale-to-width-down/110?cb=20180605130841",
+                "stats": {
+                    "health": 25000,
+                    "damage": 800
+                },
+                "buildCost": {
+                    "fuses": 5, 
+                    "gears": 2, 
+                    "rods": 8, 
+                    "capacitors": 3
+                },
+                "buildTime": "12h",
+                "marks": "Tier 3 (III)",
+                "weaponLabRequired": 5
+            }
+        }
+    },
     "boom_surprise": {
         "name": "Boom Surprise",
         "description": "Powerful 2-shot cannon with good range. Stays protected in an underground bunker until enemies are in range.",
@@ -398,60 +455,60 @@
             }
         }
     },
-    "flotsam_cannon": {
-        "name": "Flotsam Cannon",
-        "description": "The mine wasn't dangerous enough, so they put a cannon on it! Potent defensive cannon that when destroyed detonates with a powerful explosion, causing damage in an area.",
+    "microwavr": {
+        "name": "Microwav'r",
+        "description": "Burns all enemies within range with dangerous microwave radiation. Can also be used to make popcorn.",
         "maxLevel": 3,
-        "attackSpeed": 1000,
-        "range": 10,
+        "attackSpeed": 200,
+        "range": 15,
         "levels": {
             "1": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/FlotsamCannonI.png/revision/latest/scale-to-width-down/110?cb=20180605130839",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e7/MicrowavrI.png/revision/latest/scale-to-width-down/70?cb=20180430142415",
                 "stats": {
-                    "health": 15000,
-                    "damage": 500
+                    "health": 20000,
+                    "damage": 60
                 },
                 "buildCost": {
                     "fuses": 0, 
-                    "gears": 2, 
-                    "rods": 0, 
-                    "capacitors": 4
+                    "gears": 3, 
+                    "rods": 2, 
+                    "capacitors": 1
                 },
                 "buildTime": "1h",
                 "marks": "Tier 1 (I)",
                 "weaponLabRequired": 2
             },
             "2": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/FlotsamCannonII.png/revision/latest/scale-to-width-down/110?cb=20180605130840",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/f8/MicrowavrII.png/revision/latest/scale-to-width-down/70?cb=20180430142454",
                 "stats": {
-                    "health": 20000,
-                    "damage": 650
+                    "health": 25000,
+                    "damage": 100
                 },
                 "buildCost": {
-                    "fuses": 2, 
-                    "gears": 6, 
-                    "rods": 4, 
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 6, 
                     "capacitors": 0
                 },
                 "buildTime": "4h",
                 "marks": "Tier 2 (II)",
-                "weaponLabRequired": 4
+                "weaponLabRequired": 3
             },
             "3": {
-                "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/FlotsamCannonIII.png/revision/latest/scale-to-width-down/110?cb=20180605130841",
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/be/MicrowavrIII.png/revision/latest/scale-to-width-down/70?cb=20180430142508",
                 "stats": {
-                    "health": 25000,
-                    "damage": 800
+                    "health": 30000,
+                    "damage": 140
                 },
                 "buildCost": {
-                    "fuses": 5, 
-                    "gears": 2, 
-                    "rods": 8, 
-                    "capacitors": 3
+                    "fuses": 6, 
+                    "gears": 3, 
+                    "rods": 0, 
+                    "capacitors": 9
                 },
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",
-                "weaponLabRequired": 5
+                "weaponLabRequired": 4
             }
         }
     },
