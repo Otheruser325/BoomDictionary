@@ -53,14 +53,22 @@ module.exports = {
             special = levelNum === 1 ? 'Provides 50% damage boost to nearby defences' :
                     levelNum === 2 ? 'Provides 75% damage boost to nearby defences' :
                     'Provides 100% damage boost to nearby defences';
-        } else if (defenceType === 'flotsam_cannon') {
-            special = levelNum === 1 ? 'Deals 2,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
-                    levelNum === 2 ? 'Deals 2,400 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
-                    'Deals 3,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay';
+        } else if (defenceType === 'shield_generator') {
+            special = levelNum === 1 ? 'Gives the Headquarters 50% of shield equivalent to its maximum HP' :
+                    levelNum === 2 ? 'Gives the Headquarters 100% of shield equivalent to its maximum HP' :
+                    'Gives the Headquarters 150% of shield equivalent to its maximum HP';
         } else if (defenceType === 'simo') {
             special = levelNum === 1 ? 'Can see through smokescreens; targets low-health enemies' :
                     levelNum === 2 ? 'Can see through smokescreens; targets low-health enemies' :
                     'Can see through smokescreens; targets low-health enemies';
+        } else if (defenceType === 'shy_shield') {
+            special = levelNum === 1 ? 'Creates a shield around itself against Gunboat Weaponry' :
+                    levelNum === 2 ? 'Creates a shield around itself against Gunboat Weaponry' :
+                    'Creates a shield around itself against Gunboat Weaponry';
+        } else if (defenceType === 'flotsam_cannon') {
+            special = levelNum === 1 ? 'Deals 2,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                    levelNum === 2 ? 'Deals 2,400 death damage upon defeat; 6.5 tiles of radius; 3-second delay' :
+                    'Deals 3,000 death damage upon defeat; 6.5 tiles of radius; 3-second delay';
         }
 
         const embed = new EmbedBuilder()
