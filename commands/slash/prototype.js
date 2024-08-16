@@ -172,7 +172,7 @@ module.exports = {
                     { name: 'DPS', value: formatNumber(dps), inline: true },
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
                     { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
                     { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
                     { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
                     { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
@@ -239,7 +239,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true }
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true }
                 );
             } else if (troopType === 'turret_engineer') {
                 const spawnSpeed = level < 26 ? 7000 - (level - 12) * 100 : 5600;
@@ -258,7 +258,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Spawn Speed', value: spawnSpeed !== 'Unknown' ? `${formatNumber(spawnSpeed)} ms` : 'Unknown', inline: true }
+                    { name: 'Spawn Speed', value: spawnSpeed !== 'Unknown' ? `${formatNumber(spawnSpeed)}ms` : 'Unknown', inline: true }
                 );
             } else {
                 // Handle general troop stats
@@ -279,7 +279,7 @@ module.exports = {
                     { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true }
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true }
                 );
             }
 
