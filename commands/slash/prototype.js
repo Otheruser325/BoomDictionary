@@ -16,18 +16,18 @@ module.exports = {
                         .setDescription('Type of prototype defence')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Doom Cannon', value: 'doom_cannon' },
                             { name: 'Shock Blaster', value: 'shock_blaster' },
                             { name: 'Lazor Beam', value: 'lazor_beam' },
-                            { name: 'Grappler', value: 'grappler' },
-                            { name: 'Hot Pot', value: 'hot_pot' },
-                            { name: 'Shield Generator', value: 'shield_generator' },
+                            { name: 'Doom Cannon', value: 'doom_cannon' },
                             { name: 'Damage Amplifier', value: 'damage_amplifier' },
-                            { name: 'Flotsam Cannon', value: 'flotsam_cannon' },
-                            { name: 'Boom Surprise', value: 'boom_surprise' },
-                            { name: `Microwav\'r`, value: 'microwavr' },
+                            { name: 'Shield Generator', value: 'shield_generator' },
+                            { name: 'Hot Pot', value: 'hot_pot' },
+                            { name: 'Grappler', value: 'grappler' },
                             { name: 'S.I.M.O.', value: 'simo' },
-                            { name: 'Shy Shield', value: 'sky_shield' }
+                            { name: 'Shy Shield', value: 'sky_shield' },
+                            { name: `Microwav\'r`, value: 'microwavr' },
+                            { name: 'Boom Surprise', value: 'boom_surprise' },
+                            { name: 'Flotsam Cannon', value: 'flotsam_cannon' }
                         )
                 )
                 .addIntegerOption(option =>
