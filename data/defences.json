@@ -1238,6 +1238,134 @@
             }
         }
     },
+    "critter_launcher": {
+        "name": "Critter Launcher",
+        "description": "The Critter Launcher lobs critters at a long distance. These critters are not only a great distraction but also deal a lot of damage!",
+        "maxLevel": 17,
+        "attackSpeed": 2000,
+        "range": 10,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/5/5b/Critter_Launcher_01_v2-removebg-preview.png/revision/latest/scale-to-width-down/120?cb=20230816000716",
+                "stats": { "health": 5200, "damage": 76 },
+                "upgradeCost": { "wood": 1700000, "stone": 1000000, "iron": 200000 },
+                "upgradeTime": "30m",
+                "hqRequired": 14
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/04/Critter_Launcher_02_03-removebg-preview.png/revision/latest?cb=20230816000653",
+                "stats": { "health": 5700, "damage": 82 },
+                "upgradeCost": { "wood": 2170000, "stone": 1980000, "iron": 400000 },
+                "upgradeTime": "12h",
+                "hqRequired": 15
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/04/Critter_Launcher_02_03-removebg-preview.png/revision/latest?cb=20230816000653",
+                "stats": { "health": 6200, "damage": 90 },
+                "upgradeCost": { "wood": 2300000, "stone": 2250000, "iron": 400000 },
+                "upgradeTime": "14h",
+                "hqRequired": 15
+            },
+            "4": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/75/Critter_Launcher_04_05-removebg-preview.png/revision/latest?cb=20230816000636",
+                "stats": { "health": 6700, "damage": 98 },
+                "upgradeCost": { "wood": 2880000, "stone": 2680000, "iron": 1000000 },
+                "upgradeTime": "16h",
+                "hqRequired": 16
+            },
+            "5": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/75/Critter_Launcher_04_05-removebg-preview.png/revision/latest?cb=20230816000636",
+                "stats": { "health": 7200, "damage": 108 },
+                "upgradeCost": { "wood": 3060000, "stone": 2970000, "iron": 2000000 },
+                "upgradeTime": "18h",
+                "hqRequired": 17
+            },
+            "6": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1f/Critter_Launcher_06_07-removebg-preview.png/revision/latest?cb=20230816000608",
+                "stats": { "health": 7700, "damage": 120 },
+                "upgradeCost": { "wood": 3060000, "stone": 2970001, "iron": 2750000 },
+                "upgradeTime": "20h",
+                "hqRequired": 18
+            },
+            "7": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/1f/Critter_Launcher_06_07-removebg-preview.png/revision/latest?cb=20230816000608",
+                "stats": { "health": 8200, "damage": 132 },
+                "upgradeCost": { "wood": 3420000, "stone": 3100000, "iron": 3070000 },
+                "upgradeTime": "1d",
+                "hqRequired": 19
+            },
+            "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 8700, "damage": 144 },
+                "upgradeCost": { "wood": 3750000, "stone": 3400000, "iron": 3360000 },
+                "upgradeTime": "1d 4h",
+                "hqRequired": 20
+            },
+            "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 9200, "damage": 160 },
+                "upgradeCost": { "wood": 4010000, "stone": 3700000, "iron": 3510000 },
+                "upgradeTime": "1d 8h",
+                "hqRequired": 20
+            },
+            "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 9700, "damage": 174 },
+                "upgradeCost": { "wood": 4300000, "stone": 3980000, "iron": 3700000 },
+                "upgradeTime": "1d 10h",
+                "hqRequired": 21
+            },
+            "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 10200, "damage": 192 },
+                "upgradeCost": { "wood": 4560000, "stone": 4150000, "iron": 3840000 },
+                "upgradeTime": "1d 12h",
+                "hqRequired": 22
+            },
+            "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 10700, "damage": 210 },
+                "upgradeCost": { "wood": 4800000, "stone": 4540000, "iron": 4100000 },
+                "upgradeTime": "1d 14h",
+                "hqRequired": 23
+            },
+            "13": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 11200, "damage": 228 },
+                "upgradeCost": { "wood": 4970000, "stone": 4700000, "iron": 4350000 },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 23
+            },
+            "14": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 11700, "damage": 246 },
+                "upgradeCost": { "wood": 5100000, "stone": 5220000, "iron": 5090000 },
+                "upgradeTime": "1d 18h",
+                "hqRequired": 24
+            },
+            "15": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 12200, "damage": 264 },
+                "upgradeCost": { "wood": 5200000, "stone": 5350000, "iron": 5132000 },
+                "upgradeTime": "1d 20h",
+                "hqRequired": 24
+            },
+            "16": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 12700, "damage": 282 },
+                "upgradeCost": { "wood": 5600000, "stone": 5500000, "iron": 5450000 },
+                "upgradeTime": "1d 22h",
+                "hqRequired": 25
+            },
+            "17": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": { "health": 13500, "damage": 308 },
+                "upgradeCost": { "wood": 5900000, "stone": 5800000, "iron": 5800000 },
+                "upgradeTime": "2d",
+                "hqRequired": 26
+            }
+        }
+    },
     "shock_launcher": {
         "name": "Shock Launcher",
         "description": "The Shock Launcher fires shock bombs, similar to those in your Gunboat's arsenal. Enemy troops caught in the area of effect are briefly stunned and unable to move or attack.",
