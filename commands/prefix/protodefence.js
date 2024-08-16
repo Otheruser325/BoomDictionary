@@ -12,7 +12,7 @@ const validDefenceTypes = {
     'grappler': 'grappler',
     's.i.m.o.': 'simo',
     'shy shield': 'sky_shield',
-    `microwav\'r`: 'microwavr',
+    `microwav'r`: 'microwavr',
     'boom surprise': 'boom_surprise',
     'flotsam cannon': 'flotsam_cannon'
 };
