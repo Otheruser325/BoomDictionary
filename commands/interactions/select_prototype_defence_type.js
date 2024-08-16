@@ -10,7 +10,7 @@ const validPrototypeDefenceTypes = {
     'hot pot': 'hot_pot',
     'grappler': 'grappler',
     's.i.m.o.': 'simo',
-    'shy shield': 'sky_shield',
+    'sky shield': 'sky_shield',
     "microwav'r": 'microwavr',
     'boom surprise': 'boom_surprise',
     'flotsam cannon': 'flotsam_cannon'
