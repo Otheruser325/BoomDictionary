@@ -72,22 +72,46 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setTitle(`${defenceData.name} - Level ${levelNum}`)
-            .setDescription(defenceData.description || 'No description available.')
-            .setThumbnail(image)
-            .addFields(
-                { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(dps), inline: true },
-                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
-                { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
-                { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
-                { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
-                { name: 'Marks', value: marks.toString(), inline: true },
-                { name: 'Special', value: special || 'None', inline: true }
-            )
-            .setColor('#0099ff');
+                .setTitle(`${defenceData.name} - Level ${level}`)
+                .setDescription(defenceData.description || 'No description available.')
+                .setThumbnail(image)
+                .setColor('#0099ff');
+
+            // Handle unique stats for certain protodefences
+            if (defenceType === 'sky_shield') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'Shield Health', value: formatNumber(stats.shieldHealth), inline: true },
+                    { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
+                    { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
+                    { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
+                    { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
+                    { name: 'Marks', value: marks.toString(), inline: true },
+                    { name: 'Special', value: special || 'None', inline: true }
+                );
+            } else {
+                // Handle general defence stats
+                let dps = 'N/A';
+                let damagePerShot = 'N/A';
+
+                if (stats.damage !== null) {
+                    dps = (stats.damage / (defenceData.attackSpeed / 1000)).toFixed(2);
+                    damagePerShot = stats.damage.toString();
+                }
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)} ms` : 'Unknown', inline: true },
+                    { name: 'Build Cost', value: `Fuses: ${formatNumber(buildCost.fuses)}\nGears: ${formatNumber(buildCost.gears)}\nRods: ${formatNumber(buildCost.rods)}\nCapacitors: ${formatNumber(buildCost.capacitors)}`, inline: true },
+                    { name: 'Build Time', value: `${levelData.buildTime || 'Not available'}`, inline: true },
+                    { name: 'Weapon Lab Required', value: `${levelData.weaponLabRequired || 'Not available'}`, inline: true },
+                    { name: 'Marks', value: marks.toString(), inline: true },
+                    { name: 'Special', value: special || 'None', inline: true }
+                );
+            }
 
         await interaction.update({ embeds: [embed], components: [] });
     }
