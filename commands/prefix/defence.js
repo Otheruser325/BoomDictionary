@@ -77,6 +77,9 @@ module.exports = {
             const hqRequired = levelData.hqRequired || 'Not specified';
             const image = levelData.image || '';
 
+            // Calculate DPS if attackSpeed is known
+            const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
                 .setDescription(defenceData.description || 'No description available.')
