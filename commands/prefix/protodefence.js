@@ -3,18 +3,18 @@ const prototypeDefences = require('../../data/prototypeDefences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
 const validDefenceTypes = {
-    'doom cannon': 'doom_cannon',
     'shock blaster': 'shock_blaster',
     'lazor beam': 'lazor_beam',
-    'grappler': 'grappler',
-    'hot pot': 'hot_pot',
-    'shield generator': 'shield_generator',
+    'doom cannon': 'doom_cannon',
     'damage amplifier': 'damage_amplifier',
-    'flotsam cannon': 'flotsam_cannon',
-    'boom surprise': 'boom_surprise',
-    `microwav\'r`: 'microwavr',
+    'shield generator': 'shield_generator',
+    'hot pot': 'hot_pot',
+    'grappler': 'grappler',
     's.i.m.o.': 'simo',
-    'shy shield': 'sky_shield'
+    'shy shield': 'sky_shield',
+    `microwav\'r`: 'microwavr',
+    'boom surprise': 'boom_surprise',
+    'flotsam cannon': 'flotsam_cannon'
 };
 
 module.exports = {
