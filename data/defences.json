@@ -1237,5 +1237,91 @@
                 "hqRequired": 26
             }
         }
+    },
+    "shock_launcher": {
+        "name": "Shock Launcher",
+        "description": "The Shock Launcher fires shock bombs, similar to those in your Gunboat's arsenal. Enemy troops caught in the area of effect are briefly stunned and unable to move or attack.",
+        "maxLevel": 11,
+        "attackSpeed": 5000,
+        "range": 18,
+        "levels": {
+            "1": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/7/7d/ShockLauncher1.png/revision/latest/scale-to-width-down/113?cb=20160315214036",
+                "stats": { "health": 7000, "damage": 60, "stunDuration": 1.4 },
+                "upgradeCost": { "wood": 810000, "stone": 670000, "iron": 420000 },
+                "upgradeTime": "8h",
+                "hqRequired": 17
+            },
+            "2": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/1/10/ShockLauncher2-NEW.png/revision/latest/scale-to-width-down/114?cb=20160315213411",
+                "stats": { "health": 7700, "damage": 65, "stunDuration": 1.6 },
+                "upgradeCost": { "wood": 940000, "stone": 780000, "iron": 490000 },
+                "upgradeTime": "10h",
+                "hqRequired": 17
+            },
+            "3": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/3/30/ShockLauncher2.png/revision/latest/scale-to-width-down/110?cb=20151216010740",
+                "stats": { "health": 8470, "damage": 70, "stunDuration": 1.8 },
+                "upgradeCost": { "wood": 1150000, "stone": 1050000, "iron": 690000 },
+                "upgradeTime": "12h",
+                "hqRequired": 18
+            },
+            "4": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/84/ShockLauncher3.png/revision/latest/scale-to-width-down/140?cb=20151216013113",
+                "stats": { "health": 9300, "damage": 75, "stunDuration": 2 },
+                "upgradeCost": { "wood": 1480000, "stone": 1350000, "iron": 890000 },
+                "upgradeTime": "14h",
+                "hqRequired": 18
+            },
+            "5": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/b5/Shock_launcher_level5-0.png/revision/latest?cb=20200622204753",
+                "stats": { "health": 10200, "damage": 85, "stunDuration": 2.2 },
+                "upgradeCost": { "wood": 1670000, "stone": 1620000, "iron": 1270000 },
+                "upgradeTime": "18h",
+                "hqRequired": 19
+            },
+            "6": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/25/ShockLauncher6-0.png/revision/latest?cb=20200622204922",
+                "stats": { "health": 11300, "damage": 95, "stunDuration": 2.4 },
+                "upgradeCost": { "wood": 2040000, "stone": 1980000, "iron": 1560000 },
+                "upgradeTime": "20h",
+                "hqRequired": 19
+            },
+            "7": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/2/2b/ShockLauncher7.png/revision/latest/scale-to-width-down/120?cb=20160323203824",
+                "stats": { "health": 12400, "damage": 105, "stunDuration": 2.6 },
+                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "upgradeTime": "1d",
+                "hqRequired": 20
+            },
+            "8": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
+                "stats": { "health": 13600, "damage": 115, "stunDuration": 2.8 },
+                "upgradeCost": { "wood": 2880000, "stone": 2880000, "iron": 2870000 },
+                "upgradeTime": "1d 6h",
+                "hqRequired": 20
+            },
+            "9": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
+                "stats": { "health": 15000, "damage": 130, "stunDuration": 3 },
+                "upgradeCost": { "wood": 3300000, "stone": 3300000, "iron": 3300000 },
+                "upgradeTime": "1d 12h",
+                "hqRequired": 20
+            },
+            "10": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
+                "stats": { "health": 16500, "damage": 145, "stunDuration": 3.2 },
+                "upgradeCost": { "wood": 4320000, "stone": 4700000, "iron": 5080000 },
+                "upgradeTime": "1d 14h",
+                "hqRequired": 21
+            },
+            "11": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
+                "stats": { "health": 18100, "damage": 160, "stunDuration": 3.4 },
+                "upgradeCost": { "wood": 5400000, "stone": 5870000, "iron": 6000000 },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 25
+            }
+        }
     }
 }
