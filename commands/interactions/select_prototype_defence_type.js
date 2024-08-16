@@ -9,9 +9,11 @@ const validPrototypeDefenceTypes = {
     'hot pot': 'hot_pot',
     'shield generator': 'shield_generator',
     'damage amplifier': 'damage_amplifier',
-    'boom surprise': 'boom_surprise',
     'flotsam cannon': 'flotsam_cannon',
-    's.i.m.o.': 'simo'
+    'boom surprise': 'boom_surprise',
+    `microwav\'r`: 'microwavr',
+    's.i.m.o.': 'simo',
+    'shy shield': 'sky_shield'
 };
 
 module.exports = {
