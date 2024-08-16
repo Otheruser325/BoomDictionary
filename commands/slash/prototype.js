@@ -25,7 +25,7 @@ module.exports = {
                             { name: 'Grappler', value: 'grappler' },
                             { name: 'S.I.M.O.', value: 'simo' },
                             { name: 'Shy Shield', value: 'sky_shield' },
-                            { name: `Microwav\'r`, value: 'microwavr' },
+                            { name: "Microwav'r", value: 'microwavr' },
                             { name: 'Boom Surprise', value: 'boom_surprise' },
                             { name: 'Flotsam Cannon', value: 'flotsam_cannon' }
                         )
