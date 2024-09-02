@@ -6,8 +6,11 @@ const validTroopTypes = {
     'rifleman': 'rifleman',
     'heavy': 'heavy',
     'zooka': 'zooka',
+    'warrior': 'warrior',
     'tank': 'tank',
-    'grenadier': 'grenadier'
+    'medic': 'medic',
+    'grenadier': 'grenadier',
+    'cryoneer': 'cryoneer'
 };
 
 module.exports = {
