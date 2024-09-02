@@ -808,6 +808,283 @@
             }
         }
     },
+    "warrior": {
+        "name": "Warrior",
+        "description": "We're a warrior tribe of many strong men! Let us join your fight against the invaders.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/b/b2/WarriorD.png/revision/latest/scale-to-width-down/250?cb=20150803213842",
+        "maxLevel": 24,
+        "attackSpeed": 1000,
+        "attackRange": 0.9,
+        "unitSize": 3,
+        "trainingTime": "3m",
+        "movementSpeed": "300",
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 400,
+                    "damage": 160,
+                    "selfHeal": 40
+                },
+                "trainingCost": { "gold": 800 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 5
+            },
+            "2": {
+                "stats": {
+                    "health": 424,
+                    "damage": 169,
+                    "selfHeal": 42
+                },
+                "trainingCost": { "gold": 1000 },
+                "researchCost": { "gold": 155000 },
+                "upgradeTime": "16h",
+                "armoryRequired": 5
+            },
+            "3": {
+                "stats": {
+                    "health": 449,
+                    "damage": 179,
+                    "selfHeal": 44
+                },
+                "trainingCost": { "gold": 1200 },
+                "researchCost": { "gold": 294000 },
+                "upgradeTime": "22h",
+                "armoryRequired": 6
+            },
+            "4": {
+                "stats": {
+                    "health": 475,
+                    "damage": 189,
+                    "selfHeal": 46
+                },
+                "trainingCost": { "gold": 1400 },
+                "researchCost": { "gold": 470000 },
+                "upgradeTime": "1d 6h",
+                "armoryRequired": 7
+            },
+            "5": {
+                "stats": {
+                    "health": 503,
+                    "damage": 200,
+                    "selfHeal": 48
+                },
+                "trainingCost": { "gold": 1600 },
+                "researchCost": { "gold": 680000 },
+                "upgradeTime": "1d 7h",
+                "armoryRequired": 8
+            },
+            "6": {
+                "stats": {
+                    "health": 533,
+                    "damage": 212,
+                    "selfHeal": 50
+                },
+                "trainingCost": { "gold": 1800 },
+                "researchCost": { "gold": 800000 },
+                "upgradeTime": "1d 9h",
+                "armoryRequired": 9
+            },
+            "7": {
+                "stats": {
+                    "health": 564,
+                    "damage": 224,
+                    "selfHeal": 52
+                },
+                "trainingCost": { "gold": 2000 },
+                "researchCost": { "gold": 900000 },
+                "upgradeTime": "1d 13h",
+                "armoryRequired": 10
+            },
+            "8": {
+                "stats": {
+                    "health": 597,
+                    "damage": 237,
+                    "selfHeal": 54
+                },
+                "trainingCost": { "gold": 2200 },
+                "researchCost": { "gold": 1230000 },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 11
+            },
+            "9": {
+                "stats": {
+                    "health": 633,
+                    "damage": 251,
+                    "selfHeal": 56
+                },
+                "trainingCost": { "gold": 2400 },
+                "researchCost": { "gold": 1680000 },
+                "upgradeTime": "2d",
+                "armoryRequired": 12
+            },
+            "10": {
+                "stats": {
+                    "health": 670,
+                    "damage": 266,
+                    "selfHeal": 58
+                },
+                "trainingCost": { "gold": 2600 },
+                "researchCost": { "gold": 1900000 },
+                "upgradeTime": "2d 3h",
+                "armoryRequired": 13
+            },
+            "11": {
+                "stats": {
+                    "health": 710,
+                    "damage": 281,
+                    "selfHeal": 60
+                },
+                "trainingCost": { "gold": 2800 },
+                "researchCost": { "gold": 2280000 },
+                "upgradeTime": "2d 16h",
+                "armoryRequired": 14
+            },
+            "12": {
+                "stats": {
+                    "health": 751,
+                    "damage": 297,
+                    "selfHeal": 62
+                },
+                "trainingCost": { "gold": 3000 },
+                "researchCost": { "gold": 3140000 },
+                "upgradeTime": "2d 20h",
+                "armoryRequired": 15
+            },
+            "13": {
+                "stats": {
+                    "health": 796,
+                    "damage": 315,
+                    "selfHeal": 64
+                },
+                "trainingCost": { "gold": 3200 },
+                "researchCost": { "gold": 3600000 },
+                "upgradeTime": "2d 22h",
+                "armoryRequired": 16
+            },
+            "14": {
+                "stats": {
+                    "health": 843,
+                    "damage": 333,
+                    "selfHeal": 66
+                },
+                "trainingCost": { "gold": 3400 },
+                "researchCost": { "gold": 4000000 },
+                "upgradeTime": "3d 4h",
+                "armoryRequired": 17
+            },
+            "15": {
+                "stats": {
+                    "health": 892,
+                    "damage": 352,
+                    "selfHeal": 68
+                },
+                "trainingCost": { "gold": 3600 },
+                "researchCost": { "gold": 4500000 },
+                "upgradeTime": "3d 7h",
+                "armoryRequired": 17
+            },
+            "16": {
+                "stats": {
+                    "health": 945,
+                    "damage": 373,
+                    "selfHeal": 70
+                },
+                "trainingCost": { "gold": 3800 },
+                "researchCost": { "gold": 4800000 },
+                "upgradeTime": "3d 10h",
+                "armoryRequired": 18
+            },
+            "17": {
+                "stats": {
+                    "health": 1001,
+                    "damage": 394,
+                    "selfHeal": 72
+                },
+                "trainingCost": { "gold": 4000 },
+                "researchCost": { "gold": 5600000 },
+                "upgradeTime": "3d 14h",
+                "armoryRequired": 19
+            },
+            "18": {
+                "stats": {
+                    "health": 1060,
+                    "damage": 417,
+                    "selfHeal": 74
+                },
+                "trainingCost": { "gold": 4200 },
+                "researchCost": { "gold": 6400000 },
+                "upgradeTime": "3d 16h",
+                "armoryRequired": 20
+            },
+            "19": {
+                "stats": {
+                    "health": 1123,
+                    "damage": 441,
+                    "selfHeal": 76
+                },
+                "trainingCost": { "gold": 4400 },
+                "researchCost": { "gold": 7000000 },
+                "upgradeTime": "3d 18h",
+                "armoryRequired": 21
+            },
+            "20": {
+                "stats": {
+                    "health": 1189,
+                    "damage": 467,
+                    "selfHeal": 78
+                },
+                "trainingCost": { "gold": 4600 },
+                "researchCost": { "gold": 7500000 },
+                "upgradeTime": "3d 20h",
+                "armoryRequired": 22
+            },
+            "21": {
+                "stats": {
+                    "health": 1257,
+                    "damage": 495,
+                    "selfHeal": 80
+                },
+                "trainingCost": { "gold": 4800 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "3d 22h",
+                "armoryRequired": 23
+            },
+            "22": {
+                "stats": {
+                    "health": 1327,
+                    "damage": 525,
+                    "selfHeal": 82
+                },
+                "trainingCost": { "gold": 5000 },
+                "researchCost": { "gold": 8500000 },
+                "upgradeTime": "4d",
+                "armoryRequired": 24
+            },
+            "23": {
+                "stats": {
+                    "health": 1399,
+                    "damage": 557,
+                    "selfHeal": 84
+                },
+                "trainingCost": { "gold": 5200 },
+                "researchCost": { "gold": 9000000 },
+                "upgradeTime": "4d 2h",
+                "armoryRequired": 25
+            },
+            "24": {
+                "stats": {
+                    "health": 1473,
+                    "damage": 590,
+                    "selfHeal": 86
+                },
+                "trainingCost": { "gold": 5400 },
+                "researchCost": { "gold": 9500000 },
+                "upgradeTime": "4d 4h",
+                "armoryRequired": 26
+            }
+        }
+    },
     "tank": {
         "name": "Tank",
         "description": "Tank ready for battle! This baby has a long range cannon and thick armor to boot.",
