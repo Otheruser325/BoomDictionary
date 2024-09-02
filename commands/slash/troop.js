@@ -14,8 +14,11 @@ module.exports = {
                     { name: 'Rifleman', value: 'rifleman' },
                     { name: 'Heavy', value: 'heavy' },
                     { name: 'Zooka', value: 'zooka' },
+                    { name: 'Warrior', value: 'warrior' },
                     { name: 'Tank', value: 'tank' },
-                    { name: 'Grenadier', value: 'grenadier' }
+                    { name: 'Medic', value: 'medic' },
+                    { name: 'Grenadier', value: 'grenadier' },
+                    { name: 'Cryoneer', value: 'cryoneer' }
                 )
         )
         .addIntegerOption(option =>
