@@ -33,23 +33,66 @@ module.exports = {
         const armoryRequired = levelData.armoryRequired || 'Not specified';
 
         const embed = new EmbedBuilder()
-            .setTitle(`${troopData.name} - Level ${levelNum}`)
-            .setDescription(troopData.description || 'No description available.')
-            .setThumbnail(image)
-            .addFields(
-                { name: 'Health', value: formatNumber(stats.health), inline: true },
-                { name: 'DPS', value: formatNumber(dps), inline: true },
-                { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
-                { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
-                { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
-                { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
-                { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
-                { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
-                { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
-            )
-            .setColor('#0099ff');
+                .setTitle(`${troopData.name} - Level ${level}`)
+                .setDescription(troopData.description || 'No description available.')
+                .setThumbnail(image)
+                .setColor('#0099ff');
+
+            // Handle unique stats for certain troops
+            if (troopType === 'warrior') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Healing per Attack', value: formatNumber(stats.selfHeal), inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else if (troopType === 'cryoneer') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Freeze Power', value: `${formatNumber(troopData.speedReduction)}%`, inline: true },
+                    { name: 'Freeze Duration', value: `${formatNumber(troopData.freezeDuration)} seconds`, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else {
+                // Handle general troop stats
+                let dps = 'N/A';
+                let damagePerShot = 'N/A';
+
+                if (stats.damage !== null) {
+                    dps = (stats.damage / (troopData.attackSpeed / 1000)).toFixed(2);
+                    damagePerShot = stats.damage.toString();
+                }
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            }
 
         await interaction.update({ embeds: [embed], components: [] });
     }
