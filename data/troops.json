@@ -230,6 +230,199 @@
             }
         }
     },
+    "zooka": {
+        "name": "Zooka",
+        "description": "Need something blown to bits? A few shots from my bazooka will destroy any enemy building!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/a/aa/ZookaD.png/revision/latest/scale-to-width-down/180?cb=20150803213759",
+        "maxLevel": 25,
+        "attackSpeed": 2000,
+        "attackRange": 7.2,
+        "unitSize": 2,
+        "trainingTime": "4m",
+        "movementSpeed": "180",
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 50,
+                    "damage": 160
+                },
+                "trainingCost": { "gold": 220 },
+                "researchCost": { "gold": 0 },
+                "armoryRequired": 2
+            },
+            "2": {
+                "stats": {
+                    "health": 54,
+                    "damage": 176
+                },
+                "trainingCost": { "gold": 330 },
+                "researchCost": { "gold": 17100 },
+                "armoryRequired": 2
+            },
+            "3": {
+                "stats": {
+                    "health": 59,
+                    "damage": 194
+                },
+                "trainingCost": { "gold": 450 },
+                "researchCost": { "gold": 46000 },
+                "armoryRequired": 3
+            },
+            "4": {
+                "stats": {
+                    "health": 67,
+                    "damage": 212
+                },
+                "trainingCost": { "gold": 550 },
+                "researchCost": { "gold": 99000 },
+                "armoryRequired": 4
+            },
+            "5": {
+                "stats": {
+                    "health": 70,
+                    "damage": 234
+                },
+                "trainingCost": { "gold": 700 },
+                "researchCost": { "gold": 168000 },
+                "armoryRequired": 5
+            },
+            "6": {
+                "stats": {
+                    "health": 76,
+                    "damage": 258
+                },
+                "trainingCost": { "gold": 850 },
+                "researchCost": { "gold": 284000 },
+                "armoryRequired": 6
+            },
+            "7": {
+                "stats": {
+                    "health": 83,
+                    "damage": 284
+                },
+                "trainingCost": { "gold": 1000 },
+                "researchCost": { "gold": 450000 },
+                "armoryRequired": 7
+            },
+            "8": {
+                "stats": {
+                    "health": 90,
+                    "damage": 312
+                },
+                "trainingCost": { "gold": 1150 },
+                "researchCost": { "gold": 650000 },
+                "armoryRequired": 8
+            },
+            "9": {
+                "stats": {
+                    "health": 98,
+                    "damage": 342
+                },
+                "trainingCost": { "gold": 1300 },
+                "researchCost": { "gold": 760000 },
+                "armoryRequired": 9
+            },
+            "10": {
+                "stats": {
+                    "health": 107,
+                    "damage": 378
+                },
+                "trainingCost": { "gold": 1450 },
+                "researchCost": { "gold": 850000 },
+                "armoryRequired": 10
+            },
+            "11": {
+                "stats": {
+                    "health": 116,
+                    "damage": 414
+                },
+                "trainingCost": { "gold": 1600 },
+                "researchCost": { "gold": 1160000 },
+                "armoryRequired": 11
+            },
+            "12": {
+                "stats": {
+                    "health": 126,
+                    "damage": 456
+                },
+                "trainingCost": { "gold": 1800 },
+                "researchCost": { "gold": 1590000 },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 138,
+                    "damage": 502
+                },
+                "trainingCost": { "gold": 2000 },
+                "researchCost": { "gold": 1800000 },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 150,
+                    "damage": 552
+                },
+                "trainingCost": { "gold": 2200 },
+                "researchCost": { "gold": 2160000 },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 163,
+                    "damage": 608
+                },
+                "trainingCost": { "gold": 2400 },
+                "researchCost": { "gold": 2970000 },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 177,
+                    "damage": 668
+                },
+                "trainingCost": { "gold": 2600 },
+                "researchCost": { "gold": 3400000 },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 193,
+                    "damage": 736
+                },
+                "trainingCost": { "gold": 2800 },
+                "researchCost": { "gold": 3800000 },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 210,
+                    "damage": 808
+                },
+                "trainingCost": { "gold": 3000 },
+                "researchCost": { "gold": 4500000 },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 228,
+                    "damage": 890
+                },
+                "trainingCost": { "gold": 3200 },
+                "researchCost": { "gold": 5300000 },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 248,
+                    "damage": 978
+                },
+                "trainingCost": { "gold": 3400 },
+                "researchCost": { "gold": 6100000 },
+                "armoryRequired": 20
+            }
+        }
+    },
     "tank": {
         "name": "Tank",
         "description": "Tank ready for battle! This baby has a long range cannon and thick armor to boot.",
