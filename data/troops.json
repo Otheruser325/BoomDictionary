@@ -1308,6 +1308,130 @@
             }
         }
     },
+	"medic": {
+        "name": "Medic",
+        "description": "I'm here to save lives! With my support, our soldiers can stay in the fight when the going gets hot.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/4/4b/Medicc.png/revision/latest/scale-to-width-down/250?cb=20240902074008",
+        "maxLevel": 17,
+        "attackSpeed": 600,
+        "attackRange": 4,
+        "unitSize": 5,
+        "trainingTime": "10m",
+        "movementSpeed": "270",
+		"splashRadius": 1.5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 500,
+                    "healing": 20
+                },
+                "trainingCost": { "gold": 5000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 14
+            },
+            "2": {
+                "stats": {
+                    "health": 544,
+                    "healing": 21
+                },
+                "trainingCost": { "gold": 5500 },
+                "researchCost": { "gold": 1680000 },
+                "upgradeTime": "2d 22h",
+                "armoryRequired": 14
+            },
+            "3": {
+                "stats": {
+                    "health": 592,
+                    "healing": 22
+                },
+                "trainingCost": { "gold": 6000 },
+                "researchCost": { "gold": 2740000 },
+                "upgradeTime": "3d 1h",
+                "armoryRequired": 15
+            },
+            "4": {
+                "stats": {
+                    "health": 644,
+                    "healing": 23
+                },
+                "trainingCost": { "gold": 6500 },
+                "researchCost": { "gold": 3300000 },
+                "upgradeTime": "3d 3h",
+                "armoryRequired": 15
+            },
+            "5": {
+                "stats": {
+                    "health": 701,
+                    "healing": 24
+                },
+                "trainingCost": { "gold": 7000 },
+                "researchCost": { "gold": 3400000 },
+                "upgradeTime": "3d 5h",
+                "armoryRequired": 16
+            },
+            "6": {
+                "stats": {
+                    "health": 762,
+                    "healing": 25
+                },
+                "trainingCost": { "gold": 7500 },
+                "researchCost": { "gold": 3800000 },
+                "upgradeTime": "3d 15h",
+                "armoryRequired": 17
+            },
+            "7": {
+                "stats": {
+                    "health": 829,
+                    "healing": 26
+                },
+                "trainingCost": { "gold": 8000 },
+                "researchCost": { "gold": 4500000 },
+                "upgradeTime": "3d 17h",
+                "armoryRequired": 18
+            },
+			"8": {
+                "stats": {
+                    "health": 902,
+                    "healing": 27
+                },
+                "trainingCost": { "gold": 8500 },
+                "researchCost": { "gold": 4800000 },
+                "upgradeTime": "3d 18h",
+                "armoryRequired": 18
+            },
+			"9": {
+                "stats": {
+                    "health": 982,
+                    "healing": 28
+                },
+                "trainingCost": { "gold": 9000 },
+                "researchCost": { "gold": 5300000 },
+                "upgradeTime": "3d 23h",
+                "armoryRequired": 19
+            },
+			"10": {
+                "stats": {
+                    "health": 1068,
+                    "healing": 29
+                },
+                "trainingCost": { "gold": 9500 },
+                "researchCost": { "gold": 6100000 },
+                "upgradeTime": "4d",
+                "armoryRequired": 20
+            },
+			"11": {
+                "stats": {
+                    "health": 1162,
+                    "healing": 30
+                },
+                "trainingCost": { "gold": 10000 },
+                "researchCost": { "gold": 6400000 },
+                "upgradeTime": "4d 1h",
+                "armoryRequired": 20
+            }
+        }
+    },
     "grenadier": {
         "name": "Grenadier",
         "description": "I hear you chaps have been looking for an explosives expert. Well, you struck lucky! I'll toss a few mashers their way, and Bob's your uncle - those Blaggards go up in smoke!",

@@ -30,6 +30,7 @@ module.exports = {
         const image = troopData.image || '';
         const attackSpeed = troopData.attackSpeed;
         const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+		const hps = attackSpeed ? (stats.healing / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
         const armoryRequired = levelData.armoryRequired || 'Not specified';
 
         const embed = new EmbedBuilder()
@@ -52,6 +53,20 @@ module.exports = {
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
                     { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else if (troopType === 'medic') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'Healing Per Second', value: formatNumber(hps), inline: true },
+                    { name: 'Healing Per Shot', value: formatNumber(stats.healing), inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Heal Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Heal Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else if (troopType === 'cryoneer') {
@@ -90,7 +105,7 @@ module.exports = {
                     { name: 'Health', value: formatNumber(stats.health), inline: true },
                     { name: 'DPS', value: formatNumber(dps), inline: true },
                     { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                    { name: 'Death Damage', value: `${formatNumber(stats.deathDamage)} Tiles`, inline: true },
+                    { name: 'Death Damage', value: `${formatNumber(stats.deathDamage)}`, inline: true },
 					{ name: 'Death Radius', value: `${formatNumber(troopData.deathRadius)} Tiles`, inline: true },
                     { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
