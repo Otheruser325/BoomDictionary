@@ -116,6 +116,7 @@ module.exports = {
                     { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
                     { name: 'Heal Range', value: `${formatNumber(range)} Tiles`, inline: true },
                     { name: 'Heal Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+					{ name: 'Heal Type', value: `Splash (${formatNumber(troopData.splashRadius)} Tiles)`, inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else if (troopType === 'cryoneer') {
