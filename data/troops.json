@@ -1395,7 +1395,7 @@
                     "health": 902,
                     "healing": 27
                 },
-                "trainingCost": { "gold": 8500 },
+                "trainingCost": { "gold": 9000 },
                 "researchCost": { "gold": 4800000 },
                 "upgradeTime": "3d 18h",
                 "armoryRequired": 18
@@ -1405,7 +1405,7 @@
                     "health": 982,
                     "healing": 28
                 },
-                "trainingCost": { "gold": 9000 },
+                "trainingCost": { "gold": 10000 },
                 "researchCost": { "gold": 5300000 },
                 "upgradeTime": "3d 23h",
                 "armoryRequired": 19
@@ -1415,7 +1415,7 @@
                     "health": 1068,
                     "healing": 29
                 },
-                "trainingCost": { "gold": 9500 },
+                "trainingCost": { "gold": 11000 },
                 "researchCost": { "gold": 6100000 },
                 "upgradeTime": "4d",
                 "armoryRequired": 20
@@ -1425,10 +1425,30 @@
                     "health": 1162,
                     "healing": 30
                 },
-                "trainingCost": { "gold": 10000 },
+                "trainingCost": { "gold": 12000 },
                 "researchCost": { "gold": 6400000 },
                 "upgradeTime": "4d 1h",
                 "armoryRequired": 20
+            },
+			"12": {
+                "stats": {
+                    "health": 1264,
+                    "healing": 31
+                },
+                "trainingCost": { "gold": 13000 },
+                "researchCost": { "gold": 6600000 },
+                "upgradeTime": "4d 2h",
+                "armoryRequired": 21
+            },
+			"13": {
+                "stats": {
+                    "health": 1376,
+                    "healing": 32
+                },
+                "trainingCost": { "gold": 14000 },
+                "researchCost": { "gold": 7100000 },
+                "upgradeTime": "4d 4h",
+                "armoryRequired": 22
             }
         }
     },
