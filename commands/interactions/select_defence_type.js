@@ -1,18 +1,6 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, EmbedBuilder } = require('discord.js');
 const defences = require('../../data/defences.json');
 
-const validDefenceTypes = {
-    'sniper tower': 'sniper_tower',
-    'mortar': 'mortar',
-    'machine gun': 'machine_gun',
-    'cannon': 'cannon',
-    'flamethrower': 'flamethrower',
-    'boom cannon': 'boom_cannon',
-    'rocket launcher': 'rocket_launcher',
-    'critter launcher': 'critter_launcher',
-    'shock launcher': 'shock_launcher'
-};
-
 module.exports = {
     customId: 'select_defence_type',
     async execute(interaction) {

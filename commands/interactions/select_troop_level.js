@@ -70,6 +70,37 @@ module.exports = {
                     { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
+            } else if (troopType === 'grenadier' || troopType === 'bombardier') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Splash Radius', value: `${formatNumber(troopData.splashRadius)} Tiles`, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else if (troopType === 'scorcher') {
+                embed.addFields(
+                    { name: 'Health', value: formatNumber(stats.health), inline: true },
+                    { name: 'DPS', value: formatNumber(dps), inline: true },
+                    { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
+                    { name: 'Death Damage', value: `${formatNumber(stats.deathDamage)} Tiles`, inline: true },
+					{ name: 'Death Radius', value: `${formatNumber(troopData.deathRadius)} Tiles`, inline: true },
+                    { name: 'Training Cost', value: `Gold: ${formatNumber(trainingCost.gold)}`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Unit Size', value: formatNumber(troopData.unitSize), inline: true },
+                    { name: 'Training Time', value: troopData.trainingTime || 'Unknown', inline: true },
+                    { name: 'Movement Speed', value: troopData.movementSpeed || 'Unknown', inline: true },
+                    { name: 'Attack Range', value: `${formatNumber(range)} Tiles`, inline: true },
+                    { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
             } else {
                 // Handle general troop stats
                 let dps = 'N/A';

@@ -1318,6 +1318,7 @@
         "unitSize": 6,
         "trainingTime": "15m",
         "movementSpeed": "250",
+		"splashRadius": 1.8,
         "levels": {
             "1": {
                 "stats": {
@@ -1408,6 +1409,233 @@
                 "researchCost": { "gold": 7400000 },
                 "upgradeTime": "4d 13h",
                 "armoryRequired": 20
+            },
+			"10": {
+                "stats": {
+                    "health": 760,
+                    "damage": 384
+                },
+                "trainingCost": { "gold": 17000 },
+                "researchCost": { "gold": 7800000 },
+                "upgradeTime": "4d 15h",
+                "armoryRequired": 20
+            },
+			"11": {
+                "stats": {
+                    "health": 806,
+                    "damage": 412
+                },
+                "trainingCost": { "gold": 18000 },
+                "researchCost": { "gold": 8100000 },
+                "upgradeTime": "4d 16h",
+                "armoryRequired": 21
+            },
+			"12": {
+                "stats": {
+                    "health": 854,
+                    "damage": 444
+                },
+                "trainingCost": { "gold": 19000 },
+                "researchCost": { "gold": 8700000 },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 22
+            },
+			"13": {
+                "stats": {
+                    "health": 904,
+                    "damage": 476
+                },
+                "trainingCost": { "gold": 20000 },
+                "researchCost": { "gold": 9100000 },
+                "upgradeTime": "4d 20h",
+                "armoryRequired": 23
+            },
+			"14": {
+                "stats": {
+                    "health": 956,
+                    "damage": 512
+                },
+                "trainingCost": { "gold": 21000 },
+                "researchCost": { "gold": 9500000 },
+                "upgradeTime": "4d 22h",
+                "armoryRequired": 24
+            },
+			"15": {
+                "stats": {
+                    "health": 1010,
+                    "damage": 548
+                },
+                "trainingCost": { "gold": 22000 },
+                "researchCost": { "gold": 9900000 },
+                "upgradeTime": "5d",
+                "armoryRequired": 25
+            },
+			"16": {
+                "stats": {
+                    "health": 1070,
+                    "damage": 590
+                },
+                "trainingCost": { "gold": 23000 },
+                "researchCost": { "gold": 10300000 },
+                "upgradeTime": "5d 2h",
+                "armoryRequired": 26
+            }
+        }
+    },
+	"scorcher": {
+        "name": "Scorcher",
+        "description": "Vroom vroom!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/3/34/Scorcher.png/revision/latest/scale-to-width-down/350?cb=20150205125419",
+        "maxLevel": 13,
+        "attackSpeed": 500,
+        "attackRange": 3.3,
+        "unitSize": 14,
+        "trainingTime": "50m",
+        "movementSpeed": "230",
+		"deathRadius": 3,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 25000,
+                    "damage": 1050,
+					"deathDamage": 3500
+                },
+                "trainingCost": { "gold": 25000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 18
+            },
+            "2": {
+                "stats": {
+                    "health": 26800,
+                    "damage": 1155,
+					"deathDamage": 3850
+                },
+                "trainingCost": { "gold": 30000 },
+                "researchCost": { "gold": 5400000 },
+                "upgradeTime": "4d 6h",
+                "armoryRequired": 18
+            },
+            "3": {
+                "stats": {
+                    "health": 28600,
+                    "damage": 1272,
+					"deathDamage": 4240
+                },
+                "trainingCost": { "gold": 35000 },
+                "researchCost": { "gold": 5900000 },
+                "upgradeTime": "4d 10h",
+                "armoryRequired": 18
+            },
+            "4": {
+                "stats": {
+                    "health": 30600,
+                    "damage": 1398,
+					"deathDamage": 4660
+                },
+                "trainingCost": { "gold": 40000 },
+                "researchCost": { "gold": 6500000 },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 19
+            },
+            "5": {
+                "stats": {
+                    "health": 32800,
+                    "damage": 1536,
+					"deathDamage": 5120
+                },
+                "trainingCost": { "gold": 45000 },
+                "researchCost": { "gold": 7100000 },
+                "upgradeTime": "4d 14h",
+                "armoryRequired": 19
+            },
+            "6": {
+                "stats": {
+                    "health": 35000,
+                    "damage": 1692,
+					"deathDamage": 5640
+                },
+                "trainingCost": { "gold": 50000 },
+                "researchCost": { "gold": 7200000 },
+                "upgradeTime": "4d 16h",
+                "armoryRequired": 19
+            },
+            "7": {
+                "stats": {
+                    "health": 37500,
+                    "damage": 1860,
+					"deathDamage": 6200
+                },
+                "trainingCost": { "gold": 55000 },
+                "researchCost": { "gold": 7600000 },
+                "upgradeTime": "4d 17h",
+                "armoryRequired": 20
+            },
+            "8": {
+                "stats": {
+                    "health": 40000,
+                    "damage": 2046,
+					"deathDamage": 6820
+                },
+                "trainingCost": { "gold": 60000 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "4d 19h",
+                "armoryRequired": 20
+            },
+            "9": {
+                "stats": {
+                    "health": 43000,
+                    "damage": 2250,
+					"deathDamage": 7500
+                },
+                "trainingCost": { "gold": 65000 },
+                "researchCost": { "gold": 8300000 },
+                "upgradeTime": "4d 21h",
+                "armoryRequired": 21
+            },
+			"10": {
+                "stats": {
+                    "health": 46000,
+                    "damage": 2472,
+					"deathDamage": 8240
+                },
+                "trainingCost": { "gold": 70000 },
+                "researchCost": { "gold": 8700000 },
+                "upgradeTime": "4d 23h",
+                "armoryRequired": 23
+            },
+			"11": {
+                "stats": {
+                    "health": 49500,
+                    "damage": 2712,
+					"deathDamage": 9040
+                },
+                "trainingCost": { "gold": 75000 },
+                "researchCost": { "gold": 9100000 },
+                "upgradeTime": "5d 1h",
+                "armoryRequired": 24
+            },
+			"12": {
+                "stats": {
+                    "health": 53000,
+                    "damage": 2970,
+					"deathDamage": 9900
+                },
+                "trainingCost": { "gold": 80000 },
+                "researchCost": { "gold": 9500000 },
+                "upgradeTime": "5d 3h",
+                "armoryRequired": 25
+            },
+			"13": {
+                "stats": {
+                    "health": 56700,
+                    "damage": 3240,
+					"deathDamage": 10800
+                },
+                "trainingCost": { "gold": 85000 },
+                "researchCost": { "gold": 10000000 },
+                "upgradeTime": "5d 5h",
+                "armoryRequired": 26
             }
         }
     },
@@ -1554,6 +1782,90 @@
                 "trainingCost": { "gold": 18000 },
                 "researchCost": { "gold": 9400000 },
                 "upgradeTime": "5d",
+                "armoryRequired": 26
+            }
+        }
+    },
+	"bombardier": {
+        "name": "Bombardier",
+        "description": "The Bombardiers can shoot with pin point accuracy from a large distance, dealing massive damage. They require extra energy to deploy as they are slightly older (but more experienced) than most troops.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/3/3f/Bombardier.png/revision/latest/scale-to-width-down/250?cb=20190626233050",
+        "maxLevel": 7,
+        "attackSpeed": 2200,
+        "attackRange": 12,
+        "unitSize": 8,
+        "trainingTime": "15m",
+        "movementSpeed": "200",
+		"splashRadius": 1,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 250,
+                    "damage": 2420
+                },
+                "trainingCost": { "gold": 17000 },
+                "researchCost": { "gold": 0 },
+                "upgradeTime": "N/A",
+                "armoryRequired": 21
+            },
+            "2": {
+                "stats": {
+                    "health": 300,
+                    "damage": 2860
+                },
+                "trainingCost": { "gold": 20000 },
+                "researchCost": { "gold": 7500000 },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 21
+            },
+            "3": {
+                "stats": {
+                    "health": 380,
+                    "damage": 3300
+                },
+                "trainingCost": { "gold": 25000 },
+                "researchCost": { "gold": 7500000 },
+                "upgradeTime": "4d 14h",
+                "armoryRequired": 22
+            },
+            "4": {
+                "stats": {
+                    "health": 500,
+                    "damage": 3740
+                },
+                "trainingCost": { "gold": 30000 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "4d 16h",
+                "armoryRequired": 23
+            },
+            "5": {
+                "stats": {
+                    "health": 600,
+                    "damage": 4180
+                },
+                "trainingCost": { "gold": 35000 },
+                "researchCost": { "gold": 8500000 },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 23
+            },
+            "6": {
+                "stats": {
+                    "health": 700,
+                    "damage": 4620
+                },
+                "trainingCost": { "gold": 40000 },
+                "researchCost": { "gold": 9000000 },
+                "upgradeTime": "4d 20h",
+                "armoryRequired": 25
+            },
+            "7": {
+                "stats": {
+                    "health": 750,
+                    "damage": 5060
+                },
+                "trainingCost": { "gold": 45000 },
+                "researchCost": { "gold": 9500000 },
+                "upgradeTime": "4d 22h",
                 "armoryRequired": 26
             }
         }
