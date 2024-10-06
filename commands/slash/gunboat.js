@@ -11,16 +11,13 @@ module.exports = {
                 .setDescription('Type of troop')
                 .setRequired(true)
                 .addChoices(
-                    { name: 'Rifleman', value: 'rifleman' },
-                    { name: 'Heavy', value: 'heavy' },
-                    { name: 'Zooka', value: 'zooka' },
-                    { name: 'Warrior', value: 'warrior' },
-                    { name: 'Tank', value: 'tank' },
-                    { name: 'Medic', value: 'medic' },
-                    { name: 'Grenadier', value: 'grenadier' },
-					{ name: 'Scorcher', value: 'scorcher' },
-                    { name: 'Cryoneer', value: 'cryoneer' },
-					{ name: 'Bombardier', value: 'bombardier' }
+                    { name: 'Artillery', value: 'artillery' },
+                    { name: 'Flare', value: 'flare' },
+                    { name: 'Medkit', value: 'medkit' },
+                    { name: 'Shock Bomb', value: 'shock_bomb' },
+                    { name: 'Barrage', value: 'barrage' },
+                    { name: 'Smoke Screen', value: 'smokescreen' },
+                    { name: 'Critters', value: 'critters' }
                 )
         )
         .addIntegerOption(option =>
