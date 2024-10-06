@@ -133,7 +133,24 @@ client.on(Events.InteractionCreate, async interaction => {
                 await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
             }
         }
-    } else {
+    } else if (interaction.isModalSubmit()) {
+        const interactionHandler = client.interactions.get(interaction.customId);
+        if (!interactionHandler) {
+            console.error(`No modal interaction handler matching ${interaction.customId} was found.`);
+            return;
+        }
+
+        try {
+            await interactionHandler.execute(interaction);
+        } catch (error) {
+            console.error('Error executing modal interaction:', error);
+            if (!interaction.replied) {
+                await interaction.reply({ content: 'There was an error executing this form submission!', ephemeral: true });
+            } else {
+                await interaction.followUp({ content: 'There was an error executing this form submission!', ephemeral: true });
+            }
+        }
+    }  else {
         console.error('Received an unhandled interaction type.');
     }
 });
