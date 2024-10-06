@@ -71,13 +71,16 @@ module.exports = {
             const stats = levelData.stats;
             const researchCost = levelData.researchCost || { gold: 0 };
             const armoryRequired = levelData.armoryRequired || 'Not specified';
-            const image = levelData.image || '';
+            const image = abilityData.image || '';
 
             const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
                 .setDescription(abilityData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for gunboat abilities
             if (abilityType === 'artillery') {

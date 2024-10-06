@@ -83,8 +83,11 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
                 .setDescription(defenceData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for certain defences
             if (defenceType === 'shock_launcher') {

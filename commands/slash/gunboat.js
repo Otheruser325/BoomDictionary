@@ -8,7 +8,7 @@ module.exports = {
         .setDescription('Get statistics for a specific type of gunboat ability.')
         .addStringOption(option =>
             option.setName('ability_type')
-                .setDescription('Type of troop')
+                .setDescription('Type of gunboat ability')
                 .setRequired(true)
                 .addChoices(
                     { name: 'Artillery', value: 'artillery' },
@@ -22,7 +22,7 @@ module.exports = {
         )
         .addIntegerOption(option =>
             option.setName('level')
-                .setDescription('Level of the troop')
+                .setDescription('Level of the gunboat ability')
                 .setRequired(true)
         ),
     async execute(interaction) {
@@ -46,13 +46,16 @@ module.exports = {
         const stats = levelData.stats;
         const researchCost = levelData.researchCost || { gold: 0 };
         const armoryRequired = levelData.armoryRequired || 'Not specified';
-        const image = levelData.image || '';
+        const image = abilityData.image || null;
 
         const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
                 .setDescription(abilityData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for gunboat abilities
             if (abilityType === 'artillery') {

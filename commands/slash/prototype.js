@@ -134,8 +134,11 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`${defenceData.name} - Level ${level}`)
                 .setDescription(defenceData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for certain protodefences
             if (defenceType === 'shield_generator') {
@@ -221,8 +224,11 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for certain prototroops
             if (troopType === 'critter_cannon') {
