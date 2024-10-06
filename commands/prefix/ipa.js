@@ -41,7 +41,7 @@ module.exports = {
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${fileName}`) // Correct customId
+                        .setCustomId(`play-pronunciation-${fileName}`)
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()

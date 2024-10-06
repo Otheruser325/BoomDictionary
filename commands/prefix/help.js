@@ -14,10 +14,10 @@ module.exports = {
 
         for (const file of commandFiles) {
             const command = require(path.join(__dirname, '../../commands/prefix', file));
-            if (command.name === 'help') continue; // Skip the help command
+            if (command.name === 'help') continue;
 
             let commandName = command.name;
-            let description = command.description || 'No description available'; // Provide default description
+            let description = command.description || 'No description available';
 
             if (command.aliases && command.aliases.length > 0) {
                 commandName += ` (Aliases: ${command.aliases.join(', ')})`;
@@ -81,10 +81,8 @@ module.exports = {
                     await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
                 } catch (error) {
                     if (error.code === 10008) {
-                        // Handle unknown message error (e.g., message was deleted)
-                        console.error('The message was not found or has been deleted.');
+                        return message.channel.send(`The help embed was deleted and couldn't be recovered, please try again later.`);
                     } else {
-                        // Handle other errors
                         console.error('Error updating message:', error);
                     }
                 }
@@ -96,10 +94,8 @@ module.exports = {
                         await messageReply.edit({ components: [] });
                     } catch (error) {
                         if (error.code === 10008) {
-                            // Handle unknown message error
-                            console.error('The message was not found or has been deleted.');
+                            return message.channel.send(`The help embed was deleted and couldn't be recovered, please try again later.`);
                         } else {
-                            // Handle other errors
                             console.error('Error removing components:', error);
                         }
                     }

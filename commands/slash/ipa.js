@@ -39,7 +39,7 @@ module.exports = {
 
                 const components = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
-                        .setCustomId(`play_pronunciation_${term}`) // Use a custom ID for interaction
+                        .setCustomId(`play-pronunciation-${term}`)
                         .setLabel('Play Pronunciation')
                         .setStyle(ButtonStyle.Primary),
                     new ButtonBuilder()

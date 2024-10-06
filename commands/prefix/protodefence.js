@@ -20,7 +20,7 @@ const validDefenceTypes = {
 module.exports = {
     name: 'protodefence',
     description: 'Get statistics for a prototype defence.',
-    aliases: ['protodefense', 'prototypeDefence', 'prototypeDefense'],
+    aliases: ['protodefense', 'prototypedefence', 'prototypedefense'],
     args: false,
     usage: '<defence_type> <level>',
 
