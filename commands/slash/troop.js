@@ -47,8 +47,8 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const trainingCost = levelData.trainingCost || 'N/A';
-        const researchCost = levelData.researchCost || 'N/A';
+        const trainingCost = levelData.trainingCost || { gold: 0 };
+        const researchCost = levelData.researchCost || { gold: 0 };
         const attackSpeed = troopData.attackSpeed;
         const range = troopData.attackRange || 'Unknown';
         const image = troopData.image || '';

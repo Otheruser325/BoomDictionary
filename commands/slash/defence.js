@@ -66,7 +66,7 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const upgradeCost = levelData.upgradeCost || 'N/A';
+        const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
         const attackSpeed = defenceData.attackSpeed || 'Unknown';
         const range = defenceData.range || 'Unknown';
         const hqRequired = levelData.hqRequired || 'N/A';

@@ -24,9 +24,9 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const researchCost = levelData.researchCost || 'N/A';
+        const researchCost = levelData.researchCost || { gold: 0 };
         const armoryRequired = levelData.armoryRequired || 'N/A';
-        const image = levelData.image || '';
+        const image = abilityData.image || '';
 
         const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
