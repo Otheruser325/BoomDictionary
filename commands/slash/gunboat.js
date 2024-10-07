@@ -104,7 +104,7 @@ module.exports = {
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else {
-                return message.reply(`Stat data for the gunboat ability ${abilityData.name} is currently unavailable.`);
+                return interaction.reply(`Stat data for the gunboat ability ${abilityData.name} is currently unavailable.`);
             }
 
         await interaction.reply({ embeds: [embed] });

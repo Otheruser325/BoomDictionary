@@ -916,6 +916,50 @@
                 },
                 "upgradeTime": "3d 3h",
                 "armoryRequired": 20
+            },
+			"17": {
+                "stats": {
+                    "missileDamage": 873,
+					"totalDamage": 13095
+                },
+                "researchCost": {
+                    "gold": 7000000
+                },
+                "upgradeTime": "3d 5h",
+                "armoryRequired": 21
+            },
+			"18": {
+                "stats": {
+                    "missileDamage": 960,
+					"totalDamage": 14400
+                },
+                "researchCost": {
+                    "gold": 7500000
+                },
+                "upgradeTime": "3d 7h",
+                "armoryRequired": 22
+            },
+			"19": {
+                "stats": {
+                    "missileDamage": 1047,
+					"totalDamage": 15705
+                },
+                "researchCost": {
+                    "gold": 8000000
+                },
+                "upgradeTime": "3d 9h",
+                "armoryRequired": 23
+            },
+			"20": {
+                "stats": {
+                    "missileDamage": 1134,
+					"totalDamage": 17010
+                },
+                "researchCost": {
+                    "gold": 8500000
+                },
+                "upgradeTime": "3d 11h",
+                "armoryRequired": 24
             }
         }
     },
