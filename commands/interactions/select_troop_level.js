@@ -36,8 +36,11 @@ module.exports = {
         const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)
                 .setDescription(troopData.description || 'No description available.')
-                .setThumbnail(image)
                 .setColor('#0099ff');
+				
+			if (image) {
+                embed.setThumbnail(image);
+            }
 
             // Handle unique stats for certain troops
             if (troopType === 'warrior') {

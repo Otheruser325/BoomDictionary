@@ -8,183 +8,365 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0e/SniperTower1.png/revision/latest/scale-to-width-down/70?cb=20150602194611",
-                "stats": { "health": 1700, "damage": 56 },
-                "upgradeCost": { "wood": 100, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 1700,
+                    "damage": 56
+                },
+                "upgradeCost": {
+                    "wood": 100,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "3s",
                 "hqRequired": 1
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/SniperTower2.png/revision/latest/scale-to-width-down/80?cb=20150602194612",
-                "stats": { "health": 1850, "damage": 61.6 },
-                "upgradeCost": { "wood": 200, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 1850,
+                    "damage": 61.6
+                },
+                "upgradeCost": {
+                    "wood": 200,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "5m",
                 "hqRequired": 4
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e2/SniperTower3.png/revision/latest?cb=20150627112216",
-                "stats": { "health": 2010, "damage": 67.2 },
-                "upgradeCost": { "wood": 860, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2010,
+                    "damage": 67.2
+                },
+                "upgradeCost": {
+                    "wood": 860,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "20m",
                 "hqRequired": 4
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/c2/SniperTower4.png/revision/latest/scale-to-width-down/100?cb=20150628051132",
-                "stats": { "health": 2190, "damage": 74.2 },
-                "upgradeCost": { "wood": 2070, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2190,
+                    "damage": 74.2
+                },
+                "upgradeCost": {
+                    "wood": 2070,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h",
                 "hqRequired": 4
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6f/SniperTower5.png/revision/latest/scale-to-width-down/80?cb=20150624172623",
-                "stats": { "health": 2380, "damage": 82.6 },
-                "upgradeCost": { "wood": 4700, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2380,
+                    "damage": 82.6
+                },
+                "upgradeCost": {
+                    "wood": 4700,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h 15m",
                 "hqRequired": 4
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a2/SniperTower6.png/revision/latest/scale-to-width-down/80?cb=20150625174720",
-                "stats": { "health": 2600, "damage": 89.6 },
-                "upgradeCost": { "wood": 9300, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2600,
+                    "damage": 89.6
+                },
+                "upgradeCost": {
+                    "wood": 9300,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h 45m",
                 "hqRequired": 5
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/SniperTower7.png/revision/latest/scale-to-width-down/80?cb=20150624172702",
-                "stats": { "health": 2800, "damage": 99.4 },
-                "upgradeCost": { "wood": 12500, "stone": 2200, "iron": 0 },
+                "stats": {
+                    "health": 2800,
+                    "damage": 99.4
+                },
+                "upgradeCost": {
+                    "wood": 12500,
+                    "stone": 2200,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 15m",
                 "hqRequired": 6
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/SniperTower8.png/revision/latest/scale-to-width-down/80?cb=20150715172128",
-                "stats": { "health": 3100, "damage": 109.2 },
-                "upgradeCost": { "wood": 19100, "stone": 3800, "iron": 0 },
+                "stats": {
+                    "health": 3100,
+                    "damage": 109.2
+                },
+                "upgradeCost": {
+                    "wood": 19100,
+                    "stone": 3800,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 30m",
                 "hqRequired": 7
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/SniperTower9.png/revision/latest/scale-to-width-down/72?cb=20150625150924",
-                "stats": { "health": 3300, "damage": 120.4 },
-                "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 },
+                "stats": {
+                    "health": 3300,
+                    "damage": 120.4
+                },
+                "upgradeCost": {
+                    "wood": 32000,
+                    "stone": 7100,
+                    "iron": 0
+                },
                 "upgradeTime": "3h 30m",
                 "hqRequired": 8
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/5/58/SniperTower10.png/revision/latest/scale-to-width-down/100?cb=20150624172601",
-                "stats": { "health": 3600, "damage": 131.6 },
-                "upgradeCost": { "wood": 52000, "stone": 12300, "iron": 3300 },
+                "stats": {
+                    "health": 3600,
+                    "damage": 131.6
+                },
+                "upgradeCost": {
+                    "wood": 52000,
+                    "stone": 12300,
+                    "iron": 3300
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 9
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/01/SniperTower11.png/revision/latest/scale-to-width-down/70?cb=20150625150949",
-                "stats": { "health": 4000, "damage": 145.6 },
-                "upgradeCost": { "wood": 83000, "stone": 20800, "iron": 6700 },
+                "stats": {
+                    "health": 4000,
+                    "damage": 145.6
+                },
+                "upgradeCost": {
+                    "wood": 83000,
+                    "stone": 20800,
+                    "iron": 6700
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 10
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a3/SniperTower12.png/revision/latest/scale-to-width-down/80?cb=20150625151009",
-                "stats": { "health": 4300, "damage": 159.6 },
-                "upgradeCost": { "wood": 115000, "stone": 42000, "iron": 12000 },
+                "stats": {
+                    "health": 4300,
+                    "damage": 159.6
+                },
+                "upgradeCost": {
+                    "wood": 115000,
+                    "stone": 42000,
+                    "iron": 12000
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 11
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/74/SniperTower13.png/revision/latest/scale-to-width-down/75?cb=20150625150203",
-                "stats": { "health": 4700, "damage": 176.4 },
-                "upgradeCost": { "wood": 177000, "stone": 83000, "iron": 21800 },
+                "stats": {
+                    "health": 4700,
+                    "damage": 176.4
+                },
+                "upgradeCost": {
+                    "wood": 177000,
+                    "stone": 83000,
+                    "iron": 21800
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 12
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d9/SniperTower14.png/revision/latest/scale-to-width-down/65?cb=20150625101238",
-                "stats": { "health": 5100, "damage": 193.2 },
-                "upgradeCost": { "wood": 255000, "stone": 153000, "iron": 44000 },
+                "stats": {
+                    "health": 5100,
+                    "damage": 193.2
+                },
+                "upgradeCost": {
+                    "wood": 255000,
+                    "stone": 153000,
+                    "iron": 44000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 13
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/db/SniperTower15.png/revision/latest/scale-to-width-down/110?cb=20150624173027",
-                "stats": { "health": 5500, "damage": 212.8 },
-                "upgradeCost": { "wood": 360000, "stone": 315000, "iron": 87000 },
+                "stats": {
+                    "health": 5500,
+                    "damage": 212.8
+                },
+                "upgradeCost": {
+                    "wood": 360000,
+                    "stone": 315000,
+                    "iron": 87000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 14
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/47/SniperTower16.png/revision/latest/scale-to-width-down/115?cb=20150624170744",
-                "stats": { "health": 6000, "damage": 233.8 },
-                "upgradeCost": { "wood": 630000, "stone": 480000, "iron": 175000 },
+                "stats": {
+                    "health": 6000,
+                    "damage": 233.8
+                },
+                "upgradeCost": {
+                    "wood": 630000,
+                    "stone": 480000,
+                    "iron": 175000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 15
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a2/SniperTower17.png/revision/latest/scale-to-width-down/110?cb=20150624170514",
-                "stats": { "health": 6600, "damage": 257.6 },
-                "upgradeCost": { "wood": 910000, "stone": 810000, "iron": 360000 },
+                "stats": {
+                    "health": 6600,
+                    "damage": 257.6
+                },
+                "upgradeCost": {
+                    "wood": 910000,
+                    "stone": 810000,
+                    "iron": 360000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 16
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/SniperTower18.png/revision/latest/scale-to-width-down/115?cb=20150626082443",
-                "stats": { "health": 7100, "damage": 282.8 },
-                "upgradeCost": { "wood": 1320000, "stone": 1090000, "iron": 690000 },
+                "stats": {
+                    "health": 7100,
+                    "damage": 282.8
+                },
+                "upgradeCost": {
+                    "wood": 1320000,
+                    "stone": 1090000,
+                    "iron": 690000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 17
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d5/SniperTower19.png/revision/latest/scale-to-width-down/105?cb=20150626083525",
-                "stats": { "health": 7800, "damage": 310.8 },
-                "upgradeCost": { "wood": 1650000, "stone": 1500000, "iron": 990000 },
+                "stats": {
+                    "health": 7800,
+                    "damage": 310.8
+                },
+                "upgradeCost": {
+                    "wood": 1650000,
+                    "stone": 1500000,
+                    "iron": 990000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d5/SniperTower19.png/revision/latest/scale-to-width-down/105?cb=20150626083525",
-                "stats": { "health": 8400, "damage": 343 },
-                "upgradeCost": { "wood": 2100000, "stone": 2100000, "iron": 20900000 },
+                "stats": {
+                    "health": 8400,
+                    "damage": 343
+                },
+                "upgradeCost": {
+                    "wood": 2100000,
+                    "stone": 2100000,
+                    "iron": 20900000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 20
             },
             "21": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/c4/SniperTower21New.png/revision/latest/scale-to-width-down/95?cb=20160320115431",
-                "stats": { "health": 9200, "damage": 376.6 },
-                "upgradeCost": { "wood": 2760000, "stone": 2530000, "iron": 2300000 },
+                "stats": {
+                    "health": 9200,
+                    "damage": 376.6
+                },
+                "upgradeCost": {
+                    "wood": 2760000,
+                    "stone": 2530000,
+                    "iron": 2300000
+                },
                 "upgradeTime": "1d 2h",
                 "hqRequired": 21
             },
             "22": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
-                "stats": { "health": 10000, "damage": 414.4 },
-                "upgradeCost": { "wood": 3380000, "stone": 3100000, "iron": 2820000 },
+                "stats": {
+                    "health": 10000,
+                    "damage": 414.4
+                },
+                "upgradeCost": {
+                    "wood": 3380000,
+                    "stone": 3100000,
+                    "iron": 2820000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 22
             },
             "23": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
-                "stats": { "health": 10900, "damage": 469 },
-                "upgradeCost": { "wood": 4060000, "stone": 3720000, "iron": 3380000 },
+                "stats": {
+                    "health": 10900,
+                    "damage": 469
+                },
+                "upgradeCost": {
+                    "wood": 4060000,
+                    "stone": 3720000,
+                    "iron": 3380000
+                },
                 "upgradeTime": "1d 6h",
                 "hqRequired": 23
             },
             "24": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
-                "stats": { "health": 11900, "damage": 515.2 },
-                "upgradeCost": { "wood": 4870000, "stone": 4460000, "iron": 4060000 },
+                "stats": {
+                    "health": 11900,
+                    "damage": 515.2
+                },
+                "upgradeCost": {
+                    "wood": 4870000,
+                    "stone": 4460000,
+                    "iron": 4060000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 24
             },
             "25": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
-                "stats": { "health": 13000, "damage": 565.6 },
-                "upgradeCost": { "wood": 5840000, "stone": 5360000, "iron": 4870000 },
+                "stats": {
+                    "health": 13000,
+                    "damage": 565.6
+                },
+                "upgradeCost": {
+                    "wood": 5840000,
+                    "stone": 5360000,
+                    "iron": 4870000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 25
             },
             "26": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
-                "stats": { "health": 14200, "damage": 621.6 },
-                "upgradeCost": { "wood": 6720000, "stone": 6160000, "iron": 5600000 },
+                "stats": {
+                    "health": 14200,
+                    "damage": 621.6
+                },
+                "upgradeCost": {
+                    "wood": 6720000,
+                    "stone": 6160000,
+                    "iron": 5600000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 26
             }
@@ -199,197 +381,393 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/73/Mortar1New.png/revision/latest/scale-to-width-down/105?cb=20160403110409",
-                "stats": { "health": 2000, "damage": 65 },
-                "upgradeCost": { "wood": 1180, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2000,
+                    "damage": 65
+                },
+                "upgradeCost": {
+                    "wood": 1180,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "30m",
                 "hqRequired": 3
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/ec/Mortar2New.png/revision/latest/scale-to-width-down/100?cb=20160403110409",
-                "stats": { "health": 2180, "damage": 70 },
-                "upgradeCost": { "wood": 2360, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2180,
+                    "damage": 70
+                },
+                "upgradeCost": {
+                    "wood": 2360,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h",
                 "hqRequired": 3
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fc/Mortar3b.png/revision/latest/scale-to-width-down/90?cb=20160414081756",
-                "stats": { "health": 2370, "damage": 80 },
-                "upgradeCost": { "wood": 5900, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2370,
+                    "damage": 80
+                },
+                "upgradeCost": {
+                    "wood": 5900,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h 45m",
                 "hqRequired": 4
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/4e/Mortar4.png/revision/latest/scale-to-width-down/100?cb=20160404101128",
-                "stats": { "health": 2600, "damage": 85 },
-                "upgradeCost": { "wood": 11500, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2600,
+                    "damage": 85
+                },
+                "upgradeCost": {
+                    "wood": 11500,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 15m",
                 "hqRequired": 5
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e7/Mortar5.png/revision/latest/scale-to-width-down/100?cb=20160404101129",
-                "stats": { "health": 2800, "damage": 95 },
-                "upgradeCost": { "wood": 15500, "stone": 2730, "iron": 0 },
+                "stats": {
+                    "health": 2800,
+                    "damage": 95
+                },
+                "upgradeCost": {
+                    "wood": 15500,
+                    "stone": 2730,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 45m",
                 "hqRequired": 6
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/23/Mortar6b.png/revision/latest/scale-to-width-down/85?cb=20160414081831",
-                "stats": { "health": 3000, "damage": 105 },
-                "upgradeCost": { "wood": 23500, "stone": 4700, "iron": 0 },
+                "stats": {
+                    "health": 3000,
+                    "damage": 105
+                },
+                "upgradeCost": {
+                    "wood": 23500,
+                    "stone": 4700,
+                    "iron": 0
+                },
                 "upgradeTime": "3h 15m",
                 "hqRequired": 7
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/4b/Mortar7.png/revision/latest/scale-to-width-down/100?cb=20160404101129",
-                "stats": { "health": 3300, "damage": 115 },
-                "upgradeCost": { "wood": 40000, "stone": 8700, "iron": 0 },
+                "stats": {
+                    "health": 3300,
+                    "damage": 115
+                },
+                "upgradeCost": {
+                    "wood": 40000,
+                    "stone": 8700,
+                    "iron": 0
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 8
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/2f/Mortar8New.png/revision/latest/scale-to-width-down/95?cb=20160404101129",
-                "stats": { "health": 3600, "damage": 125 },
-                "upgradeCost": { "wood": 63000, "stone": 15000, "iron": 4000 },
+                "stats": {
+                    "health": 3600,
+                    "damage": 125
+                },
+                "upgradeCost": {
+                    "wood": 63000,
+                    "stone": 15000,
+                    "iron": 4000
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 9
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/87/Mortar10.png/revision/latest/scale-to-width-down/110?cb=20160314173016",
-                "stats": { "health": 3900, "damage": 140 },
-                "upgradeCost": { "wood": 101000, "stone": 25200, "iron": 8200 },
+                "stats": {
+                    "health": 3900,
+                    "damage": 140
+                },
+                "upgradeCost": {
+                    "wood": 101000,
+                    "stone": 25200,
+                    "iron": 8200
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 10
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/87/Mortar10.png/revision/latest/scale-to-width-down/110?cb=20160314173016",
-                "stats": { "health": 4300, "damage": 155 },
-                "upgradeCost": { "wood": 140000, "stone": 50000, "iron": 14600 },
+                "stats": {
+                    "health": 4300,
+                    "damage": 155
+                },
+                "upgradeCost": {
+                    "wood": 140000,
+                    "stone": 50000,
+                    "iron": 14600
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 11
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/ba/Mortar11.png/revision/latest/scale-to-width-down/100?cb=20160314173319",
-                "stats": { "health": 4600, "damage": 170 },
-                "upgradeCost": { "wood": 217000, "stone": 102000, "iron": 26700 },
+                "stats": {
+                    "health": 4600,
+                    "damage": 170
+                },
+                "upgradeCost": {
+                    "wood": 217000,
+                    "stone": 102000,
+                    "iron": 26700
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 12
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d5/Mortar12.png/revision/latest/scale-to-width-down/115?cb=20160314173401",
-                "stats": { "health": 5100, "damage": 185 },
-                "upgradeCost": { "wood": 320000, "stone": 191000, "iron": 54000 },
+                "stats": {
+                    "health": 5100,
+                    "damage": 185
+                },
+                "upgradeCost": {
+                    "wood": 320000,
+                    "stone": 191000,
+                    "iron": 54000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 13
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/2a/Mortar13.png/revision/latest/scale-to-width-down/105?cb=20160314173744",
-                "stats": { "health": 5500, "damage": 205 },
-                "upgradeCost": { "wood": 460000, "stone": 400000, "iron": 110000 },
+                "stats": {
+                    "health": 5500,
+                    "damage": 205
+                },
+                "upgradeCost": {
+                    "wood": 460000,
+                    "stone": 400000,
+                    "iron": 110000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 14
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/f7/Mortar14.png/revision/latest/scale-to-width-down/100?cb=20160320121024",
-                "stats": { "health": 6000, "damage": 225 },
-                "upgradeCost": { "wood": 810000, "stone": 610000, "iron": 224000 },
+                "stats": {
+                    "health": 6000,
+                    "damage": 225
+                },
+                "upgradeCost": {
+                    "wood": 810000,
+                    "stone": 610000,
+                    "iron": 224000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 15
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/f7/Mortar14.png/revision/latest/scale-to-width-down/100?cb=20160320121024",
-                "stats": { "health": 6500, "damage": 245 },
-                "upgradeCost": { "wood": 1180000, "stone": 1050000, "iron": 460000 },
+                "stats": {
+                    "health": 6500,
+                    "damage": 245
+                },
+                "upgradeCost": {
+                    "wood": 1180000,
+                    "stone": 1050000,
+                    "iron": 460000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
-                "stats": { "health": 7100, "damage": 270 },
-                "upgradeCost": { "wood": 1720000, "stone": 1420000, "iron": 900000 },
+                "stats": {
+                    "health": 7100,
+                    "damage": 270
+                },
+                "upgradeCost": {
+                    "wood": 1720000,
+                    "stone": 1420000,
+                    "iron": 900000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
-                "stats": { "health": 7700, "damage": 300 },
-                "upgradeCost": { "wood": 2170000, "stone": 1980000, "iron": 1300000 },
+                "stats": {
+                    "health": 7700,
+                    "damage": 300
+                },
+                "upgradeCost": {
+                    "wood": 2170000,
+                    "stone": 1980000,
+                    "iron": 1300000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
-                "stats": { "health": 8400, "damage": 330 },
-                "upgradeCost": { "wood": 2520000, "stone": 2450000, "iron": 1920000 },
+                "stats": {
+                    "health": 8400,
+                    "damage": 330
+                },
+                "upgradeCost": {
+                    "wood": 2520000,
+                    "stone": 2450000,
+                    "iron": 1920000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 19
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
-                "stats": { "health": 9100, "damage": 360 },
-                "upgradeCost": { "wood": 2880000, "stone": 2880000, "iron": 2870000 },
+                "stats": {
+                    "health": 9100,
+                    "damage": 360
+                },
+                "upgradeCost": {
+                    "wood": 2880000,
+                    "stone": 2880000,
+                    "iron": 2870000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 20
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/31/Mortarvs2.png/revision/latest/scale-to-width-down/120?cb=20150205224539",
-                "stats": { "health": 9900, "damage": 400 },
-                "upgradeCost": { "wood": 2960000, "stone": 2970000, "iron": 2950000 },
+                "stats": {
+                    "health": 9900,
+                    "damage": 400
+                },
+                "upgradeCost": {
+                    "wood": 2960000,
+                    "stone": 2970000,
+                    "iron": 2950000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
             },
             "21": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/37/Mortar21.png/revision/latest/scale-to-width-down/130?cb=20160315214349",
-                "stats": { "health": 10800, "damage": 435 },
-                "upgradeCost": { "wood": 3420000, "stone": 3100000, "iron": 3070000 },
+                "stats": {
+                    "health": 10800,
+                    "damage": 435
+                },
+                "upgradeCost": {
+                    "wood": 3420000,
+                    "stone": 3100000,
+                    "iron": 3070000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 21
             },
             "22": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 11880, "damage": 480 },
-                "upgradeCost": { "wood": 3750000, "stone": 3400000, "iron": 3360000 },
+                "stats": {
+                    "health": 11880,
+                    "damage": 480
+                },
+                "upgradeCost": {
+                    "wood": 3750000,
+                    "stone": 3400000,
+                    "iron": 3360000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 22
             },
             "23": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 12980, "damage": 525 },
-                "upgradeCost": { "wood": 4130000, "stone": 3740000, "iron": 3700000 },
+                "stats": {
+                    "health": 12980,
+                    "damage": 525
+                },
+                "upgradeCost": {
+                    "wood": 4130000,
+                    "stone": 3740000,
+                    "iron": 3700000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 23
             },
             "24": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 14180, "damage": 570 },
-                "upgradeCost": { "wood": 4330000, "stone": 3930000, "iron": 3890000 },
+                "stats": {
+                    "health": 14180,
+                    "damage": 570
+                },
+                "upgradeCost": {
+                    "wood": 4330000,
+                    "stone": 3930000,
+                    "iron": 3890000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 23
             },
             "25": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 15480, "damage": 610 },
-                "upgradeCost": { "wood": 4760000, "stone": 4320000, "iron": 4270000 },
+                "stats": {
+                    "health": 15480,
+                    "damage": 610
+                },
+                "upgradeCost": {
+                    "wood": 4760000,
+                    "stone": 4320000,
+                    "iron": 4270000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 24
             },
             "26": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 16880, "damage": 660 },
-                "upgradeCost": { "wood": 5000000, "stone": 4530000, "iron": 4480000 },
+                "stats": {
+                    "health": 16880,
+                    "damage": 660
+                },
+                "upgradeCost": {
+                    "wood": 5000000,
+                    "stone": 4530000,
+                    "iron": 4480000
+                },
                 "upgradeTime": "1d 20h",
                 "hqRequired": 24
             },
             "27": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 18380, "damage": 705 },
-                "upgradeCost": { "wood": 5500000, "stone": 4990000, "iron": 4930000 },
+                "stats": {
+                    "health": 18380,
+                    "damage": 705
+                },
+                "upgradeCost": {
+                    "wood": 5500000,
+                    "stone": 4990000,
+                    "iron": 4930000
+                },
                 "upgradeTime": "1d 22h",
                 "hqRequired": 25
             },
             "28": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
-                "stats": { "health": 20000, "damage": 775 },
-                "upgradeCost": { "wood": 6050000, "stone": 5490000, "iron": 5420000 },
+                "stats": {
+                    "health": 20000,
+                    "damage": 775
+                },
+                "upgradeCost": {
+                    "wood": 6050000,
+                    "stone": 5490000,
+                    "iron": 5420000
+                },
                 "upgradeTime": "2d",
                 "hqRequired": 26
             }
@@ -404,183 +782,365 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/cb/MachineGun1.png/revision/latest/scale-to-width-down/95?cb=20150529190213",
-                "stats": { "health": 1600, "damage": 8.7 },
-                "upgradeCost": { "wood": 3300, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 1600,
+                    "damage": 8.7
+                },
+                "upgradeCost": {
+                    "wood": 3300,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h",
                 "hqRequired": 4
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8a/MachineGun2.png/revision/latest/scale-to-width-down/100?cb=20150529190213",
-                "stats": { "health": 1740, "damage": 9.9 },
-                "upgradeCost": { "wood": 4600, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 1740,
+                    "damage": 9.9
+                },
+                "upgradeCost": {
+                    "wood": 4600,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h 15m",
                 "hqRequired": 4
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a7/MachineGun3.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
-                "stats": { "health": 1890, "damage": 11.1 },
-                "upgradeCost": { "wood": 8800, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 1890,
+                    "damage": 11.1
+                },
+                "upgradeCost": {
+                    "wood": 8800,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "1h 45m",
                 "hqRequired": 5
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/f6/MachineGun4.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
-                "stats": { "health": 2060, "damage": 12.6 },
-                "upgradeCost": { "wood": 10000, "stone": 0, "iron": 0 },
+                "stats": {
+                    "health": 2060,
+                    "damage": 12.6
+                },
+                "upgradeCost": {
+                    "wood": 10000,
+                    "stone": 0,
+                    "iron": 0
+                },
                 "upgradeTime": "2h",
                 "hqRequired": 5
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/dd/MachineGun5.png/revision/latest/scale-to-width-down/100?cb=20150529190214",
-                "stats": { "health": 2240, "damage": 14.2 },
-                "upgradeCost": { "wood": 13200, "stone": 2320, "iron": 0 },
+                "stats": {
+                    "health": 2240,
+                    "damage": 14.2
+                },
+                "upgradeCost": {
+                    "wood": 13200,
+                    "stone": 2320,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 15m",
                 "hqRequired": 6
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/41/MachineGun6.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
-                "stats": { "health": 2440, "damage": 16.0 },
-                "upgradeCost": { "wood": 14900, "stone": 2610, "iron": 0 },
+                "stats": {
+                    "health": 2440,
+                    "damage": 16.0
+                },
+                "upgradeCost": {
+                    "wood": 14900,
+                    "stone": 2610,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 30m",
                 "hqRequired": 6
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/41/MachineGun6.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
-                "stats": { "health": 2700, "damage": 18.0 },
-                "upgradeCost": { "wood": 22500, "stone": 4500, "iron": 0 },
+                "stats": {
+                    "health": 2700,
+                    "damage": 18.0
+                },
+                "upgradeCost": {
+                    "wood": 22500,
+                    "stone": 4500,
+                    "iron": 0
+                },
                 "upgradeTime": "3h",
                 "hqRequired": 7
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/MachineGun8.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
-                "stats": { "health": 2900, "damage": 20.3 },
-                "upgradeCost": { "wood": 38000, "stone": 8400, "iron": 0 },
+                "stats": {
+                    "health": 2900,
+                    "damage": 20.3
+                },
+                "upgradeCost": {
+                    "wood": 38000,
+                    "stone": 8400,
+                    "iron": 0
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 8
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/MachineGun9.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
-                "stats": { "health": 3100, "damage": 22.9 },
-                "upgradeCost": { "wood": 60000, "stone": 14400, "iron": 3800 },
+                "stats": {
+                    "health": 3100,
+                    "damage": 22.9
+                },
+                "upgradeCost": {
+                    "wood": 60000,
+                    "stone": 14400,
+                    "iron": 3800
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 9
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/MachineGun9.png/revision/latest/scale-to-width-down/100?cb=20150529190215",
-                "stats": { "health": 3400, "damage": 25.8 },
-                "upgradeCost": { "wood": 97000, "stone": 24300, "iron": 7800 },
+                "stats": {
+                    "health": 3400,
+                    "damage": 25.8
+                },
+                "upgradeCost": {
+                    "wood": 97000,
+                    "stone": 24300,
+                    "iron": 7800
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 10
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
-                "stats": { "health": 3700, "damage": 29.1 },
-                "upgradeCost": { "wood": 134000, "stone": 49000, "iron": 14000 },
+                "stats": {
+                    "health": 3700,
+                    "damage": 29.1
+                },
+                "upgradeCost": {
+                    "wood": 134000,
+                    "stone": 49000,
+                    "iron": 14000
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 11
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
-                "stats": { "health": 4000, "damage": 32.9 },
-                "upgradeCost": { "wood": 205000, "stone": 96000, "iron": 25200 },
+                "stats": {
+                    "health": 4000,
+                    "damage": 32.9
+                },
+                "upgradeCost": {
+                    "wood": 205000,
+                    "stone": 96000,
+                    "iron": 25200
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 12
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
-                "stats": { "health": 4400, "damage": 37.1 },
-                "upgradeCost": { "wood": 295000, "stone": 177000, "iron": 50000 },
+                "stats": {
+                    "health": 4400,
+                    "damage": 37.1
+                },
+                "upgradeCost": {
+                    "wood": 295000,
+                    "stone": 177000,
+                    "iron": 50000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 13
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8f/MachineGun11.png/revision/latest/scale-to-width-down/110?cb=20150529190216",
-                "stats": { "health": 4800, "damage": 41.8 },
-                "upgradeCost": { "wood": 420000, "stone": 360000, "iron": 100000 },
+                "stats": {
+                    "health": 4800,
+                    "damage": 41.8
+                },
+                "upgradeCost": {
+                    "wood": 420000,
+                    "stone": 360000,
+                    "iron": 100000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 14
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 5200, "damage": 47.1 },
-                "upgradeCost": { "wood": 730000, "stone": 550000, "iron": 201000 },
+                "stats": {
+                    "health": 5200,
+                    "damage": 47.1
+                },
+                "upgradeCost": {
+                    "wood": 730000,
+                    "stone": 550000,
+                    "iron": 201000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 15
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 5700, "damage": 53.2 },
-                "upgradeCost": { "wood": 1040000, "stone": 930000, "iron": 410000 },
+                "stats": {
+                    "health": 5700,
+                    "damage": 53.2
+                },
+                "upgradeCost": {
+                    "wood": 1040000,
+                    "stone": 930000,
+                    "iron": 410000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 6200, "damage": 59.9 },
-                "upgradeCost": { "wood": 1510000, "stone": 1240000, "iron": 790000 },
+                "stats": {
+                    "health": 6200,
+                    "damage": 59.9
+                },
+                "upgradeCost": {
+                    "wood": 1510000,
+                    "stone": 1240000,
+                    "iron": 790000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 6700, "damage": 67.6 },
-                "upgradeCost": { "wood": 1880000, "stone": 1710000, "iron": 1120000 },
+                "stats": {
+                    "health": 6700,
+                    "damage": 67.6
+                },
+                "upgradeCost": {
+                    "wood": 1880000,
+                    "stone": 1710000,
+                    "iron": 1120000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 7300, "damage": 76.2 },
-                "upgradeCost": { "wood": 2150000, "stone": 2090000, "iron": 1640000 },
+                "stats": {
+                    "health": 7300,
+                    "damage": 76.2
+                },
+                "upgradeCost": {
+                    "wood": 2150000,
+                    "stone": 2090000,
+                    "iron": 1640000
+                },
                 "upgradeTime": "22h",
                 "hqRequired": 19
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6d/MachineGun15.png/revision/latest/scale-to-width-down/110?cb=20150624172931",
-                "stats": { "health": 7900, "damage": 85.9 },
-                "upgradeCost": { "wood": 2430000, "stone": 2430000, "iron": 2420000 },
+                "stats": {
+                    "health": 7900,
+                    "damage": 85.9
+                },
+                "upgradeCost": {
+                    "wood": 2430000,
+                    "stone": 2430000,
+                    "iron": 2420000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 20
             },
             "21": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d0/MachineGun21New.png/revision/latest/scale-to-width-down/130?cb=20160320125631",
-                "stats": { "health": 8600, "damage": 96.9 },
-                "upgradeCost": { "wood": 2760000, "stone": 2540000, "iron": 2980000 },
+                "stats": {
+                    "health": 8600,
+                    "damage": 96.9
+                },
+                "upgradeCost": {
+                    "wood": 2760000,
+                    "stone": 2540000,
+                    "iron": 2980000
+                },
                 "upgradeTime": "1d 2h",
                 "hqRequired": 21
             },
             "22": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
-                "stats": { "health": 9460, "damage": 109.3 },
-                "upgradeCost": { "wood": 3150000, "stone": 2900000, "iron": 3400000 },
+                "stats": {
+                    "health": 9460,
+                    "damage": 109.3
+                },
+                "upgradeCost": {
+                    "wood": 3150000,
+                    "stone": 2900000,
+                    "iron": 3400000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 22
             },
             "23": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
-                "stats": { "health": 10360, "damage": 122.3 },
-                "upgradeCost": { "wood": 3590000, "stone": 3310000, "iron": 3380000 },
+                "stats": {
+                    "health": 10360,
+                    "damage": 122.3
+                },
+                "upgradeCost": {
+                    "wood": 3590000,
+                    "stone": 3310000,
+                    "iron": 3380000
+                },
                 "upgradeTime": "1d 6h",
                 "hqRequired": 23
             },
             "24": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
-                "stats": { "health": 11360, "damage": 136.3 },
-                "upgradeCost": { "wood": 4090000, "stone": 3770000, "iron": 4420000 },
+                "stats": {
+                    "health": 11360,
+                    "damage": 136.3
+                },
+                "upgradeCost": {
+                    "wood": 4090000,
+                    "stone": 3770000,
+                    "iron": 4420000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 24
             },
             "25": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
-                "stats": { "health": 12460, "damage": 151.3 },
-                "upgradeCost": { "wood": 4670000, "stone": 4300000, "iron": 5040000 },
+                "stats": {
+                    "health": 12460,
+                    "damage": 151.3
+                },
+                "upgradeCost": {
+                    "wood": 4670000,
+                    "stone": 4300000,
+                    "iron": 5040000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 25
             },
             "26": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
-                "stats": { "health": 13520, "damage": 168.7 },
-                "upgradeCost": { "wood": 5320000, "stone": 4900000, "iron": 5750000 },
+                "stats": {
+                    "health": 13520,
+                    "damage": 168.7
+                },
+                "upgradeCost": {
+                    "wood": 5320000,
+                    "stone": 4900000,
+                    "iron": 5750000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 26
             }
@@ -595,183 +1155,365 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a1/Cannon1.png/revision/latest/scale-to-width-down/90?cb=20151024143232",
-                "stats": { "health": 2000, "damage": 420 },
-                "upgradeCost": { "wood": 11600, "stone": 2030, "iron": 0 },
+                "stats": {
+                    "health": 2000,
+                    "damage": 420
+                },
+                "upgradeCost": {
+                    "wood": 11600,
+                    "stone": 2030,
+                    "iron": 0
+                },
                 "upgradeTime": "2h",
                 "hqRequired": 6
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/dc/Cannon2.png/revision/latest/scale-to-width-down/90?cb=20151024202437",
-                "stats": { "health": 2180, "damage": 462 },
-                "upgradeCost": { "wood": 13200, "stone": 2320, "iron": 0 },
+                "stats": {
+                    "health": 2180,
+                    "damage": 462
+                },
+                "upgradeCost": {
+                    "wood": 13200,
+                    "stone": 2320,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 15h",
                 "hqRequired": 6
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/dc/Cannon2.png/revision/latest/scale-to-width-down/90?cb=20151024202437",
-                "stats": { "health": 2370, "damage": 507 },
-                "upgradeCost": { "wood": 19600, "stone": 3900, "iron": 0 },
+                "stats": {
+                    "health": 2370,
+                    "damage": 507
+                },
+                "upgradeCost": {
+                    "wood": 19600,
+                    "stone": 3900,
+                    "iron": 0
+                },
                 "upgradeTime": "2h 45m",
                 "hqRequired": 7
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/a/a5/Cannon4.png/revision/latest/scale-to-width-down/95?cb=20151024143403",
-                "stats": { "health": 2600, "damage": 558 },
-                "upgradeCost": { "wood": 32000, "stone": 7100, "iron": 0 },
+                "stats": {
+                    "health": 2600,
+                    "damage": 558
+                },
+                "upgradeCost": {
+                    "wood": 32000,
+                    "stone": 7100,
+                    "iron": 0
+                },
                 "upgradeTime": "3h 30m",
                 "hqRequired": 8
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/ea/Cannon5.png/revision/latest/scale-to-width-down/100?cb=20151024143439",
-                "stats": { "health": 2800, "damage": 615 },
-                "upgradeCost": { "wood": 50000, "stone": 12000, "iron": 3200 },
+                "stats": {
+                    "health": 2800,
+                    "damage": 615
+                },
+                "upgradeCost": {
+                    "wood": 50000,
+                    "stone": 12000,
+                    "iron": 3200
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 9
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Cannon6.png/revision/latest/scale-to-width-down/90?cb=20151024143512",
-                "stats": { "health": 3000, "damage": 675 },
-                "upgradeCost": { "wood": 79000, "stone": 19800, "iron": 6400 },
+                "stats": {
+                    "health": 3000,
+                    "damage": 675
+                },
+                "upgradeCost": {
+                    "wood": 79000,
+                    "stone": 19800,
+                    "iron": 6400
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 10
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Cannon6.png/revision/latest/scale-to-width-down/90?cb=20151024143512",
-                "stats": { "health": 3300, "damage": 744 },
-                "upgradeCost": { "wood": 107000, "stone": 39000, "iron": 11200 },
+                "stats": {
+                    "health": 3300,
+                    "damage": 744
+                },
+                "upgradeCost": {
+                    "wood": 107000,
+                    "stone": 39000,
+                    "iron": 11200
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 11
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Cannon6.png/revision/latest/scale-to-width-down/90?cb=20151024143512",
-                "stats": { "health": 3600, "damage": 819 },
-                "upgradeCost": { "wood": 161000, "stone": 76000, "iron": 19800 },
+                "stats": {
+                    "health": 3600,
+                    "damage": 819
+                },
+                "upgradeCost": {
+                    "wood": 161000,
+                    "stone": 76000,
+                    "iron": 19800
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 12
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Cannon6.png/revision/latest/scale-to-width-down/90?cb=20151024143512",
-                "stats": { "health": 3900, "damage": 900 },
-                "upgradeCost": { "wood": 227000, "stone": 136000, "iron": 39000 },
+                "stats": {
+                    "health": 3900,
+                    "damage": 900
+                },
+                "upgradeCost": {
+                    "wood": 227000,
+                    "stone": 136000,
+                    "iron": 39000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 13
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/48/Cannon10.png/revision/latest/scale-to-width-down/100?cb=20150715013335",
-                "stats": { "health": 4300, "damage": 990 },
-                "upgradeCost": { "wood": 314000, "stone": 274000, "iron": 76000 },
+                "stats": {
+                    "health": 4300,
+                    "damage": 990
+                },
+                "upgradeCost": {
+                    "wood": 314000,
+                    "stone": 274000,
+                    "iron": 76000
+                },
                 "upgradeTime": "9h",
                 "hqRequired": 14
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d2/Cannon11.png/revision/latest/scale-to-width-down/85?cb=20150624172950",
-                "stats": { "health": 4600, "damage": 1089 },
-                "upgradeCost": { "wood": 540000, "stone": 410000, "iron": 149000 },
+                "stats": {
+                    "health": 4600,
+                    "damage": 1089
+                },
+                "upgradeCost": {
+                    "wood": 540000,
+                    "stone": 410000,
+                    "iron": 149000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 15
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/20/Cannon12.png/revision/latest/scale-to-width-down/95?cb=20150624174540",
-                "stats": { "health": 5100, "damage": 1197 },
-                "upgradeCost": { "wood": 610000, "stone": 460000, "iron": 168000 },
+                "stats": {
+                    "health": 5100,
+                    "damage": 1197
+                },
+                "upgradeCost": {
+                    "wood": 610000,
+                    "stone": 460000,
+                    "iron": 168000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 15
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fe/Cannon13.png/revision/latest/scale-to-width-down/110?cb=20150703133406",
-                "stats": { "health": 5500, "damage": 1317 },
-                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "stats": {
+                    "health": 5500,
+                    "damage": 1317
+                },
+                "upgradeCost": {
+                    "wood": 850000,
+                    "stone": 760000,
+                    "iron": 330000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 16
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/5/5e/Cannon14.png/revision/latest/scale-to-width-down/105?cb=20150624235857",
-                "stats": { "health": 6000, "damage": 1449 },
-                "upgradeCost": { "wood": 950000, "stone": 850000, "iron": 370000 },
+                "stats": {
+                    "health": 6000,
+                    "damage": 1449
+                },
+                "upgradeCost": {
+                    "wood": 950000,
+                    "stone": 850000,
+                    "iron": 370000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon15.png/revision/latest/scale-to-width-down/110?cb=20150624235910",
-                "stats": { "health": 6500, "damage": 1596 },
-                "upgradeCost": { "wood": 1350000, "stone": 1110000, "iron": 700000 },
+                "stats": {
+                    "health": 6500,
+                    "damage": 1596
+                },
+                "upgradeCost": {
+                    "wood": 1350000,
+                    "stone": 1110000,
+                    "iron": 700000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/Cannon16.png/revision/latest/scale-to-width-down/105?cb=20151114200455",
-                "stats": { "health": 7100, "damage": 1755 },
-                "upgradeCost": { "wood": 1480000, "stone": 1220000, "iron": 770000 },
+                "stats": {
+                    "health": 7100,
+                    "damage": 1755
+                },
+                "upgradeCost": {
+                    "wood": 1480000,
+                    "stone": 1220000,
+                    "iron": 770000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 17
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/Cannon16.png/revision/latest/scale-to-width-down/105?cb=20151114200455",
-                "stats": { "health": 7700, "damage": 1929 },
-                "upgradeCost": { "wood": 1810000, "stone": 1650000, "iron": 1080000 },
+                "stats": {
+                    "health": 7700,
+                    "damage": 1929
+                },
+                "upgradeCost": {
+                    "wood": 1810000,
+                    "stone": 1650000,
+                    "iron": 1080000
+                },
                 "upgradeTime": "22h",
                 "hqRequired": 18
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/Cannon16.png/revision/latest/scale-to-width-down/105?cb=20151114200455",
-                "stats": { "health": 8400, "damage": 2124 },
-                "upgradeCost": { "wood": 1970000, "stone": 1800000, "iron": 1180000 },
+                "stats": {
+                    "health": 8400,
+                    "damage": 2124
+                },
+                "upgradeCost": {
+                    "wood": 1970000,
+                    "stone": 1800000,
+                    "iron": 1180000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 18
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/23/Cannon19.png/revision/latest/scale-to-width-down/120?cb=20150624172931",
-                "stats": { "health": 9100, "damage": 2334 },
-                "upgradeCost": { "wood": 2220000, "stone": 2160000, "iron": 1700000 },
+                "stats": {
+                    "health": 9100,
+                    "damage": 2334
+                },
+                "upgradeCost": {
+                    "wood": 2220000,
+                    "stone": 2160000,
+                    "iron": 1700000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 19
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/23/Cannon19.png/revision/latest/scale-to-width-down/120?cb=20150624172931",
-                "stats": { "health": 9900, "damage": 2568 },
-                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "stats": {
+                    "health": 9900,
+                    "damage": 2568
+                },
+                "upgradeCost": {
+                    "wood": 2470000,
+                    "stone": 2470000,
+                    "iron": 2460000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
             },
             "21": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon21.png/revision/latest/scale-to-width-down/130?cb=20151021142645",
-                "stats": { "health": 10800, "damage": 2826 },
-                "upgradeCost": { "wood": 2750000, "stone": 2990000, "iron": 3230000 },
+                "stats": {
+                    "health": 10800,
+                    "damage": 2826
+                },
+                "upgradeCost": {
+                    "wood": 2750000,
+                    "stone": 2990000,
+                    "iron": 3230000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 21
             },
             "22": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
-                "stats": { "health": 11880, "damage": 3108 },
-                "upgradeCost": { "wood": 3130000, "stone": 3400000, "iron": 3670000 },
+                "stats": {
+                    "health": 11880,
+                    "damage": 3108
+                },
+                "upgradeCost": {
+                    "wood": 3130000,
+                    "stone": 3400000,
+                    "iron": 3670000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 22
             },
             "23": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
-                "stats": { "health": 12980, "damage": 3414 },
-                "upgradeCost": { "wood": 3500000, "stone": 3800000, "iron": 4110000 },
+                "stats": {
+                    "health": 12980,
+                    "damage": 3414
+                },
+                "upgradeCost": {
+                    "wood": 3500000,
+                    "stone": 3800000,
+                    "iron": 4110000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 23
             },
             "24": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
-                "stats": { "health": 14180, "damage": 3744 },
-                "upgradeCost": { "wood": 3930000, "stone": 4260000, "iron": 4600000 },
+                "stats": {
+                    "health": 14180,
+                    "damage": 3744
+                },
+                "upgradeCost": {
+                    "wood": 3930000,
+                    "stone": 4260000,
+                    "iron": 4600000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 24
             },
             "25": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
-                "stats": { "health": 15480, "damage": 4098 },
-                "upgradeCost": { "wood": 4400000, "stone": 4780000, "iron": 5160000 },
+                "stats": {
+                    "health": 15480,
+                    "damage": 4098
+                },
+                "upgradeCost": {
+                    "wood": 4400000,
+                    "stone": 4780000,
+                    "iron": 5160000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 25
             },
             "26": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
-                "stats": { "health": 16870, "damage": 4500 },
-                "upgradeCost": { "wood": 4930000, "stone": 5350000, "iron": 5780000 },
+                "stats": {
+                    "health": 16870,
+                    "damage": 4500
+                },
+                "upgradeCost": {
+                    "wood": 4930000,
+                    "stone": 5350000,
+                    "iron": 5780000
+                },
                 "upgradeTime": "1d 20h",
                 "hqRequired": 26
             }
@@ -786,169 +1528,337 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/Flamethrower1.png/revision/latest/scale-to-width-down/70?cb=20151104053404",
-                "stats": { "health": 2300, "damage": 12 },
-                "upgradeCost": { "wood": 31500, "stone": 7500, "iron": 2000 },
+                "stats": {
+                    "health": 2300,
+                    "damage": 12
+                },
+                "upgradeCost": {
+                    "wood": 31500,
+                    "stone": 7500,
+                    "iron": 2000
+                },
                 "upgradeTime": "2h 45m",
                 "hqRequired": 9
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6c/Flamethrower2.png/revision/latest/scale-to-width-down/80?cb=20151105041901",
-                "stats": { "health": 2500, "damage": 13.2 },
-                "upgradeCost": { "wood": 44000, "stone": 10500, "iron": 2800 },
+                "stats": {
+                    "health": 2500,
+                    "damage": 13.2
+                },
+                "upgradeCost": {
+                    "wood": 44000,
+                    "stone": 10500,
+                    "iron": 2800
+                },
                 "upgradeTime": "3h 45h",
                 "hqRequired": 9
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6c/Flamethrower2.png/revision/latest/scale-to-width-down/80?cb=20151105041901",
-                "stats": { "health": 2700, "damage": 14.6 },
-                "upgradeCost": { "wood": 69000, "stone": 17300, "iron": 5600 },
+                "stats": {
+                    "health": 2700,
+                    "damage": 14.6
+                },
+                "upgradeCost": {
+                    "wood": 69000,
+                    "stone": 17300,
+                    "iron": 5600
+                },
                 "upgradeTime": "4h",
                 "hqRequired": 10
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/6c/Flamethrower2.png/revision/latest/scale-to-width-down/80?cb=20151105041901",
-                "stats": { "health": 3000, "damage": 16 },
-                "upgradeCost": { "wood": 94000, "stone": 34000, "iron": 9800 },
+                "stats": {
+                    "health": 3000,
+                    "damage": 16
+                },
+                "upgradeCost": {
+                    "wood": 94000,
+                    "stone": 34000,
+                    "iron": 9800
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 11
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/cc/Flamethrower5.png/revision/latest/scale-to-width-down/90?cb=20151105041927",
-                "stats": { "health": 3200, "damage": 17.6 },
-                "upgradeCost": { "wood": 107000, "stone": 39000, "iron": 11200 },
+                "stats": {
+                    "health": 3200,
+                    "damage": 17.6
+                },
+                "upgradeCost": {
+                    "wood": 107000,
+                    "stone": 39000,
+                    "iron": 11200
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 11
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/cc/Flamethrower5.png/revision/latest/scale-to-width-down/90?cb=20151105041927",
-                "stats": { "health": 3500, "damage": 19.4 },
-                "upgradeCost": { "wood": 161000, "stone": 76000, "iron": 19800 },
+                "stats": {
+                    "health": 3500,
+                    "damage": 19.4
+                },
+                "upgradeCost": {
+                    "wood": 161000,
+                    "stone": 76000,
+                    "iron": 19800
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 12
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/b8/Flamethrower7.png/revision/latest/scale-to-width-down/95?cb=20151026215412",
-                "stats": { "health": 3800, "damage": 21.2 },
-                "upgradeCost": { "wood": 244000, "stone": 147000, "iron": 42000 },
+                "stats": {
+                    "health": 3800,
+                    "damage": 21.2
+                },
+                "upgradeCost": {
+                    "wood": 244000,
+                    "stone": 147000,
+                    "iron": 42000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 13
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/b8/Flamethrower7.png/revision/latest/scale-to-width-down/95?cb=20151026215412",
-                "stats": { "health": 4200, "damage": 23.4 },
-                "upgradeCost": { "wood": 340000, "stone": 295000, "iron": 81000 },
+                "stats": {
+                    "health": 4200,
+                    "damage": 23.4
+                },
+                "upgradeCost": {
+                    "wood": 340000,
+                    "stone": 295000,
+                    "iron": 81000
+                },
                 "upgradeTime": "9h",
                 "hqRequired": 14
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/17/Flamethrower9.png/revision/latest/scale-to-width-down/100?cb=20151209211142",
-                "stats": { "health": 4500, "damage": 25.8 },
-                "upgradeCost": { "wood": 360000, "stone": 315000, "iron": 87000 },
+                "stats": {
+                    "health": 4500,
+                    "damage": 25.8
+                },
+                "upgradeCost": {
+                    "wood": 360000,
+                    "stone": 315000,
+                    "iron": 87000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 14
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/02/Flamethrower10.png/revision/latest/scale-to-width-down/90?cb=20151026215640",
-                "stats": { "health": 4900, "damage": 28.2 },
-                "upgradeCost": { "wood": 620000, "stone": 470000, "iron": 172000 },
+                "stats": {
+                    "health": 4900,
+                    "damage": 28.2
+                },
+                "upgradeCost": {
+                    "wood": 620000,
+                    "stone": 470000,
+                    "iron": 172000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 15
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/70/Flamethrower11.png/revision/latest/scale-to-width-down/100?cb=20151026215716",
-                "stats": { "health": 5300, "damage": 31.2 },
-                "upgradeCost": { "wood": 870000, "stone": 780000, "iron": 340000 },
+                "stats": {
+                    "health": 5300,
+                    "damage": 31.2
+                },
+                "upgradeCost": {
+                    "wood": 870000,
+                    "stone": 780000,
+                    "iron": 340000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 16
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/2f/Flamethrower12.png/revision/latest/scale-to-width-down/90?cb=20151105050607",
-                "stats": { "health": 5800, "damage": 34.2 },
-                "upgradeCost": { "wood": 1320000, "stone": 1090000, "iron": 690000 },
+                "stats": {
+                    "health": 5800,
+                    "damage": 34.2
+                },
+                "upgradeCost": {
+                    "wood": 1320000,
+                    "stone": 1090000,
+                    "iron": 690000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 17
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/2f/Flamethrower12.png/revision/latest/scale-to-width-down/90?cb=20151105050607",
-                "stats": { "health": 6300, "damage": 37.6 },
-                "upgradeCost": { "wood": 1400000, "stone": 1150000, "iron": 730000 },
+                "stats": {
+                    "health": 6300,
+                    "damage": 37.6
+                },
+                "upgradeCost": {
+                    "wood": 1400000,
+                    "stone": 1150000,
+                    "iron": 730000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/21/Flamethrower14.png/revision/latest/scale-to-width-down/100?cb=20151105050636",
-                "stats": { "health": 6900, "damage": 41.4 },
-                "upgradeCost": { "wood": 1710000, "stone": 1560000, "iron": 1020000 },
+                "stats": {
+                    "health": 6900,
+                    "damage": 41.4
+                },
+                "upgradeCost": {
+                    "wood": 1710000,
+                    "stone": 1560000,
+                    "iron": 1020000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
-                "stats": { "health": 7500, "damage": 45.6 },
-                "upgradeCost": { "wood": 1920000, "stone": 1870000, "iron": 1470000 },
+                "stats": {
+                    "health": 7500,
+                    "damage": 45.6
+                },
+                "upgradeCost": {
+                    "wood": 1920000,
+                    "stone": 1870000,
+                    "iron": 1470000
+                },
                 "upgradeTime": "22h",
                 "hqRequired": 19
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
-                "stats": { "health": 8200, "damage": 50.2 },
-                "upgradeCost": { "wood": 2140000, "stone": 2140000, "iron": 2130000 },
+                "stats": {
+                    "health": 8200,
+                    "damage": 50.2
+                },
+                "upgradeCost": {
+                    "wood": 2140000,
+                    "stone": 2140000,
+                    "iron": 2130000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 20
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Flamethrower15.png/revision/latest/scale-to-width-down/100?cb=20151026215755",
-                "stats": { "health": 8900, "damage": 55.2 },
-                "upgradeCost": { "wood": 2260000, "stone": 2270000, "iron": 2260000 },
+                "stats": {
+                    "health": 8900,
+                    "damage": 55.2
+                },
+                "upgradeCost": {
+                    "wood": 2260000,
+                    "stone": 2270000,
+                    "iron": 2260000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 20
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/21/Flamethrower18.png/revision/latest/scale-to-width-down/115?cb=20151021141206",
-                "stats": { "health": 9600, "damage": 60.6 },
-                "upgradeCost": { "wood": 2370000, "stone": 2790000, "iron": 2580000 },
+                "stats": {
+                    "health": 9600,
+                    "damage": 60.6
+                },
+                "upgradeCost": {
+                    "wood": 2370000,
+                    "stone": 2790000,
+                    "iron": 2580000
+                },
                 "upgradeTime": "1d 6h",
                 "hqRequired": 21
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 10560, "damage": 66.6 },
-                "upgradeCost": { "wood": 2710000, "stone": 3190000, "iron": 2950000 },
+                "stats": {
+                    "health": 10560,
+                    "damage": 66.6
+                },
+                "upgradeCost": {
+                    "wood": 2710000,
+                    "stone": 3190000,
+                    "iron": 2950000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 22
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 11510, "damage": 73.2 },
-                "upgradeCost": { "wood": 3040000, "stone": 3570000, "iron": 3300000 },
+                "stats": {
+                    "health": 11510,
+                    "damage": 73.2
+                },
+                "upgradeCost": {
+                    "wood": 3040000,
+                    "stone": 3570000,
+                    "iron": 3300000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 23
             },
             "21": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 12560, "damage": 80.2 },
-                "upgradeCost": { "wood": 3220000, "stone": 3790000, "iron": 3500000 },
+                "stats": {
+                    "health": 12560,
+                    "damage": 80.2
+                },
+                "upgradeCost": {
+                    "wood": 3220000,
+                    "stone": 3790000,
+                    "iron": 3500000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 23
             },
             "22": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 13660, "damage": 87.8 },
-                "upgradeCost": { "wood": 3600000, "stone": 4240000, "iron": 3920000 },
+                "stats": {
+                    "health": 13660,
+                    "damage": 87.8
+                },
+                "upgradeCost": {
+                    "wood": 3600000,
+                    "stone": 4240000,
+                    "iron": 3920000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 24
             },
             "23": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 14810, "damage": 96 },
-                "upgradeCost": { "wood": 4040000, "stone": 4750000, "iron": 4390000 },
+                "stats": {
+                    "health": 14810,
+                    "damage": 96
+                },
+                "upgradeCost": {
+                    "wood": 4040000,
+                    "stone": 4750000,
+                    "iron": 4390000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 25
             },
             "24": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
-                "stats": { "health": 16110, "damage": 105.6 },
-                "upgradeCost": { "wood": 4520000, "stone": 5320000, "iron": 4920000 },
+                "stats": {
+                    "health": 16110,
+                    "damage": 105.6
+                },
+                "upgradeCost": {
+                    "wood": 4520000,
+                    "stone": 5320000,
+                    "iron": 4920000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 26
             }
@@ -963,141 +1873,281 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/47/Boom_Cannon1new.png/revision/latest/scale-to-width-down/100?cb=20180630101902",
-                "stats": { "health": 3500, "damage": 1160 },
-                "upgradeCost": { "wood": 121000, "stone": 57000, "iron": 14900 },
+                "stats": {
+                    "health": 3500,
+                    "damage": 1160
+                },
+                "upgradeCost": {
+                    "wood": 121000,
+                    "stone": 57000,
+                    "iron": 14900
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 12
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/Boom_Cannon2new.png/revision/latest/scale-to-width-down/100?cb=20180630101903",
-                "stats": { "health": 3850, "damage": 1276 },
-                "upgradeCost": { "wood": 141000, "stone": 66000, "iron": 17300 },
+                "stats": {
+                    "health": 3850,
+                    "damage": 1276
+                },
+                "upgradeCost": {
+                    "wood": 141000,
+                    "stone": 66000,
+                    "iron": 17300
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 12
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/eb/Boom_Cannon3new.png/revision/latest/scale-to-width-down/100?cb=20180630101903",
-                "stats": { "health": 4200, "damage": 1404 },
-                "upgradeCost": { "wood": 198000, "stone": 11900, "iron": 34000 },
+                "stats": {
+                    "health": 4200,
+                    "damage": 1404
+                },
+                "upgradeCost": {
+                    "wood": 198000,
+                    "stone": 11900,
+                    "iron": 34000
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 13
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d7/Boom_Cannon4new.png/revision/latest/scale-to-width-down/100?cb=20180630101904",
-                "stats": { "health": 4700, "damage": 1544 },
-                "upgradeCost": { "wood": 255000, "stone": 153000, "iron": 44000 },
+                "stats": {
+                    "health": 4700,
+                    "damage": 1544
+                },
+                "upgradeCost": {
+                    "wood": 255000,
+                    "stone": 153000,
+                    "iron": 44000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 13
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/cb/Boom_Cannon5new.png/revision/latest/scale-to-width-down/100?cb=20180630101904",
-                "stats": { "health": 5100, "damage": 1700 },
-                "upgradeCost": { "wood": 350000, "stone": 308000, "iron": 85000 },
+                "stats": {
+                    "health": 5100,
+                    "damage": 1700
+                },
+                "upgradeCost": {
+                    "wood": 350000,
+                    "stone": 308000,
+                    "iron": 85000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 14
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/da/Boom_Cannon6new.png/revision/latest/scale-to-width-down/100?cb=20180630105718",
-                "stats": { "health": 5600, "damage": 1868 },
-                "upgradeCost": { "wood": 610000, "stone": 460000, "iron": 168000 },
+                "stats": {
+                    "health": 5600,
+                    "damage": 1868
+                },
+                "upgradeCost": {
+                    "wood": 610000,
+                    "stone": 460000,
+                    "iron": 168000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 15
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/98/Boom_Cannon7new.png/revision/latest/scale-to-width-down/100?cb=20180630101905",
-                "stats": { "health": 6200, "damage": 2056 },
-                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "stats": {
+                    "health": 6200,
+                    "damage": 2056
+                },
+                "upgradeCost": {
+                    "wood": 850000,
+                    "stone": 760000,
+                    "iron": 330000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 16
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/c2/Boom_Cannon8new.png/revision/latest/scale-to-width-down/100?cb=20180630101906",
-                "stats": { "health": 6800, "damage": 2260 },
-                "upgradeCost": { "wood": 950000, "stone": 850000, "iron": 370000 },
+                "stats": {
+                    "health": 6800,
+                    "damage": 2260
+                },
+                "upgradeCost": {
+                    "wood": 950000,
+                    "stone": 850000,
+                    "iron": 370000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/93/Boom_Cannon9new.png/revision/latest/scale-to-width-down/100?cb=20180630102020",
-                "stats": { "health": 7500, "damage": 2488 },
-                "upgradeCost": { "wood": 1350000, "stone": 1110000, "iron": 700000 },
+                "stats": {
+                    "health": 7500,
+                    "damage": 2488
+                },
+                "upgradeCost": {
+                    "wood": 1350000,
+                    "stone": 1110000,
+                    "iron": 700000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/36/Boom_Cannon10new.png/revision/latest/scale-to-width-down/100?cb=20180630102021",
-                "stats": { "health": 8300, "damage": 2736 },
-                "upgradeCost": { "wood": 1650000, "stone": 1500000, "iron": 990000 },
+                "stats": {
+                    "health": 8300,
+                    "damage": 2736
+                },
+                "upgradeCost": {
+                    "wood": 1650000,
+                    "stone": 1500000,
+                    "iron": 990000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/Boom_Cannon11new.png/revision/latest/scale-to-width-down/100?cb=20180630102022",
-                "stats": { "health": 9100, "damage": 3008 },
-                "upgradeCost": { "wood": 1810000, "stone": 1650000, "iron": 1080000 },
+                "stats": {
+                    "health": 9100,
+                    "damage": 3008
+                },
+                "upgradeCost": {
+                    "wood": 1810000,
+                    "stone": 1650000,
+                    "iron": 1080000
+                },
                 "upgradeTime": "22h",
                 "hqRequired": 18
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/Boom_Cannon12new.png/revision/latest/scale-to-width-down/100?cb=20180630102022",
-                "stats": { "health": 10000, "damage": 3308 },
-                "upgradeCost": { "wood": 2040000, "stone": 1980000, "iron": 1560000 },
+                "stats": {
+                    "health": 10000,
+                    "damage": 3308
+                },
+                "upgradeCost": {
+                    "wood": 2040000,
+                    "stone": 1980000,
+                    "iron": 1560000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 19
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/42/Boom_Cannon13new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
-                "stats": { "health": 11000, "damage": 3640 },
-                "upgradeCost": { "wood": 2260000, "stone": 2270000, "iron": 2260000 },
+                "stats": {
+                    "health": 11000,
+                    "damage": 3640
+                },
+                "upgradeCost": {
+                    "wood": 2260000,
+                    "stone": 2270000,
+                    "iron": 2260000
+                },
                 "upgradeTime": "1d 6h",
                 "hqRequired": 20
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/4/42/Boom_Cannon13new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
-                "stats": { "health": 12100, "damage": 4000 },
-                "upgradeCost": { "wood": 2460000, "stone": 2470000, "iron": 2460000 },
+                "stats": {
+                    "health": 12100,
+                    "damage": 4000
+                },
+                "upgradeCost": {
+                    "wood": 2460000,
+                    "stone": 2470000,
+                    "iron": 2460000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 20
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/Boom_Cannon15new.png/revision/latest/scale-to-width-down/100?cb=20180630102023",
-                "stats": { "health": 13300, "damage": 4400 },
-                "upgradeCost": { "wood": 3200000, "stone": 3460000, "iron": 2940000 },
+                "stats": {
+                    "health": 13300,
+                    "damage": 4400
+                },
+                "upgradeCost": {
+                    "wood": 3200000,
+                    "stone": 3460000,
+                    "iron": 2940000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 21
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
-                "stats": { "health": 14630, "damage": 4840 },
-                "upgradeCost": { "wood": 3900000, "stone": 4210000, "iron": 3590000 },
+                "stats": {
+                    "health": 14630,
+                    "damage": 4840
+                },
+                "upgradeCost": {
+                    "wood": 3900000,
+                    "stone": 4210000,
+                    "iron": 3590000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 22
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
-                "stats": { "health": 16030, "damage": 5320 },
-                "upgradeCost": { "wood": 4680000, "stone": 5050000, "iron": 4310000 },
+                "stats": {
+                    "health": 16030,
+                    "damage": 5320
+                },
+                "upgradeCost": {
+                    "wood": 4680000,
+                    "stone": 5050000,
+                    "iron": 4310000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 23
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
-                "stats": { "health": 17530, "damage": 5840 },
-                "upgradeCost": { "wood": 5620000, "stone": 6060000, "iron": 5170000 },
+                "stats": {
+                    "health": 17530,
+                    "damage": 5840
+                },
+                "upgradeCost": {
+                    "wood": 5620000,
+                    "stone": 6060000,
+                    "iron": 5170000
+                },
                 "upgradeTime": "1d 20h",
                 "hqRequired": 24
             },
             "19": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
-                "stats": { "health": 19130, "damage": 6400 },
-                "upgradeCost": { "wood": 6740000, "stone": 7270000, "iron": 6200000 },
+                "stats": {
+                    "health": 19130,
+                    "damage": 6400
+                },
+                "upgradeCost": {
+                    "wood": 6740000,
+                    "stone": 7270000,
+                    "iron": 6200000
+                },
                 "upgradeTime": "1d 22h",
                 "hqRequired": 25
             },
             "20": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
-                "stats": { "health": 21040, "damage": 7040 },
-                "upgradeCost": { "wood": 7750000, "stone": 8360000, "iron": 7130000 },
+                "stats": {
+                    "health": 21040,
+                    "damage": 7040
+                },
+                "upgradeCost": {
+                    "wood": 7750000,
+                    "stone": 8360000,
+                    "iron": 7130000
+                },
                 "upgradeTime": "2d 4h",
                 "hqRequired": 26
             }
@@ -1112,127 +2162,253 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7c/RocketLauncher1.png/revision/latest/scale-to-width-down/105?cb=20140528174119",
-                "stats": { "health": 4000, "damage": 22.75 },
-                "upgradeCost": { "wood": 142000, "stone": 85000, "iron": 24300 },
+                "stats": {
+                    "health": 4000,
+                    "damage": 22.75
+                },
+                "upgradeCost": {
+                    "wood": 142000,
+                    "stone": 85000,
+                    "iron": 24300
+                },
                 "upgradeTime": "5h",
                 "hqRequired": 13
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/c3/RocketLauncher2.png/revision/latest/scale-to-width-down/105?cb=20140528174134",
-                "stats": { "health": 4400, "damage": 25.2 },
-                "upgradeCost": { "wood": 198000, "stone": 119000, "iron": 34000 },
+                "stats": {
+                    "health": 4400,
+                    "damage": 25.2
+                },
+                "upgradeCost": {
+                    "wood": 198000,
+                    "stone": 119000,
+                    "iron": 34000
+                },
                 "upgradeTime": "6h",
                 "hqRequired": 13
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/85/RocketLauncher3.png/revision/latest/scale-to-width-down/105?cb=20140528181507",
-                "stats": { "health": 4800, "damage": 27.65 },
-                "upgradeCost": { "wood": 275000, "stone": 240000, "iron": 66000 },
+                "stats": {
+                    "health": 4800,
+                    "damage": 27.65
+                },
+                "upgradeCost": {
+                    "wood": 275000,
+                    "stone": 240000,
+                    "iron": 66000
+                },
                 "upgradeTime": "7h",
                 "hqRequired": 14
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/85/RocketLauncher3.png/revision/latest/scale-to-width-down/105?cb=20140528181507",
-                "stats": { "health": 5200, "damage": 30.45 },
-                "upgradeCost": { "wood": 314000, "stone": 274000, "iron": 76000 },
+                "stats": {
+                    "health": 5200,
+                    "damage": 30.45
+                },
+                "upgradeCost": {
+                    "wood": 314000,
+                    "stone": 274000,
+                    "iron": 76000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 14
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7b/RocketLauncher5.png/revision/latest/scale-to-width-down/120?cb=20140528174154",
-                "stats": { "health": 5700, "damage": 33.25 },
-                "upgradeCost": { "wood": 540000, "stone": 410000, "iron": 149000 },
+                "stats": {
+                    "health": 5700,
+                    "damage": 33.25
+                },
+                "upgradeCost": {
+                    "wood": 540000,
+                    "stone": 410000,
+                    "iron": 149000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 15
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/RocketLauncher6.png/revision/latest?cb=20141211074900",
-                "stats": { "health": 6300, "damage": 36.75 },
-                "upgradeCost": { "wood": 760000, "stone": 680000, "iron": 298000 },
+                "stats": {
+                    "health": 6300,
+                    "damage": 36.75
+                },
+                "upgradeCost": {
+                    "wood": 760000,
+                    "stone": 680000,
+                    "iron": 298000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 16
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 6900, "damage": 40.25 },
-                "upgradeCost": { "wood": 850000, "stone": 760000, "iron": 330000 },
+                "stats": {
+                    "health": 6900,
+                    "damage": 40.25
+                },
+                "upgradeCost": {
+                    "wood": 850000,
+                    "stone": 760000,
+                    "iron": 330000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 16
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 6900, "damage": 44.45 },
-                "upgradeCost": { "wood": 1210000, "stone": 1000000, "iron": 630000 },
+                "stats": {
+                    "health": 6900,
+                    "damage": 44.45
+                },
+                "upgradeCost": {
+                    "wood": 1210000,
+                    "stone": 1000000,
+                    "iron": 630000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 17
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 8200, "damage": 48.65 },
-                "upgradeCost": { "wood": 1480000, "stone": 1350000, "iron": 890000 },
+                "stats": {
+                    "health": 8200,
+                    "damage": 48.65
+                },
+                "upgradeCost": {
+                    "wood": 1480000,
+                    "stone": 1350000,
+                    "iron": 890000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 18
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 9000, "damage": 53.55 },
-                "upgradeCost": { "wood": 1850000, "stone": 1800000, "iron": 1420000 },
+                "stats": {
+                    "health": 9000,
+                    "damage": 53.55
+                },
+                "upgradeCost": {
+                    "wood": 1850000,
+                    "stone": 1800000,
+                    "iron": 1420000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 19
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 9800, "damage": 59.15 },
-                "upgradeCost": { "wood": 1920000, "stone": 1870000, "iron": 1470000 },
+                "stats": {
+                    "health": 9800,
+                    "damage": 59.15
+                },
+                "upgradeCost": {
+                    "wood": 1920000,
+                    "stone": 1870000,
+                    "iron": 1470000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 19
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/RocketLauncher7.png/revision/latest?cb=20141211070032",
-                "stats": { "health": 10700, "damage": 64.75 },
-                "upgradeCost": { "wood": 2060000, "stone": 2060000, "iron": 2050000 },
+                "stats": {
+                    "health": 10700,
+                    "damage": 64.75
+                },
+                "upgradeCost": {
+                    "wood": 2060000,
+                    "stone": 2060000,
+                    "iron": 2050000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 20
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8c/RocketLauncher13.png/revision/latest/scale-to-width-down/150?cb=20160319191036",
-                "stats": { "health": 11800, "damage": 71.4 },
-                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "stats": {
+                    "health": 11800,
+                    "damage": 71.4
+                },
+                "upgradeCost": {
+                    "wood": 2470000,
+                    "stone": 2470000,
+                    "iron": 2460000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
-                "stats": { "health": 12989, "damage": 78.4 },
-                "upgradeCost": { "wood": 4210000, "stone": 3590000, "iron": 3900000 },
+                "stats": {
+                    "health": 12989,
+                    "damage": 78.4
+                },
+                "upgradeCost": {
+                    "wood": 4210000,
+                    "stone": 3590000,
+                    "iron": 3900000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 21
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
-                "stats": { "health": 14180, "damage": 85.4 },
-                "upgradeCost": { "wood": 5050000, "stone": 4310000, "iron": 4680000 },
+                "stats": {
+                    "health": 14180,
+                    "damage": 85.4
+                },
+                "upgradeCost": {
+                    "wood": 5050000,
+                    "stone": 4310000,
+                    "iron": 4680000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 23
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
-                "stats": { "health": 15480, "damage": 92.75 },
-                "upgradeCost": { "wood": 6060000, "stone": 5170000, "iron": 5620000 },
+                "stats": {
+                    "health": 15480,
+                    "damage": 92.75
+                },
+                "upgradeCost": {
+                    "wood": 6060000,
+                    "stone": 5170000,
+                    "iron": 5620000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 24
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
-                "stats": { "health": 16880, "damage": 100.45 },
-                "upgradeCost": { "wood": 7270000, "stone": 6200000, "iron": 6000000 },
+                "stats": {
+                    "health": 16880,
+                    "damage": 100.45
+                },
+                "upgradeCost": {
+                    "wood": 7270000,
+                    "stone": 6200000,
+                    "iron": 6000000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 25
             },
             "18": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
-                "stats": { "health": 18480, "damage": 110.85 },
-                "upgradeCost": { "wood": 8360000, "stone": 7130000, "iron": 7750000 },
+                "stats": {
+                    "health": 18480,
+                    "damage": 110.85
+                },
+                "upgradeCost": {
+                    "wood": 8360000,
+                    "stone": 7130000,
+                    "iron": 7750000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 26
             }
@@ -1247,120 +2423,239 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/5/5b/Critter_Launcher_01_v2-removebg-preview.png/revision/latest/scale-to-width-down/120?cb=20230816000716",
-                "stats": { "health": 5200, "damage": 76 },
-                "upgradeCost": { "wood": 1700000, "stone": 1000000, "iron": 200000 },
+                "stats": {
+                    "health": 5200,
+                    "damage": 76
+                },
+                "upgradeCost": {
+                    "wood": 1700000,
+                    "stone": 1000000,
+                    "iron": 200000
+                },
                 "upgradeTime": "30m",
                 "hqRequired": 14
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/04/Critter_Launcher_02_03-removebg-preview.png/revision/latest?cb=20230816000653",
-                "stats": { "health": 5700, "damage": 82 },
-                "upgradeCost": { "wood": 2170000, "stone": 1980000, "iron": 400000 },
+                "stats": {
+                    "health": 5700,
+                    "damage": 82
+                },
+                "upgradeCost": {
+                    "wood": 2170000,
+                    "stone": 1980000,
+                    "iron": 400000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 15
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/04/Critter_Launcher_02_03-removebg-preview.png/revision/latest?cb=20230816000653",
-                "stats": { "health": 6200, "damage": 90 },
-                "upgradeCost": { "wood": 2300000, "stone": 2250000, "iron": 400000 },
+                "stats": {
+                    "health": 6200,
+                    "damage": 90
+                },
+                "upgradeCost": {
+                    "wood": 2300000,
+                    "stone": 2250000,
+                    "iron": 400000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 15
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/75/Critter_Launcher_04_05-removebg-preview.png/revision/latest?cb=20230816000636",
-                "stats": { "health": 6700, "damage": 98 },
-                "upgradeCost": { "wood": 2880000, "stone": 2680000, "iron": 1000000 },
+                "stats": {
+                    "health": 6700,
+                    "damage": 98
+                },
+                "upgradeCost": {
+                    "wood": 2880000,
+                    "stone": 2680000,
+                    "iron": 1000000
+                },
                 "upgradeTime": "16h",
                 "hqRequired": 16
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/75/Critter_Launcher_04_05-removebg-preview.png/revision/latest?cb=20230816000636",
-                "stats": { "health": 7200, "damage": 108 },
-                "upgradeCost": { "wood": 3060000, "stone": 2970000, "iron": 2000000 },
+                "stats": {
+                    "health": 7200,
+                    "damage": 108
+                },
+                "upgradeCost": {
+                    "wood": 3060000,
+                    "stone": 2970000,
+                    "iron": 2000000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 17
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/1f/Critter_Launcher_06_07-removebg-preview.png/revision/latest?cb=20230816000608",
-                "stats": { "health": 7700, "damage": 120 },
-                "upgradeCost": { "wood": 3060000, "stone": 2970001, "iron": 2750000 },
+                "stats": {
+                    "health": 7700,
+                    "damage": 120
+                },
+                "upgradeCost": {
+                    "wood": 3060000,
+                    "stone": 2970001,
+                    "iron": 2750000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 18
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/1f/Critter_Launcher_06_07-removebg-preview.png/revision/latest?cb=20230816000608",
-                "stats": { "health": 8200, "damage": 132 },
-                "upgradeCost": { "wood": 3420000, "stone": 3100000, "iron": 3070000 },
+                "stats": {
+                    "health": 8200,
+                    "damage": 132
+                },
+                "upgradeCost": {
+                    "wood": 3420000,
+                    "stone": 3100000,
+                    "iron": 3070000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 19
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 8700, "damage": 144 },
-                "upgradeCost": { "wood": 3750000, "stone": 3400000, "iron": 3360000 },
+                "stats": {
+                    "health": 8700,
+                    "damage": 144
+                },
+                "upgradeCost": {
+                    "wood": 3750000,
+                    "stone": 3400000,
+                    "iron": 3360000
+                },
                 "upgradeTime": "1d 4h",
                 "hqRequired": 20
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 9200, "damage": 160 },
-                "upgradeCost": { "wood": 4010000, "stone": 3700000, "iron": 3510000 },
+                "stats": {
+                    "health": 9200,
+                    "damage": 160
+                },
+                "upgradeCost": {
+                    "wood": 4010000,
+                    "stone": 3700000,
+                    "iron": 3510000
+                },
                 "upgradeTime": "1d 8h",
                 "hqRequired": 20
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 9700, "damage": 174 },
-                "upgradeCost": { "wood": 4300000, "stone": 3980000, "iron": 3700000 },
+                "stats": {
+                    "health": 9700,
+                    "damage": 174
+                },
+                "upgradeCost": {
+                    "wood": 4300000,
+                    "stone": 3980000,
+                    "iron": 3700000
+                },
                 "upgradeTime": "1d 10h",
                 "hqRequired": 21
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 10200, "damage": 192 },
-                "upgradeCost": { "wood": 4560000, "stone": 4150000, "iron": 3840000 },
+                "stats": {
+                    "health": 10200,
+                    "damage": 192
+                },
+                "upgradeCost": {
+                    "wood": 4560000,
+                    "stone": 4150000,
+                    "iron": 3840000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 22
             },
             "12": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 10700, "damage": 210 },
-                "upgradeCost": { "wood": 4800000, "stone": 4540000, "iron": 4100000 },
+                "stats": {
+                    "health": 10700,
+                    "damage": 210
+                },
+                "upgradeCost": {
+                    "wood": 4800000,
+                    "stone": 4540000,
+                    "iron": 4100000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 23
             },
             "13": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 11200, "damage": 228 },
-                "upgradeCost": { "wood": 4970000, "stone": 4700000, "iron": 4350000 },
+                "stats": {
+                    "health": 11200,
+                    "damage": 228
+                },
+                "upgradeCost": {
+                    "wood": 4970000,
+                    "stone": 4700000,
+                    "iron": 4350000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 23
             },
             "14": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 11700, "damage": 246 },
-                "upgradeCost": { "wood": 5100000, "stone": 5220000, "iron": 5090000 },
+                "stats": {
+                    "health": 11700,
+                    "damage": 246
+                },
+                "upgradeCost": {
+                    "wood": 5100000,
+                    "stone": 5220000,
+                    "iron": 5090000
+                },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 24
             },
             "15": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 12200, "damage": 264 },
-                "upgradeCost": { "wood": 5200000, "stone": 5350000, "iron": 5132000 },
+                "stats": {
+                    "health": 12200,
+                    "damage": 264
+                },
+                "upgradeCost": {
+                    "wood": 5200000,
+                    "stone": 5350000,
+                    "iron": 5132000
+                },
                 "upgradeTime": "1d 20h",
                 "hqRequired": 24
             },
             "16": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 12700, "damage": 282 },
-                "upgradeCost": { "wood": 5600000, "stone": 5500000, "iron": 5450000 },
+                "stats": {
+                    "health": 12700,
+                    "damage": 282
+                },
+                "upgradeCost": {
+                    "wood": 5600000,
+                    "stone": 5500000,
+                    "iron": 5450000
+                },
                 "upgradeTime": "1d 22h",
                 "hqRequired": 25
             },
             "17": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
-                "stats": { "health": 13500, "damage": 308 },
-                "upgradeCost": { "wood": 5900000, "stone": 5800000, "iron": 5800000 },
+                "stats": {
+                    "health": 13500,
+                    "damage": 308
+                },
+                "upgradeCost": {
+                    "wood": 5900000,
+                    "stone": 5800000,
+                    "iron": 5800000
+                },
                 "upgradeTime": "2d",
                 "hqRequired": 26
             }
@@ -1375,78 +2670,166 @@
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/7d/ShockLauncher1.png/revision/latest/scale-to-width-down/113?cb=20160315214036",
-                "stats": { "health": 7000, "damage": 60, "stunDuration": 1.4 },
-                "upgradeCost": { "wood": 810000, "stone": 670000, "iron": 420000 },
+                "stats": {
+                    "health": 7000,
+                    "damage": 60,
+                    "stunDuration": 1.4
+                },
+                "upgradeCost": {
+                    "wood": 810000,
+                    "stone": 670000,
+                    "iron": 420000
+                },
                 "upgradeTime": "8h",
                 "hqRequired": 17
             },
             "2": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/10/ShockLauncher2-NEW.png/revision/latest/scale-to-width-down/114?cb=20160315213411",
-                "stats": { "health": 7700, "damage": 65, "stunDuration": 1.6 },
-                "upgradeCost": { "wood": 940000, "stone": 780000, "iron": 490000 },
+                "stats": {
+                    "health": 7700,
+                    "damage": 65,
+                    "stunDuration": 1.6
+                },
+                "upgradeCost": {
+                    "wood": 940000,
+                    "stone": 780000,
+                    "iron": 490000
+                },
                 "upgradeTime": "10h",
                 "hqRequired": 17
             },
             "3": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/30/ShockLauncher2.png/revision/latest/scale-to-width-down/110?cb=20151216010740",
-                "stats": { "health": 8470, "damage": 70, "stunDuration": 1.8 },
-                "upgradeCost": { "wood": 1150000, "stone": 1050000, "iron": 690000 },
+                "stats": {
+                    "health": 8470,
+                    "damage": 70,
+                    "stunDuration": 1.8
+                },
+                "upgradeCost": {
+                    "wood": 1150000,
+                    "stone": 1050000,
+                    "iron": 690000
+                },
                 "upgradeTime": "12h",
                 "hqRequired": 18
             },
             "4": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/84/ShockLauncher3.png/revision/latest/scale-to-width-down/140?cb=20151216013113",
-                "stats": { "health": 9300, "damage": 75, "stunDuration": 2 },
-                "upgradeCost": { "wood": 1480000, "stone": 1350000, "iron": 890000 },
+                "stats": {
+                    "health": 9300,
+                    "damage": 75,
+                    "stunDuration": 2
+                },
+                "upgradeCost": {
+                    "wood": 1480000,
+                    "stone": 1350000,
+                    "iron": 890000
+                },
                 "upgradeTime": "14h",
                 "hqRequired": 18
             },
             "5": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/b5/Shock_launcher_level5-0.png/revision/latest?cb=20200622204753",
-                "stats": { "health": 10200, "damage": 85, "stunDuration": 2.2 },
-                "upgradeCost": { "wood": 1670000, "stone": 1620000, "iron": 1270000 },
+                "stats": {
+                    "health": 10200,
+                    "damage": 85,
+                    "stunDuration": 2.2
+                },
+                "upgradeCost": {
+                    "wood": 1670000,
+                    "stone": 1620000,
+                    "iron": 1270000
+                },
                 "upgradeTime": "18h",
                 "hqRequired": 19
             },
             "6": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/25/ShockLauncher6-0.png/revision/latest?cb=20200622204922",
-                "stats": { "health": 11300, "damage": 95, "stunDuration": 2.4 },
-                "upgradeCost": { "wood": 2040000, "stone": 1980000, "iron": 1560000 },
+                "stats": {
+                    "health": 11300,
+                    "damage": 95,
+                    "stunDuration": 2.4
+                },
+                "upgradeCost": {
+                    "wood": 2040000,
+                    "stone": 1980000,
+                    "iron": 1560000
+                },
                 "upgradeTime": "20h",
                 "hqRequired": 19
             },
             "7": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/2/2b/ShockLauncher7.png/revision/latest/scale-to-width-down/120?cb=20160323203824",
-                "stats": { "health": 12400, "damage": 105, "stunDuration": 2.6 },
-                "upgradeCost": { "wood": 2470000, "stone": 2470000, "iron": 2460000 },
+                "stats": {
+                    "health": 12400,
+                    "damage": 105,
+                    "stunDuration": 2.6
+                },
+                "upgradeCost": {
+                    "wood": 2470000,
+                    "stone": 2470000,
+                    "iron": 2460000
+                },
                 "upgradeTime": "1d",
                 "hqRequired": 20
             },
             "8": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
-                "stats": { "health": 13600, "damage": 115, "stunDuration": 2.8 },
-                "upgradeCost": { "wood": 2880000, "stone": 2880000, "iron": 2870000 },
+                "stats": {
+                    "health": 13600,
+                    "damage": 115,
+                    "stunDuration": 2.8
+                },
+                "upgradeCost": {
+                    "wood": 2880000,
+                    "stone": 2880000,
+                    "iron": 2870000
+                },
                 "upgradeTime": "1d 6h",
                 "hqRequired": 20
             },
             "9": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
-                "stats": { "health": 15000, "damage": 130, "stunDuration": 3 },
-                "upgradeCost": { "wood": 3300000, "stone": 3300000, "iron": 3300000 },
+                "stats": {
+                    "health": 15000,
+                    "damage": 130,
+                    "stunDuration": 3
+                },
+                "upgradeCost": {
+                    "wood": 3300000,
+                    "stone": 3300000,
+                    "iron": 3300000
+                },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 20
             },
             "10": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
-                "stats": { "health": 16500, "damage": 145, "stunDuration": 3.2 },
-                "upgradeCost": { "wood": 4320000, "stone": 4700000, "iron": 5080000 },
+                "stats": {
+                    "health": 16500,
+                    "damage": 145,
+                    "stunDuration": 3.2
+                },
+                "upgradeCost": {
+                    "wood": 4320000,
+                    "stone": 4700000,
+                    "iron": 5080000
+                },
                 "upgradeTime": "1d 14h",
                 "hqRequired": 21
             },
             "11": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
-                "stats": { "health": 18100, "damage": 160, "stunDuration": 3.4 },
-                "upgradeCost": { "wood": 5400000, "stone": 5870000, "iron": 6000000 },
+                "stats": {
+                    "health": 18100,
+                    "damage": 160,
+                    "stunDuration": 3.4
+                },
+                "upgradeCost": {
+                    "wood": 5400000,
+                    "stone": 5870000,
+                    "iron": 6000000
+                },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 25
             }

@@ -2,168 +2,529 @@
     "artillery": {
         "name": "Artillery",
         "description": "Your Gunboat fires a high-explosive cannon shell that damages enemy buildings. Be careful not to hit your own troops!",
-		"image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Artillery_new.png/revision/latest/scale-to-width-down/250?cb=20141024005634",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Artillery_new.png/revision/latest/scale-to-width-down/250?cb=20141024005634",
         "maxLevel": 26,
         "explosionRadius": 0.49,
-		"explosionRadiusAgainstTroops": 1.5,
-		"energyCost": 3,
-		"energyCostIncreasePerUse": 2,
+        "explosionRadiusAgainstTroops": 1.5,
+        "energyCost": 3,
+        "energyCostIncreasePerUse": 2,
         "levels": {
             "1": {
-                "stats": { "damage": 700 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 1
+                "stats": {
+                    "damage": 700
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
-                "stats": { "damage": 777 },
-                "researchCost": { "gold": 10400 },
+                "stats": {
+                    "damage": 777
+                },
+                "researchCost": {
+                    "gold": 10400
+                },
                 "upgradeTime": "2h",
                 "armoryRequired": 1
             },
             "3": {
-                "stats": { "damage": 862 },
-                "researchCost": { "gold": 20900 },
+                "stats": {
+                    "damage": 862
+                },
+                "researchCost": {
+                    "gold": 20900
+                },
                 "upgradeTime": "3h",
                 "armoryRequired": 2
             },
             "4": {
-                "stats": { "damage": 957 },
-                "researchCost": { "gold": 44000 },
+                "stats": {
+                    "damage": 957
+                },
+                "researchCost": {
+                    "gold": 44000
+                },
                 "upgradeTime": "5h",
                 "armoryRequired": 3
             },
             "5": {
-                "stats": { "damage": 1063 },
-                "researchCost": { "gold": 88000 },
+                "stats": {
+                    "damage": 1063
+                },
+                "researchCost": {
+                    "gold": 88000
+                },
                 "upgradeTime": "7h",
                 "armoryRequired": 4
             },
             "6": {
-                "stats": { "damage": 1180 },
-                "researchCost": { "gold": 150000 },
+                "stats": {
+                    "damage": 1180
+                },
+                "researchCost": {
+                    "gold": 150000
+                },
                 "upgradeTime": "11h",
                 "armoryRequired": 5
             },
             "7": {
-                "stats": { "damage": 1309 },
-                "researchCost": { "gold": 252000 },
+                "stats": {
+                    "damage": 1309
+                },
+                "researchCost": {
+                    "gold": 252000
+                },
                 "upgradeTime": "15h",
                 "armoryRequired": 6
             },
             "8": {
-                "stats": { "damage": 1453 },
-                "researchCost": { "gold": 400000 },
+                "stats": {
+                    "damage": 1453
+                },
+                "researchCost": {
+                    "gold": 400000
+                },
                 "upgradeTime": "19h",
                 "armoryRequired": 7
             },
             "9": {
-                "stats": { "damage": 1613 },
-                "researchCost": { "gold": 580000 },
+                "stats": {
+                    "damage": 1613
+                },
+                "researchCost": {
+                    "gold": 580000
+                },
                 "upgradeTime": "22h",
                 "armoryRequired": 8
             },
             "10": {
-                "stats": { "damage": 1791 },
-                "researchCost": { "gold": 680000 },
+                "stats": {
+                    "damage": 1791
+                },
+                "researchCost": {
+                    "gold": 680000
+                },
                 "upgradeTime": "22h",
                 "armoryRequired": 9
             },
             "11": {
-                "stats": { "damage": 1988 },
-                "researchCost": { "gold": 760000 },
+                "stats": {
+                    "damage": 1988
+                },
+                "researchCost": {
+                    "gold": 760000
+                },
                 "upgradeTime": "1d",
                 "armoryRequired": 10
             },
             "12": {
-                "stats": { "damage": 2206 },
-                "researchCost": { "gold": 1030000 },
+                "stats": {
+                    "damage": 2206
+                },
+                "researchCost": {
+                    "gold": 1030000
+                },
                 "upgradeTime": "1d 4h",
                 "armoryRequired": 11
             },
             "13": {
-                "stats": { "damage": 2449 },
-                "researchCost": { "gold": 1410000 },
+                "stats": {
+                    "damage": 2449
+                },
+                "researchCost": {
+                    "gold": 1410000
+                },
                 "upgradeTime": "1d 9h",
                 "armoryRequired": 12
             },
             "14": {
-                "stats": { "damage": 2718 },
-                "researchCost": { "gold": 1600000 },
+                "stats": {
+                    "damage": 2718
+                },
+                "researchCost": {
+                    "gold": 1600000
+                },
                 "upgradeTime": "1d 9h",
                 "armoryRequired": 13
             },
             "15": {
-                "stats": { "damage": 3017 },
-                "researchCost": { "gold": 1920000 },
+                "stats": {
+                    "damage": 3017
+                },
+                "researchCost": {
+                    "gold": 1920000
+                },
                 "upgradeTime": "1d 18h",
                 "armoryRequired": 14
             },
             "16": {
-                "stats": { "damage": 3349 },
-                "researchCost": { "gold": 2640000 },
+                "stats": {
+                    "damage": 3349
+                },
+                "researchCost": {
+                    "gold": 2640000
+                },
                 "upgradeTime": "1d 22h",
                 "armoryRequired": 15
             },
             "17": {
-                "stats": { "damage": 3718 },
-                "researchCost": { "gold": 3040000 },
+                "stats": {
+                    "damage": 3718
+                },
+                "researchCost": {
+                    "gold": 3040000
+                },
                 "upgradeTime": "1d 22h",
                 "armoryRequired": 16
             },
             "18": {
-                "stats": { "damage": 4127 },
-                "researchCost": { "gold": 3400000 },
+                "stats": {
+                    "damage": 4127
+                },
+                "researchCost": {
+                    "gold": 3400000
+                },
                 "upgradeTime": "2d 3h",
                 "armoryRequired": 17
             },
             "19": {
-                "stats": { "damage": 4580 },
-                "researchCost": { "gold": 4000000 },
+                "stats": {
+                    "damage": 4580
+                },
+                "researchCost": {
+                    "gold": 4000000
+                },
                 "upgradeTime": "2d 5h",
                 "armoryRequired": 18
             },
             "20": {
-                "stats": { "damage": 5084 },
-                "researchCost": { "gold": 4700000 },
+                "stats": {
+                    "damage": 5084
+                },
+                "researchCost": {
+                    "gold": 4700000
+                },
                 "upgradeTime": "2d 8h",
                 "armoryRequired": 19
             },
             "21": {
-                "stats": { "damage": 5644 },
-                "researchCost": { "gold": 5400000 },
+                "stats": {
+                    "damage": 5644
+                },
+                "researchCost": {
+                    "gold": 5400000
+                },
                 "upgradeTime": "2d 9h",
                 "armoryRequired": 20
             },
             "22": {
-                "stats": { "damage": 6264 },
-                "researchCost": { "gold": 5900000 },
+                "stats": {
+                    "damage": 6264
+                },
+                "researchCost": {
+                    "gold": 5900000
+                },
                 "upgradeTime": "2d 11h",
                 "armoryRequired": 21
             },
             "23": {
-                "stats": { "damage": 6884 },
-                "researchCost": { "gold": 6400000 },
+                "stats": {
+                    "damage": 6884
+                },
+                "researchCost": {
+                    "gold": 6400000
+                },
                 "upgradeTime": "2d 13h",
                 "armoryRequired": 23
             },
             "24": {
-                "stats": { "damage": 7504 },
-                "researchCost": { "gold": 6900000 },
+                "stats": {
+                    "damage": 7504
+                },
+                "researchCost": {
+                    "gold": 6900000
+                },
                 "upgradeTime": "2d 15h",
                 "armoryRequired": 24
             },
             "25": {
-                "stats": { "damage": 8124 },
-                "researchCost": { "gold": 7400000 },
+                "stats": {
+                    "damage": 8124
+                },
+                "researchCost": {
+                    "gold": 7400000
+                },
                 "upgradeTime": "2d 17h",
                 "armoryRequired": 25
             },
             "26": {
-                "stats": { "damage": 8855 },
-                "researchCost": { "gold": 8000000 },
+                "stats": {
+                    "damage": 8855
+                },
+                "researchCost": {
+                    "gold": 8000000
+                },
                 "upgradeTime": "2d 19h",
                 "armoryRequired": 26
+            }
+        }
+    },
+    "flare": {
+        "name": "Flare",
+        "description": "Your Gunboat can shoot more than just artillery fire! Flares can guide your troops in battle.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/5/54/Flare.png/revision/latest/scale-to-width-down/250?cb=20140303055220",
+        "maxLevel": 7,
+        "energyCost": 2,
+        "energyCostIncreasePerUse": 1,
+        "levels": {
+            "1": {
+                "stats": {
+                    "duration": 6
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "duration": 8
+                },
+                "researchCost": {
+                    "gold": 6300
+                },
+                "upgradeTime": "2h",
+                "armoryRequired": 1
+            },
+            "3": {
+                "stats": {
+                    "duration": 11
+                },
+                "researchCost": {
+                    "gold": 105000
+                },
+                "upgradeTime": "8h",
+                "armoryRequired": 5
+            },
+            "4": {
+                "stats": {
+                    "duration": 15
+                },
+                "researchCost": {
+                    "gold": 350000
+                },
+                "upgradeTime": "17h",
+                "armoryRequired": 9
+            },
+            "5": {
+                "stats": {
+                    "duration": 20
+                },
+                "researchCost": {
+                    "gold": 1080000
+                },
+                "upgradeTime": "1d 2h",
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "duration": 25
+                },
+                "researchCost": {
+                    "gold": 2600000
+                },
+                "upgradeTime": "1d 11h",
+                "armoryRequired": 15
+            },
+            "7": {
+                "stats": {
+                    "duration": 30
+                },
+                "researchCost": {
+                    "gold": 4200000
+                },
+                "upgradeTime": "1d 17h",
+                "armoryRequired": 18
+            }
+        }
+    },
+    "medkit": {
+        "name": "Medkit",
+        "description": "Heal your troops on the battlefield with the Medkit.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/0/0f/Medkit.png/revision/latest?cb=20230822132718",
+        "maxLevel": 26,
+        "healingRadius": 3.5,
+        "duration": 7.5,
+        "energyCost": 6,
+        "energyCostIncreasePerUse": 3,
+        "levels": {
+            "1": {
+                "stats": {
+                    "healingPerPulse": 7,
+					"totalHeal": 175
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "healingPerPulse": 8,
+					"totalHeal": 200
+                },
+                "researchCost": {
+                    "gold": 12100
+                },
+                "upgradeTime": "3h",
+                "armoryRequired": 1
+            },
+            "3": {
+                "stats": {
+                    "healingPerPulse": 9,
+					"totalHeal": 225
+                },
+                "researchCost": {
+                    "gold": 23800
+                },
+                "upgradeTime": "4h",
+                "armoryRequired": 2
+            },
+            "4": {
+                "stats": {
+                    "healingPerPulse": 10,
+					"totalHeal": 250
+                },
+                "researchCost": {
+                    "gold": 50000
+                },
+                "upgradeTime": "7h",
+                "armoryRequired": 3
+            },
+            "5": {
+                "stats": {
+                    "healingPerPulse": 11,
+					"totalHeal": 275
+                },
+                "researchCost": {
+                    "gold": 99000
+                },
+                "upgradeTime": "9h",
+                "armoryRequired": 4
+            },
+            "6": {
+                "stats": {
+                    "healingPerPulse": 12,
+					"totalHeal": 300
+                },
+                "researchCost": {
+                    "gold": 168000
+                },
+                "upgradeTime": "14h",
+                "armoryRequired": 5
+            },
+            "7": {
+                "stats": {
+                    "healingPerPulse": 13,
+					"totalHeal": 325
+                },
+                "researchCost": {
+                    "gold": 284000
+                },
+                "upgradeTime": "19h",
+                "armoryRequired": 6
+            },
+			"8": {
+                "stats": {
+                    "healingPerPulse": 14,
+					"totalHeal": 350
+                },
+                "researchCost": {
+                    "gold": 450000
+                },
+                "upgradeTime": "1d 1h",
+                "armoryRequired": 7
+            },
+			"9": {
+                "stats": {
+                    "healingPerPulse": 15,
+					"totalHeal": 375
+                },
+                "researchCost": {
+                    "gold": 650000
+                },
+                "upgradeTime": "1d 4h",
+                "armoryRequired": 8
+            },
+			"10": {
+                "stats": {
+                    "healingPerPulse": 16,
+					"totalHeal": 400
+                },
+                "researchCost": {
+                    "gold": 760000
+                },
+                "upgradeTime": "1d 4h",
+                "armoryRequired": 9
+            },
+			"11": {
+                "stats": {
+                    "healingPerPulse": 17,
+					"totalHeal": 425
+                },
+                "researchCost": {
+                    "gold": 850000
+                },
+                "upgradeTime": "1d 8h",
+                "armoryRequired": 10
+            },
+			"12": {
+                "stats": {
+                    "healingPerPulse": 19,
+					"totalHeal": 475
+                },
+                "researchCost": {
+                    "gold": 1160000
+                },
+                "upgradeTime": "1d 12h",
+                "armoryRequired": 11
+            },
+			"13": {
+                "stats": {
+                    "healingPerPulse": 21,
+					"totalHeal": 525
+                },
+                "researchCost": {
+                    "gold": 1590000
+                },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 12
+            },
+			"14": {
+                "stats": {
+                    "healingPerPulse": 23,
+					"totalHeal": 575
+                },
+                "researchCost": {
+                    "gold": 1800000
+                },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 13
+            },
+			"15": {
+                "stats": {
+                    "healingPerPulse": 25,
+					"totalHeal": 625
+                },
+                "researchCost": {
+                    "gold": 2160000
+                },
+                "upgradeTime": "2d 6h",
+                "armoryRequired": 14
             }
         }
     }

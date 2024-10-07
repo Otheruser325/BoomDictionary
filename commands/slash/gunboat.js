@@ -63,9 +63,31 @@ module.exports = {
                     { name: 'Damage', value: formatNumber(stats.damage), inline: true },
 					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
 					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+					{ name: 'Explosion Radius', value: `${formatNumber(abilityData.explosionRadius)} Tiles`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
-                    { name: 'Research Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
-                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
+                );
+            } else if (abilityType === 'flare') {
+                embed.addFields(
+                    { name: 'Duration', value: `${formatNumber(stats.duration)}s`, inline: true },
+					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
+					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold) || 'N/A'}`, inline: true },
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
+                );
+            } else if (abilityType === 'medkit') {
+                embed.addFields(
+                    { name: 'Healing per Pulse', value: formatNumber(stats.healingPerPulse), inline: true },
+					{ name: 'Total Heal', value: formatNumber(stats.totalHeal), inline: true },
+					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
+					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+					{ name: 'Healing Radius', value: `${formatNumber(abilityData.healingRadius)} Tiles`, inline: true },
+					{ name: 'Duration', value: `${formatNumber(abilityData.duration)}s`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
                 );
             } else {
                 return message.reply(`Stat data for the gunboat ability ${abilityData.name} is currently unavailable.`);
