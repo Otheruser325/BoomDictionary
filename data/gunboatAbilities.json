@@ -960,6 +960,28 @@
                 },
                 "upgradeTime": "3d 11h",
                 "armoryRequired": 24
+            },
+			"21": {
+                "stats": {
+                    "missileDamage": 1221,
+					"totalDamage": 18315
+                },
+                "researchCost": {
+                    "gold": 9000000
+                },
+                "upgradeTime": "3d 14h",
+                "armoryRequired": 25
+            },
+			"22": {
+                "stats": {
+                    "missileDamage": 1323.33,
+					"totalDamage": 19950
+                },
+                "researchCost": {
+                    "gold": 9500000
+                },
+                "upgradeTime": "3d 15h",
+                "armoryRequired": 26
             }
         }
     },

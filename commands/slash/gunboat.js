@@ -47,7 +47,7 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
         const armoryRequired = levelData.armoryRequired || 'N/A';
         const image = abilityData.image || null;
-		const critterDPS = abilityData.critterAttackSpeed ? (stats.critterDamage / (abilityData.critterAttackSpeed / 1000)).toFixed(2) : 'Unknown';
+		const critterDPS = abilityData.critterAttackSpeed ? (abilityData.critterDamage / (abilityData.critterAttackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
@@ -86,6 +86,19 @@ module.exports = {
 					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
 					{ name: 'Healing Radius', value: `${formatNumber(abilityData.healingRadius)} Tiles`, inline: true },
 					{ name: 'Duration', value: `${formatNumber(abilityData.duration)}s`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else if (abilityType === 'barrage') {
+                embed.addFields(
+				    { name: 'Number of Projectiles', value: formatNumber(abilityData.numProjectiles), inline: true },
+                    { name: 'Missile Damage', value: formatNumber(stats.missileDamage), inline: true },
+					{ name: 'Total Damage', value: formatNumber(stats.totalDamage), inline: true },
+					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
+					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+					{ name: 'Impact Radius', value: `${formatNumber(abilityData.impactRadius)} Tiles`, inline: true },
+					{ name: 'Missile Explosion Radius', value: `${formatNumber(abilityData.missileExplosionRadius)} Tiles`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }

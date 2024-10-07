@@ -70,6 +70,19 @@ module.exports = {
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
+            } else if (abilityType === 'barrage') {
+                embed.addFields(
+				    { name: 'Number of Projectiles', value: formatNumber(abilityData.numProjectiles), inline: true },
+                    { name: 'Missile Damage', value: formatNumber(stats.missileDamage), inline: true },
+					{ name: 'Total Damage', value: formatNumber(stats.totalDamage), inline: true },
+					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
+					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+					{ name: 'Impact Radius', value: `${formatNumber(abilityData.impactRadius)} Tiles`, inline: true },
+					{ name: 'Missile Explosion Radius', value: `${formatNumber(abilityData.missileExplosionRadius)} Tiles`, inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
             } else if (abilityType === 'critters') {
                 embed.addFields(
                     { name: 'Amount of Critters', value: `${formatNumber(stats.amountOfCritters)}`, inline: true },
