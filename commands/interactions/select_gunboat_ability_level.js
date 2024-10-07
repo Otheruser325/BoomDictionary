@@ -27,6 +27,7 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
         const armoryRequired = levelData.armoryRequired || 'N/A';
         const image = abilityData.image || '';
+		const critterDPS = attackSpeed ? (stats.critterDamage / (critterAttackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
@@ -48,7 +49,7 @@ module.exports = {
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
-            } else if (abilityType === 'flare') {
+            } else if (abilityType === 'flare' || abilityType === 'shock_bomb' || abilityType === 'smokescreen') {
                 embed.addFields(
                     { name: 'Duration', value: `${formatNumber(stats.duration)}s`, inline: true },
 					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
@@ -66,6 +67,19 @@ module.exports = {
 					{ name: 'Healing Radius', value: `${formatNumber(abilityData.healingRadius)} Tiles`, inline: true },
 					{ name: 'Duration', value: `${formatNumber(abilityData.duration)}s`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
+                    { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
+                );
+            } else if (abilityType === 'critters') {
+                embed.addFields(
+                    { name: 'Amount of Critters', value: `${formatNumber(stats.amountOfCritters)}`, inline: true },
+					{ name: 'Critter Health', value: `${formatNumber(abilityData.critterHealth)}`, inline: true },
+					{ name: 'Critter Damage', value: `${formatNumber(abilityData.critterDamage)}`, inline: true },
+					{ name: 'Critter Range', value: `${formatNumber(abilityData.critterAttackRange)} Tiles`, inline: true },
+					{ name: 'Critter DPS', value: `${formatNumber(critterDPS)}`, inline: true },
+					{ name: 'Energy Cost', value: formatNumber(abilityData.energyCost), inline: true },
+					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
+                    { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold) || 'N/A'}`, inline: true },
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
                     { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );

@@ -648,5 +648,434 @@
                 "armoryRequired": 26
             }
         }
+    },
+	"shock_bomb": {
+        "name": "Shock Bomb",
+        "description": "The Shock Bomb disables anything it hits for a short time. Use it to silence dangerous turrets!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/a/ac/Shock_Bomb.png/revision/latest/scale-to-width-down/250?cb=20150515215420",
+        "maxLevel": 7,
+        "energyCost": 7,
+        "energyCostIncreasePerUse": 5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "duration": 5
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "duration": 6
+                },
+                "researchCost": {
+                    "gold": 66000
+                },
+                "upgradeTime": "8h",
+                "armoryRequired": 4
+            },
+            "3": {
+                "stats": {
+                    "duration": 7
+                },
+                "researchCost": {
+                    "gold": 245000
+                },
+                "upgradeTime": "21h",
+                "armoryRequired": 7
+            },
+            "4": {
+                "stats": {
+                    "duration": 8
+                },
+                "researchCost": {
+                    "gold": 880000
+                },
+                "upgradeTime": "1d 6h",
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "duration": 9
+                },
+                "researchCost": {
+                    "gold": 2180000
+                },
+                "upgradeTime": "2d 1h",
+                "armoryRequired": 15
+            },
+            "6": {
+                "stats": {
+                    "duration": 10
+                },
+                "researchCost": {
+                    "gold": 3700000
+                },
+                "upgradeTime": "2d 9h",
+                "armoryRequired": 18
+            },
+            "7": {
+                "stats": {
+                    "duration": 11
+                },
+                "researchCost": {
+                    "gold": 5500000
+                },
+                "upgradeTime": "2d 17h",
+                "armoryRequired": 23
+            }
+        }
+    },
+	"barrage": {
+        "name": "Barrage",
+        "description": "The Barrage will deal massive damage to buildings and units in the target area. Be careful of friendly fire! The Barrage can damage your own units.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/c/c1/Barragec.png/revision/latest?cb=20141031121643",
+        "maxLevel": 22,
+		"numProjectiles": 15,
+		"impactRadius": 3,
+        "missileExplosionRadius": 1.49,
+        "missileExplosionRadiusAgainstTroops": 1.8,
+        "energyCost": 10,
+        "energyCostIncreasePerUse": 6,
+        "levels": {
+            "1": {
+                "stats": {
+                    "missileDamage": 190,
+					"totalDamage": 2850
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "missileDamage": 209,
+					"totalDamage": 3135
+                },
+                "researchCost": {
+                    "gold": 360000
+                },
+                "upgradeTime": "1d 1h",
+                "armoryRequired": 7
+            },
+            "3": {
+                "stats": {
+                    "missileDamage": 230,
+					"totalDamage": 3450
+                },
+                "researchCost": {
+                    "gold": 640000
+                },
+                "upgradeTime": "1d 4h",
+                "armoryRequired": 8
+            },
+            "4": {
+                "stats": {
+                    "missileDamage": 253,
+					"totalDamage": 3795
+                },
+                "researchCost": {
+                    "gold": 800000
+                },
+                "upgradeTime": "1d 4h",
+                "armoryRequired": 9
+            },
+            "5": {
+                "stats": {
+                    "missileDamage": 278,
+					"totalDamage": 4170
+                },
+                "researchCost": {
+                    "gold": 900000
+                },
+                "upgradeTime": "1d 8h",
+                "armoryRequired": 10
+            },
+            "6": {
+                "stats": {
+                    "missileDamage": 306,
+					"totalDamage": 4590
+                },
+                "researchCost": {
+                    "gold": 1230000
+                },
+                "upgradeTime": "1d 13h",
+                "armoryRequired": 11
+            },
+            "7": {
+                "stats": {
+                    "missileDamage": 337,
+					"totalDamage": 5055
+                },
+                "researchCost": {
+                    "gold": 1680000
+                },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 12
+            },
+            "8": {
+                "stats": {
+                    "missileDamage": 370,
+					"totalDamage": 5550
+                },
+                "researchCost": {
+                    "gold": 1900000
+                },
+                "upgradeTime": "1d 20h",
+                "armoryRequired": 13
+            },
+            "9": {
+                "stats": {
+                    "missileDamage": 407,
+					"totalDamage": 6105
+                },
+                "researchCost": {
+                    "gold": 2280000
+                },
+                "upgradeTime": "2d 6h",
+                "armoryRequired": 14
+            },
+            "10": {
+                "stats": {
+                    "missileDamage": 448,
+					"totalDamage": 6720
+                },
+                "researchCost": {
+                    "gold": 3140000
+                },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 15
+            },
+            "11": {
+                "stats": {
+                    "missileDamage": 493,
+					"totalDamage": 7395
+                },
+                "researchCost": {
+                    "gold": 3600000
+                },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 16
+            }
+        }
+    },
+	"smokescreen": {
+        "name": "Smoke Screen",
+        "description": "Hide your troops on the battlefield with Smoke Screen. Enemies won't be able to shoot at troops inside the smoke, but the troops inside can't shoot either.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/SmokeScreen.png/revision/latest?cb=20150515124613",
+        "maxLevel": 8,
+        "energyCost": 2,
+        "energyCostIncreasePerUse": 1,
+        "levels": {
+            "1": {
+                "stats": {
+                    "duration": 8
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "duration": 9
+                },
+                "researchCost": {
+                    "gold": 1350000
+                },
+                "upgradeTime": "1d 8h",
+                "armoryRequired": 14
+            },
+            "3": {
+                "stats": {
+                    "duration": 10
+                },
+                "researchCost": {
+                    "gold": 1950000
+                },
+                "upgradeTime": "1d 11h",
+                "armoryRequired": 15
+            },
+            "4": {
+                "stats": {
+                    "duration": 11
+                },
+                "researchCost": {
+                    "gold": 2250000
+                },
+                "upgradeTime": "1d 11h",
+                "armoryRequired": 16
+            },
+            "5": {
+                "stats": {
+                    "duration": 12
+                },
+                "researchCost": {
+                    "gold": 3000000
+                },
+                "upgradeTime": "1d 16h",
+                "armoryRequired": 17
+            },
+            "6": {
+                "stats": {
+                    "duration": 13
+                },
+                "researchCost": {
+                    "gold": 3800000
+                },
+                "upgradeTime": "1d 17h",
+                "armoryRequired": 18
+            },
+            "7": {
+                "stats": {
+                    "duration": 14
+                },
+                "researchCost": {
+                    "gold": 4600000
+                },
+                "upgradeTime": "1d 18h",
+                "armoryRequired": 24
+            },
+			"8": {
+                "stats": {
+                    "duration": 15
+                },
+                "researchCost": {
+                    "gold": 5400000
+                },
+                "upgradeTime": "1d 19h",
+                "armoryRequired": 25
+            }
+        }
+    },
+	"critters": {
+        "name": "Critters",
+        "description": "Launch these robot troops to distract and destroy enemy buildings!",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Critters.png/revision/latest/scale-to-width-down/290?cb=20240314052412",
+        "maxLevel": 11,
+		"critterHealth": 400,
+		"critterDamage": 67.5,
+		"critterAttackRange": 0.9,
+		"critterAttackSpeed": 500,
+        "energyCost": 8,
+        "energyCostIncreasePerUse": 5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "amountOfCritters": 6
+                },
+                "researchCost": {
+                    "gold": null
+                },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "amountOfCritters": 7
+                },
+                "researchCost": {
+                    "gold": 5300000
+                },
+                "upgradeTime": "2d 2h",
+                "armoryRequired": 19
+            },
+            "3": {
+                "stats": {
+                    "amountOfCritters": 8
+                },
+                "researchCost": {
+                    "gold": 6600000
+                },
+                "upgradeTime": "2d 8h",
+                "armoryRequired": 19
+            },
+            "4": {
+                "stats": {
+                    "amountOfCritters": 9
+                },
+                "researchCost": {
+                    "gold": 7000000
+                },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 19
+            },
+            "5": {
+                "stats": {
+                    "amountOfCritters": 10
+                },
+                "researchCost": {
+                    "gold": 7400000
+                },
+                "upgradeTime": "2d 18h",
+                "armoryRequired": 20
+            },
+            "6": {
+                "stats": {
+                    "amountOfCritters": 11
+                },
+                "researchCost": {
+                    "gold": 7800000
+                },
+                "upgradeTime": "3d",
+                "armoryRequired": 20
+            },
+            "7": {
+                "stats": {
+                    "amountOfCritters": 12
+                },
+                "researchCost": {
+                    "gold": 8000000
+                },
+                "upgradeTime": "3d 6h",
+                "armoryRequired": 20
+            },
+			"8": {
+                "stats": {
+                    "amountOfCritters": 13
+                },
+                "researchCost": {
+                    "gold": 8400000
+                },
+                "upgradeTime": "3d 12h",
+                "armoryRequired": 23
+            },
+			"9": {
+                "stats": {
+                    "amountOfCritters": 14
+                },
+                "researchCost": {
+                    "gold": 8800000
+                },
+                "upgradeTime": "3d 18h",
+                "armoryRequired": 24
+            },
+			"10": {
+                "stats": {
+                    "amountOfCritters": 15
+                },
+                "researchCost": {
+                    "gold": 9200000
+                },
+                "upgradeTime": "4d",
+                "armoryRequired": 25
+            },
+			"11": {
+                "stats": {
+                    "amountOfCritters": 16
+                },
+                "researchCost": {
+                    "gold": 9600000
+                },
+                "upgradeTime": "4d 6h",
+                "armoryRequired": 26
+            }
+        }
     }
 }
