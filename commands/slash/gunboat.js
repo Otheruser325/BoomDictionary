@@ -47,7 +47,7 @@ module.exports = {
         const researchCost = levelData.researchCost || { gold: 0 };
         const armoryRequired = levelData.armoryRequired || 'N/A';
         const image = abilityData.image || null;
-		const critterDPS = attackSpeed ? (stats.critterDamage / (critterAttackSpeed / 1000)).toFixed(2) : 'Unknown';
+		const critterDPS = abilityData.critterAttackSpeed ? (stats.critterDamage / (abilityData.critterAttackSpeed / 1000)).toFixed(2) : 'Unknown';
 
         const embed = new EmbedBuilder()
                 .setTitle(`${abilityData.name} - Level ${level}`)
