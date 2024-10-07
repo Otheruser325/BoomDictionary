@@ -525,6 +525,127 @@
                 },
                 "upgradeTime": "2d 6h",
                 "armoryRequired": 14
+            },
+			"16": {
+                "stats": {
+                    "healingPerPulse": 27,
+					"totalHeal": 675
+                },
+                "researchCost": {
+                    "gold": 2970000
+                },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 15
+            },
+			"17": {
+                "stats": {
+                    "healingPerPulse": 29,
+					"totalHeal": 725
+                },
+                "researchCost": {
+                    "gold": 3400000
+                },
+                "upgradeTime": "2d 12h",
+                "armoryRequired": 16
+            },
+			"18": {
+                "stats": {
+                    "healingPerPulse": 31,
+					"totalHeal": 775
+                },
+                "researchCost": {
+                    "gold": 3800000
+                },
+                "upgradeTime": "2d 19h",
+                "armoryRequired": 17
+            },
+			"19": {
+                "stats": {
+                    "healingPerPulse": 34,
+					"totalHeal": 850
+                },
+                "researchCost": {
+                    "gold": 4500000
+                },
+                "upgradeTime": "2d 22h",
+                "armoryRequired": 18
+            },
+			"20": {
+                "stats": {
+                    "healingPerPulse": 37,
+					"totalHeal": 925
+                },
+                "researchCost": {
+                    "gold": 5300000
+                },
+                "upgradeTime": "3d 1h",
+                "armoryRequired": 19
+            },
+			"21": {
+                "stats": {
+                    "healingPerPulse": 40,
+					"totalHeal": 1000
+                },
+                "researchCost": {
+                    "gold": 6100000
+                },
+                "upgradeTime": "3d 4h",
+                "armoryRequired": 20
+            },
+			"22": {
+                "stats": {
+                    "healingPerPulse": 43,
+					"totalHeal": 1075
+                },
+                "researchCost": {
+                    "gold": 6600000
+                },
+                "upgradeTime": "3d 6h",
+                "armoryRequired": 21
+            },
+			"23": {
+                "stats": {
+                    "healingPerPulse": 46,
+					"totalHeal": 1150
+                },
+                "researchCost": {
+                    "gold": 7100000
+                },
+                "upgradeTime": "3d 8h",
+                "armoryRequired": 23
+            },
+			"24": {
+                "stats": {
+                    "healingPerPulse": 49,
+					"totalHeal": 1225
+                },
+                "researchCost": {
+                    "gold": 7600000
+                },
+                "upgradeTime": "3d 10h",
+                "armoryRequired": 24
+            },
+			"25": {
+                "stats": {
+                    "healingPerPulse": 52,
+					"totalHeal": 1300
+                },
+                "researchCost": {
+                    "gold": 8100000
+                },
+                "upgradeTime": "3d 12h",
+                "armoryRequired": 25
+            },
+			"26": {
+                "stats": {
+                    "healingPerPulse": 56,
+					"totalHeal": 1400
+                },
+                "researchCost": {
+                    "gold": 8500000
+                },
+                "upgradeTime": "3d 14h",
+                "armoryRequired": 26
             }
         }
     }

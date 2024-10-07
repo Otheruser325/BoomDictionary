@@ -66,10 +66,10 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
-        const attackSpeed = defenceData.attackSpeed || 'Unknown'; // Attack speed in milliseconds
-        const range = defenceData.range || 'Unknown'; // Range in game units
-        const hqRequired = levelData.hqRequired || 'Not specified'; // HQ level required
+        const upgradeCost = levelData.upgradeCost || 'N/A';
+        const attackSpeed = defenceData.attackSpeed || 'Unknown';
+        const range = defenceData.range || 'Unknown';
+        const hqRequired = levelData.hqRequired || 'N/A';
         const image = levelData.image || '';
 
         // Calculate DPS

@@ -71,10 +71,10 @@ module.exports = {
             }
 
             const stats = levelData.stats;
-            const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
+            const upgradeCost = levelData.upgradeCost || 'N/A';
             const attackSpeed = defenceData.attackSpeed || 'Unknown';
             const range = defenceData.range || 'Unknown';
-            const hqRequired = levelData.hqRequired || 'Not specified';
+            const hqRequired = levelData.hqRequired || 'N/A';
             const image = levelData.image || '';
 
             // Calculate DPS if attackSpeed is known

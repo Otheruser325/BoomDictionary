@@ -69,8 +69,8 @@ module.exports = {
             }
 
             const stats = levelData.stats;
-            const researchCost = levelData.researchCost || { gold: 0 };
-            const armoryRequired = levelData.armoryRequired || 'Not specified';
+            const researchCost = levelData.researchCost || 'N/A';
+            const armoryRequired = levelData.armoryRequired || 'N/A';
             const image = abilityData.image || '';
 
             const embed = new EmbedBuilder()
@@ -91,7 +91,7 @@ module.exports = {
 					{ name: 'Explosion Radius', value: `${formatNumber(abilityData.explosionRadius)} Tiles`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
-                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else if (abilityType === 'flare') {
                 embed.addFields(
@@ -100,7 +100,7 @@ module.exports = {
 					{ name: `Energy Cost Increase per ${abilityData.name}`, value: formatNumber(abilityData.energyCostIncreasePerUse), inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold) || 'N/A'}`, inline: true },
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
-                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else if (abilityType === 'medkit') {
                 embed.addFields(
@@ -112,7 +112,7 @@ module.exports = {
 					{ name: 'Duration', value: `${formatNumber(abilityData.duration)}s`, inline: true },
                     { name: 'Research Cost', value: `Gold: ${formatNumber(researchCost.gold)}`, inline: true },
                     { name: 'Research Time', value: `${levelData.upgradeTime || 'N/A'}`, inline: true },
-                    { name: 'Armory Level Required', value: `${armoryRequired.toString() || 'N/A'}`, inline: true }
+                    { name: 'Armory Level Required', value: armoryRequired.toString(), inline: true }
                 );
             } else {
                 return message.reply(`Stat data for the gunboat ability ${abilityData.name} is currently unavailable.`);

@@ -47,14 +47,14 @@ module.exports = {
         }
 
         const stats = levelData.stats;
-        const trainingCost = levelData.trainingCost || { gold: 0 };
-        const researchCost = levelData.researchCost || { gold: 0 };
+        const trainingCost = levelData.trainingCost || 'N/A';
+        const researchCost = levelData.researchCost || 'N/A';
         const attackSpeed = troopData.attackSpeed;
         const range = troopData.attackRange || 'Unknown';
         const image = troopData.image || '';
         const dps = attackSpeed ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
 		const hps = attackSpeed ? (stats.healing / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
-        const armoryRequired = levelData.armoryRequired || 'Not specified';
+        const armoryRequired = levelData.armoryRequired || 'N/A';
 
         const embed = new EmbedBuilder()
                 .setTitle(`${troopData.name} - Level ${level}`)

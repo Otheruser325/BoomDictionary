@@ -16,9 +16,9 @@
                     "damage": 30
                 },
                 "trainingCost": { "gold": 20 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 1
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -289,9 +289,9 @@
                     "damage": 2.6
                 },
                 "trainingCost": { "gold": 300 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 1
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -562,9 +562,9 @@
                     "damage": 160
                 },
                 "trainingCost": { "gold": 220 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 2
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -826,9 +826,9 @@
                     "selfHeal": 40
                 },
                 "trainingCost": { "gold": 800 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 5
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1102,9 +1102,9 @@
                     "damage": 490
                 },
                 "trainingCost": { "gold": 8000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 9
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1326,9 +1326,9 @@
                     "healing": 20
                 },
                 "trainingCost": { "gold": 5000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 14
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1510,9 +1510,9 @@
                     "damage": 200
                 },
                 "trainingCost": { "gold": 8000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 16
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1685,9 +1685,9 @@
 					"deathDamage": 3500
                 },
                 "trainingCost": { "gold": 25000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 18
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1843,9 +1843,9 @@
                     "beamExtension": 0
                 },
                 "trainingCost": { "gold": 7000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 20
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
@@ -1988,9 +1988,9 @@
                     "damage": 2420
                 },
                 "trainingCost": { "gold": 17000 },
-                "researchCost": { "gold": 0 },
-                "upgradeTime": "N/A",
-                "armoryRequired": 21
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
             },
             "2": {
                 "stats": {
