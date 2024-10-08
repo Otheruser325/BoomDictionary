@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
 const gunboatAbilities = require('../../data/gunboatAbilities.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -21,6 +21,15 @@ module.exports = {
     usage: '<ability_type> <level>',
 
     async execute(message, args) {
+		// Check bot permissions
+        const botPermissions = message.channel.permissionsFor(message.guild.members.me);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);
+
+        if (!botPermissions.has(requiredPermissions)) {
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, and `READ_MESSAGE_HISTORY` permissions.");
+        }
+		
+		try {
         if (args.length === 0) {
             const defenceOptions = Object.keys(validAbilityTypes).map(abilityKey => {
                 const ability = gunboatAbilities[validAbilityTypes[abilityKey]];
@@ -69,7 +78,7 @@ module.exports = {
                 return message.reply(`No data available for level ${level}.`);
             }
 
-            const stats = levelData.stats;
+            const stats = levelData.stats || {};
             const researchCost = levelData.researchCost || { gold: 0 };
             const armoryRequired = levelData.armoryRequired || 'N/A';
             const image = abilityData.image || '';
@@ -146,7 +155,11 @@ module.exports = {
                 return message.reply(`Stat data for the gunboat ability ${abilityData.name} is currently unavailable.`);
             }
 
-            await message.channel.send({ embeds: [embed] });
+                await message.channel.send({ embeds: [embed] });
+		    }
+        } catch (error) {
+            console.error('Error executing gunboat command:', error);
+            message.reply('An error occurred while executing the gunboat command. Please try again later.');
         }
     }
 };

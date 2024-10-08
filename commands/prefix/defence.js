@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
 const defences = require('../../data/defences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -137,7 +137,7 @@ module.exports = {
 			}
         } catch (error) {
             console.error('Error executing defence command:', error);
-            message.reply('An error occurred while executing this command. Please try again later.');
+            message.reply('An error occurred while executing the defence command. Please try again later.');
         }
     }
 };

@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
 const troops = require('../../data/troops.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -23,6 +23,15 @@ module.exports = {
     usage: '<troop_type> <level>',
     
     async execute(message, args) {
+		// Check bot permissions
+        const botPermissions = message.channel.permissionsFor(message.guild.members.me);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);
+
+        if (!botPermissions.has(requiredPermissions)) {
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, and `READ_MESSAGE_HISTORY` permissions.");
+        }
+		
+		try {
         if (args.length === 0) {
             // Display list of troop types
             const troopOptions = Object.keys(validTroopTypes).map(troopKey => {
@@ -72,7 +81,7 @@ module.exports = {
                 return message.reply(`No data available for level ${level}.`);
             }
 
-            const stats = levelData.stats;
+            const stats = levelData.stats || {};
             const trainingCost = levelData.trainingCost || { gold: 0 };
             const researchCost = levelData.researchCost || { gold: 0 };
             const range = troopData.attackRange;
@@ -194,7 +203,11 @@ module.exports = {
                 );
             }
 
-            await message.channel.send({ embeds: [embed] });
+                await message.channel.send({ embeds: [embed] });
+		    }
+        } catch (error) {
+            console.error('Error executing troop command:', error);
+            message.reply('An error occurred while executing the troop command. Please try again later.');
         }
     }
 };
