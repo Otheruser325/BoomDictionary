@@ -62,14 +62,11 @@ client.once('ready', async () => {
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
 
-    // Determine if message starts with a valid prefix
     let prefix = prefixes.find(p => message.content.startsWith(p));
     if (!prefix) return;
 
-    // Extract command and arguments
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
-
     const command = client.commands.get(commandName);
     if (!command) return;
 
@@ -81,11 +78,21 @@ client.on('messageCreate', async message => {
         }
     }
 
+    // Check if the bot has the necessary permissions
+    const botMissingPermissions = message.channel.permissionsFor(message.guild.me).missing(['SEND_MESSAGES', 'EMBED_LINKS']);
+    if (botMissingPermissions.length) {
+        return message.reply(`I don't have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`);
+    }
+
     try {
         await command.execute(message, args);
     } catch (error) {
         console.error('Error executing command:', error);
-        await message.reply('There was an error trying to execute that command!');
+        if (botMissingPermissions.includes('SEND_MESSAGES')) {
+            console.warn('Bot does not have permission to send messages.');
+        } else {
+            await message.reply('There was an error trying to execute that command!');
+        }
     }
 });
 
@@ -104,6 +111,12 @@ client.on(Events.InteractionCreate, async interaction => {
             if (missingPermissions.length) {
                 return interaction.reply({ content: `You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`, ephemeral: true });
             }
+        }
+
+        // Check if the bot has necessary permissions
+        const botMissingPermissions = interaction.channel.permissionsFor(interaction.guild.me).missing(['SEND_MESSAGES', 'EMBED_LINKS']);
+        if (botMissingPermissions.length) {
+            return interaction.reply({ content: `I don't have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`, ephemeral: true });
         }
 
         try {
