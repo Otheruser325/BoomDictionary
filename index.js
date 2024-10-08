@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, Events } = require('discord.js');
+const { Client, GatewayIntentBits, PermissionsBitField, Collection, Events } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
@@ -82,7 +82,10 @@ client.on('messageCreate', async message => {
     let botMissingPermissions = [];
     if (message.guild && message.guild.me) {
         try {
-            botMissingPermissions = message.channel.permissionsFor(message.guild.me)?.missing(['SEND_MESSAGES', 'EMBED_LINKS']) || [];
+            botMissingPermissions = message.channel.permissionsFor(message.guild.members.me).missing([
+                PermissionsBitField.Flags.SendMessages,
+                PermissionsBitField.Flags.EmbedLinks
+            ]);
         } catch (err) {
             console.error('Error checking bot permissions:', err);
             botMissingPermissions = [];
@@ -110,6 +113,16 @@ client.on(Events.InteractionCreate, async interaction => {
         const command = client.slashCommands.get(interaction.commandName);
         if (!command) {
             console.error(`No command matching ${interaction.commandName} was found.`);
+            return;
+        }
+		
+		if (!interaction.guild) {
+            try {
+                await command.execute(interaction);
+            } catch (error) {
+                console.error('Error executing interaction in DMs:', error);
+                await interaction.reply({ content: 'There was an error executing this command in DMs!', ephemeral: true });
+            }
             return;
         }
 		
@@ -192,6 +205,14 @@ client.on(Events.InteractionCreate, async interaction => {
     }  else {
         console.error('Received an unhandled interaction type.');
     }
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
 client.login(token);
