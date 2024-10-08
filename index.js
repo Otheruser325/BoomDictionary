@@ -78,8 +78,17 @@ client.on('messageCreate', async message => {
         }
     }
 
-    // Check if the bot has the necessary permissions
-    const botMissingPermissions = message.channel.permissionsFor(message.guild.me).missing(['SEND_MESSAGES', 'EMBED_LINKS']);
+    // Safely check if the bot has the necessary permissions
+    let botMissingPermissions = [];
+    if (message.guild && message.guild.me) {
+        try {
+            botMissingPermissions = message.channel.permissionsFor(message.guild.me)?.missing(['SEND_MESSAGES', 'EMBED_LINKS']) || [];
+        } catch (err) {
+            console.error('Error checking bot permissions:', err);
+            botMissingPermissions = [];
+        }
+    }
+
     if (botMissingPermissions.length) {
         return message.reply(`I don't have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`);
     }
@@ -88,10 +97,10 @@ client.on('messageCreate', async message => {
         await command.execute(message, args);
     } catch (error) {
         console.error('Error executing command:', error);
-        if (botMissingPermissions.includes('SEND_MESSAGES')) {
-            console.warn('Bot does not have permission to send messages.');
-        } else {
+        if (!botMissingPermissions.includes('SEND_MESSAGES')) {
             await message.reply('There was an error trying to execute that command!');
+        } else {
+            console.warn('Bot does not have permission to send messages.');
         }
     }
 });
