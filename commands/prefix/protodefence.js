@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
 const prototypeDefences = require('../../data/prototypeDefences.json');
 const { formatNumber } = require('../../utils/formatNumber');
 
@@ -20,12 +20,20 @@ const validDefenceTypes = {
 module.exports = {
     name: 'protodefence',
     description: 'Get statistics for a prototype defence.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY', 'EMBED_LINKS'],
     aliases: ['protodefense', 'prototypedefence', 'prototypedefense'],
     args: false,
     usage: '<defence_type> <level>',
 
     async execute(message, args) {
+		// Check bot permissions
+        const botPermissions = message.channel.permissionsFor(message.guild.members.me);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks']);
+
+        if (!botPermissions.has(requiredPermissions)) {
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, `READ_MESSAGE_HISTORY`, and `EMBED_LINKS` permissions.");
+        }
+		
         if (args.length === 0) {
             // Display selection box for choosing a prototype defence type
             const defenceOptions = Object.keys(validDefenceTypes).map(defenceKey => {

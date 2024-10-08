@@ -18,17 +18,17 @@ const validTroopTypes = {
 module.exports = {
     name: 'troop',
     description: 'Get statistics for a specific type of troop.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY', 'EMBED_LINKS'],
     args: false,
     usage: '<troop_type> <level>',
     
     async execute(message, args) {
 		// Check bot permissions
         const botPermissions = message.channel.permissionsFor(message.guild.members.me);
-        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks']);
 
         if (!botPermissions.has(requiredPermissions)) {
-            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, and `READ_MESSAGE_HISTORY` permissions.");
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, `READ_MESSAGE_HISTORY`, and `EMBED_LINKS` permissions.");
         }
 		
 		try {

@@ -15,7 +15,7 @@ const validAbilityTypes = {
 module.exports = {
     name: 'gunboat',
     description: 'Get statistics for a gunboat ability.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY', 'EMBED_LINKS'],
     aliases: ['gb'],
     args: false,
     usage: '<ability_type> <level>',
@@ -23,10 +23,10 @@ module.exports = {
     async execute(message, args) {
 		// Check bot permissions
         const botPermissions = message.channel.permissionsFor(message.guild.members.me);
-        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks']);
 
         if (!botPermissions.has(requiredPermissions)) {
-            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, and `READ_MESSAGE_HISTORY` permissions.");
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, `READ_MESSAGE_HISTORY`, and `EMBED_LINKS` permissions.");
         }
 		
 		try {

@@ -128,10 +128,16 @@ client.on(Events.InteractionCreate, async interaction => {
 		
 		// Check if the user has the necessary permissions
         if (command.permissions) {
-            const member = interaction.guild.members.cache.get(interaction.user.id);
-            const missingPermissions = command.permissions.filter(permission => !member.permissions.has(permission));
-            if (missingPermissions.length) {
-                return interaction.reply({ content: `You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`, ephemeral: true });
+            try {
+                // Fetch the member if not cached
+                const member = await interaction.guild.members.fetch(interaction.user.id);
+                const missingPermissions = command.permissions.filter(permission => !member.permissions.has(permission));
+                if (missingPermissions.length) {
+                    return interaction.reply({ content: `You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`, ephemeral: true });
+                }
+            } catch (error) {
+                console.error('Error fetching member:', error);
+                return interaction.reply({ content: 'There was an error checking your permissions.', ephemeral: true });
             }
         }
 
