@@ -17,6 +17,7 @@ const validDefenceTypes = {
 module.exports = {
     name: 'defence',
     description: 'Get statistics for a specific type of defence.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     aliases: ['defense'],
     args: false,
     usage: '<defence_type> <level>',

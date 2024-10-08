@@ -5,6 +5,7 @@ const BASE_URL = 'https://funny-eclair-d437ee.netlify.app';
 module.exports = {
     name: 'ipa',
     description: 'Get the pronunciation of a word.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     async execute(message, args) {
         if (args.length === 0) {
             return message.channel.send({ content: 'Please provide a word to get the pronunciation.', ephemeral: true });

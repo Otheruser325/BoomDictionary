@@ -15,6 +15,7 @@ const validAbilityTypes = {
 module.exports = {
     name: 'gunboat',
     description: 'Get statistics for a gunboat ability.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     aliases: ['gb'],
     args: false,
     usage: '<ability_type> <level>',

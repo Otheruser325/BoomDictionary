@@ -16,6 +16,7 @@ const validTroopTypes = {
 module.exports = {
     name: 'prototroop',
     description: 'Get statistics for a prototype troop.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     aliases: ['prototypeTroop'],
     usage: '<troop_type> <level>',
 

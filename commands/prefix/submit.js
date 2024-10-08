@@ -3,6 +3,7 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 module.exports = {
     name: 'submit',
     description: 'Submit a report or suggestion.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     async execute(message, args) {
         // Create an embed
         const embed = new EmbedBuilder()

@@ -12,6 +12,7 @@ const patchNotes = [
 module.exports = {
     name: 'info',
     description: 'Get information about Boom Dictionary.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     aliases: ['information', 'version', 'about'],
     usage: '[page]',
     exampleUsage: 'v info 2',

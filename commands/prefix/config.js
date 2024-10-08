@@ -4,6 +4,7 @@ const { PermissionsBitField } = require('discord.js');
 module.exports = {
     name: 'config',
     description: 'Configure the voice channel for pronunciation playback.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     async execute(message, args) {
         // Check if the user has the necessary permissions
         const member = message.member;

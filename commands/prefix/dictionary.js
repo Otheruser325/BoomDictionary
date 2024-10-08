@@ -4,6 +4,7 @@ const dictionary = require('../../data/dictionary.json');
 module.exports = {
     name: 'dictionary',
     description: 'Get definitions for terms or view categories.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     async execute(message, args) {
         if (args.length === 0) {
             // No argument provided; show categories

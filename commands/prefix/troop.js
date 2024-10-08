@@ -18,6 +18,7 @@ const validTroopTypes = {
 module.exports = {
     name: 'troop',
     description: 'Get statistics for a specific type of troop.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     args: false,
     usage: '<troop_type> <level>',
     

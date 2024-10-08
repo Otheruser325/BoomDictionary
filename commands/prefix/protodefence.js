@@ -20,6 +20,7 @@ const validDefenceTypes = {
 module.exports = {
     name: 'protodefence',
     description: 'Get statistics for a prototype defence.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     aliases: ['protodefense', 'prototypedefence', 'prototypedefense'],
     args: false,
     usage: '<defence_type> <level>',

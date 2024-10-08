@@ -73,6 +73,14 @@ client.on('messageCreate', async message => {
     const command = client.commands.get(commandName);
     if (!command) return;
 
+    // Check if the user has the necessary permissions
+    if (command.permissions) {
+        const missingPermissions = command.permissions.filter(permission => !message.member.permissions.has(permission));
+        if (missingPermissions.length) {
+            return message.reply(`You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`);
+        }
+    }
+
     try {
         await command.execute(message, args);
     } catch (error) {
@@ -87,6 +95,15 @@ client.on(Events.InteractionCreate, async interaction => {
         if (!command) {
             console.error(`No command matching ${interaction.commandName} was found.`);
             return;
+        }
+		
+		// Check if the user has the necessary permissions
+        if (command.permissions) {
+            const member = interaction.guild.members.cache.get(interaction.user.id);
+            const missingPermissions = command.permissions.filter(permission => !member.permissions.has(permission));
+            if (missingPermissions.length) {
+                return interaction.reply({ content: `You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`, ephemeral: true });
+            }
         }
 
         try {

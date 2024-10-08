@@ -6,6 +6,7 @@ const commandsPerPage = 10; // Number of commands per page
 module.exports = {
     name: 'help',
     description: 'Lists all available prefix commands or provides detailed help for a specific command.',
+	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     async execute(message, args) {
         // Load prefix command files
         const commandFiles = fs.readdirSync(path.join(__dirname, '../../commands/prefix')).filter(file => file.endsWith('.js'));
