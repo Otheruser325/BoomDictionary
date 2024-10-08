@@ -141,12 +141,6 @@ client.on(Events.InteractionCreate, async interaction => {
             }
         }
 
-        // Check if the bot has necessary permissions
-        const botMissingPermissions = interaction.channel.permissionsFor(interaction.guild.me).missing(['SEND_MESSAGES', 'EMBED_LINKS']);
-        if (botMissingPermissions.length) {
-            return interaction.reply({ content: `I don't have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`, ephemeral: true });
-        }
-
         try {
             await command.execute(interaction);
         } catch (error) {
