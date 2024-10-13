@@ -1,4 +1,9 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const {
+    EmbedBuilder,
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle
+} = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const commandsPerPage = 10; // Number of commands per page
@@ -6,7 +11,7 @@ const commandsPerPage = 10; // Number of commands per page
 module.exports = {
     name: 'help',
     description: 'Lists all available prefix commands or provides detailed help for a specific command.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
+    permissions: ['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks'],
     async execute(message, args) {
         // Load prefix command files
         const commandFiles = fs.readdirSync(path.join(__dirname, '../../commands/prefix')).filter(file => file.endsWith('.js'));
@@ -26,7 +31,10 @@ module.exports = {
 
             description += `\n${command.usage ? `Usage: ${command.usage}` : ''}`;
 
-            defaultCommands.push({ name: commandName, description: description });
+            defaultCommands.push({
+                name: commandName,
+                description: description
+            });
         }
 
         const generateEmbed = (commands, page) => {
@@ -38,25 +46,30 @@ module.exports = {
                 .setTimestamp();
 
             currentCommands.forEach(cmd => {
-                embed.addFields({ name: cmd.name || 'No name', value: cmd.description || 'No description' });
+                embed.addFields({
+                    name: cmd.name || 'No name',
+                    value: cmd.description || 'No description'
+                });
             });
 
-            embed.setFooter({ text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}` });
+            embed.setFooter({
+                text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}`
+            });
             return embed;
         };
 
         const generateButtons = (currentPage, totalPages) => {
             const row = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setCustomId('previous')
-                    .setLabel('◀️')
-                    .setStyle(ButtonStyle.Primary)
-                    .setDisabled(currentPage === 1),
+                .setCustomId('previous')
+                .setLabel('◀️')
+                .setStyle(ButtonStyle.Primary)
+                .setDisabled(currentPage === 1),
                 new ButtonBuilder()
-                    .setCustomId('next')
-                    .setLabel('▶️')
-                    .setStyle(ButtonStyle.Primary)
-                    .setDisabled(currentPage === totalPages)
+                .setCustomId('next')
+                .setLabel('▶️')
+                .setStyle(ButtonStyle.Primary)
+                .setDisabled(currentPage === totalPages)
             );
             return row;
         };
@@ -65,10 +78,17 @@ module.exports = {
         const totalPages = Math.ceil(defaultCommands.length / commandsPerPage);
 
         try {
-            const messageReply = await message.reply({ embeds: [generateEmbed(defaultCommands, currentPage)], components: [generateButtons(currentPage, totalPages)], fetchReply: true });
+            const messageReply = await message.reply({
+                embeds: [generateEmbed(defaultCommands, currentPage)],
+                components: [generateButtons(currentPage, totalPages)],
+                fetchReply: true
+            });
 
             const filter = (i) => i.user.id === message.author.id;
-            const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
+            const collector = messageReply.createMessageComponentCollector({
+                filter,
+                time: 60000
+            });
 
             collector.on('collect', async (i) => {
                 if (i.customId === 'previous' && currentPage > 1) {
@@ -79,10 +99,19 @@ module.exports = {
 
                 try {
                     const newEmbed = generateEmbed(defaultCommands, currentPage);
-                    await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
+                    await i.update({
+                        embeds: [newEmbed],
+                        components: [generateButtons(currentPage, totalPages)]
+                    });
                 } catch (error) {
                     if (error.code === 10008) {
                         return message.channel.send(`The help embed was deleted and couldn't be recovered, please try again later.`);
+                    } else if (error.code === 10062) {
+                        return message.channel.send(`My systematic networking is currently out of sync and timed out. Please try again later.`);
+                    } else if (error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
+                        return message.channel.send(`An unexpected error occurred. Please try again later.`);
+                    } else if (error.message.includes("Interaction was not replied")) {
+                        return message.channel.send(`An interaction error occurred. Please try again later.`);
                     } else {
                         console.error('Error updating message:', error);
                     }
@@ -92,10 +121,20 @@ module.exports = {
             collector.on('end', async () => {
                 if (messageReply.editable) {
                     try {
-                        await messageReply.edit({ components: [] });
+                        await messageReply.edit({
+                            components: []
+                        });
                     } catch (error) {
                         if (error.code === 10008) {
                             return message.channel.send(`The help embed was deleted and couldn't be recovered, please try again later.`);
+                        } else if (error.code === 10062) {
+                            return message.channel.send(`My systematic networking is currently out of sync and timed out. Please try again later.`);
+                        } else if (error.code === 40060) {
+                            return message.channel.send("I couldn't reuse this interaction as I've already acknowledged it. Please try again later.");
+                        } else if (error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
+                            return message.channel.send(`An unexpected error occurred. Please try again later.`);
+                        } else if (error.message.includes("Interaction was not replied")) {
+                            return message.channel.send(`An interaction error occurred. Please try again later.`);
                         } else {
                             console.error('Error removing components:', error);
                         }

@@ -1,7 +1,14 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const {
+    SlashCommandBuilder
+} = require('@discordjs/builders');
 const fs = require('fs');
 const path = require('path');
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const {
+    EmbedBuilder,
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle
+} = require('discord.js');
 const commandsPerPage = 10; // Number of commands per page
 
 module.exports = {
@@ -27,7 +34,10 @@ module.exports = {
 
             description += `\n${command.data.usage ? `Usage: ${command.data.usage}` : ''}`;
 
-            defaultCommands.push({ name: commandName, description: description });
+            defaultCommands.push({
+                name: commandName,
+                description: description
+            });
         }
 
         const generateEmbed = (commands, page) => {
@@ -39,25 +49,30 @@ module.exports = {
                 .setTimestamp();
 
             currentCommands.forEach(cmd => {
-                embed.addFields({ name: cmd.name, value: cmd.description });
+                embed.addFields({
+                    name: cmd.name,
+                    value: cmd.description
+                });
             });
 
-            embed.setFooter({ text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}` });
+            embed.setFooter({
+                text: `Page ${page} of ${Math.ceil(commands.length / commandsPerPage)}`
+            });
             return embed;
         };
 
         const generateButtons = (currentPage, totalPages) => {
             const row = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setCustomId('previous')
-                    .setLabel('◀️')
-                    .setStyle(ButtonStyle.Primary)
-                    .setDisabled(currentPage === 1),
+                .setCustomId('previous')
+                .setLabel('◀️')
+                .setStyle(ButtonStyle.Primary)
+                .setDisabled(currentPage === 1),
                 new ButtonBuilder()
-                    .setCustomId('next')
-                    .setLabel('▶️')
-                    .setStyle(ButtonStyle.Primary)
-                    .setDisabled(currentPage === totalPages)
+                .setCustomId('next')
+                .setLabel('▶️')
+                .setStyle(ButtonStyle.Primary)
+                .setDisabled(currentPage === totalPages)
             );
             return row;
         };
@@ -66,10 +81,17 @@ module.exports = {
         const totalPages = Math.ceil(defaultCommands.length / commandsPerPage);
 
         try {
-            const messageReply = await interaction.reply({ embeds: [generateEmbed(defaultCommands, currentPage)], components: [generateButtons(currentPage, totalPages)], fetchReply: true });
+            const messageReply = await interaction.reply({
+                embeds: [generateEmbed(defaultCommands, currentPage)],
+                components: [generateButtons(currentPage, totalPages)],
+                fetchReply: true
+            });
 
             const filter = (i) => i.user.id === interaction.user.id;
-            const collector = messageReply.createMessageComponentCollector({ filter, time: 60000 });
+            const collector = messageReply.createMessageComponentCollector({
+                filter,
+                time: 60000
+            });
 
             collector.on('collect', async (i) => {
                 if (i.customId === 'previous' && currentPage > 1) {
@@ -80,7 +102,10 @@ module.exports = {
 
                 try {
                     const newEmbed = generateEmbed(defaultCommands, currentPage);
-                    await i.update({ embeds: [newEmbed], components: [generateButtons(currentPage, totalPages)] });
+                    await i.update({
+                        embeds: [newEmbed],
+                        components: [generateButtons(currentPage, totalPages)]
+                    });
                 } catch (error) {
                     if (error.code === 10008) {
                         // Handle unknown message error (e.g., message was deleted)
@@ -95,13 +120,21 @@ module.exports = {
             collector.on('end', async () => {
                 if (messageReply.editable) {
                     try {
-                        await messageReply.edit({ components: [] });
+                        await messageReply.edit({
+                            components: []
+                        });
                     } catch (error) {
                         if (error.code === 10008) {
-                            // Handle unknown message error
-                            console.error('The message was not found or has been deleted.');
+                            return interaction.followUp(`The help embed was deleted and couldn't be recovered, please try again later.`);
+                        } else if (error.code === 10062) {
+                            return interaction.followUp(`My systematic networking is currently out of sync and timed out. Please try again later.`);
+                        } else if (error.code === 40060) {
+                            return interaction.followUp("I couldn't reuse this interaction as I've already acknowledged it. Please try again later.");
+                        } else if (error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
+                            return interaction.followUp(`An unexpected error occurred. Please try again later.`);
+                        } else if (error.message.includes("Interaction was not replied")) {
+                            return interaction.followUp(`An interaction error occurred. Please try again later.`);
                         } else {
-                            // Handle other errors
                             console.error('Error removing components:', error);
                         }
                     }

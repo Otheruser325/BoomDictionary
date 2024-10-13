@@ -1823,6 +1823,162 @@
             }
         }
     },
+    "laser_ranger": {
+        "name": "Laser Ranger",
+        "description": "Laser Ranger uses her battery powered, handheld laser prototype to zap enemies in the line of sight.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/f/ff/LaserRanger.png/revision/latest/scale-to-width-down/250?cb=20221109100739",
+        "maxLevel": 13,
+        "attackSpeed": 1500,
+        "attackRange": 7.6,
+        "unitSize": 3,
+        "trainingTime": "8m 10s",
+        "movementSpeed": "300",
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 312,
+                    "damage": 30.72,
+                    "beamExtension": 0
+                },
+                "trainingCost": { "gold": 6000 },
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "health": 323,
+                    "damage": 31.744,
+                    "beamExtension": 2
+                },
+                "trainingCost": { "gold": 7000 },
+                "researchCost": { "gold": 7200000 },
+                "upgradeTime": "4d 4h",
+                "armoryRequired": 19
+            },
+            "3": {
+                "stats": {
+                    "health": 332,
+                    "damage": 32.704,
+                    "beamExtension": 4
+                },
+                "trainingCost": { "gold": 8000 },
+                "researchCost": { "gold": 7300000 },
+                "upgradeTime": "4d 6h",
+                "armoryRequired": 20
+            },
+            "4": {
+                "stats": {
+                    "health": 353,
+                    "damage": 33.664,
+                    "beamExtension": 6
+                },
+                "trainingCost": { "gold": 9000 },
+                "researchCost": { "gold": 7500000 },
+                "upgradeTime": "4d 8h",
+                "armoryRequired": 21
+            },
+            "5": {
+                "stats": {
+                    "health": 375,
+                    "damage": 34.624,
+                    "beamExtension": 8
+                },
+                "trainingCost": { "gold": 10000 },
+                "researchCost": { "gold": 7700000 },
+                "upgradeTime": "4d 10h",
+                "armoryRequired": 21
+            },
+            "6": {
+                "stats": {
+                    "health": 398,
+                    "damage": 35.584,
+                    "beamExtension": 10
+                },
+                "trainingCost": { "gold": 11000 },
+                "researchCost": { "gold": 7800000 },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 22
+            },
+            "7": {
+                "stats": {
+                    "health": 422,
+                    "damage": 36.544,
+                    "beamExtension": 12
+                },
+                "trainingCost": { "gold": 12000 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "4d 14h",
+                "armoryRequired": 23
+            },
+            "8": {
+                "stats": {
+                    "health": 447,
+                    "damage": 37.568,
+                    "beamExtension": 14
+                },
+                "trainingCost": { "gold": 13000 },
+                "researchCost": { "gold": 8200000 },
+                "upgradeTime": "4d 16h",
+                "armoryRequired": 23
+            },
+            "9": {
+                "stats": {
+                    "health": 473,
+                    "damage": 38.528,
+                    "beamExtension": 16
+                },
+                "trainingCost": { "gold": 14000 },
+                "researchCost": { "gold": 8300000 },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 24
+            },
+            "10": {
+                "stats": {
+                    "health": 500,
+                    "damage": 39.488,
+                    "beamExtension": 18
+                },
+                "trainingCost": { "gold": 15000 },
+                "researchCost": { "gold": 8500000 },
+                "upgradeTime": "4d 20h",
+                "armoryRequired": 24
+            },
+            "11": {
+                "stats": {
+                    "health": 528,
+                    "damage": 40.448,
+                    "beamExtension": 20
+                },
+                "trainingCost": { "gold": 16000 },
+                "researchCost": { "gold": 8700000 },
+                "upgradeTime": "4d 22h",
+                "armoryRequired": 25
+            },
+            "12": {
+                "stats": {
+                    "health": 557,
+                    "damage": 41.408,
+                    "beamExtension": 22
+                },
+                "trainingCost": { "gold": 17000 },
+                "researchCost": { "gold": 8900000 },
+                "upgradeTime": "5d",
+                "armoryRequired": 25
+            },
+            "13": {
+                "stats": {
+                    "health": 587,
+                    "damage": 42.432,
+                    "beamExtension": 24
+                },
+                "trainingCost": { "gold": 18000 },
+                "researchCost": { "gold": 9000000 },
+                "upgradeTime": "5d 1d",
+                "armoryRequired": 26
+            }
+        }
+    },
     "cryoneer": {
         "name": "Cryoneer",
         "description": "Nice to meet you, Commander! Cryoneer reporting in. My Freeze Beam can seriously reduce the firepower of enemy defenses. It's also great for cooling beverages and making ice sculptures!",
@@ -1970,7 +2126,7 @@
             }
         }
     },
-	"bombardier": {
+    "bombardier": {
         "name": "Bombardier",
         "description": "The Bombardiers can shoot with pin point accuracy from a large distance, dealing massive damage. They require extra energy to deploy as they are slightly older (but more experienced) than most troops.",
         "image": "https://static.wikia.nocookie.net/boombeach/images/3/3f/Bombardier.png/revision/latest/scale-to-width-down/250?cb=20190626233050",
@@ -2050,6 +2206,111 @@
                 "trainingCost": { "gold": 45000 },
                 "researchCost": { "gold": 9500000 },
                 "upgradeTime": "4d 22h",
+                "armoryRequired": 26
+            }
+        }
+    },
+	"mech": {
+        "name": "Mech",
+        "description": "The Mech is a lean, mean fighting machine! He takes up a lot of space, but he can also take a lot of damage. His mighty autocannons stun their targets.",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/9/9f/Mech.png/revision/latest/scale-to-width-down/350?cb=20200819171347",
+        "maxLevel": 9,
+        "attackSpeed": 100,
+        "attackRange": 8,
+        "unitSize": 14,
+        "trainingTime": "30m",
+        "movementSpeed": "130",
+		"splashRadius": 0.2,
+        "stunDuration": 3.5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 18600,
+                    "damage": 75.8
+                },
+                "trainingCost": { "gold": 26000 },
+                "researchCost": { "gold": null },
+                "upgradeTime": null,
+                "armoryRequired": null
+            },
+            "2": {
+                "stats": {
+                    "health": 19140,
+                    "damage": 77.8
+                },
+                "trainingCost": { "gold": 28000 },
+                "researchCost": { "gold": 7800000 },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 21
+            },
+            "3": {
+                "stats": {
+                    "health": 19700,
+                    "damage": 79.8
+                },
+                "trainingCost": { "gold": 30000 },
+                "researchCost": { "gold": 7900000 },
+                "upgradeTime": "4d 19h",
+                "armoryRequired": 22
+            },
+            "4": {
+                "stats": {
+                    "health": 20280,
+                    "damage": 81.8
+                },
+                "trainingCost": { "gold": 32000 },
+                "researchCost": { "gold": 8000000 },
+                "upgradeTime": "4d 21h",
+                "armoryRequired": 22
+            },
+            "5": {
+                "stats": {
+                    "health": 20880,
+                    "damage": 83.8
+                },
+                "trainingCost": { "gold": 34000 },
+                "researchCost": { "gold": 8100000 },
+                "upgradeTime": "4d 23h",
+                "armoryRequired": 23
+            },
+            "6": {
+                "stats": {
+                    "health": 21500,
+                    "damage": 85.9
+                },
+                "trainingCost": { "gold": 36000 },
+                "researchCost": { "gold": 8200000 },
+                "upgradeTime": "5d 1h",
+                "armoryRequired": 23
+            },
+            "7": {
+                "stats": {
+                    "health": 22140,
+                    "damage": 87.9
+                },
+                "trainingCost": { "gold": 38000 },
+                "researchCost": { "gold": 8300000 },
+                "upgradeTime": "5d 3h",
+                "armoryRequired": 24
+            },
+            "8": {
+                "stats": {
+                    "health": 22800,
+                    "damage": 89.9
+                },
+                "trainingCost": { "gold": 40000 },
+                "researchCost": { "gold": 8400000 },
+                "upgradeTime": "5d 5h",
+                "armoryRequired": 25
+            },
+            "9": {
+                "stats": {
+                    "health": 23500,
+                    "damage": 92.1
+                },
+                "trainingCost": { "gold": 42000 },
+                "researchCost": { "gold": 8500000 },
+                "upgradeTime": "5d 6h",
                 "armoryRequired": 26
             }
         }

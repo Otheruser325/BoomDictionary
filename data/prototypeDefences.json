@@ -5,12 +5,15 @@
         "maxLevel": 3,
         "attackSpeed": 80,
         "range": 18,
+        "canDetectSmoke": false,
+        "canTargetAir": true,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/0/09/ShockBlasterI.png/revision/latest/scale-to-width-down/120?cb=20150506154605",
                 "stats": {
                     "health": 15000,
-                    "damage": 64
+                    "damage": 64,
+                    "stunDuration": 0.6
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -26,7 +29,8 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/ShockBlasterII.png/revision/latest/scale-to-width-down/120?cb=20150506154628",
                 "stats": {
                     "health": 20000,
-                    "damage": 104
+                    "damage": 104,
+                    "stunDuration": 0.8
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -42,7 +46,8 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/5/51/ShockBlasterIII.png/revision/latest/scale-to-width-down/120?cb=20150506154652",
                 "stats": {
                     "health": 25000,
-                    "damage": 144
+                    "damage": 144,
+                    "stunDuration": 1
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -62,6 +67,8 @@
         "maxLevel": 3,
         "attackSpeed": 4000,
         "range": 18,
+        "canDetectSmoke": false,
+        "canTargetAir": true,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/ce/LazorBeamI.png/revision/latest/scale-to-width-down/120?cb=20150506195253",
@@ -119,6 +126,8 @@
         "maxLevel": 3,
         "attackSpeed": 3500, 
         "range": 18,
+        "canDetectSmoke": false,
+        "canTargetAir": true,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/17/DoomCannon1.png/revision/latest/scale-to-width-down/120?cb=20150515220523",
@@ -128,9 +137,9 @@
                 },
                 "buildCost": {
                     "fuses": 0, 
-                    "gears": 0, 
+                    "gears": 3, 
                     "rods": 0, 
-                    "capacitors": 0
+                    "capacitors": 3
                 },
                 "buildTime": "1h",
                 "marks": "Tier 1 (I)",
@@ -143,10 +152,10 @@
                     "damage": 8750
                 },
                 "buildCost": {
-                    "fuses": 0, 
-                    "gears": 0, 
+                    "fuses": 3, 
+                    "gears": 6, 
                     "rods": 0, 
-                    "capacitors": 0
+                    "capacitors": 3
                 },
                 "buildTime": "4h",
                 "marks": "Tier 2 (II)",
@@ -160,9 +169,9 @@
                 },
                 "buildCost": {
                     "fuses": 0, 
-                    "gears": 0, 
-                    "rods": 0, 
-                    "capacitors": 0
+                    "gears": 3, 
+                    "rods": 9, 
+                    "capacitors": 6
                 },
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",
@@ -176,12 +185,14 @@
         "maxLevel": 3,
         "attackSpeed": null,
         "range": 7.6,
+        "canDetectSmoke": null,
+        "canTargetAir": null,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/1e/DamageAmplifierI.png/revision/latest/scale-to-width-down/120?cb=20150506153721",
                 "stats": {
                     "health": 20000,
-                    "damage": null
+                    "damageIncrease": 50
                 },
                 "buildCost": {
                     "fuses": 3, 
@@ -197,7 +208,7 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/6/65/DamageAmplifierII.png/revision/latest/scale-to-width-down/120?cb=20150506153744",
                 "stats": {
                     "health": 27500,
-                    "damage": null
+                    "damageIncrease": 75
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -213,7 +224,7 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/1c/DamageAmplifierIII.png/revision/latest/scale-to-width-down/120?cb=20150506153832",
                 "stats": {
                     "health": 35000,
-                    "damage": null
+                    "damageIncrease": 100
                 },
                 "buildCost": {
                     "fuses": 9, 
@@ -233,12 +244,14 @@
         "maxLevel": 3,
         "attackSpeed": null,
         "range": null,
+        "canDetectSmoke": null,
+        "canTargetAir": null,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/9/9d/ShieldGeneratorI.png/revision/latest/scale-to-width-down/120?cb=20151021124228",
                 "stats": {
                     "health": 20000,
-                    "damage": null
+                    "shieldStrength": 50
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -254,7 +267,7 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/89/ShieldGeneratorII.png/revision/latest/scale-to-width-down/120?cb=20151021124227",
                 "stats": {
                     "health": 27500,
-                    "damage": null
+                    "shieldStrength": 100
                 },
                 "buildCost": {
                     "fuses": 6, 
@@ -270,7 +283,7 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/8/8e/ShieldGeneratorIII.png/revision/latest/scale-to-width-down/140?cb=20151021124227",
                 "stats": {
                     "health": 35000,
-                    "damage": null
+                    "shieldStrength": 150
                 },
                 "buildCost": {
                     "fuses": 9, 
@@ -290,6 +303,8 @@
         "maxLevel": 3,
         "attackSpeed": 150,
         "range": 8.5,
+        "canDetectSmoke": false,
+        "canTargetAir": false,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/c/ca/HotPotI.png/revision/latest/scale-to-width-down/120?cb=20160906213936",
@@ -347,6 +362,8 @@
         "maxLevel": 3,
         "attackSpeed": 5000,
         "range": 25,
+        "canDetectSmoke": false,
+        "canTargetAir": false,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/3/3a/GrapplerI.png/revision/latest/scale-to-width-down/110?cb=20160907011052",
@@ -404,6 +421,8 @@
         "maxLevel": 3,
         "attackSpeed": 2000,
         "range": 15,
+        "canDetectSmoke": true,
+        "canTargetAir": false,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/1/13/SIMOI.png/revision/latest/scale-to-width-down/110?cb=20180330092744",
@@ -461,12 +480,13 @@
         "maxLevel": 3,
         "attackSpeed": null,
         "range": 6,
+        "canDetectSmoke": null,
+        "canTargetAir": null,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d1/SkyShieldI.png/revision/latest/scale-to-width-down/80?cb=20180409095709",
                 "stats": {
                     "health": 20000,
-                    "damage": null,
                     "shieldHealth": 20000
                 },
                 "buildCost": {
@@ -483,7 +503,6 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/7/74/SkyShieldII.png/revision/latest/scale-to-width-down/80?cb=20180409095709",
                 "stats": {
                     "health": 27500,
-                    "damage": null,
                     "shieldHealth": 22500
                 },
                 "buildCost": {
@@ -500,7 +519,6 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/b/b2/SkyShieldIII.png/revision/latest/scale-to-width-down/80?cb=20180409095710",
                 "stats": {
                     "health": 35000,
-                    "damage": null,
                     "shieldHealth": 25000
                 },
                 "buildCost": {
@@ -520,7 +538,9 @@
         "description": "Burns all enemies within range with dangerous microwave radiation. Can also be used to make popcorn.",
         "maxLevel": 3,
         "attackSpeed": 200,
-        "range": 15,
+        "range": 6.5,
+        "canDetectSmoke": true,
+        "canTargetAir": false,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e7/MicrowavrI.png/revision/latest/scale-to-width-down/70?cb=20180430142415",
@@ -578,12 +598,17 @@
         "maxLevel": 3,
         "attackSpeed": 1000,
         "range": 10,
+        "canDetectSmoke": false,
+        "canTargetAir": false,
+        "deathExplosionRadius": 6.5,
+        "deathExplosionDelay": 3,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/5/55/FlotsamCannonI.png/revision/latest/scale-to-width-down/110?cb=20180605130839",
                 "stats": {
                     "health": 15000,
-                    "damage": 500
+                    "damage": 500,
+                    "deathDamage": 2000
                 },
                 "buildCost": {
                     "fuses": 0, 
@@ -599,7 +624,8 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/FlotsamCannonII.png/revision/latest/scale-to-width-down/110?cb=20180605130840",
                 "stats": {
                     "health": 20000,
-                    "damage": 650
+                    "damage": 650,
+                    "deathDamage": 2400
                 },
                 "buildCost": {
                     "fuses": 2, 
@@ -615,7 +641,8 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/FlotsamCannonIII.png/revision/latest/scale-to-width-down/110?cb=20180605130841",
                 "stats": {
                     "health": 25000,
-                    "damage": 800
+                    "damage": 800,
+                    "deathDamage": 3000
                 },
                 "buildCost": {
                     "fuses": 5, 
@@ -635,6 +662,8 @@
         "maxLevel": 3,
         "attackSpeed": 1500,
         "range": 9,
+        "canDetectSmoke": false,
+        "canTargetAir": true,
         "levels": {
             "1": {
                 "image": "https://static.wikia.nocookie.net/boombeach/images/e/e6/BoomSurpriseI.png/revision/latest/scale-to-width-down/110?cb=20180514122347",

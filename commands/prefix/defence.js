@@ -1,6 +1,15 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
+const {
+    EmbedBuilder,
+    ActionRowBuilder,
+    StringSelectMenuBuilder,
+    StringSelectMenuOptionBuilder,
+    PermissionsBitField,
+    ComponentType
+} = require('discord.js');
 const defences = require('../../data/defences.json');
-const { formatNumber } = require('../../utils/formatNumber');
+const {
+    formatNumber
+} = require('../../utils/formatNumber');
 
 const validDefenceTypes = {
     'sniper tower': 'sniper_tower',
@@ -17,13 +26,12 @@ const validDefenceTypes = {
 module.exports = {
     name: 'defence',
     description: 'Get statistics for a specific type of defence.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY', 'EMBED_LINKS'],
+    permissions: ['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks'],
     aliases: ['defense'],
     args: false,
-    usage: '<defence_type> <level>',
 
     async execute(message, args) {
-		// Check bot permissions
+        // Check bot permissions
         const botPermissions = message.channel.permissionsFor(message.guild.members.me);
         const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks']);
 
@@ -33,6 +41,7 @@ module.exports = {
 
         try {
             if (args.length === 0) {
+                // Show defence types selection menu
                 const defenceOptions = Object.keys(validDefenceTypes).map(defenceKey => {
                     const defence = defences[validDefenceTypes[defenceKey]];
                     const description = (defence && defence.description) ? defence.description.substring(0, 100) : 'No description available.';
@@ -43,7 +52,7 @@ module.exports = {
                 });
 
                 const selectMenu = new StringSelectMenuBuilder()
-                    .setCustomId('select_defence_type')
+                    .setCustomId('select-defence-type')
                     .setPlaceholder('Select a defence type')
                     .addOptions(defenceOptions);
 
@@ -54,8 +63,269 @@ module.exports = {
                     .setDescription('Please choose a defence type to view its details.')
                     .setColor('#0099ff');
 
-                await message.channel.send({ embeds: [embed], components: [row] });
+                const reply = await message.reply({
+                    embeds: [embed],
+                    components: [row]
+                });
+
+                const filter = interaction => interaction.user.id === message.author.id;
+                const defenceCollector = reply.createMessageComponentCollector({
+                    componentType: ComponentType.StringSelect,
+                    time: 30000
+                });
+
+                defenceCollector.on('collect', async (interaction) => {
+                    if (interaction.customId !== 'select-defence-type') return;
+
+                    if (interaction.user.id !== message.author.id) {
+                        return interaction.reply({
+                            content: `Only ${message.author.username} can use this selection menu!`,
+                            ephemeral: true
+                        });
+                    }
+
+                    const selectedDefenceType = interaction.values[0];
+                    const defenceData = defences[selectedDefenceType];
+
+                    if (!defenceData) {
+                        return interaction.reply({
+                            content: 'Invalid defence type!',
+                            ephemeral: true
+                        });
+                    }
+
+                    const maxOptions = 25;
+                    const levels = Array.from({
+                        length: defenceData.maxLevel
+                    }, (_, i) => i + 1);
+                    const levelOptions = levels.slice(0, maxOptions).map(level => {
+                        return new StringSelectMenuOptionBuilder()
+                            .setLabel(`Level ${level}`)
+                            .setValue(`${selectedDefenceType}-${level}`)
+                            .setDescription(defenceData.levels[level]?.upgradeTime || 'No details available.');
+                    });
+
+                    const defenceLevelSelectMenu = new StringSelectMenuBuilder()
+                        .setCustomId('select-defence-level')
+                        .setPlaceholder('Select a level')
+                        .addOptions(levelOptions);
+
+                    const levelRow = new ActionRowBuilder().addComponents(defenceLevelSelectMenu);
+                    const levelEmbed = new EmbedBuilder()
+                        .setTitle(`Select a Level for ${defenceData.name}`)
+                        .setDescription('Please choose a level to view its details.')
+                        .setColor('#0099ff');
+
+                    const levelFilter = response => response.author.id === message.author.id;
+                    const levelCollector = interaction.channel.createMessageComponentCollector({
+                        componentType: ComponentType.StringSelect,
+                        time: 30000
+                    });
+
+                    await interaction.update({
+                        embeds: [levelEmbed],
+                        components: [levelRow]
+                    });
+
+                    levelCollector.on('collect', async (interaction) => {
+                        if (interaction.customId !== 'select-defence-level') return;
+
+                        if (interaction.user.id !== message.author.id) {
+                            return interaction.reply({
+                                content: `Only ${message.author.username} can use this selection menu!`,
+                                ephemeral: true
+                            });
+                        }
+
+                        const [selectedDefenceType, level] = interaction.values[0].split('-');
+                        const levelNum = parseInt(level, 10);
+
+                        if (isNaN(levelNum) || levelNum < 1 || levelNum > defenceData.maxLevel) {
+                            return interaction.reply({
+                                content: `Invalid level! Please provide a level between 1 and ${defenceData.maxLevel}.`,
+                                ephemeral: true
+                            });
+                        }
+
+                        const levelData = defenceData.levels[level];
+
+                        if (!levelData) {
+                            return interaction.reply({
+                                content: 'No data available for this level!',
+                                ephemeral: true
+                            });
+                        }
+
+                        const stats = levelData.stats || {};
+                        const upgradeCost = levelData.upgradeCost || {
+                            wood: 0,
+                            stone: 0,
+                            iron: 0
+                        };
+                        const attackSpeed = defenceData.attackSpeed || 'Unknown';
+                        const hqRequired = levelData.hqRequired || 'N/A';
+
+                        // Calculate DPS if attackSpeed is known
+                        const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+
+                        const embedDefence = new EmbedBuilder()
+                            .setTitle(`${defenceData.name} - Level ${level}`)
+                            .setDescription(defenceData.description || 'No description available.')
+                            .setColor('#0099ff');
+
+                        if (levelData.image) {
+                            embedDefence.setThumbnail(levelData.image);
+                        }
+
+                        // Handle unique stats for certain defences
+                        if (selectedDefenceType === 'critter_launcher') {
+                            const crittersPerShot = 1;
+                            const crittersPerSecond = (crittersPerShot / (attackSpeed / 1000)).toFixed(2);
+            
+                            embedDefence.addFields({
+                                name: 'Health',
+                                value: formatNumber(stats.health),
+                                inline: true
+                            }, {
+                                name: 'DPS',
+                                value: formatNumber(dps),
+                                inline: true
+                            }, {
+                                name: 'Damage Per Shot',
+                                value: formatNumber(stats.damage),
+                                inline: true
+                            }, {
+                                name: 'Range',
+                                value: `${formatNumber(defenceData.range)} Tiles`,
+                                inline: true
+                            }, {
+                                name: 'Attack Speed',
+                                value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                                inline: true
+                            }, {
+                                name: 'Critters Per Shot',
+                                value: formatNumber(crittersPerShot),
+                                inline: true
+                            }, {
+                                name: 'Critters Per Second',
+                                value: formatNumber(crittersPerSecond),
+                                inline: true
+                            }, {
+                                name: 'Upgrade Cost',
+                                value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`,
+                                inline: true
+                            }, {
+                                name: 'Upgrade Time',
+                                value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                                inline: true
+                            }, {
+                                name: 'HQ Required',
+                                value: hqRequired.toString(),
+                                inline: true
+                            });
+                        } else if (selectedDefenceType === 'shock_launcher') {
+                            embedDefence.addFields({
+                                name: 'Health',
+                                value: formatNumber(stats.health),
+                                inline: true
+                            }, {
+                                name: 'DPS',
+                                value: formatNumber(dps),
+                                inline: true
+                            }, {
+                                name: 'Damage Per Shot',
+                                value: formatNumber(stats.damage),
+                                inline: true
+                            }, {
+                                name: 'Range',
+                                value: `${formatNumber(defenceData.range)} Tiles`,
+                                inline: true
+                            }, {
+                                name: 'Attack Speed',
+                                value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                                inline: true
+                            }, {
+                                name: 'Shock Duration',
+                                value: `${formatNumber(stats.stunDuration)} seconds`,
+                                inline: true
+                            }, {
+                                name: 'Upgrade Cost',
+                                value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`,
+                                inline: true
+                            }, {
+                                name: 'Upgrade Time',
+                                value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                                inline: true
+                            }, {
+                                name: 'HQ Required',
+                                value: hqRequired.toString(),
+                                inline: true
+                            });
+                        } else {
+                            embedDefence.addFields({
+                                name: 'Health',
+                                value: formatNumber(stats.health),
+                                inline: true
+                            }, {
+                                name: 'DPS',
+                                value: formatNumber(dps),
+                                inline: true
+                            }, {
+                                name: 'Damage Per Shot',
+                                value: formatNumber(stats.damage),
+                                inline: true
+                            }, {
+                                name: 'Range',
+                                value: `${formatNumber(defenceData.range)} Tiles`,
+                                inline: true
+                            }, {
+                                name: 'Attack Speed',
+                                value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                                inline: true
+                            }, {
+                                name: 'Upgrade Cost',
+                                value: `Wood: ${formatNumber(levelData.upgradeCost.wood)}\nStone: ${formatNumber(levelData.upgradeCost.stone)}\nIron: ${formatNumber(levelData.upgradeCost.iron)}`,
+                                inline: true
+                            }, {
+                                name: 'Upgrade Time',
+                                value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                                inline: true
+                            }, {
+                                name: 'HQ Required',
+                                value: hqRequired.toString(),
+                                inline: true
+                            });
+                        }
+
+                        await interaction.update({
+                            embeds: [embedDefence],
+                            components: []
+                        });
+                        levelCollector.stop();
+                    });
+
+                    levelCollector.on('end', async (collected, reason) => {
+                        if (reason === 'time' && collected.size === 0) {
+                            await reply.edit({
+                                content: 'You did not select a level in time. Please try again.',
+                                embeds: [],
+                                components: []
+                            });
+                        }
+                    });
+                });
+
+                defenceCollector.on('end', async (collected, reason) => {
+                    if (reason === 'time' && collected.size === 0) {
+                        await reply.edit({
+                            content: 'You did not select a defence type in time. Please try again.',
+                            embeds: [],
+                            components: []
+                        });
+                    }
+                });
             } else {
+                // Argument provided; directly fetch defence statistics
                 const userFriendlyDefenceType = args.slice(0, -1).join(' ').toLowerCase().trim();
                 const level = parseInt(args[args.length - 1], 10);
 
@@ -81,63 +351,163 @@ module.exports = {
                 }
 
                 const stats = levelData.stats || {};
-                const upgradeCost = levelData.upgradeCost || { wood: 0, stone: 0, iron: 0 };
+                const upgradeCost = levelData.upgradeCost || {
+                    wood: 0,
+                    stone: 0,
+                    iron: 0
+                };
                 const attackSpeed = defenceData.attackSpeed || 'Unknown';
-                const range = defenceData.range || 'Unknown';
-                const hqRequired = levelData.hqRequired || 'N/A';
-                const image = levelData.image || '';
-
-                // Calculate DPS if attackSpeed is known
                 const dps = attackSpeed !== 'Unknown' ? (stats.damage / (attackSpeed / 1000)).toFixed(2) : 'Unknown';
+                const hqRequired = levelData.hqRequired || 'N/A';
 
-                const embed = new EmbedBuilder()
+                const embedDefence = new EmbedBuilder()
                     .setTitle(`${defenceData.name} - Level ${level}`)
                     .setDescription(defenceData.description || 'No description available.')
                     .setColor('#0099ff');
-				
-			    if (image) {
-                    embed.setThumbnail(image);
+
+                if (levelData.image) {
+                    embedDefence.setThumbnail(levelData.image);
                 }
 
                 // Handle unique stats for certain defences
-                if (defenceType === 'shock_launcher') {
-                embed.addFields(
-                        { name: 'Health', value: formatNumber(stats.health), inline: true },
-                        { name: 'DPS', value: formatNumber(dps), inline: true },
-                        { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                        { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                        { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
-                        { name: 'Shock Duration', value: `${formatNumber(stats.stunDuration)} seconds`, inline: true },
-                        { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
-                        { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
-                        { name: 'HQ Required', value: hqRequired.toString(), inline: true }
-                    );
+                if (defenceType === 'critter_launcher') {
+                    const crittersPerShot = 1;
+                    const crittersPerSecond = (crittersPerShot / (attackSpeed / 1000)).toFixed(2);
+    
+                    embedDefence.addFields({
+                        name: 'Health',
+                        value: formatNumber(stats.health),
+                        inline: true
+                    }, {
+                        name: 'DPS',
+                        value: formatNumber(dps),
+                        inline: true
+                    }, {
+                        name: 'Damage Per Shot',
+                        value: formatNumber(stats.damage),
+                        inline: true
+                    }, {
+                        name: 'Range',
+                        value: `${formatNumber(defenceData.range)} Tiles`,
+                        inline: true
+                    }, {
+                        name: 'Attack Speed',
+                        value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                        inline: true
+                    }, {
+                        name: 'Critters Per Shot',
+                        value: formatNumber(crittersPerShot),
+                        inline: true
+                    }, {
+                        name: 'Critters Per Second',
+                        value: formatNumber(crittersPerSecond),
+                        inline: true
+                    }, {
+                        name: 'Upgrade Cost',
+                        value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`,
+                        inline: true
+                    }, {
+                        name: 'Upgrade Time',
+                        value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                        inline: true
+                    }, {
+                        name: 'HQ Required',
+                        value: hqRequired.toString(),
+                        inline: true
+                    });
+                } else if (defenceType === 'shock_launcher') {
+                    embedDefence.addFields({
+                        name: 'Health',
+                        value: formatNumber(stats.health),
+                        inline: true
+                    }, {
+                        name: 'DPS',
+                        value: formatNumber(dps),
+                        inline: true
+                    }, {
+                        name: 'Damage Per Shot',
+                        value: formatNumber(stats.damage),
+                        inline: true
+                    }, {
+                        name: 'Range',
+                        value: `${formatNumber(defenceData.range)} Tiles`,
+                        inline: true
+                    }, {
+                        name: 'Attack Speed',
+                        value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                        inline: true
+                    }, {
+                        name: 'Shock Duration',
+                        value: `${formatNumber(stats.stunDuration)} seconds`,
+                        inline: true
+                    }, {
+                        name: 'Upgrade Cost',
+                        value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`,
+                        inline: true
+                    }, {
+                        name: 'Upgrade Time',
+                        value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                        inline: true
+                    }, {
+                        name: 'HQ Required',
+                        value: hqRequired.toString(),
+                        inline: true
+                    });
                 } else {
-                    // Handle general defence stats
-                    let dps = 'N/A';
-                    let damagePerShot = 'N/A';
-
-                    if (stats.damage !== null) {
-                        dps = (stats.damage / (defenceData.attackSpeed / 1000)).toFixed(2);
-                        damagePerShot = stats.damage.toString();
-                    }
-                    embed.addFields(
-                        { name: 'Health', value: formatNumber(stats.health), inline: true },
-                        { name: 'DPS', value: formatNumber(dps), inline: true },
-                        { name: 'Damage Per Shot', value: formatNumber(stats.damage), inline: true },
-                        { name: 'Range', value: `${formatNumber(range)} Tiles`, inline: true },
-                        { name: 'Attack Speed', value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown', inline: true },
-                        { name: 'Upgrade Cost', value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`, inline: true },
-                        { name: 'Upgrade Time', value: `${levelData.upgradeTime || 'Not available'}`, inline: true },
-                        { name: 'HQ Required', value: hqRequired.toString(), inline: true }
-                    );
+                    embedDefence.addFields({
+                        name: 'Health',
+                        value: formatNumber(stats.health),
+                        inline: true
+                    }, {
+                        name: 'DPS',
+                        value: formatNumber(dps),
+                        inline: true
+                    }, {
+                        name: 'Damage Per Shot',
+                        value: formatNumber(stats.damage),
+                        inline: true
+                    }, {
+                        name: 'Range',
+                        value: `${formatNumber(defenceData.range)} Tiles`,
+                        inline: true
+                    }, {
+                        name: 'Attack Speed',
+                        value: attackSpeed !== 'Unknown' ? `${formatNumber(attackSpeed)}ms` : 'Unknown',
+                        inline: true
+                    }, {
+                        name: 'Upgrade Cost',
+                        value: `Wood: ${formatNumber(upgradeCost.wood)}\nStone: ${formatNumber(upgradeCost.stone)}\nIron: ${formatNumber(upgradeCost.iron)}`,
+                        inline: true
+                    }, {
+                        name: 'Upgrade Time',
+                        value: `${levelData.upgradeTime.toString() || 'N/A'}`,
+                        inline: true
+                    }, {
+                        name: 'HQ Required',
+                        value: hqRequired.toString(),
+                        inline: true
+                    });
                 }
 
-                await message.channel.send({ embeds: [embed] });
-			}
+                await message.reply({
+                    embeds: [embedDefence]
+                });
+            }
         } catch (error) {
-            console.error('Error executing defence command:', error);
-            message.reply('An error occurred while executing the defence command. Please try again later.');
+            if (error.code === 10008) {
+                return message.reply(`I couldn't find the selection menu for ${interaction.customId || 'this interaction'}, please try again later.`);
+            } else if (error.code === 10062) {
+                return message.reply("My systematic networking is currently out of sync and timed out. Please try again later.");
+            } else if (error.code === 40060) {
+                return message.reply("I couldn't reuse this interaction as I've already acknowledged it. Please try again later.");
+            } else if (error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
+                return message.reply("An unexpected error occurred. Please try again later.");
+            } else if (error.message.includes("Interaction was not replied")) {
+                return message.reply("An interaction error occurred. Please try again later.");
+            } else {
+                console.error('Error executing defence command:', error);
+                message.reply('An error occurred while executing the defence command. Please try again later.');
+            }
         }
     }
 };

@@ -44,13 +44,6 @@ for (const file of slashCommandFiles) {
     client.slashCommands.set(command.data.name, command);
 }
 
-// Load interaction handlers
-const interactionFiles = fs.readdirSync(path.join(__dirname, 'commands/interactions')).filter(file => file.endsWith('.js'));
-for (const file of interactionFiles) {
-    const interaction = require(path.join(__dirname, 'commands/interactions', file));
-    client.interactions.set(interaction.customId, interaction);
-}
-
 client.once('ready', async () => {
     console.log('Bot is online!');
     console.log(`Logged in as ${client.user.tag}`);
@@ -100,6 +93,11 @@ client.on('messageCreate', async message => {
         await command.execute(message, args);
     } catch (error) {
         console.error('Error executing command:', error);
+
+        if (error.code === 10062 || error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
+            return message.reply('An unexpected error has occurred. Please try again later.');
+        }
+
         if (!botMissingPermissions.includes('SEND_MESSAGES')) {
             await message.reply('There was an error trying to execute that command!');
         } else {
@@ -110,102 +108,73 @@ client.on('messageCreate', async message => {
 
 client.on(Events.InteractionCreate, async interaction => {
     if (interaction.isCommand()) {
-        const command = client.slashCommands.get(interaction.commandName);
-        if (!command) {
-            console.error(`No command matching ${interaction.commandName} was found.`);
-            return;
-        }
-		
-		if (!interaction.guild) {
-            try {
-                await command.execute(interaction);
-            } catch (error) {
-                console.error('Error executing interaction in DMs:', error);
-                await interaction.reply({ content: 'There was an error executing this command in DMs!', ephemeral: true });
-            }
-            return;
-        }
-		
-		// Check if the user has the necessary permissions
-        if (command.permissions) {
-            try {
-                // Fetch the member if not cached
-                const member = await interaction.guild.members.fetch(interaction.user.id);
-                const missingPermissions = command.permissions.filter(permission => !member.permissions.has(permission));
-                if (missingPermissions.length) {
-                    return interaction.reply({ content: `You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`, ephemeral: true });
-                }
-            } catch (error) {
-                console.error('Error fetching member:', error);
-                return interaction.reply({ content: 'There was an error checking your permissions.', ephemeral: true });
-            }
-        }
-
-        try {
-            await command.execute(interaction);
-        } catch (error) {
-            console.error('Error executing interaction command:', error);
-            if (!interaction.replied) {
-                await interaction.reply({ content: 'There was an error executing this command!', ephemeral: true });
-            } else {
-                await interaction.followUp({ content: 'There was an error executing this command!', ephemeral: true });
-            }
-        }
+        await handleSlashCommand(interaction);
     } else if (interaction.isStringSelectMenu()) {
-        const interactionHandler = client.interactions.get(interaction.customId);
-        if (!interactionHandler) {
-            console.error(`No interaction handler matching ${interaction.customId} was found.`);
-            return;
-        }
-
-        try {
-            await interactionHandler.execute(interaction);
-        } catch (error) {
-            console.error('Error executing interaction:', error);
-            if (!interaction.replied) {
-                await interaction.reply({ content: 'There was an error executing this interaction!', ephemeral: true });
-            } else {
-                await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
-            }
-        }
+        await handleSelectMenu(interaction);
     } else if (interaction.isButton()) {
-        const interactionHandler = client.interactions.get(interaction.customId);
-        if (!interactionHandler) {
-            console.error(`No interaction handler matching ${interaction.customId} was found.`);
-            return;
-        }
-
-        try {
-            await interactionHandler.execute(interaction);
-        } catch (error) {
-            console.error('Error executing button interaction:', error);
-            if (!interaction.replied) {
-                await interaction.reply({ content: 'There was an error executing this interaction!', ephemeral: true });
-            } else {
-                await interaction.followUp({ content: 'There was an error executing this interaction!', ephemeral: true });
-            }
-        }
+        await handleButton(interaction);
     } else if (interaction.isModalSubmit()) {
-        const interactionHandler = client.interactions.get(interaction.customId);
-        if (!interactionHandler) {
-            console.error(`No modal interaction handler matching ${interaction.customId} was found.`);
-            return;
-        }
-
-        try {
-            await interactionHandler.execute(interaction);
-        } catch (error) {
-            console.error('Error executing modal interaction:', error);
-            if (!interaction.replied) {
-                await interaction.reply({ content: 'There was an error executing this form submission!', ephemeral: true });
-            } else {
-                await interaction.followUp({ content: 'There was an error executing this form submission!', ephemeral: true });
-            }
-        }
-    }  else {
+        await handleModalSubmit(interaction);
+    } else {
         console.error('Received an unhandled interaction type.');
     }
 });
+
+async function handleSlashCommand(interaction) {
+    const command = client.slashCommands.get(interaction.commandName);
+    if (!command) return;
+
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        console.error(`Error executing command: ${interaction.commandName}`, error);
+        await handleInteractionError(interaction, 'There was an error executing this command!');
+    }
+}
+
+async function handleSelectMenu(interaction) {
+    const handler = client.interactions.get(interaction.customId);
+    if (!handler) return;
+
+    try {
+        await handler.execute(interaction);
+    } catch (error) {
+        console.error(`Error executing select menu interaction: ${interaction.customId}`, error);
+        await handleInteractionError(interaction, 'There was an error processing the selection menu!');
+    }
+}
+
+async function handleButton(interaction) {
+    const handler = client.interactions.get(interaction.customId);
+    if (!handler) return;
+
+    try {
+        await handler.execute(interaction);
+    } catch (error) {
+        console.error(`Error executing button interaction: ${interaction.customId}`, error);
+        await handleInteractionError(interaction, 'There was an error processing the button interaction!');
+    }
+}
+
+async function handleModalSubmit(interaction) {
+    const handler = client.interactions.get(interaction.customId);
+    if (!handler) return;
+
+    try {
+        await handler.execute(interaction);
+    } catch (error) {
+        console.error(`Error executing modal interaction: ${interaction.customId}`, error);
+        await handleInteractionError(interaction, 'There was an error submitting the form!');
+    }
+}
+
+function handleInteractionError(interaction, message) {
+    if (!interaction.replied) {
+        interaction.reply({ content: message, ephemeral: true });
+    } else {
+        interaction.followUp({ content: message, ephemeral: true });
+    }
+}
 
 process.on('uncaughtException', (error) => {
     console.error('Uncaught Exception:', error);
@@ -213,6 +182,10 @@ process.on('uncaughtException', (error) => {
 
 process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+
+    if (reason instanceof Error) {
+        console.error('Error stack:', reason.stack);
+    }
 });
 
 client.login(token);
