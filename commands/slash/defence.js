@@ -241,4 +241,4 @@ module.exports = {
             }
         }
     },
-};
+}

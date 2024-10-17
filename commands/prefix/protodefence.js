@@ -854,4 +854,4 @@ module.exports = {
             }
         }
     }
-};
+}

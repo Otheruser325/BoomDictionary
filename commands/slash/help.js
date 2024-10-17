@@ -145,4 +145,4 @@ module.exports = {
             console.error('Error sending initial help message:', error);
         }
     }
-};
+}

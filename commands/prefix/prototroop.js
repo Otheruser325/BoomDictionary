@@ -546,4 +546,4 @@ module.exports = {
             }
         }
     }
-};
+}
