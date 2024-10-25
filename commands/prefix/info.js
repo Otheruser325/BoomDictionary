@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, PermissionsBitField, } = require('discord.js');
 
 // Patch notes for Boom Dictionary
 const patchNotes = [
