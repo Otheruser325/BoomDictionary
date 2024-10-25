@@ -14,12 +14,20 @@ const patchNotes = [
 module.exports = {
     name: 'info',
     description: 'Get information about Boom Dictionary.',
-	permissions: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
+	permissions: ['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks'],
     aliases: ['information', 'version', 'about'],
     usage: '[page]',
     exampleUsage: 'v info 2',
     note: 'Provides information about the bot version and its developer.',
     async execute(message, args) {
+		// Check bot permissions
+        const botPermissions = message.channel.permissionsFor(message.guild.members.me);
+        const requiredPermissions = new PermissionsBitField(['SendMessages', 'ViewChannel', 'ReadMessageHistory', 'EmbedLinks']);
+
+        if (!botPermissions.has(requiredPermissions)) {
+            return message.reply("I don't have the necessary permissions to execute this command. Please make sure I have `SEND_MESSAGES`, `VIEW_CHANNEL`, `READ_MESSAGE_HISTORY`, and `EMBED_LINKS` permissions.");
+        }
+		
         try {
             // Get page number, default to 1 if not provided or invalid
             let page = parseInt(args[0]) || 1;
