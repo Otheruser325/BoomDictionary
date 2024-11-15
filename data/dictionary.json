@@ -131,6 +131,27 @@
             "class": "Noun",
             "origin": "Game Term",
             "pronunciation": "ˈraɪflmən"
+        },
+		"heavy": {
+            "terminology": "Heavy",
+            "definition": "A bulky infantry troop that has high health and relatively short range to protect other troops behind them.",
+            "class": "Noun",
+            "origin": "Game Term",
+            "pronunciation": "ˈhɛvi"
+        },
+		"zooka": {
+            "terminology": "Zooka",
+            "definition": "A long-range troop that has very low health and inflicts high damage at a distance.",
+            "class": "Noun",
+            "origin": "Game Term",
+            "pronunciation": "ˈzuːkə"
+        },
+		"medic": {
+            "terminology": "Medic",
+            "definition": "A support troop that heals other troops with his medkits.",
+            "class": "Noun",
+            "origin": "Game Term",
+            "pronunciation": "ˈmɛdɪk"
         }
     },
     "Battle": {
