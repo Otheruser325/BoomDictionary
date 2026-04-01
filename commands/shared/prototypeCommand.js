@@ -13,7 +13,7 @@ import {
 } from './choices.js';
 import { formatNumber } from '../../utils/formatNumber.js';
 
-const MIN_PROTOTYPE_TROOP_LEVEL = 12;
+const LEGACY_MIN_PROTOTYPE_TROOP_LEVEL = 12;
 const prototypeDefenceLookup = buildChoiceLookup(prototypeDefenceChoices);
 const prototypeTroopLookup = buildChoiceLookup(prototypeTroopChoices);
 
@@ -57,8 +57,74 @@ function formatPrototypeTrainingCost(trainingCost = {}) {
     return `Gold: ${formatNumber(trainingCost.gold ?? null)}`;
 }
 
-function getPrototypeTokenCost(level) {
-    return level < 26 ? 250 + (level - MIN_PROTOTYPE_TROOP_LEVEL) * 100 : 2500;
+function getLegacyPrototypeTokenCost(level) {
+    if (!Number.isInteger(level) || level <= LEGACY_MIN_PROTOTYPE_TROOP_LEVEL) {
+        return null;
+    }
+
+    return level < 27 ? 150 + (level - LEGACY_MIN_PROTOTYPE_TROOP_LEVEL) * 100 : 1500;
+}
+
+function getPrototypeTroopUpgradeCostText(levelData, level) {
+    if (levelData?.upgradeCostProtoTokens != null) {
+        return `Proto Tokens: ${formatNumber(levelData.upgradeCostProtoTokens)}`;
+    }
+
+    const legacyCost = getLegacyPrototypeTokenCost(level);
+    return `Proto Tokens: ${formatNumber(legacyCost)}`;
+}
+
+function getPrototypeTroopUpgradeTimeText(levelData) {
+    return levelData?.upgradeTime || 'N/A';
+}
+
+function getPrototypeTroopRequirementText(levelData) {
+    if (levelData?.workshopRequired != null) {
+        return `Workshop Level ${formatNumber(levelData.workshopRequired)}`;
+    }
+
+    if (levelData?.armoryRequired != null) {
+        return `Armory Level ${formatNumber(levelData.armoryRequired)}`;
+    }
+
+    return 'N/A';
+}
+
+function getPrototypeTroopAttackSpeedText(troopData) {
+    if (troopData.attackSpeedLabel) {
+        return troopData.attackSpeedLabel;
+    }
+
+    if (troopData.healSpeedLabel) {
+        return troopData.healSpeedLabel;
+    }
+
+    const attackSpeed = Number(troopData.attackSpeed);
+    return Number.isFinite(attackSpeed) ? `${formatNumber(attackSpeed)}ms` : null;
+}
+
+function formatStatValue(value, suffix = '') {
+    if (value == null) {
+        return null;
+    }
+
+    if (typeof value === 'string') {
+        return suffix && !value.endsWith(suffix) ? `${value}${suffix}` : value;
+    }
+
+    return `${formatNumber(value)}${suffix}`;
+}
+
+function addEmbedField(embed, name, value, inline = true) {
+    if (value == null) {
+        return;
+    }
+
+    embed.addFields({
+        name,
+        value: String(value),
+        inline,
+    });
 }
 
 function addSharedPrototypeDefenceFields(
@@ -398,6 +464,7 @@ export function buildPrototypeTroopEmbed(troopType, level) {
     const trainingCost = levelData.trainingCost || {};
     const attackSpeed = Number(troopData.attackSpeed);
     const dps = stats.dps ?? getRatePerSecond(stats.damage, attackSpeed);
+    const attackSpeedText = getPrototypeTroopAttackSpeedText(troopData);
 
     const embed = new EmbedBuilder()
         .setTitle(`${troopData.name} - Level ${level}`)
@@ -448,24 +515,18 @@ export function buildPrototypeTroopEmbed(troopType, level) {
             inline: true,
         });
     } else if (normalizedType === 'turret_engineer') {
-        const spawnSpeed = level < 26 ? 7000 - (level - MIN_PROTOTYPE_TROOP_LEVEL) * 100 : 5600;
-        embed.addFields({
-            name: 'Turret Hitpoints',
-            value: formatNumber(stats.turretHealth || 0),
-            inline: true,
-        }, {
-            name: 'Turret Damage',
-            value: formatNumber(stats.turretDamage || 0),
-            inline: true,
-        }, {
-            name: 'Turret DPS',
-            value: formatNumber(getRatePerSecond(stats.turretDamage, troopData.turretAttackSpeed)),
-            inline: true,
-        }, {
-            name: 'Spawn Speed',
-            value: `${formatNumber(spawnSpeed)}ms`,
-            inline: true,
-        });
+        const turretHealth = stats.turretHealth ?? troopData.turretHealth;
+        const turretDamage = stats.turretDamage ?? troopData.turretDamage;
+
+        addEmbedField(embed, 'Turret Hitpoints', formatNumber(turretHealth));
+        addEmbedField(embed, 'Turret Damage', formatNumber(turretDamage));
+        addEmbedField(
+            embed,
+            'Turret DPS',
+            formatNumber(getRatePerSecond(turretDamage, troopData.turretAttackSpeed))
+        );
+        addEmbedField(embed, 'Turret Attack Range', formatStatValue(troopData.turretAttackRange, ' Tiles'));
+        addEmbedField(embed, 'Spawn Speed', formatStatValue(stats.spawnSpeed));
     } else if (normalizedType === 'critter_engineer') {
         embed.addFields({
             name: 'Critters Per Throw',
@@ -473,34 +534,100 @@ export function buildPrototypeTroopEmbed(troopType, level) {
             inline: true,
         }, {
             name: 'Spawn Speed',
-            value: `${formatNumber(stats.spawnSpeed)}s`,
+            value: formatStatValue(stats.spawnSpeed),
             inline: true,
         });
-    } else {
+    } else if (normalizedType === 'clone_rifleman') {
         embed.addFields({
             name: 'DPS',
             value: formatNumber(dps),
             inline: true,
         }, {
-            name: 'Damage Per Shot',
-            value: formatNumber(stats.damage),
+            name: 'Secondary Hitpoints',
+            value: formatNumber(stats.secondaryHealth),
+            inline: true,
+        }, {
+            name: 'Secondary DPS',
+            value: formatNumber(stats.secondaryDps),
+            inline: true,
+        }, {
+            name: 'Tertiary Hitpoints',
+            value: formatNumber(stats.tertiaryHealth),
+            inline: true,
+        }, {
+            name: 'Tertiary DPS',
+            value: formatNumber(stats.tertiaryDps),
+            inline: true,
+        }, {
+            name: 'Total Health',
+            value: formatNumber(stats.totalHealth),
             inline: true,
         });
-
-        if (normalizedType === 'cryobombardier') {
+    } else if (normalizedType === 'dr_vitamin') {
+        addEmbedField(embed, 'Heal Per Second', formatNumber(stats.healPerSecond));
+        addEmbedField(embed, 'Damage Taken', formatStatValue(stats.damageTaken));
+        addEmbedField(embed, 'Damage Boost', formatStatValue(stats.damageBoost));
+        addEmbedField(embed, 'Speed Bonus', formatStatValue(stats.speedBonus));
+        addEmbedField(embed, 'Heal Type', troopData.healType);
+        addEmbedField(embed, 'Splash Radius', formatStatValue(troopData.splashRadius, ' Tiles'));
+        addEmbedField(embed, 'Vitamin Duration', formatStatValue(troopData.vitaminDuration, 's'));
+    } else if (normalizedType === 'protector') {
+        addEmbedField(embed, 'Shield Health', formatNumber(stats.shieldHealth));
+        addEmbedField(embed, 'Shield Duration', formatStatValue(troopData.shieldDuration, 's'));
+    } else if (normalizedType === 'mega_scorcher') {
+        addEmbedField(embed, 'Approximate DPS', formatNumber(stats.approximateDps));
+        addEmbedField(embed, 'Standard DPS', formatNumber(stats.standardDps));
+        addEmbedField(embed, 'Residual Burn Damage', formatNumber(stats.residualBurnDamage));
+        addEmbedField(embed, 'Death Damage', formatNumber(stats.deathDamage));
+        addEmbedField(embed, 'Death Explosion Radius', formatStatValue(troopData.deathExplosionRadius, ' Tiles'));
+    } else {
+        if (stats.dps != null || stats.damage != null) {
             embed.addFields({
-                name: 'Freeze Power',
-                value: `${formatNumber(troopData.speedReduction || 0)}%`,
+                name: 'DPS',
+                value: formatNumber(dps),
                 inline: true,
             }, {
-                name: 'Protection Debuff',
-                value: `${formatNumber(troopData.protectionDebuff || 0)}%`,
-                inline: true,
-            }, {
-                name: 'Freeze Duration',
-                value: `${formatNumber(troopData.freezeDuration || 0)}s`,
+                name: 'Damage Per Shot',
+                value: formatNumber(stats.damage),
                 inline: true,
             });
+        }
+
+        if (normalizedType === 'lazortron') {
+            addEmbedField(embed, 'Beam Length', formatStatValue(troopData.beamLength, ' Tiles'));
+        }
+
+        if (normalizedType === 'rain_maker') {
+            addEmbedField(embed, 'Shrapnel Count', formatNumber(troopData.shrapnelCount));
+            addEmbedField(embed, 'Splash Radius', formatStatValue(troopData.splashRadius, ' Tiles'));
+        }
+
+        if (normalizedType === 'cryobombardier' || normalizedType === 'cryotank') {
+            addEmbedField(embed, 'Freeze Power', formatStatValue(troopData.speedReduction, '%'));
+            addEmbedField(embed, 'Freeze Duration', formatStatValue(troopData.freezeDuration, 's'));
+
+            if (troopData.protectionDebuff != null) {
+                addEmbedField(embed, 'Protection Debuff', formatStatValue(troopData.protectionDebuff, '%'));
+            }
+
+            if (stats.beamExtension != null) {
+                addEmbedField(embed, 'Beam Extension', formatStatValue(stats.beamExtension));
+            }
+        }
+
+        if (normalizedType === 'shockaneer') {
+            addEmbedField(embed, 'Shock Duration', formatStatValue(troopData.shockDuration, 's'));
+            addEmbedField(embed, 'Beam Extension', formatStatValue(stats.beamExtension));
+        }
+
+        if (normalizedType === 'melon_bombardier') {
+            addEmbedField(embed, 'Shrapnel Damage', formatNumber(stats.shrapnelDamage));
+            addEmbedField(embed, 'Splash Radius', formatStatValue(troopData.splashRadius, ' Tiles'));
+        }
+
+        if (normalizedType === 'stunner') {
+            addEmbedField(embed, 'Shock Duration', formatStatValue(stats.shockDuration, 's'));
+            addEmbedField(embed, 'Splash Radius', formatStatValue(troopData.splashRadius, ' Tiles'));
         }
     }
 
@@ -510,7 +637,15 @@ export function buildPrototypeTroopEmbed(troopType, level) {
         inline: true,
     }, {
         name: 'Upgrade Cost',
-        value: `Proto Tokens: ${formatNumber(getPrototypeTokenCost(level))}`,
+        value: getPrototypeTroopUpgradeCostText(levelData, level),
+        inline: true,
+    }, {
+        name: 'Upgrade Time',
+        value: getPrototypeTroopUpgradeTimeText(levelData),
+        inline: true,
+    }, {
+        name: 'Workshop Requirement',
+        value: getPrototypeTroopRequirementText(levelData),
         inline: true,
     }, {
         name: 'Unit Size',
@@ -542,10 +677,10 @@ export function buildPrototypeTroopEmbed(troopType, level) {
         });
     }
 
-    if (Number.isFinite(attackSpeed)) {
+    if (attackSpeedText) {
         embed.addFields({
-            name: 'Attack Speed',
-            value: `${formatNumber(attackSpeed)}ms`,
+            name: troopData.healSpeedLabel ? 'Heal Speed' : 'Attack Speed',
+            value: attackSpeedText,
             inline: true,
         });
     }

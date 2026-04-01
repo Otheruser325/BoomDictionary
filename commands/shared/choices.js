@@ -74,10 +74,18 @@ export const prototypeDefenceChoices = [
 
 export const prototypeTroopChoices = [
     { name: 'Rain Maker', value: 'rain_maker' },
-    { name: 'Lazortron', value: 'lazortron' },
-    { name: 'Critter Cannon', value: 'critter_cannon' },
+    { name: 'Critter Cannon MK II.', value: 'critter_cannon' },
+    { name: 'Lazortron MK II.', value: 'lazortron' },
     { name: 'Heavy Choppa', value: 'heavy_choppa' },
-    { name: 'Turret Engineer', value: 'turret_engineer' },
-    { name: 'Critter Engineer', value: 'critter_engineer' },
+    { name: 'Clone Rifleman', value: 'clone_rifleman' },
+    { name: 'CryoTank', value: 'cryotank' },
+    { name: 'Dr. Vitamin', value: 'dr_vitamin' },
     { name: 'Cryobombardier', value: 'cryobombardier' },
+    { name: 'Shockaneer', value: 'shockaneer' },
+    { name: 'Protector', value: 'protector' },
+    { name: 'Critter Engineer', value: 'critter_engineer' },
+    { name: 'Melon Bombardier', value: 'melon_bombardier' },
+    { name: 'MegaScorcher', value: 'mega_scorcher' },
+    { name: 'Turret Engineer', value: 'turret_engineer' },
+    { name: 'Stunner', value: 'stunner' },
 ];
