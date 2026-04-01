@@ -1,0 +1,45 @@
+{
+  "troops": {
+    "preferred_sources": [
+      "Official Boom Beach game data and patch notes",
+      "Boom Beach Wiki troop pages"
+    ],
+    "notes": "Verify maxLevel, researchCost, trainingCost, attackSpeed, and any troop-specific mechanics together."
+  },
+  "defences": {
+    "preferred_sources": [
+      "Official Boom Beach game data and patch notes",
+      "Boom Beach Wiki defence pages"
+    ],
+    "notes": "Verify damage, health, range, reload time, and HQ unlock data in the same pass."
+  },
+  "gunboatAbilities": {
+    "preferred_sources": [
+      "Official Boom Beach game data and patch notes",
+      "Boom Beach Wiki gunboat ability pages"
+    ],
+    "notes": "Track energy cost changes separately from damage or duration changes."
+  },
+  "prototypeTroops": {
+    "preferred_sources": [
+      "Official Boom Beach prototypes announcements",
+      "Boom Beach Wiki prototype troop pages"
+    ],
+    "notes": "Prototype entries tend to need extra notes for temporary availability and special mechanics. As of April 1, 2026 the current workshop roster differs from the bot's older 12-26 legacy dataset; check docs/prototype-troop-analysis.md before editing live values."
+  },
+  "prototypeDefences": {
+    "preferred_sources": [
+      "Official Boom Beach prototype announcements",
+      "Boom Beach Wiki prototype defence pages"
+    ],
+    "notes": "Keep prototype behaviour notes close to the level data so rare mechanics are easier to verify later."
+  },
+  "dictionary": {
+    "preferred_sources": [
+      "In-game terminology",
+      "Official Boom Beach communications",
+      "Boom Beach Wiki terminology pages"
+    ],
+    "notes": "Terminology, pronunciation, and origin should be checked together to keep the dictionary and IPA commands aligned."
+  }
+}

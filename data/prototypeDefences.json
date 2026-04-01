@@ -598,6 +598,7 @@
         "maxLevel": 3,
         "attackSpeed": 1000,
         "range": 10,
+        "minimumRange": 2.3,
         "canDetectSmoke": false,
         "canTargetAir": false,
         "deathExplosionRadius": 6.5,
@@ -611,10 +612,10 @@
                     "deathDamage": 2000
                 },
                 "buildCost": {
-                    "fuses": 0, 
-                    "gears": 2, 
+                    "fuses": 3, 
+                    "gears": 3, 
                     "rods": 0, 
-                    "capacitors": 4
+                    "capacitors": 3
                 },
                 "buildTime": "1h",
                 "marks": "Tier 1 (I)",
@@ -624,14 +625,14 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d8/FlotsamCannonII.png/revision/latest/scale-to-width-down/110?cb=20180605130840",
                 "stats": {
                     "health": 20000,
-                    "damage": 650,
-                    "deathDamage": 2400
+                    "damage": 750,
+                    "deathDamage": 3500
                 },
                 "buildCost": {
-                    "fuses": 2, 
-                    "gears": 6, 
-                    "rods": 4, 
-                    "capacitors": 0
+                    "fuses": 3, 
+                    "gears": 3, 
+                    "rods": 3, 
+                    "capacitors": 3
                 },
                 "buildTime": "4h",
                 "marks": "Tier 2 (II)",
@@ -641,14 +642,14 @@
                 "image": "https://static.wikia.nocookie.net/boombeach/images/d/d3/FlotsamCannonIII.png/revision/latest/scale-to-width-down/110?cb=20180605130841",
                 "stats": {
                     "health": 25000,
-                    "damage": 800,
-                    "deathDamage": 3000
+                    "damage": 1250,
+                    "deathDamage": 6000
                 },
                 "buildCost": {
-                    "fuses": 5, 
-                    "gears": 2, 
-                    "rods": 8, 
-                    "capacitors": 3
+                    "fuses": 4, 
+                    "gears": 4, 
+                    "rods": 3, 
+                    "capacitors": 4
                 },
                 "buildTime": "12h",
                 "marks": "Tier 3 (III)",

@@ -1,16 +1,41 @@
-const { Client, GatewayIntentBits, PermissionsBitField, Collection, Events } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
-const dotenv = require('dotenv');
-const { deployCommands } = require('./deploy-commands');
+import {
+    Client,
+    Collection,
+    Events,
+    GatewayIntentBits,
+    PermissionsBitField,
+} from 'discord.js';
+import { config } from 'dotenv';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import { deployCommands } from './deploy-commands.js';
+import {
+    attachProcessErrorHandlers,
+    logError,
+    reportExecutionError,
+} from './utils/errorHandling.js';
+import {
+    loadDirectoryModules,
+    resolveInteractionHandler,
+    resolvePrefixCommand,
+    resolveSlashCommand,
+} from './utils/moduleRegistry.js';
 
-// Load environment variables from .env file
-dotenv.config();
+config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
-const guildId = process.env.GUILD_ID; // Optional: for guild-specific commands
 const prefixes = ['bd!', 'BD!'];
+
+if (!token || !clientId) {
+    console.error(
+        'Missing required environment variables. Expected TOKEN and CLIENT_ID.'
+    );
+    process.exit(1);
+}
 
 const client = new Client({
     intents: [
@@ -19,173 +44,292 @@ const client = new Client({
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.GuildMessageTyping // Ensure this intent is included if you use message typing events
-    ]
+        GatewayIntentBits.GuildMessageTyping,
+    ],
 });
 
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.interactions = new Collection();
+client.interactionPrefixes = [];
 
-// Load prefix commands
-const prefixCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/prefix')).filter(file => file.endsWith('.js'));
-for (const file of prefixCommandFiles) {
-    const command = require(path.join(__dirname, 'commands/prefix', file));
-    client.commands.set(command.name, command);
-    if (command.aliases) {
-        command.aliases.forEach(alias => client.commands.set(alias, command));
-    }
-}
+attachProcessErrorHandlers(client);
 
-// Load slash commands
-const slashCommandFiles = fs.readdirSync(path.join(__dirname, 'commands/slash')).filter(file => file.endsWith('.js'));
-for (const file of slashCommandFiles) {
-    const command = require(path.join(__dirname, 'commands/slash', file));
-    client.slashCommands.set(command.data.name, command);
-}
+await registerPrefixCommands();
+await registerSlashCommands();
+await registerGlobalInteractionHandlers();
 
-client.once('ready', async () => {
+client.once(Events.ClientReady, async (readyClient) => {
     console.log('Bot is online!');
-    console.log(`Logged in as ${client.user.tag}`);
+    console.log(`Logged in as ${readyClient.user.tag}`);
 
-    // Deploy slash commands
-    await deployCommands(clientId, token, client.slashCommands);
+    try {
+        await deployCommands(clientId, token, client.slashCommands);
+    } catch (error) {
+        logError('deploy-commands-failed', error, {
+            clientId,
+        });
+    }
 });
 
-client.on('messageCreate', async message => {
-    if (message.author.bot) return;
+client.on(Events.MessageCreate, async (message) => {
+    if (message.author.bot) {
+        return;
+    }
 
-    let prefix = prefixes.find(p => message.content.startsWith(p));
-    if (!prefix) return;
+    const prefix = prefixes.find((candidate) =>
+        message.content.startsWith(candidate)
+    );
+
+    if (!prefix) {
+        return;
+    }
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const commandName = args.shift().toLowerCase();
+    const commandName = args.shift()?.toLowerCase();
+
+    if (!commandName) {
+        return;
+    }
+
     const command = client.commands.get(commandName);
-    if (!command) return;
 
-    // Check if the user has the necessary permissions
-    if (command.permissions) {
-        const missingPermissions = command.permissions.filter(permission => !message.member.permissions.has(permission));
+    if (!command) {
+        return;
+    }
+
+    if (command.permissions?.length) {
+        const memberPermissions = message.member?.permissions;
+        const missingPermissions = command.permissions.filter((permission) =>
+            !memberPermissions?.has(permission)
+        );
+
         if (missingPermissions.length) {
-            return message.reply(`You don't have the necessary permissions to use this command: ${missingPermissions.join(', ')}`);
+            await message.reply(
+                `You do not have the necessary permissions to use this command: ${missingPermissions.join(', ')}`
+            );
+            return;
         }
     }
 
-    // Safely check if the bot has the necessary permissions
-    let botMissingPermissions = [];
-    if (message.guild && message.guild.me) {
-        try {
-            botMissingPermissions = message.channel.permissionsFor(message.guild.members.me).missing([
-                PermissionsBitField.Flags.SendMessages,
-                PermissionsBitField.Flags.EmbedLinks
-            ]);
-        } catch (err) {
-            console.error('Error checking bot permissions:', err);
-            botMissingPermissions = [];
-        }
-    }
+    const botPermissions = message.guild?.members?.me ?
+        message.channel.permissionsFor(message.guild.members.me) :
+        null;
+    const requiredBotPermissions = [
+        PermissionsBitField.Flags.SendMessages,
+        PermissionsBitField.Flags.EmbedLinks,
+    ];
+    const botMissingPermissions = botPermissions ?
+        botPermissions.missing(requiredBotPermissions) :
+        [];
 
     if (botMissingPermissions.length) {
-        return message.reply(`I don't have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`);
+        await message.reply(
+            `I do not have the necessary permissions to send messages or embeds: ${botMissingPermissions.join(', ')}`
+        );
+        return;
     }
 
     try {
         await command.execute(message, args);
     } catch (error) {
-        console.error('Error executing command:', error);
+        await reportExecutionError({
+            error,
+            fallbackMessage: 'There was an error trying to execute that command.',
+            message,
+            metadata: {
+                commandName,
+                filePath: command.__filePath ?? null,
+                type: 'prefix',
+            },
+            scope: 'prefix-command-failed',
+        });
+    }
+});
 
-        if (error.code === 10062 || error.status === 403 || error.status === 404 || error.status === 503 || error.status === 520) {
-            return message.reply('An unexpected error has occurred. Please try again later.');
+client.on(Events.InteractionCreate, async (interaction) => {
+    try {
+        if (interaction.isChatInputCommand()) {
+            await handleSlashCommand(interaction);
+            return;
         }
 
-        if (!botMissingPermissions.includes('SEND_MESSAGES')) {
-            await message.reply('There was an error trying to execute that command!');
-        } else {
-            console.warn('Bot does not have permission to send messages.');
+        if (interaction.isButton()) {
+            await handleComponentInteraction(interaction, {
+                fallbackMessage: 'There was an error processing that button.',
+                type: 'button',
+            });
+            return;
         }
-    }
-});
 
-client.on(Events.InteractionCreate, async interaction => {
-    if (interaction.isCommand()) {
-        await handleSlashCommand(interaction);
-    } else if (interaction.isStringSelectMenu()) {
-        await handleSelectMenu(interaction);
-    } else if (interaction.isButton()) {
-        await handleButton(interaction);
-    } else if (interaction.isModalSubmit()) {
-        await handleModalSubmit(interaction);
-    } else {
-        console.error('Received an unhandled interaction type.');
-    }
-});
+        if (interaction.isStringSelectMenu()) {
+            await handleComponentInteraction(interaction, {
+                fallbackMessage: 'There was an error processing that menu.',
+                type: 'select-menu',
+            });
+            return;
+        }
 
-async function handleSlashCommand(interaction) {
-    const command = client.slashCommands.get(interaction.commandName);
-    if (!command) return;
-
-    try {
-        await command.execute(interaction);
+        if (interaction.isModalSubmit()) {
+            await handleComponentInteraction(interaction, {
+                fallbackMessage: 'There was an error submitting that form.',
+                type: 'modal',
+            });
+        }
     } catch (error) {
-        console.error(`Error executing command: ${interaction.commandName}`, error);
-        await handleInteractionError(interaction, 'There was an error executing this command!');
-    }
-}
-
-async function handleSelectMenu(interaction) {
-    const handler = client.interactions.get(interaction.customId);
-    if (!handler) return;
-
-    try {
-        await handler.execute(interaction);
-    } catch (error) {
-        console.error(`Error executing select menu interaction: ${interaction.customId}`, error);
-        await handleInteractionError(interaction, 'There was an error processing the selection menu!');
-    }
-}
-
-async function handleButton(interaction) {
-    const handler = client.interactions.get(interaction.customId);
-    if (!handler) return;
-
-    try {
-        await handler.execute(interaction);
-    } catch (error) {
-        console.error(`Error executing button interaction: ${interaction.customId}`, error);
-        await handleInteractionError(interaction, 'There was an error processing the button interaction!');
-    }
-}
-
-async function handleModalSubmit(interaction) {
-    const handler = client.interactions.get(interaction.customId);
-    if (!handler) return;
-
-    try {
-        await handler.execute(interaction);
-    } catch (error) {
-        console.error(`Error executing modal interaction: ${interaction.customId}`, error);
-        await handleInteractionError(interaction, 'There was an error submitting the form!');
-    }
-}
-
-function handleInteractionError(interaction, message) {
-    if (!interaction.replied) {
-        interaction.reply({ content: message, ephemeral: true });
-    } else {
-        interaction.followUp({ content: message, ephemeral: true });
-    }
-}
-
-process.on('uncaughtException', (error) => {
-    console.error('Uncaught Exception:', error);
-});
-
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-
-    if (reason instanceof Error) {
-        console.error('Error stack:', reason.stack);
+        await reportExecutionError({
+            error,
+            fallbackMessage: 'There was an unexpected error while processing that interaction.',
+            interaction,
+            metadata: {
+                customId: interaction.customId ?? null,
+                interactionType: interaction.type,
+            },
+            scope: 'interaction-dispatch-failed',
+        });
     }
 });
 
 client.login(token);
+
+async function registerPrefixCommands() {
+    const commandDirectory = join(__dirname, 'commands/prefix');
+    const prefixCommands = await loadDirectoryModules(
+        commandDirectory,
+        resolvePrefixCommand
+    );
+
+    for (const prefixCommand of prefixCommands) {
+        const command = {
+            ...prefixCommand.module,
+            __filePath: prefixCommand.filePath,
+        };
+
+        client.commands.set(prefixCommand.name, command);
+
+        for (const alias of prefixCommand.aliases) {
+            client.commands.set(alias, command);
+        }
+    }
+}
+
+async function registerSlashCommands() {
+    const commandDirectory = join(__dirname, 'commands/slash');
+    const slashCommands = await loadDirectoryModules(
+        commandDirectory,
+        resolveSlashCommand
+    );
+
+    for (const slashCommand of slashCommands) {
+        client.slashCommands.set(slashCommand.name, {
+            ...slashCommand.module,
+            __filePath: slashCommand.filePath,
+        });
+    }
+}
+
+async function registerGlobalInteractionHandlers() {
+    const interactionDirectory = join(__dirname, 'commands/interactions');
+    const interactionHandlers = await loadDirectoryModules(
+        interactionDirectory,
+        resolveInteractionHandler
+    );
+
+    for (const interactionHandler of interactionHandlers) {
+        if (!interactionHandler.global) {
+            continue;
+        }
+
+        if (interactionHandler.customId) {
+            client.interactions.set(
+                interactionHandler.customId,
+                {
+                    ...interactionHandler.module,
+                    __filePath: interactionHandler.filePath,
+                }
+            );
+        }
+
+        if (interactionHandler.customIdPrefix) {
+            client.interactionPrefixes.push({
+                ...interactionHandler,
+                module: {
+                    ...interactionHandler.module,
+                    __filePath: interactionHandler.filePath,
+                },
+            });
+        }
+    }
+}
+
+function getInteractionHandler(customId) {
+    if (!customId) {
+        return null;
+    }
+
+    const exactHandler = client.interactions.get(customId);
+
+    if (exactHandler) {
+        return exactHandler;
+    }
+
+    const prefixHandler = client.interactionPrefixes.find((handler) =>
+        customId.startsWith(handler.customIdPrefix)
+    );
+
+    return prefixHandler?.module ?? null;
+}
+
+async function handleSlashCommand(interaction) {
+    const command = client.slashCommands.get(interaction.commandName);
+
+    if (!command) {
+        return;
+    }
+
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        await reportExecutionError({
+            error,
+            fallbackMessage: 'There was an error executing this command.',
+            interaction,
+            metadata: {
+                commandName: interaction.commandName,
+                filePath: command.__filePath ?? null,
+                type: 'slash',
+            },
+            scope: 'slash-command-failed',
+        });
+    }
+}
+
+async function handleComponentInteraction(
+    interaction,
+    {
+        fallbackMessage,
+        type,
+    }
+) {
+    const handler = getInteractionHandler(interaction.customId);
+
+    if (!handler) {
+        return;
+    }
+
+    try {
+        await handler.execute(interaction);
+    } catch (error) {
+        await reportExecutionError({
+            error,
+            fallbackMessage,
+            interaction,
+            metadata: {
+                customId: interaction.customId,
+                filePath: handler.__filePath ?? null,
+                type,
+            },
+            scope: 'component-handler-failed',
+        });
+    }
+}

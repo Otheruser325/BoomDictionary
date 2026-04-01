@@ -1,10 +1,9 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { executePingCommand } from '../shared/pingCommand.js';
 
-module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Replies with Pong!'),
-    async execute(interaction) {
-        await interaction.reply('Pong!');
-    },
-};
+export const data = new SlashCommandBuilder()
+    .setName('ping')
+    .setDescription('Replies with Pong!');
+export async function execute(interaction) {
+    return executePingCommand(interaction);
+}

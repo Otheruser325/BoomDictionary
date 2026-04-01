@@ -1,0 +1,34 @@
+{
+    "sourceUrl": "https://boombeach.fandom.com/wiki/Proto_Troop_Workshop",
+    "updatedAt": "2026-04-01",
+    "workshopCurrent": [
+        "Rain Maker",
+        "Critter Cannon MK II.",
+        "Lazortron MK II.",
+        "Heavy Choppa",
+        "Clone Rifleman",
+        "CryoTank",
+        "Dr. Vitamin",
+        "Cryobombardier",
+        "Shockaneer",
+        "Protector",
+        "Critter Engineer",
+        "Melon Bombardier",
+        "MegaScorcher",
+        "Turret Engineer",
+        "Stunner"
+    ],
+    "warshipsExclusiveOrNotAtWorkshop": [
+        "Seeker",
+        "Vampire Zooka",
+        "Hidden Warrior",
+        "Undercover Rifleman",
+        "Zombie Rifleman"
+    ],
+    "formerPrototypeTroops": [
+        "Rocket Choppa",
+        "Lazortron",
+        "Critter Cannon",
+        "Incinerator"
+    ]
+}

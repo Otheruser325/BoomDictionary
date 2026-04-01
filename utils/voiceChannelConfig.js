@@ -1,34 +1,40 @@
-const fs = require('fs');
-const path = require('path');
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const configFilePath = path.join(__dirname, '../data/voiceChannelConfig.json');
+// Rebuild __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-// Load the existing configurations or create a new one
+// Use file extension in JSON path (ESM-safe)
+const configFilePath = join(__dirname, '../data/voiceChannelConfig.json');
+
+// Load JSON config
 const loadConfig = () => {
-    if (fs.existsSync(configFilePath)) {
-        const data = fs.readFileSync(configFilePath);
-        return JSON.parse(data);
+    if (!existsSync(configFilePath)) {
+        return {};
     }
-    return {};
+
+    try {
+        const data = readFileSync(configFilePath, 'utf8');
+        return JSON.parse(data);
+    } catch {
+        return {};
+    }
 };
 
-// Save configurations to the JSON file
+// Save JSON config
 const saveConfig = (config) => {
-    fs.writeFileSync(configFilePath, JSON.stringify(config, null, 2));
+    writeFileSync(configFilePath, JSON.stringify(config, null, 2), 'utf8');
 };
 
-const getVoiceChannel = (guildId) => {
+export const getVoiceChannel = (guildId) => {
     const config = loadConfig();
-    return config[guildId] ? config[guildId].channelId : null;
+    return config[guildId]?.channelId ?? null;
 };
 
-const setVoiceChannel = (guildId, channelId) => {
+export const setVoiceChannel = (guildId, channelId) => {
     const config = loadConfig();
     config[guildId] = { channelId };
     saveConfig(config);
-};
-
-module.exports = {
-    getVoiceChannel,
-    setVoiceChannel,
 };

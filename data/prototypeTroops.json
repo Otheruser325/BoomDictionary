@@ -160,7 +160,11 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Lazortron_MK._II.",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
     },
     "rain_maker": {
         "name": "Rain Maker",
@@ -323,7 +327,11 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Rain_Maker",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
     },
     "critter_cannon": {
         "name": "Critter Cannon MK II.",
@@ -501,7 +509,11 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Critter_Cannon_MK._II.",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
     },
     "rocket_choppa": {
         "name": "Rocket Choppa",
@@ -664,18 +676,26 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Rocket_Choppa",
+        "availabilityLabel": "Standard troop today; formerly a prototype troop.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "standard_troop_now"
     },
     "heavy_choppa": {
         "name": "Heavy Choppa",
-        "description": "A powerful troop with significant health and damage output.",
+        "description": "The flying clown car of the battlefield! Instead of laughs this unit delivers seemingly endless stream of bullets.",
         "image": "https://static.wikia.nocookie.net/boombeach/images/a/a6/Heavy_Choppa.png/revision/latest/scale-to-width-down/300?cb=20191211191513",
         "maxLevel": 26,
         "attackSpeed": 100,
         "attackRange": 5.5,
+        "attackRangeLabel": "5.5-10 Tiles",
         "unitSize": 14,
-        "trainingTime": "30m",
+        "trainingTime": "1h",
         "movementSpeed": "350",
+        "spawnSpeed": 5000,
+        "maxSpawnCount": 10,
+        "deathSpawnAmount": 8,
         "levels": {
             "12": {
                 "stats": {
@@ -749,7 +769,7 @@
             },
             "19": {
                 "stats": {
-                    "health": 22250,
+                    "health": 22500,
                     "damage": 25.5
                 },
                 "trainingCost": {
@@ -827,7 +847,11 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Heavy_Choppa",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
     },
     "turret_engineer": {
         "name": "Turret Engineer",
@@ -835,12 +859,12 @@
         "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/Turret_Engineer_2.png/revision/latest/scale-to-width-down/95?cb=20220608162139",
         "maxLevel": 26,
         "attackSpeed": 7000,
-        "attackRange": 8.2,
-        "unitSize": 15,
+        "attackRange": 10.6,
+        "unitSize": 8,
         "trainingTime": "10m",
         "movementSpeed": "170",
         "turretAttackSpeed": 3500,
-        "turretAttackRange": 8.2,
+        "turretAttackRange": 9.8,
         "levels": {
             "12": {
                 "stats": {
@@ -906,7 +930,7 @@
                 "stats": {
                     "health": 902,
                     "damage": null,
-                    "turretHealth": 13020,
+                    "turretHealth": 13030,
                     "turretDamage": 1155
                 },
                 "trainingCost": {
@@ -1003,7 +1027,7 @@
                     "health": 1772,
                     "damage": null,
                     "turretHealth": 25350,
-                    "turretDamage": 2446.5
+                    "turretDamage": 2471
                 },
                 "trainingCost": {
                     "gold": 25000
@@ -1015,14 +1039,183 @@
                     "health": 1924,
                     "damage": null,
                     "turretHealth": 25350,
-                    "turretDamage": 2446.5
+                    "turretDamage": 2719.5
                 },
                 "trainingCost": {
                     "gold": 26000
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Turret_Engineer",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
+    },
+    "critter_engineer": {
+        "name": "Critter Engineer",
+        "description": "This crafty Engineer has his own set of critters that he throws at enemy buildings.",
+        "image": "",
+        "maxLevel": 26,
+        "unitSize": 8,
+        "trainingTime": "10m",
+        "movementSpeed": "170",
+        "levels": {
+            "12": {
+                "stats": {
+                    "health": 592,
+                    "spawnSpeed": 5.9
+                },
+                "trainingCost": {
+                    "gold": 12000
+                },
+                "armoryRequired": 12
+            },
+            "13": {
+                "stats": {
+                    "health": 644,
+                    "spawnSpeed": 5.8
+                },
+                "trainingCost": {
+                    "gold": 13000
+                },
+                "armoryRequired": 13
+            },
+            "14": {
+                "stats": {
+                    "health": 701,
+                    "spawnSpeed": 5.7
+                },
+                "trainingCost": {
+                    "gold": 14000
+                },
+                "armoryRequired": 14
+            },
+            "15": {
+                "stats": {
+                    "health": 762,
+                    "spawnSpeed": 5.6
+                },
+                "trainingCost": {
+                    "gold": 15000
+                },
+                "armoryRequired": 15
+            },
+            "16": {
+                "stats": {
+                    "health": 829,
+                    "spawnSpeed": 5.5
+                },
+                "trainingCost": {
+                    "gold": 16000
+                },
+                "armoryRequired": 16
+            },
+            "17": {
+                "stats": {
+                    "health": 902,
+                    "spawnSpeed": 5.4
+                },
+                "trainingCost": {
+                    "gold": 17000
+                },
+                "armoryRequired": 17
+            },
+            "18": {
+                "stats": {
+                    "health": 982,
+                    "spawnSpeed": 5.3
+                },
+                "trainingCost": {
+                    "gold": 18000
+                },
+                "armoryRequired": 18
+            },
+            "19": {
+                "stats": {
+                    "health": 1068,
+                    "spawnSpeed": 5.2
+                },
+                "trainingCost": {
+                    "gold": 19000
+                },
+                "armoryRequired": 19
+            },
+            "20": {
+                "stats": {
+                    "health": 1162,
+                    "spawnSpeed": 5.1
+                },
+                "trainingCost": {
+                    "gold": 20000
+                },
+                "armoryRequired": 20
+            },
+            "21": {
+                "stats": {
+                    "health": 1264,
+                    "spawnSpeed": 5
+                },
+                "trainingCost": {
+                    "gold": 21000
+                },
+                "armoryRequired": 21
+            },
+            "22": {
+                "stats": {
+                    "health": 1376,
+                    "spawnSpeed": 4.9
+                },
+                "trainingCost": {
+                    "gold": 22000
+                },
+                "armoryRequired": 22
+            },
+            "23": {
+                "stats": {
+                    "health": 1498,
+                    "spawnSpeed": 4.8
+                },
+                "trainingCost": {
+                    "gold": 23000
+                },
+                "armoryRequired": 23
+            },
+            "24": {
+                "stats": {
+                    "health": 1630,
+                    "spawnSpeed": 4.7
+                },
+                "trainingCost": {
+                    "gold": 24000
+                },
+                "armoryRequired": 24
+            },
+            "25": {
+                "stats": {
+                    "health": 1772,
+                    "spawnSpeed": 4.6
+                },
+                "trainingCost": {
+                    "gold": 25000
+                },
+                "armoryRequired": 25
+            },
+            "26": {
+                "stats": {
+                    "health": 1924,
+                    "spawnSpeed": 4.5
+                },
+                "trainingCost": {
+                    "gold": 26000
+                },
+                "armoryRequired": 26
+            }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Critter_Engineer",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
     },
     "cryobombardier": {
         "name": "Cryobombardier",
@@ -1034,6 +1227,9 @@
         "unitSize": 8,
         "trainingTime": "15m",
         "movementSpeed": "200",
+        "speedReduction": 50,
+        "protectionDebuff": -10,
+        "freezeDuration": 5,
         "levels": {
             "12": {
                 "stats": {
@@ -1141,7 +1337,7 @@
                     "damage": 2530
                 },
                 "trainingCost": {
-                    "gold": 3800
+                    "gold": 38000
                 },
                 "armoryRequired": 22
             },
@@ -1185,6 +1381,135 @@
                 },
                 "armoryRequired": 26
             }
-        }
+        },
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Cryobombardier",
+        "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
+        "rosterUpdatedAt": "2026-04-01",
+        "dataStatus": "legacy_stats_only"
+    },
+    "clone_rifleman": {
+        "name": "Clone Rifleman",
+        "description": "A prototype support troop that replicates into multiple weaker riflemen variants instead of staying as a single unit.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Clone_Rifleman",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "cryotank": {
+        "name": "CryoTank",
+        "description": "A prototype tank variant that trades the normal cannon for cryogenic attacks that slow and weaken enemy defenses.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/CryoTank",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "dr_vitamin": {
+        "name": "Dr. Vitamin",
+        "description": "A prototype support troop built around combat buffs, healing, and protection for nearby allies.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Dr._Vitamin",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "shockaneer": {
+        "name": "Shockaneer",
+        "description": "A prototype attacker that chains electric damage through targets while stunning them.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Shockaneer",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "protector": {
+        "name": "Protector",
+        "description": "A protective prototype troop that shields nearby allies with a temporary crystal barrier.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Protector",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "melon_bombardier": {
+        "name": "Melon Bombardier",
+        "description": "A prototype artillery troop that throws explosive melons which split into extra fragments on impact.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Melon_Bombardier",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "mega_scorcher": {
+        "name": "MegaScorcher",
+        "description": "A heavier prototype scorcher variant built around massive health, splash fire damage, and death damage.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/MegaScorcher",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "stunner": {
+        "name": "Stunner",
+        "description": "A prototype troop that lobs shock payloads to damage and disable defenses.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Stunner",
+        "availabilityLabel": "Current Proto Troop Workshop troop; detailed level stats still need migration into the bot dataset.",
+        "dataStatus": "roster_only",
+        "rosterUpdatedAt": "2026-04-01",
+        "maxLevel": 28,
+        "levels": {}
+    },
+    "seeker": {
+        "name": "Seeker",
+        "description": "A fast prototype troop focused on bypassing defenses and collapsing onto key targets.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Seeker",
+        "availabilityLabel": "Currently not available at the Proto Troop Workshop; treated as Warships-only or limited-availability prototype data.",
+        "dataStatus": "warships_only_roster",
+        "rosterUpdatedAt": "2026-04-01",
+        "levels": {}
+    },
+    "vampire_zooka": {
+        "name": "Vampire Zooka",
+        "description": "A prototype zooka variant built around lifesteal-style survivability in special modes.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Vampire_Zooka",
+        "availabilityLabel": "Currently not available at the Proto Troop Workshop; treated as Warships-only or limited-availability prototype data.",
+        "dataStatus": "warships_only_roster",
+        "rosterUpdatedAt": "2026-04-01",
+        "levels": {}
+    },
+    "hidden_warrior": {
+        "name": "Hidden Warrior",
+        "description": "A prototype warrior-style troop with stealth or ambush-focused special behavior.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Hidden_Warrior",
+        "availabilityLabel": "Currently not available at the Proto Troop Workshop; treated as Warships-only or limited-availability prototype data.",
+        "dataStatus": "warships_only_roster",
+        "rosterUpdatedAt": "2026-04-01",
+        "levels": {}
+    },
+    "undercover_rifleman": {
+        "name": "Undercover Rifleman",
+        "description": "A prototype rifleman variant built around deceptive or delayed-engagement mechanics.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Undercover_Rifleman",
+        "availabilityLabel": "Currently not available at the Proto Troop Workshop; treated as Warships-only or limited-availability prototype data.",
+        "dataStatus": "warships_only_roster",
+        "rosterUpdatedAt": "2026-04-01",
+        "levels": {}
+    },
+    "zombie_rifleman": {
+        "name": "Zombie Rifleman",
+        "description": "A special prototype rifleman variant that appears in Warships prototype troop rotations.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Zombie_Rifleman",
+        "availabilityLabel": "Currently not available at the Proto Troop Workshop; treated as Warships-only or limited-availability prototype data.",
+        "dataStatus": "warships_only_roster",
+        "rosterUpdatedAt": "2026-04-01",
+        "levels": {}
     }
 }

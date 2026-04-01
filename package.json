@@ -2,7 +2,9 @@
   "name": "boomdictionary",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "check": "node scripts/validate-modules.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
 	"start": "node index.js"
   },

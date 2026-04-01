@@ -1,5 +1,13 @@
-function formatNumber(number) {
-    return new Intl.NumberFormat().format(number);
-}
+export function formatNumber(number) {
+    if (number == null) {
+        return 'N/A';
+    }
 
-module.exports = { formatNumber };
+    const numericValue = Number(number);
+
+    if (Number.isFinite(numericValue)) {
+        return new Intl.NumberFormat().format(numericValue);
+    }
+
+    return String(number);
+}

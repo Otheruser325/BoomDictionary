@@ -2,7 +2,7 @@
     "sniper_tower": {
         "name": "Sniper Tower",
         "description": "The Sniper in the tower shoots at enemy attackers. He's armed with a long-range rifle that deals good damage.",
-        "maxLevel": 26,
+        "maxLevel": 28,
         "attackSpeed": 1400,
         "range": 12,
         "levels": {
@@ -369,13 +369,41 @@
                 },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 26
+            },
+            "27": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
+                "stats": {
+                    "health": 15500,
+                    "damage": 683.2
+                },
+                "upgradeCost": {
+                    "wood": 7730000,
+                    "stone": 7080000,
+                    "iron": 6440000
+                },
+                "upgradeTime": "1d 13h",
+                "hqRequired": 27
+            },
+            "28": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/6/63/SniperTower22.png/revision/latest/scale-to-width-down/100?cb=20160320131506",
+                "stats": {
+                    "health": 16900,
+                    "damage": 751.8
+                },
+                "upgradeCost": {
+                    "wood": 8890000,
+                    "stone": 8140000,
+                    "iron": 7400000
+                },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 28
             }
         }
     },
     "mortar": {
         "name": "Mortar",
         "description": "The Mortar is an artillery piece that is effective at medium to long range, but can't target enemies right next to it. Mortar shells explode and deal damage to all troops in the area of effect.",
-        "maxLevel": 28,
+        "maxLevel": 30,
         "attackSpeed": 5000,
         "range": 12,
         "levels": {
@@ -770,13 +798,41 @@
                 },
                 "upgradeTime": "2d",
                 "hqRequired": 26
+            },
+            "29": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
+                "stats": {
+                    "health": 21800,
+                    "damage": 850
+                },
+                "upgradeCost": {
+                    "wood": 6650000,
+                    "stone": 6040000,
+                    "iron": 5960000
+                },
+                "upgradeTime": "2d 2h",
+                "hqRequired": 27
+            },
+            "30": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/e/e9/Mortar22.png/revision/latest/scale-to-width-down/140?cb=20160407112939",
+                "stats": {
+                    "health": 23700,
+                    "damage": 935
+                },
+                "upgradeCost": {
+                    "wood": 7320000,
+                    "stone": 6640000,
+                    "iron": 6560000
+                },
+                "upgradeTime": "2d 4h",
+                "hqRequired": 28
             }
         }
     },
     "machine_gun": {
         "name": "Machine Gun",
         "description": "The Machine Gun turret sprays bullets at the enemy, rapidly dealing damage to massed infantry at close to medium range.",
-        "maxLevel": 26,
+        "maxLevel": 28,
         "attackSpeed": 100,
         "range": 9,
         "levels": {
@@ -1143,13 +1199,41 @@
                 },
                 "upgradeTime": "1d 12h",
                 "hqRequired": 26
+            },
+            "27": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
+                "stats": {
+                    "health": 14670,
+                    "damage": 188.4
+                },
+                "upgradeCost": {
+                    "wood": 6060000,
+                    "stone": 5590000,
+                    "iron": 6560000
+                },
+                "upgradeTime": "1d 13h",
+                "hqRequired": 27
+            },
+            "28": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/4/46/MachineGun22.png/revision/latest/scale-to-width-down/160?cb=20160321101309",
+                "stats": {
+                    "health": 15920,
+                    "damage": null
+                },
+                "upgradeCost": {
+                    "wood": 6900000,
+                    "stone": 6370000,
+                    "iron": 7480000
+                },
+                "upgradeTime": "1d 16h",
+                "hqRequired": 28
             }
         }
     },
     "cannon": {
         "name": "Cannon",
         "description": "Cannons fire powerful, large caliber shells towards one target at a time. This makes them ideal against heavy and armored enemies, but less effective against massed infantry.",
-        "maxLevel": 26,
+        "maxLevel": 28,
         "attackSpeed": 3000,
         "range": 10,
         "levels": {
@@ -1516,13 +1600,41 @@
                 },
                 "upgradeTime": "1d 20h",
                 "hqRequired": 26
+            },
+            "27": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": {
+                    "health": 18390,
+                    "damage": 4950
+                },
+                "upgradeCost": {
+                    "wood": 5520000,
+                    "stone": 6000000,
+                    "iron": 6470000
+                },
+                "upgradeTime": "1d 22h",
+                "hqRequired": 27
+            },
+            "28": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/8/8d/Cannon22.png/revision/latest/scale-to-width-down/120?cb=20160331121720",
+                "stats": {
+                    "health": 20000,
+                    "damage": 5445
+                },
+                "upgradeCost": {
+                    "wood": 6180000,
+                    "stone": 6700000,
+                    "iron": 7240000
+                },
+                "upgradeTime": "2d",
+                "hqRequired": 28
             }
         }
     },
     "flamethrower": {
         "name": "Flamethrower",
         "description": "The Flamethrower is a close range weapon that deals huge amounts of damage. It's especially deadly against massed infantry. Enemies will also burn for a while after being attacked by the Flamethrower.",
-        "maxLevel": 24,
+        "maxLevel": 26,
         "attackSpeed": 150,
         "range": 6.5,
         "levels": {
@@ -1861,13 +1973,41 @@
                 },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 26
+            },
+            "25": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
+                "stats": {
+                    "health": 17530,
+                    "damage": 116.2
+                },
+                "upgradeCost": {
+                    "wood": 5060000,
+                    "stone": 5960000,
+                    "iron": 5510000
+                },
+                "upgradeTime": "1d 19h",
+                "hqRequired": 27
+            },
+            "26": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/f/fa/Flamethrower19.png/revision/latest/scale-to-width-down/115?cb=20160331121720",
+                "stats": {
+                    "health": 19080,
+                    "damage": 127.7
+                },
+                "upgradeCost": {
+                    "wood": 5670000,
+                    "stone": 6670000,
+                    "iron": 6170000
+                },
+                "upgradeTime": "1d 22h",
+                "hqRequired": 28
             }
         }
     },
     "boom_cannon": {
         "name": "Boom Cannon",
         "description": "The Boom Cannon fires devastating shots but takes a while to reload. Even the strongest armor is no match for the Boom!",
-        "maxLevel": 20,
+        "maxLevel": 22,
         "attackSpeed": 4000,
         "range": 14,
         "levels": {
@@ -2150,13 +2290,41 @@
                 },
                 "upgradeTime": "2d 4h",
                 "hqRequired": 26
+            },
+            "21": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": {
+                    "health": 23140,
+                    "damage": 7760
+                },
+                "upgradeCost": {
+                    "wood": 8900000,
+                    "stone": 9610000,
+                    "iron": 8200000
+                },
+                "upgradeTime": "2d 8h",
+                "hqRequired": 27
+            },
+            "22": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/0/0d/Boom_Cannon16new.png/revision/latest/scale-to-width-down/100?cb=20180630102024",
+                "stats": {
+                    "health": 25450,
+                    "damage": 8520
+                },
+                "upgradeCost": {
+                    "wood": 10250000,
+                    "stone": 11050000,
+                    "iron": 9430000
+                },
+                "upgradeTime": "2d 12h",
+                "hqRequired": 28
             }
         }
     },
     "rocket_launcher": {
         "name": "Rocket Launcher",
         "description": "The Rocket Launcher is a long distance artillery piece. It fires a salvo of rockets, followed by a significant reload time.",
-        "maxLevel": 18,
+        "maxLevel": 20,
         "attackSpeed": 5000,
         "range": 25,
         "levels": {
@@ -2411,13 +2579,41 @@
                 },
                 "upgradeTime": "1d 18h",
                 "hqRequired": 26
+            },
+            "19": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": {
+                    "health": 20240,
+                    "damage": 120.4
+                },
+                "upgradeCost": {
+                    "wood": 9610000,
+                    "stone": 8200000,
+                    "iron": 8900000
+                },
+                "upgradeTime": "1d 20h",
+                "hqRequired": 27
+            },
+            "20": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/RocketLauncher14.png/revision/latest/scale-to-width-down/200?cb=20160319190516",
+                "stats": {
+                    "health": 22160,
+                    "damage": 130.45
+                },
+                "upgradeCost": {
+                    "wood": 11000000,
+                    "stone": 9430000,
+                    "iron": 10230000
+                },
+                "upgradeTime": "1d 22h",
+                "hqRequired": 28
             }
         }
     },
     "critter_launcher": {
         "name": "Critter Launcher",
         "description": "The Critter Launcher lobs critters at a long distance. These critters are not only a great distraction but also deal a lot of damage!",
-        "maxLevel": 17,
+        "maxLevel": 19,
         "attackSpeed": 2000,
         "range": 10,
         "levels": {
@@ -2658,6 +2854,34 @@
                 },
                 "upgradeTime": "2d",
                 "hqRequired": 26
+            },
+            "18": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": {
+                    "health": 14300,
+                    "damage": 336
+                },
+                "upgradeCost": {
+                    "wood": 6200000,
+                    "stone": 6100000,
+                    "iron": 6200000
+                },
+                "upgradeTime": "2d 3h",
+                "hqRequired": 27
+            },
+            "19": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/b/bc/Critter_Launcher_08_to_16-removebg-preview.png/revision/latest?cb=20230816000521",
+                "stats": {
+                    "health": 15100,
+                    "damage": 366
+                },
+                "upgradeCost": {
+                    "wood": 6600000,
+                    "stone": 6600000,
+                    "iron": 6600000
+                },
+                "upgradeTime": "2d 8h",
+                "hqRequired": 28
             }
         }
     },
@@ -2832,6 +3056,21 @@
                 },
                 "upgradeTime": "1d 16h",
                 "hqRequired": 25
+            },
+            "12": {
+                "image": "https://static.wikia.nocookie.net/boombeach/images/9/96/ShockLauncher8.png/revision/latest/scale-to-width-down/135?cb=20160325214749",
+                "stats": {
+                    "health": 19900,
+                    "damage": 180,
+                    "stunDuration": 3.6
+                },
+                "upgradeCost": {
+                    "wood": 7000000,
+                    "stone": 7630000,
+                    "iron": 8250000
+                },
+                "upgradeTime": "1d 19h",
+                "hqRequired": 27
             }
         }
     }

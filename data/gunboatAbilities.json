@@ -3,7 +3,7 @@
         "name": "Artillery",
         "description": "Your Gunboat fires a high-explosive cannon shell that damages enemy buildings. Be careful not to hit your own troops!",
         "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Artillery_new.png/revision/latest/scale-to-width-down/250?cb=20141024005634",
-        "maxLevel": 26,
+        "maxLevel": 28,
         "explosionRadius": 0.49,
         "explosionRadiusAgainstTroops": 1.5,
         "energyCost": 3,
@@ -268,6 +268,26 @@
                 },
                 "upgradeTime": "2d 19h",
                 "armoryRequired": 26
+            },
+            "27": {
+                "stats": {
+                    "damage": 9652
+                },
+                "researchCost": {
+                    "gold": 8700000
+                },
+                "upgradeTime": "2d 21h",
+                "armoryRequired": 27
+            },
+            "28": {
+                "stats": {
+                    "damage": 10520
+                },
+                "researchCost": {
+                    "gold": 9500000
+                },
+                "upgradeTime": "2d 23h",
+                "armoryRequired": 28
             }
         }
     },
@@ -355,7 +375,7 @@
         "name": "Medkit",
         "description": "Heal your troops on the battlefield with the Medkit.",
         "image": "https://static.wikia.nocookie.net/boombeach/images/0/0f/Medkit.png/revision/latest?cb=20230822132718",
-        "maxLevel": 26,
+        "maxLevel": 28,
         "healingRadius": 3.5,
         "duration": 7.5,
         "energyCost": 6,
@@ -646,6 +666,28 @@
                 },
                 "upgradeTime": "3d 14h",
                 "armoryRequired": 26
+            },
+			"27": {
+                "stats": {
+                    "healingPerPulse": 60,
+					"totalHeal": 1500
+                },
+                "researchCost": {
+                    "gold": 9000000
+                },
+                "upgradeTime": "3d 16h",
+                "armoryRequired": 27
+            },
+			"28": {
+                "stats": {
+                    "healingPerPulse": 64,
+					"totalHeal": 1600
+                },
+                "researchCost": {
+                    "gold": 9500000
+                },
+                "upgradeTime": "3d 18h",
+                "armoryRequired": 28
             }
         }
     },
@@ -653,7 +695,7 @@
         "name": "Shock Bomb",
         "description": "The Shock Bomb disables anything it hits for a short time. Use it to silence dangerous turrets!",
         "image": "https://static.wikia.nocookie.net/boombeach/images/a/ac/Shock_Bomb.png/revision/latest/scale-to-width-down/250?cb=20150515215420",
-        "maxLevel": 7,
+        "maxLevel": 8,
         "energyCost": 7,
         "energyCostIncreasePerUse": 5,
         "levels": {
@@ -726,6 +768,16 @@
                 },
                 "upgradeTime": "2d 17h",
                 "armoryRequired": 23
+            },
+            "8": {
+                "stats": {
+                    "duration": 12
+                },
+                "researchCost": {
+                    "gold": 7300000
+                },
+                "upgradeTime": "3d 1h",
+                "armoryRequired": 27
             }
         }
     },
@@ -733,7 +785,7 @@
         "name": "Barrage",
         "description": "The Barrage will deal massive damage to buildings and units in the target area. Be careful of friendly fire! The Barrage can damage your own units.",
         "image": "https://static.wikia.nocookie.net/boombeach/images/c/c1/Barragec.png/revision/latest?cb=20141031121643",
-        "maxLevel": 22,
+        "maxLevel": 24,
 		"numProjectiles": 15,
 		"impactRadius": 3,
         "missileExplosionRadius": 1.49,
@@ -969,12 +1021,12 @@
                 "researchCost": {
                     "gold": 9000000
                 },
-                "upgradeTime": "3d 14h",
+                "upgradeTime": "3d 13h",
                 "armoryRequired": 25
             },
 			"22": {
                 "stats": {
-                    "missileDamage": 1323.33,
+                    "missileDamage": 1330,
 					"totalDamage": 19950
                 },
                 "researchCost": {
@@ -982,6 +1034,28 @@
                 },
                 "upgradeTime": "3d 15h",
                 "armoryRequired": 26
+            },
+			"23": {
+                "stats": {
+                    "missileDamage": 1450,
+					"totalDamage": 21750
+                },
+                "researchCost": {
+                    "gold": 10000000
+                },
+                "upgradeTime": "3d 17h",
+                "armoryRequired": 27
+            },
+			"24": {
+                "stats": {
+                    "missileDamage": 1580,
+					"totalDamage": 23700
+                },
+                "researchCost": {
+                    "gold": 10500000
+                },
+                "upgradeTime": "3d 19h",
+                "armoryRequired": 28
             }
         }
     },
@@ -1079,7 +1153,7 @@
         "name": "Critters",
         "description": "Launch these robot troops to distract and destroy enemy buildings!",
         "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Critters.png/revision/latest/scale-to-width-down/290?cb=20240314052412",
-        "maxLevel": 11,
+        "maxLevel": 13,
 		"critterHealth": 400,
 		"critterDamage": 67.5,
 		"critterAttackRange": 0.9,
@@ -1196,6 +1270,26 @@
                 },
                 "upgradeTime": "4d 6h",
                 "armoryRequired": 26
+            },
+			"12": {
+                "stats": {
+                    "amountOfCritters": 17
+                },
+                "researchCost": {
+                    "gold": 10000000
+                },
+                "upgradeTime": "4d 12h",
+                "armoryRequired": 27
+            },
+			"13": {
+                "stats": {
+                    "amountOfCritters": 18
+                },
+                "researchCost": {
+                    "gold": 10400000
+                },
+                "upgradeTime": "4d 18h",
+                "armoryRequired": 28
             }
         }
     }
