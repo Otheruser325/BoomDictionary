@@ -9,8 +9,10 @@ export async function executeConfigCommand(interaction) {
         });
     }
 
-    const channel = interaction.options.getChannel('channel');
+    const selectedChannel = interaction.options.getChannel('channel');
     const member = interaction.member;
+    const memberVoiceChannel = interaction.member.voice?.channel ?? null;
+    const channel = selectedChannel ?? memberVoiceChannel ?? null;
 
     if (!member.permissions.has(PermissionsBitField.Flags.Administrator) &&
         !member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
@@ -20,9 +22,9 @@ export async function executeConfigCommand(interaction) {
         });
     }
 
-    if (!channel || channel.type !== 2) {
+    if (!channel?.isVoiceBased()) {
         return interaction.reply({
-            content: 'Please select a valid voice channel.',
+            content: 'Join the voice channel you want me to use, or choose one explicitly with /config channel:<voice channel>.',
             ephemeral: true,
         });
     }
@@ -30,7 +32,7 @@ export async function executeConfigCommand(interaction) {
     setVoiceChannel(interaction.guild.id, channel.id);
 
     return interaction.reply({
-        content: `Configured the bot to join ${channel.name} for pronunciation playback.`,
+        content: `Configured pronunciation playback for **${channel.name}**. I will use that channel for IPA playback in this server.`,
         ephemeral: true,
     });
 }

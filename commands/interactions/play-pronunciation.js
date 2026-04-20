@@ -15,7 +15,7 @@ export async function execute(interaction) {
         const { details, targetChannel } = await playPronunciation(interaction, term);
 
         await interaction.reply({
-            content: `Now playing pronunciation for: **${details.displayName}** in **${targetChannel.name}**.`,
+            content: `Now playing **${details.displayName}** in **${targetChannel.name}**.`,
             ephemeral: true,
         });
     } catch (error) {

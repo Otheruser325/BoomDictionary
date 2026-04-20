@@ -2,7 +2,7 @@
     "artillery": {
         "name": "Artillery",
         "description": "Your Gunboat fires a high-explosive cannon shell that damages enemy buildings. Be careful not to hit your own troops!",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Artillery_new.png/revision/latest/scale-to-width-down/250?cb=20141024005634",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Artillery_new.png/revision/latest/scale-to-width-down/250?cb=20250728105115",
         "maxLevel": 28,
         "explosionRadius": 0.49,
         "explosionRadiusAgainstTroops": 1.5,
@@ -784,7 +784,7 @@
 	"barrage": {
         "name": "Barrage",
         "description": "The Barrage will deal massive damage to buildings and units in the target area. Be careful of friendly fire! The Barrage can damage your own units.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/c/c1/Barragec.png/revision/latest?cb=20141031121643",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/c/c1/Barragec.png/revision/latest?cb=20250728112024",
         "maxLevel": 24,
 		"numProjectiles": 15,
 		"impactRadius": 3,

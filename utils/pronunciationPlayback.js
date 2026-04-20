@@ -10,7 +10,10 @@ import {
 import { PermissionsBitField } from 'discord.js';
 import { get } from 'https';
 import { getPronunciationDetails } from '../commands/shared/dictionaryCommand.js';
-import { getVoiceChannel } from './voiceChannelConfig.js';
+import {
+    clearVoiceChannel,
+    getVoiceChannel,
+} from './voiceChannelConfig.js';
 
 async function fetchStreamFromUrl(url) {
     return new Promise((resolve, reject) => {
@@ -36,8 +39,15 @@ async function resolveConfiguredChannel(interaction) {
         return null;
     }
 
-    return interaction.guild.channels.cache.get(configuredChannelId) ??
+    const configuredChannel = interaction.guild.channels.cache.get(configuredChannelId) ??
         await interaction.guild.channels.fetch(configuredChannelId).catch(() => null);
+
+    if (!configuredChannel?.isVoiceBased()) {
+        clearVoiceChannel(interaction.guild.id);
+        return null;
+    }
+
+    return configuredChannel;
 }
 
 function validateTargetChannelPermissions(interaction, channel) {
@@ -73,15 +83,15 @@ export async function playPronunciation(interaction, term) {
     const targetChannel = configuredChannel ?? memberVoiceChannel;
 
     if (!targetChannel?.isVoiceBased()) {
-        throw new Error('No usable voice channel is configured or joined.');
-    }
-
-    if (configuredChannel && memberVoiceChannel?.id !== configuredChannel.id) {
-        throw new Error(`Join ${configuredChannel.name} to use pronunciation playback in this server.`);
+        throw new Error(
+            'No usable voice channel is configured. Use /config while connected to the server voice channel you want me to use, or join one before pressing play.'
+        );
     }
 
     if (!configuredChannel && !memberVoiceChannel) {
-        throw new Error('Join a voice channel first or configure one with /config.');
+        throw new Error(
+            'Join a voice channel first, then use /config once to save it for this server.'
+        );
     }
 
     const permissionError = validateTargetChannelPermissions(interaction, targetChannel);

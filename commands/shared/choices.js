@@ -57,6 +57,19 @@ export const gunboatChoices = [
     { name: 'Critters', value: 'critters' },
 ];
 
+export const temporaryGunboatChoices = [
+    { name: 'Cryobomb', value: 'cryobomb' },
+    { name: 'Super Warrior', value: 'super_warrior' },
+    { name: 'Speed Serum', value: 'speed_serum' },
+    { name: 'Deployable Turret', value: 'deployable_turret' },
+    { name: 'Remote Defib', value: 'remote_defib' },
+    { name: 'Explosive Drones', value: 'explosive_drones' },
+    { name: 'Remote Hack', value: 'remote_hack' },
+    { name: 'Tiny Shock', value: 'tiny_shock' },
+    { name: 'Crystal Shield Projector', value: 'crystal_shield_projector' },
+    { name: 'Crystal Critters', value: 'crystal_critters' },
+];
+
 export const prototypeDefenceChoices = [
     { name: 'Shock Blaster', value: 'shock_blaster' },
     { name: 'Lazor Beam', value: 'lazor_beam' },

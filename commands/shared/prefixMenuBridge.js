@@ -23,6 +23,7 @@ export async function runPrefixCommandWithSlashAdapter(
 }
 
 export async function runTwoStageSelectPrefixCommand({
+    autoExecuteSingleLevel = false,
     args,
     choices,
     dataset,
@@ -65,7 +66,28 @@ export async function runTwoStageSelectPrefixCommand({
     }
 
     if (resolvedType) {
+        const resolvedItem = dataset[resolvedType];
+        const resolvedLevels = resolvedItem ? getLevels(resolvedItem) : [];
+
+        if (autoExecuteSingleLevel && resolvedLevels.length === 1) {
+            return executeSlash(
+                createMessageInteractionAdapter(
+                    message,
+                    {
+                        integers: {
+                            [levelOptionName]: resolvedLevels[0],
+                        },
+                        strings: {
+                            [stringOptionName]: resolvedType,
+                        },
+                        subcommand,
+                    }
+                )
+            );
+        }
+
         return showLevelMenu({
+            autoExecuteSingleLevel,
             choiceValue: resolvedType,
             dataset,
             executeSlash,
@@ -141,6 +163,7 @@ export async function runTwoStageSelectPrefixCommand({
         typeCollector.stop('selected');
 
         await showLevelMenu({
+            autoExecuteSingleLevel,
             choiceValue: interaction.values[0],
             dataset,
             executeSlash,
@@ -200,6 +223,7 @@ function resolveTypeFromArgs(args, lookup) {
 }
 
 async function showLevelMenu({
+    autoExecuteSingleLevel = false,
     choiceValue,
     dataset,
     executeSlash,
@@ -224,7 +248,45 @@ async function showLevelMenu({
         return;
     }
 
-    const levelChunks = chunkItems(getLevels(itemData), 25);
+    const levels = getLevels(itemData);
+
+    if (autoExecuteSingleLevel && levels.length === 1) {
+        if (interaction) {
+            await executeSlash(
+                createComponentExecutionAdapter(
+                    interaction,
+                    {
+                        integers: {
+                            [levelOptionName]: levels[0],
+                        },
+                        strings: {
+                            [stringOptionName]: choiceValue,
+                        },
+                        subcommand,
+                    }
+                )
+            );
+        } else {
+            await executeSlash(
+                createMessageInteractionAdapter(
+                    message,
+                    {
+                        integers: {
+                            [levelOptionName]: levels[0],
+                        },
+                        strings: {
+                            [stringOptionName]: choiceValue,
+                        },
+                        subcommand,
+                    }
+                )
+            );
+        }
+
+        return;
+    }
+
+    const levelChunks = chunkItems(levels, 25);
 
     const payload = {
         components: levelChunks.map((levelChunk, index, chunks) =>

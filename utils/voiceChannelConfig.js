@@ -38,3 +38,14 @@ export const setVoiceChannel = (guildId, channelId) => {
     config[guildId] = { channelId };
     saveConfig(config);
 };
+
+export const clearVoiceChannel = (guildId) => {
+    const config = loadConfig();
+
+    if (!(guildId in config)) {
+        return;
+    }
+
+    delete config[guildId];
+    saveConfig(config);
+};

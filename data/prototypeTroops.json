@@ -1118,173 +1118,6 @@
             }
         }
     },
-    "rocket_choppa": {
-        "name": "Rocket Choppa",
-        "description": "Like a buzzing wasp on a hot summer day, small and annoying and fires rockets at you!",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/0/01/Rocket_Choppa.png/revision/latest/scale-to-width-down/300?cb=20191211191545",
-        "maxLevel": 26,
-        "attackSpeed": 1500,
-        "attackRange": 9.5,
-        "unitSize": 14,
-        "trainingTime": "33m 20s",
-        "movementSpeed": "500",
-        "levels": {
-            "12": {
-                "stats": {
-                    "health": 1450,
-                    "damage": 370.65
-                },
-                "trainingCost": {
-                    "gold": 35000
-                },
-                "armoryRequired": 12
-            },
-            "13": {
-                "stats": {
-                    "health": 1500,
-                    "damage": 384.65
-                },
-                "trainingCost": {
-                    "gold": 40000
-                },
-                "armoryRequired": 13
-            },
-            "14": {
-                "stats": {
-                    "health": 1550,
-                    "damage": 398.3
-                },
-                "trainingCost": {
-                    "gold": 45000
-                },
-                "armoryRequired": 14
-            },
-            "15": {
-                "stats": {
-                    "health": 1600,
-                    "damage": 412.3
-                },
-                "trainingCost": {
-                    "gold": 50000
-                },
-                "armoryRequired": 15
-            },
-            "16": {
-                "stats": {
-                    "health": 1650,
-                    "damage": 426.3
-                },
-                "trainingCost": {
-                    "gold": 55000
-                },
-                "armoryRequired": 16
-            },
-            "17": {
-                "stats": {
-                    "health": 1700,
-                    "damage": 440.3
-                },
-                "trainingCost": {
-                    "gold": 60000
-                },
-                "armoryRequired": 17
-            },
-            "18": {
-                "stats": {
-                    "health": 1750,
-                    "damage": 453.95
-                },
-                "trainingCost": {
-                    "gold": 65000
-                },
-                "armoryRequired": 18
-            },
-            "19": {
-                "stats": {
-                    "health": 1800,
-                    "damage": 467.95
-                },
-                "trainingCost": {
-                    "gold": 70000
-                },
-                "armoryRequired": 19
-            },
-            "20": {
-                "stats": {
-                    "health": 1850,
-                    "damage": 481.95
-                },
-                "trainingCost": {
-                    "gold": 75000
-                },
-                "armoryRequired": 20
-            },
-            "21": {
-                "stats": {
-                    "health": 1900,
-                    "damage": 495.6
-                },
-                "trainingCost": {
-                    "gold": 80000
-                },
-                "armoryRequired": 21
-            },
-            "22": {
-                "stats": {
-                    "health": 1950,
-                    "damage": 509.6
-                },
-                "trainingCost": {
-                    "gold": 85000
-                },
-                "armoryRequired": 22
-            },
-            "23": {
-                "stats": {
-                    "health": 2000,
-                    "damage": 523.6
-                },
-                "trainingCost": {
-                    "gold": 90000
-                },
-                "armoryRequired": 23
-            },
-            "24": {
-                "stats": {
-                    "health": 2050,
-                    "damage": 537.25
-                },
-                "trainingCost": {
-                    "gold": 95000
-                },
-                "armoryRequired": 24
-            },
-            "25": {
-                "stats": {
-                    "health": 2100,
-                    "damage": 551.25
-                },
-                "trainingCost": {
-                    "gold": 100000
-                },
-                "armoryRequired": 25
-            },
-            "26": {
-                "stats": {
-                    "health": 2150,
-                    "damage": 565.25
-                },
-                "trainingCost": {
-                    "gold": 105000
-                },
-                "armoryRequired": 26
-            }
-        },
-        "sourceUrl": "https://boombeach.fandom.com/wiki/Rocket_Choppa",
-        "availabilityLabel": "Standard troop today; formerly a prototype troop.",
-        "rosterUpdatedAt": "2026-04-01",
-        "dataStatus": "standard_troop_now"
-    },
     "heavy_choppa": {
         "name": "Heavy Choppa",
         "description": "The flying clown car of the battlefield! Instead of laughs this unit delivers seemingly endless stream of bullets.",
@@ -1672,7 +1505,7 @@
     "turret_engineer": {
         "name": "Turret Engineer",
         "description": "This crafty Engineer has designed compact turrets that expand upon hitting the ground and attack enemy buildings.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/8/86/Turret_Engineer_2.png/revision/latest/scale-to-width-down/250?cb=20250914161059",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/9/9c/Turret_Engineer_2.png/revision/latest/scale-to-width-down/95?cb=20220608162139",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Turret_Engineer",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -2028,7 +1861,7 @@
     "critter_engineer": {
         "name": "Critter Engineer",
         "description": "This crafty Engineer has his own set of critters that he throws at enemy buildings.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/e/ef/Critter_Engineer.png/revision/latest/scale-to-width-down/250?cb=20250914161221",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/3/3d/Critter_Engineer.png/revision/latest/scale-to-width-down/300?cb=20220610132627",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Critter_Engineer",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -2764,7 +2597,7 @@
     "clone_rifleman": {
         "name": "Clone Rifleman",
         "description": "These Riflemen multiply after being destroyed up to two times. Each clone is slightly weaker and deals less damage than the Rifleman before him.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/0/04/CloneRifleman.png/revision/latest/scale-to-width-down/250?cb=20250402085702",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/6/61/CloneRifleman.png/revision/latest/scale-to-width-down/200?cb=20201109082542",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Clone_Rifleman",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -3257,7 +3090,7 @@
     "cryotank": {
         "name": "CryoTank",
         "description": "The CryoTank is a massive tank that freezes enemy buildings, slowing them down and dealing moderate damage. Each CryoTank requires extra energy to land ashore.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/4/40/CryoTank.png/revision/latest/scale-to-width-down/250?cb=20250722150053",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/e/e2/CryoTank.png/revision/latest/scale-to-width-down/450?cb=20220608163658",
         "sourceUrl": "https://boombeach.fandom.com/wiki/CryoTank",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -3668,7 +3501,7 @@
     "dr_vitamin": {
         "name": "Dr. Vitamin",
         "description": "Dr. Vitamin throws vitamins at other troops to boost one or many of their abilities for a short period of time.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/8/81/DrVitaminNEW.png/revision/latest/scale-to-width-down/250?cb=20250820191100",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/1/1a/DrVitaminNEW.png/revision/latest/scale-to-width-down/300?cb=20250404192526",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Dr._Vitamin",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -4108,7 +3941,7 @@
     "shockaneer": {
         "name": "Shockaneer",
         "description": "The Shockaneer shocks enemy buildings, stunning them and dealing moderate damage. Enemies, beware of her Shock Beam!",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/2/25/Shockaneer.png/revision/latest/scale-to-width-down/250?cb=20250523150439",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/3/3e/Shockaneer.png/revision/latest/scale-to-width-down/280?cb=20201201223552",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Shockaneer",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -4518,7 +4351,7 @@
     "protector": {
         "name": "Protector",
         "description": "This Native Islander is ready to help our cause against the Blackguard. She protects other troops with crystal shields for a short period of time.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/c/c0/Protector.png/revision/latest/scale-to-width-down/250?cb=20250215145250",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/5/58/Villager17b.png/revision/latest/scale-to-width-down/175?cb=20210807205509",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Protector",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -4872,7 +4705,7 @@
     "melon_bombardier": {
         "name": "Melon Bombardier",
         "description": "The Bombardier is shooting... watermelons? Why not? Be careful though, these watermelons are exploding with flavor.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/2/22/Melon_BombardierB.png/revision/latest/scale-to-width-down/250?cb=20250210102710",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/3/39/Melon_BombardierB.png/revision/latest/scale-to-width-down/250?cb=20201201223101",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Melon_Bombardier",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -5282,7 +5115,7 @@
     "mega_scorcher": {
         "name": "MegaScorcher",
         "description": "A more massive version of the scorcher, the MegaScorcher has more armor and causes bigger fires. It is also exceedingly large and takes a lot of energy to move.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/0/08/Incinerator.png/revision/latest/scale-to-width-down/250?cb=20240609165045",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/5/5b/Incinerator.png/revision/latest/scale-to-width-down/400?cb=20220608161128",
         "sourceUrl": "https://boombeach.fandom.com/wiki/MegaScorcher",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",
@@ -5720,7 +5553,7 @@
     "stunner": {
         "name": "Stunner",
         "description": "The Stunner is one shockingly stunning troop that deals area damage - rather inaccurately! But his shock bomb grenades make up for his inaccuracy, stunning buildings and giving his teammates more time to attack.",
-        "image": "https://static.wikia.nocookie.net/boombeach/images/4/4a/Stunner.png/revision/latest/scale-to-width-down/250?cb=20250523155703",
+        "image": "https://static.wikia.nocookie.net/boombeach/images/7/71/Stunner.PNG/revision/latest/scale-to-width-down/250?cb=20260214124036",
         "sourceUrl": "https://boombeach.fandom.com/wiki/Stunner",
         "dataStatus": "current_workshop_full",
         "availabilityLabel": "Current Proto Troop Workshop troop; also usable in Warships when available.",

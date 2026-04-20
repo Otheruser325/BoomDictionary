@@ -5,8 +5,8 @@ import {
     validateGunboatRequest,
 } from '../shared/gunboatCommand.js';
 
-export const customId = 'select_gunboat_ability_level';
-export const customIdPrefix = 'select_gunboat_ability_level';
+export const customId = 'select_temporary_gunboat_ability_level';
+export const customIdPrefix = 'select_temporary_gunboat_ability_level';
 
 export async function execute(interaction) {
     try {
@@ -31,9 +31,9 @@ export async function execute(interaction) {
     } catch (error) {
         return reportExecutionError({
             error,
-            fallbackMessage: 'An error occurred while updating the gunboat selection. Please try again later.',
+            fallbackMessage: 'An error occurred while updating the temporary gunboat selection. Please try again later.',
             interaction,
-            scope: 'interaction-gunboat-level-failed',
+            scope: 'interaction-temporary-gunboat-level-failed',
         });
     }
 }

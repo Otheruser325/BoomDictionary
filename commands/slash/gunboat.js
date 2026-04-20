@@ -1,39 +1,46 @@
 import { SlashCommandBuilder } from 'discord.js';
 import { reportExecutionError } from '../../utils/errorHandling.js';
 import {
-    buildGunboatEmbed,
-    validateGunboatRequest,
+    executeGunboatCommand,
 } from '../shared/gunboatCommand.js';
-import { gunboatChoices } from '../shared/choices.js';
+import {
+    gunboatChoices,
+    temporaryGunboatChoices,
+} from '../shared/choices.js';
 
 export const data = new SlashCommandBuilder()
     .setName('gunboat')
-    .setDescription('Get statistics for a specific type of gunboat ability.')
-    .addStringOption(option => option.setName('ability_type')
-        .setDescription('Type of gunboat ability')
-        .setRequired(true)
-        .addChoices(...gunboatChoices)
+    .setDescription('Get statistics for a standard or temporary gunboat ability.')
+    .addSubcommand(subcommand => subcommand
+        .setName('normal')
+        .setDescription('Get statistics for a standard gunboat ability.')
+        .addStringOption(option => option.setName('ability_type')
+            .setDescription('Type of standard gunboat ability')
+            .setRequired(true)
+            .addChoices(...gunboatChoices)
+        )
+        .addIntegerOption(option => option.setName('level')
+            .setDescription('Level of the gunboat ability')
+            .setRequired(true)
+        )
     )
-    .addIntegerOption(option => option.setName('level')
-        .setDescription('Level of the gunboat ability')
-        .setRequired(true)
+    .addSubcommand(subcommand => subcommand
+        .setName('temporary')
+        .setDescription('Get statistics for a temporary gunboat ability.')
+        .addStringOption(option => option.setName('ability_type')
+            .setDescription('Type of temporary gunboat ability')
+            .setRequired(true)
+            .addChoices(...temporaryGunboatChoices)
+        )
+        .addIntegerOption(option => option.setName('level')
+            .setDescription('Armory-scaled level of the temporary ability when applicable')
+            .setRequired(false)
+        )
     );
+
 export async function execute(interaction) {
     try {
-        const abilityType = interaction.options.getString('ability_type');
-        const level = interaction.options.getInteger('level');
-        const validationError = validateGunboatRequest(abilityType, level);
-
-        if (validationError) {
-            return interaction.reply({
-                content: validationError,
-                ephemeral: true,
-            });
-        }
-
-        await interaction.reply({
-            embeds: [buildGunboatEmbed(abilityType, level)]
-        });
+        return await executeGunboatCommand(interaction);
     } catch (error) {
         return reportExecutionError({
             error,

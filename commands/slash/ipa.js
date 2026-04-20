@@ -8,7 +8,7 @@ import {
 
 export const data = new SlashCommandBuilder()
     .setName('ipa')
-    .setDescription('Get the pronunciation of a word.')
+    .setDescription('Show the IPA pronunciation and play it in your server voice channel.')
     .addStringOption(option => option.setName('word')
         .setDescription('The word to get the pronunciation for')
         .setRequired(true));

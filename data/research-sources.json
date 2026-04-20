@@ -18,7 +18,7 @@
       "Official Boom Beach game data and patch notes",
       "Boom Beach Wiki gunboat ability pages"
     ],
-    "notes": "Track energy cost changes separately from damage or duration changes."
+    "notes": "Track normal and temporary gunboat abilities separately, and prefer the page statistics tables over summary text when the wiki shows conflicting energy cost wording."
   },
   "prototypeTroops": {
     "preferred_sources": [

@@ -7,6 +7,34 @@ function buildErrorMetadata(error) {
     };
 }
 
+function isTransientDiscordNetworkError(error) {
+    const message = typeof error?.message === 'string' ? error.message : '';
+
+    return ['ENOTFOUND', 'EAI_AGAIN', 'ECONNRESET', 'ETIMEDOUT'].includes(error?.code) &&
+        /discord\.(gg|media)|gateway/i.test(message);
+}
+
+function isIdentifyThrottleWarning(error) {
+    const message = typeof error?.message === 'string' ? error.message : '';
+    const stack = typeof error?.stack === 'string' ? error.stack : '';
+
+    return error?.name === 'TimeoutNegativeWarning' &&
+        message.includes('negative number') &&
+        stack.includes('SimpleIdentifyThrottler');
+}
+
+function shouldPrintStack(scope, error) {
+    if (scope === 'process-warning' && isIdentifyThrottleWarning(error)) {
+        return false;
+    }
+
+    if (scope === 'discord-shard-error' && isTransientDiscordNetworkError(error)) {
+        return false;
+    }
+
+    return true;
+}
+
 export function logError(scope, error, metadata = {}) {
     const timestamp = new Date().toISOString();
     const payload = {
@@ -16,7 +44,7 @@ export function logError(scope, error, metadata = {}) {
 
     console.error(`[${timestamp}] ${scope}`, payload);
 
-    if (error instanceof Error && error.stack) {
+    if (error instanceof Error && error.stack && shouldPrintStack(scope, error)) {
         console.error(error.stack);
     } else if (!(error instanceof Error)) {
         console.error(error);
@@ -121,6 +149,17 @@ export function attachProcessErrorHandlers(client) {
     const flag = Symbol.for('boomdictionary.process-error-handlers');
 
     if (!globalThis[flag]) {
+        const originalEmitWarning = process.emitWarning.bind(process);
+
+        process.emitWarning = function patchedEmitWarning(warning, ...args) {
+            if (warning instanceof Error && isIdentifyThrottleWarning(warning)) {
+                process.emit('warning', warning);
+                return;
+            }
+
+            return originalEmitWarning(warning, ...args);
+        };
+
         process.on('uncaughtException', (error) => {
             logError('uncaught-exception', error);
         });
@@ -130,6 +169,13 @@ export function attachProcessErrorHandlers(client) {
         });
 
         process.on('warning', (warning) => {
+            if (isIdentifyThrottleWarning(warning)) {
+                logError('process-warning', warning, {
+                    note: 'Discord identify throttling produced a transient negative timeout. This usually happens after clock drift, sleep/hibernate, or a flaky network, and the gateway should retry automatically.',
+                });
+                return;
+            }
+
             logError('process-warning', warning);
         });
 
@@ -142,6 +188,14 @@ export function attachProcessErrorHandlers(client) {
         });
 
         client.on('shardError', (error, shardId) => {
+            if (isTransientDiscordNetworkError(error)) {
+                logError('discord-shard-error', error, {
+                    note: 'Discord gateway DNS/connectivity failed temporarily. The client should reconnect automatically once the network recovers.',
+                    shardId,
+                });
+                return;
+            }
+
             logError('discord-shard-error', error, {
                 shardId,
             });

@@ -1,0 +1,1341 @@
+{
+    "cryobomb": {
+        "name": "Cryobomb",
+        "description": "The Cryobomb detonates to cause enemy buildings to freeze across a large area, slowing them down and dealing moderate damage.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Cryobomb",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 1,
+        "energyCost": 6,
+        "energyCostIncreasePerUse": 8,
+        "energyCostsByUse": [
+            6,
+            14,
+            22,
+            30,
+            38,
+            46,
+            54,
+            62,
+            70,
+            78
+        ],
+        "sourceNote": "The wiki statistics table appears to have a one-row anomaly late in the cost list; this dataset follows the stated 6 + 8n pattern.",
+        "levels": {
+            "1": {
+                "stats": {
+                    "damage": 260,
+                    "explosionRadius": 8,
+                    "freezeSlowdown": 75,
+                    "duration": 10
+                },
+                "armoryRequired": 8
+            }
+        }
+    },
+    "super_warrior": {
+        "name": "Super Warrior",
+        "description": "A supercharged warrior who fearlessly hurls himself into the heart of the action. Apart from healing himself with every attack, the super warrior also freezes the building it attacks, reducing its attack rate.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Super_Warrior",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 8,
+        "energyCostIncreasePerUse": 5,
+        "energyCostsByUse": [
+            8,
+            13,
+            18,
+            23,
+            28,
+            33,
+            38,
+            43,
+            48,
+            53
+        ],
+        "movementSpeed": 400,
+        "attackRange": 0.9,
+        "attackSpeedLabel": "0.8s",
+        "splashRadius": 0.1,
+        "freezeSlowdown": 50,
+        "freezeDuration": 5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 4000,
+                    "dps": 680,
+                    "damage": 544,
+                    "healingPerHit": 190.4
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "health": 4400,
+                    "dps": 728,
+                    "damage": 582.4,
+                    "healingPerHit": 203.84
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "health": 4840,
+                    "dps": 779,
+                    "damage": 623.2,
+                    "healingPerHit": 218.12
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "health": 5320,
+                    "dps": 833,
+                    "damage": 666.4,
+                    "healingPerHit": 233.24
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "health": 5860,
+                    "dps": 891,
+                    "damage": 712.8,
+                    "healingPerHit": 249.48
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "health": 6440,
+                    "dps": 954,
+                    "damage": 763.2,
+                    "healingPerHit": 267.12
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "health": 7090,
+                    "dps": 1020,
+                    "damage": 816,
+                    "healingPerHit": 285.6
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "health": 7790,
+                    "dps": 1092,
+                    "damage": 873.6,
+                    "healingPerHit": 305.76
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "health": 8570,
+                    "dps": 1168,
+                    "damage": 934.4,
+                    "healingPerHit": 327.04
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "health": 9430,
+                    "dps": 1250,
+                    "damage": 1000,
+                    "healingPerHit": 350
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "health": 10370,
+                    "dps": 1338,
+                    "damage": 1070.4,
+                    "healingPerHit": 374.64
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "health": 11410,
+                    "dps": 1431,
+                    "damage": 1144.8,
+                    "healingPerHit": 400.68
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "health": 12550,
+                    "dps": 1531,
+                    "damage": 1224.8,
+                    "healingPerHit": 428.68
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "health": 13810,
+                    "dps": 1639,
+                    "damage": 1311.2,
+                    "healingPerHit": 458.92
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "health": 15190,
+                    "dps": 1753,
+                    "damage": 1402.4,
+                    "healingPerHit": 490.84
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "health": 16710,
+                    "dps": 1874,
+                    "damage": 1499.2,
+                    "healingPerHit": 524.72
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "health": 18380,
+                    "dps": 2005,
+                    "damage": 1604,
+                    "healingPerHit": 561.4
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "health": 20220,
+                    "dps": 2145,
+                    "damage": 1716,
+                    "healingPerHit": 600.6
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "health": 22240,
+                    "dps": 2295,
+                    "damage": 1836,
+                    "healingPerHit": 642.6
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "health": 24460,
+                    "dps": 2455,
+                    "damage": 1964,
+                    "healingPerHit": 687.4
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "health": 26900,
+                    "dps": 2626,
+                    "damage": 2100.8,
+                    "healingPerHit": 735.28
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "speed_serum": {
+        "name": "Speed Serum",
+        "description": "A projectile vial full of Super Secret Sauce which energizes the troops, boosting their movement and attack speed for a short duration. Caution: side effects not thoroughly tested.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Speed_Serum",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 1,
+        "energyCost": 6,
+        "energyCostIncreasePerUse": 8,
+        "energyCostsByUse": [
+            6,
+            14,
+            22,
+            30,
+            38,
+            46,
+            54,
+            62,
+            70,
+            78
+        ],
+        "sourceNote": "The wiki summary text and statistics table disagree on Speed Serum energy costs; this dataset follows the explicit statistics table.",
+        "levels": {
+            "1": {
+                "stats": {
+                    "effectRadius": 8,
+                    "speedBonus": 300,
+                    "damageDecrease": 50,
+                    "duration": 10
+                },
+                "armoryRequired": 8
+            }
+        }
+    },
+    "deployable_turret": {
+        "name": "Deployable Turret",
+        "description": "Some stolen technology from Dr. T's laboratories resulted in the creation of the deployable turret. Fire the small turret into the battlefield and watch it sit tight and obliterate the enemy.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Deployable_Turret",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 5,
+        "energyCostIncreasePerUse": 5,
+        "energyCostsByUse": [
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50
+        ],
+        "attackSpeedLabel": "3.5s",
+        "attackRange": 8.2,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 6000,
+                    "dps": 140,
+                    "damage": 490
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "health": 6540,
+                    "dps": 154,
+                    "damage": 539
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "health": 7130,
+                    "dps": 169,
+                    "damage": 591.5
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "health": 7770,
+                    "dps": 186,
+                    "damage": 651
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "health": 8470,
+                    "dps": 205,
+                    "damage": 717.5
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "health": 9230,
+                    "dps": 225,
+                    "damage": 787.5
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "health": 10060,
+                    "dps": 248,
+                    "damage": 868
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "health": 10970,
+                    "dps": 273,
+                    "damage": 955.5
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "health": 11960,
+                    "dps": 300,
+                    "damage": 1050
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "health": 13030,
+                    "dps": 330,
+                    "damage": 1155
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "health": 14200,
+                    "dps": 363,
+                    "damage": 1270.5
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "health": 15480,
+                    "dps": 399,
+                    "damage": 1396.5
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "health": 16880,
+                    "dps": 439,
+                    "damage": 1536.5
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "health": 18390,
+                    "dps": 483,
+                    "damage": 1690.5
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "health": 20050,
+                    "dps": 532,
+                    "damage": 1862
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "health": 21850,
+                    "dps": 585,
+                    "damage": 2047.5
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "health": 23800,
+                    "dps": 642,
+                    "damage": 2247
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "health": 25940,
+                    "dps": 706,
+                    "damage": 2471
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "health": 28280,
+                    "dps": 777,
+                    "damage": 2719.5
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "health": 30830,
+                    "dps": 855,
+                    "damage": 2992.5
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "health": 33600,
+                    "dps": 940,
+                    "damage": 3290
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "remote_defib": {
+        "name": "Remote Defib",
+        "description": "Bring back fallen troops.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Remote_Defib",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 8,
+        "energyCostIncreasePerUse": 10,
+        "energyCostsByUse": [
+            8,
+            18,
+            28,
+            38,
+            48,
+            58,
+            68,
+            78,
+            88,
+            98
+        ],
+        "duration": 4,
+        "levels": {
+            "1": {
+                "stats": {
+                    "housingSpaceRevived": 6,
+                    "reviveDelay": 0.66
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "housingSpaceRevived": 7,
+                    "reviveDelay": 0.57
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "housingSpaceRevived": 8,
+                    "reviveDelay": 0.5
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "housingSpaceRevived": 9,
+                    "reviveDelay": 0.44
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "housingSpaceRevived": 10,
+                    "reviveDelay": 0.4
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "housingSpaceRevived": 11,
+                    "reviveDelay": 0.36
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "housingSpaceRevived": 12,
+                    "reviveDelay": 0.33
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "housingSpaceRevived": 13,
+                    "reviveDelay": 0.305
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "housingSpaceRevived": 14,
+                    "reviveDelay": 0.285
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "housingSpaceRevived": 15,
+                    "reviveDelay": 0.265
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "housingSpaceRevived": 16,
+                    "reviveDelay": 0.25
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "housingSpaceRevived": 17,
+                    "reviveDelay": 0.235
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "housingSpaceRevived": 18,
+                    "reviveDelay": 0.22
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "housingSpaceRevived": 19,
+                    "reviveDelay": 0.21
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "housingSpaceRevived": 20,
+                    "reviveDelay": 0.2
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "housingSpaceRevived": 21,
+                    "reviveDelay": 0.19
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "housingSpaceRevived": 22,
+                    "reviveDelay": 0.18
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "housingSpaceRevived": 23,
+                    "reviveDelay": 0.17
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "housingSpaceRevived": 24,
+                    "reviveDelay": 0.166
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "housingSpaceRevived": 25,
+                    "reviveDelay": 0.16
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "housingSpaceRevived": 26,
+                    "reviveDelay": 0.152
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "explosive_drones": {
+        "name": "Explosive Drones",
+        "description": "Fires a cluster of drones that take a short duration to activate, and then make a beeline for the nearest enemy building and explode, dealing damage.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Explosive_Drones",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available to the Gunboat for a limited period of time.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 5,
+        "energyCostIncreasePerUse": 5,
+        "energyCostsByUse": [
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50
+        ],
+        "droneCount": 5,
+        "droneMovementSpeed": 400,
+        "armingTime": 2,
+        "explosionRadius": 0.1,
+        "spawnRadius": 5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "health": 100,
+                    "damage": 500
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "health": 110,
+                    "damage": 550
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "health": 120,
+                    "damage": 605
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "health": 130,
+                    "damage": 666
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "health": 150,
+                    "damage": 732
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "health": 160,
+                    "damage": 805
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "health": 180,
+                    "damage": 886
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "health": 190,
+                    "damage": 974
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "health": 210,
+                    "damage": 1072
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "health": 240,
+                    "damage": 1179
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "health": 260,
+                    "damage": 1297
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "health": 290,
+                    "damage": 1427
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "health": 310,
+                    "damage": 1569
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "health": 350,
+                    "damage": 1726
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "health": 380,
+                    "damage": 1899
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "health": 420,
+                    "damage": 2089
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "health": 460,
+                    "damage": 2298
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "health": 500,
+                    "damage": 2528
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "health": 550,
+                    "damage": 2781
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "health": 610,
+                    "damage": 3059
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "health": 670,
+                    "damage": 3365
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "remote_hack": {
+        "name": "Remote Hack",
+        "description": "Launch the Remote Hack at a defensive building to hack it and turn it against other defenses for a duration. Once the hacking effect expires, the building is stunned for a time. Does not work on resource or HQ buildings.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Remote_Hack",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 10,
+        "energyCostIncreasePerUse": 10,
+        "energyCostsByUse": [
+            10,
+            20,
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "levels": {
+            "1": {
+                "stats": {
+                    "duration": 8
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "duration": 8.5
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "duration": 9
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "duration": 9.5
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "duration": 10
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "duration": 10.5
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "duration": 11
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "duration": 11.5
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "duration": 12
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "duration": 12.5
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "duration": 13
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "duration": 13.5
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "duration": 14
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "duration": 14.5
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "duration": 15
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "duration": 15.5
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "duration": 16
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "duration": 16.5
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "duration": 17
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "duration": 17.5
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "duration": 18
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "tiny_shock": {
+        "name": "Tiny Shock",
+        "description": "Launch the Tiny Shock at a defensive building and stun and freeze it for a long duration. Use it to disable key defensive buildings! Only targets a single structure.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Tiny_Shock",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 1,
+        "energyCost": 3,
+        "energyCostIncreasePerUse": 3,
+        "energyCostsByUse": [
+            3,
+            6,
+            9,
+            12,
+            15,
+            18,
+            21,
+            24,
+            27,
+            30
+        ],
+        "levels": {
+            "1": {
+                "stats": {
+                    "duration": 30,
+                    "targets": "Single defensive structure"
+                },
+                "armoryRequired": 8
+            }
+        }
+    },
+    "crystal_shield_projector": {
+        "name": "Crystal Shield Projector",
+        "description": "Provide troops with crystal shields.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Crystal_Shield_Projector",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 5,
+        "energyCostIncreasePerUse": 9,
+        "energyCostsByUse": [
+            5,
+            14,
+            23,
+            32,
+            41,
+            50,
+            59,
+            68,
+            77,
+            86
+        ],
+        "effectRadius": 10,
+        "duration": 8,
+        "levels": {
+            "1": {
+                "stats": {
+                    "shieldHealth": 100
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "shieldHealth": 125
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "shieldHealth": 150
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "shieldHealth": 175
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "shieldHealth": 200
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "shieldHealth": 225
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "shieldHealth": 250
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "shieldHealth": 275
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "shieldHealth": 300
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "shieldHealth": 325
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "shieldHealth": 350
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "shieldHealth": 375
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "shieldHealth": 400
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "shieldHealth": 425
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "shieldHealth": 450
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "shieldHealth": 475
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "shieldHealth": 500
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "shieldHealth": 525
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "shieldHealth": 550
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "shieldHealth": 600
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "shieldHealth": 650
+                },
+                "armoryRequired": 28
+            }
+        }
+    },
+    "crystal_critters": {
+        "name": "Crystal Critters",
+        "description": "Releases a cluster of Crystal Critters borrowed from Dr. Kavan that heal wounded troops and disappear after a short duration.",
+        "sourceUrl": "https://boombeach.fandom.com/wiki/Crystal_Critters_%28Gunboat%29",
+        "updatedAt": "2026-04-13",
+        "category": "temporary",
+        "availabilityLabel": "Temporary Gunboat Ability; occasionally available for players with Armory level 8 or above.",
+        "autoScalesWithArmory": true,
+        "maxLevel": 21,
+        "energyCost": 6,
+        "energyCostIncreasePerUse": 6,
+        "energyCostsByUse": [
+            6,
+            12,
+            18,
+            24,
+            30,
+            36,
+            42,
+            48,
+            54,
+            60
+        ],
+        "movementSpeed": 400,
+        "health": 2500,
+        "healingPerSecond": 30,
+        "healRangeLabel": "1.5-2.5 Tiles",
+        "healSpeedLabel": "0.4s",
+        "lifetime": 15,
+        "spawnRadius": 5,
+        "levels": {
+            "1": {
+                "stats": {
+                    "crittersDeployed": 4
+                },
+                "armoryRequired": 8
+            },
+            "2": {
+                "stats": {
+                    "crittersDeployed": 4
+                },
+                "armoryRequired": 9
+            },
+            "3": {
+                "stats": {
+                    "crittersDeployed": 4
+                },
+                "armoryRequired": 10
+            },
+            "4": {
+                "stats": {
+                    "crittersDeployed": 5
+                },
+                "armoryRequired": 11
+            },
+            "5": {
+                "stats": {
+                    "crittersDeployed": 5
+                },
+                "armoryRequired": 12
+            },
+            "6": {
+                "stats": {
+                    "crittersDeployed": 5
+                },
+                "armoryRequired": 13
+            },
+            "7": {
+                "stats": {
+                    "crittersDeployed": 6
+                },
+                "armoryRequired": 14
+            },
+            "8": {
+                "stats": {
+                    "crittersDeployed": 6
+                },
+                "armoryRequired": 15
+            },
+            "9": {
+                "stats": {
+                    "crittersDeployed": 6
+                },
+                "armoryRequired": 16
+            },
+            "10": {
+                "stats": {
+                    "crittersDeployed": 7
+                },
+                "armoryRequired": 17
+            },
+            "11": {
+                "stats": {
+                    "crittersDeployed": 7
+                },
+                "armoryRequired": 18
+            },
+            "12": {
+                "stats": {
+                    "crittersDeployed": 7
+                },
+                "armoryRequired": 19
+            },
+            "13": {
+                "stats": {
+                    "crittersDeployed": 8
+                },
+                "armoryRequired": 20
+            },
+            "14": {
+                "stats": {
+                    "crittersDeployed": 8
+                },
+                "armoryRequired": 21
+            },
+            "15": {
+                "stats": {
+                    "crittersDeployed": 8
+                },
+                "armoryRequired": 22
+            },
+            "16": {
+                "stats": {
+                    "crittersDeployed": 9
+                },
+                "armoryRequired": 23
+            },
+            "17": {
+                "stats": {
+                    "crittersDeployed": 9
+                },
+                "armoryRequired": 24
+            },
+            "18": {
+                "stats": {
+                    "crittersDeployed": 10
+                },
+                "armoryRequired": 25
+            },
+            "19": {
+                "stats": {
+                    "crittersDeployed": 10
+                },
+                "armoryRequired": 26
+            },
+            "20": {
+                "stats": {
+                    "crittersDeployed": 11
+                },
+                "armoryRequired": 27
+            },
+            "21": {
+                "stats": {
+                    "crittersDeployed": 11
+                },
+                "armoryRequired": 28
+            }
+        }
+    }
+}

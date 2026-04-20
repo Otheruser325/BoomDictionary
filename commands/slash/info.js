@@ -2,6 +2,7 @@ import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
 
 // Patch notes for Boom Dictionary
 const patchNotes = [
+    { version: '1.2.0', features: 'Updated to ESModules; enhanced and updated troop and defence data to match the latest versions of the game. Fixed a bug where the bot could not join a voice channel whilst running IPA, and bolstered runtime handling to reduce future crashes.', date: '2026-04-20' },
     { version: '1.1.3', features: 'Updated modules and Node version; updated troop and defence data. Will expand on proto troops and defences ever since the rework in a Boom Beach mid-2025 update.', date: '2025-12-06' },
     { version: '1.1.2', features: 'Usability fixes and improvements', date: '2024-10-12' },
     { version: '1.1.1', features: 'Bug fixes', date: '2024-10-08' },

@@ -4,15 +4,15 @@ import {
     getGunboatAbility,
 } from '../shared/gunboatCommand.js';
 
-export const customId = 'select_gunboat_ability_type';
+export const customId = 'select_temporary_gunboat_ability_type';
 
 export async function execute(interaction) {
     const selectedAbilityType = interaction.values[0];
-    const abilityData = getGunboatAbility('normal', selectedAbilityType);
+    const abilityData = getGunboatAbility('temporary', selectedAbilityType);
 
     if (!abilityData) {
         return interaction.reply({
-            content: 'No data found for the selected gunboat ability.',
+            content: 'No data found for the selected temporary gunboat ability.',
             ephemeral: true,
         });
     }
@@ -20,9 +20,9 @@ export async function execute(interaction) {
     try {
         await interaction.update(
             buildGunboatSelectionPayload(
-                'normal',
+                'temporary',
                 selectedAbilityType,
-                'select_gunboat_ability_level'
+                'select_temporary_gunboat_ability_level'
             )
         );
     } catch (error) {
@@ -30,7 +30,7 @@ export async function execute(interaction) {
             error,
             fallbackMessage: 'There was an issue processing your request. Please try again.',
             interaction,
-            scope: 'interaction-gunboat-type-failed',
+            scope: 'interaction-temporary-gunboat-type-failed',
         });
     }
 }
