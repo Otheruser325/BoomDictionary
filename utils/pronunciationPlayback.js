@@ -1,5 +1,7 @@
 import {
     AudioPlayerStatus,
+    NoSubscriberBehavior,
+    StreamType,
     VoiceConnectionStatus,
     createAudioPlayer,
     createAudioResource,
@@ -15,16 +17,69 @@ import {
     getVoiceChannel,
 } from './voiceChannelConfig.js';
 
+const IDLE_DISCONNECT_MS = 5 * 60 * 1000;
+const pronunciationSessions = new Map();
+
+function destroySession(guildId) {
+    const session = pronunciationSessions.get(guildId);
+
+    if (!session) {
+        return;
+    }
+
+    pronunciationSessions.delete(guildId);
+
+    if (session.idleTimeout) {
+        clearTimeout(session.idleTimeout);
+    }
+
+    try {
+        session.player.stop(true);
+    } catch {
+        // Best-effort cleanup.
+    }
+
+    try {
+        session.connection.destroy();
+    } catch {
+        // Best-effort cleanup.
+    }
+
+}
+
+function scheduleIdleDisconnect(guildId) {
+    const session = pronunciationSessions.get(guildId);
+
+    if (!session) {
+        return;
+    }
+
+    if (session.idleTimeout) {
+        clearTimeout(session.idleTimeout);
+    }
+
+    session.idleTimeout = setTimeout(() => {
+        destroySession(guildId);
+    }, IDLE_DISCONNECT_MS);
+}
+
 async function fetchStreamFromUrl(url) {
     return new Promise((resolve, reject) => {
-        get(url, (response) => {
+        const request = get(url, (response) => {
             if (response.statusCode !== 200) {
+                response.resume();
                 reject(new Error(`Failed to get file: ${response.statusCode}`));
                 return;
             }
 
             resolve(response);
-        }).on('error', reject);
+        });
+
+        request.setTimeout(15_000, () => {
+            request.destroy(new Error('Timed out while downloading pronunciation audio.'));
+        });
+
+        request.on('error', reject);
     });
 }
 
@@ -67,6 +122,84 @@ function validateTargetChannelPermissions(interaction, channel) {
     return null;
 }
 
+function getOrCreateSession(guild, targetChannel) {
+    const existingSession = pronunciationSessions.get(guild.id);
+    const existingConnection = getVoiceConnection(guild.id);
+
+    if (existingSession &&
+        existingSession.connection.joinConfig.channelId === targetChannel.id) {
+        if (existingSession.idleTimeout) {
+            clearTimeout(existingSession.idleTimeout);
+            existingSession.idleTimeout = null;
+        }
+
+        return existingSession;
+    }
+
+    if (existingSession) {
+        destroySession(guild.id);
+    } else if (existingConnection &&
+        existingConnection.joinConfig.channelId !== targetChannel.id) {
+        existingConnection.destroy();
+    }
+
+    const connection = joinVoiceChannel({
+        adapterCreator: guild.voiceAdapterCreator,
+        channelId: targetChannel.id,
+        guildId: guild.id,
+        selfDeaf: false,
+    });
+
+    const player = createAudioPlayer({
+        behaviors: {
+            noSubscriber: NoSubscriberBehavior.Pause,
+        },
+    });
+
+    const session = {
+        connection,
+        idleTimeout: null,
+        player,
+    };
+
+    connection.subscribe(player);
+
+    player.on(AudioPlayerStatus.Idle, () => {
+        scheduleIdleDisconnect(guild.id);
+    });
+
+    player.on('error', () => {
+        destroySession(guild.id);
+    });
+
+    connection.on('error', () => {
+        destroySession(guild.id);
+    });
+
+    connection.on(VoiceConnectionStatus.Disconnected, () => {
+        destroySession(guild.id);
+    });
+
+    pronunciationSessions.set(guild.id, session);
+    return session;
+}
+
+function createPronunciationResource(stream) {
+    return createAudioResource(stream, {
+        inputType: StreamType.Arbitrary,
+    });
+}
+
+function normalizePlaybackError(error) {
+    if (error?.code === 'ABORT_ERR' || error?.name === 'AbortError') {
+        return new Error(
+            'Pronunciation playback timed out while preparing the audio stream. Please try again.'
+        );
+    }
+
+    return error;
+}
+
 export async function playPronunciation(interaction, term) {
     const details = getPronunciationDetails(term);
 
@@ -100,39 +233,26 @@ export async function playPronunciation(interaction, term) {
         throw new Error(permissionError);
     }
 
-    const existingConnection = getVoiceConnection(interaction.guild.id);
+    try {
+        const session = getOrCreateSession(interaction.guild, targetChannel);
 
-    if (existingConnection &&
-        existingConnection.joinConfig.channelId !== targetChannel.id) {
-        existingConnection.destroy();
+        await entersState(session.connection, VoiceConnectionStatus.Ready, 15_000);
+
+        const stream = await fetchStreamFromUrl(details.audioUrl);
+        const resource = createPronunciationResource(stream);
+
+        if (session.idleTimeout) {
+            clearTimeout(session.idleTimeout);
+            session.idleTimeout = null;
+        }
+
+        session.player.play(resource);
+
+        return {
+            details,
+            targetChannel,
+        };
+    } catch (error) {
+        throw normalizePlaybackError(error);
     }
-
-    const connection = joinVoiceChannel({
-        adapterCreator: interaction.guild.voiceAdapterCreator,
-        channelId: targetChannel.id,
-        guildId: interaction.guild.id,
-        selfDeaf: false,
-    });
-
-    await entersState(connection, VoiceConnectionStatus.Ready, 15_000);
-
-    const player = createAudioPlayer();
-    const stream = await fetchStreamFromUrl(details.audioUrl);
-    const resource = createAudioResource(stream);
-
-    player.once(AudioPlayerStatus.Idle, () => {
-        connection.destroy();
-    });
-
-    player.once('error', () => {
-        connection.destroy();
-    });
-
-    connection.subscribe(player);
-    player.play(resource);
-
-    return {
-        details,
-        targetChannel,
-    };
 }

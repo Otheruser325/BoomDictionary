@@ -11,12 +11,17 @@ export async function execute(interaction) {
     if (!customId.startsWith(customIdPrefix)) return;
 
     try {
+        if (!interaction.deferred && !interaction.replied) {
+            await interaction.deferReply({
+                ephemeral: true,
+            });
+        }
+
         const term = decodeURIComponent(customId.slice(customIdPrefix.length));
         const { details, targetChannel } = await playPronunciation(interaction, term);
 
-        await interaction.reply({
+        await interaction.editReply({
             content: `Now playing **${details.displayName}** in **${targetChannel.name}**.`,
-            ephemeral: true,
         });
     } catch (error) {
         return reportExecutionError({

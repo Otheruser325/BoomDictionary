@@ -105,7 +105,11 @@ export async function safelyReplyToInteraction(interaction, payload) {
     };
 
     try {
-        if (interaction.deferred || interaction.replied) {
+        if (interaction.deferred && !interaction.replied) {
+            return await interaction.editReply(replyPayload);
+        }
+
+        if (interaction.replied) {
             return await interaction.followUp(replyPayload);
         }
 
