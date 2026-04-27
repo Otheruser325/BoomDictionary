@@ -41,5 +41,12 @@
       "Boom Beach Wiki terminology pages"
     ],
     "notes": "Terminology, pronunciation, and origin should be checked together to keep the dictionary and IPA commands aligned."
+  },
+  "heroes": {
+    "preferred_sources": [
+      "Boom Beach Wiki hero pages (Sgt. Brick, Dr. Kavan, Cpt. Everspark, Pvt. Bullit, Cpt. Ruddero)",
+      "Official Boom Beach update notes for HQ/level cap changes"
+    ],
+    "notes": "Store exact per-level rows (HP/stats/cost/time/HQ requirement) and avoid interpolation so hero command output mirrors troop/defence fidelity."
   }
 }
