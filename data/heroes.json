@@ -1,0 +1,1450 @@
+{
+  "sergeant_brick": {
+    "name": "Sergeant Brick",
+    "description": "Frontline burst hero with grenade perk and aggressive support abilities.",
+    "image": "https://static.wikia.nocookie.net/boombeach/images/a/a9/Brick_Icon.png",
+    "heroHutUnlock": 4,
+    "maxLevel": 27,
+    "unitType": "Hero",
+    "attackType": "Burst Rifle + Grenades",
+    "attackRange": 7.2,
+    "attackSpeedLabel": "1.875s between salvos (15 shots), 0.075s in-salvo",
+    "movementSpeed": 2.2,
+    "levels": {
+      "1": {
+        "stats": {
+          "health": 1000,
+          "dps": 42,
+          "damagePerShot": 8.25,
+          "grenadeDamage": 320
+        },
+        "upgradeCost": {
+          "gold": null
+        },
+        "upgradeTime": null,
+        "heroHutRequired": 4,
+        "instantCost": null
+      },
+      "2": {
+        "stats": {
+          "health": 1080,
+          "dps": 46,
+          "damagePerShot": 9.07,
+          "grenadeDamage": 350
+        },
+        "upgradeCost": {
+          "gold": 25000
+        },
+        "upgradeTime": "6h",
+        "heroHutRequired": 4,
+        "instantCost": 125
+      },
+      "3": {
+        "stats": {
+          "health": 1170,
+          "dps": 51,
+          "damagePerShot": 9.97,
+          "grenadeDamage": 370
+        },
+        "upgradeCost": {
+          "gold": 38000
+        },
+        "upgradeTime": "7h",
+        "heroHutRequired": 5,
+        "instantCost": 147
+      },
+      "4": {
+        "stats": {
+          "health": 1260,
+          "dps": 56,
+          "damagePerShot": 10.95,
+          "grenadeDamage": 410
+        },
+        "upgradeCost": {
+          "gold": 82000
+        },
+        "upgradeTime": "9h",
+        "heroHutRequired": 6,
+        "instantCost": 201
+      },
+      "5": {
+        "stats": {
+          "health": 1360,
+          "dps": 61,
+          "damagePerShot": 12.07,
+          "grenadeDamage": 440
+        },
+        "upgradeCost": {
+          "gold": 156000
+        },
+        "upgradeTime": "11h",
+        "heroHutRequired": 7,
+        "instantCost": 258
+      },
+      "6": {
+        "stats": {
+          "health": 1470,
+          "dps": 68,
+          "damagePerShot": 13.27,
+          "grenadeDamage": 470
+        },
+        "upgradeCost": {
+          "gold": 248000
+        },
+        "upgradeTime": "13h",
+        "heroHutRequired": 8,
+        "instantCost": 315
+      },
+      "7": {
+        "stats": {
+          "health": 1590,
+          "dps": 75,
+          "damagePerShot": 14.62,
+          "grenadeDamage": 510
+        },
+        "upgradeCost": {
+          "gold": 432000
+        },
+        "upgradeTime": "16h",
+        "heroHutRequired": 9,
+        "instantCost": 411
+      },
+      "8": {
+        "stats": {
+          "health": 1710,
+          "dps": 82,
+          "damagePerShot": 16.05,
+          "grenadeDamage": 560
+        },
+        "upgradeCost": {
+          "gold": 643000
+        },
+        "upgradeTime": "18h",
+        "heroHutRequired": 10,
+        "instantCost": 495
+      },
+      "9": {
+        "stats": {
+          "health": 1850,
+          "dps": 90,
+          "damagePerShot": 17.7,
+          "grenadeDamage": 600
+        },
+        "upgradeCost": {
+          "gold": 643000
+        },
+        "upgradeTime": "18h",
+        "heroHutRequired": 10,
+        "instantCost": 495
+      },
+      "10": {
+        "stats": {
+          "health": 2000,
+          "dps": 99,
+          "damagePerShot": 19.42,
+          "grenadeDamage": 650
+        },
+        "upgradeCost": {
+          "gold": 912000
+        },
+        "upgradeTime": "20h",
+        "heroHutRequired": 11,
+        "instantCost": 590
+      },
+      "11": {
+        "stats": {
+          "health": 2160,
+          "dps": 110,
+          "damagePerShot": 21.37,
+          "grenadeDamage": 700
+        },
+        "upgradeCost": {
+          "gold": 912000
+        },
+        "upgradeTime": "20h",
+        "heroHutRequired": 12,
+        "instantCost": 590
+      },
+      "12": {
+        "stats": {
+          "health": 2330,
+          "dps": 120,
+          "damagePerShot": 23.55,
+          "grenadeDamage": 760
+        },
+        "upgradeCost": {
+          "gold": 1134000
+        },
+        "upgradeTime": "22h",
+        "heroHutRequired": 13,
+        "instantCost": 669
+      },
+      "13": {
+        "stats": {
+          "health": 2520,
+          "dps": 132,
+          "damagePerShot": 25.87,
+          "grenadeDamage": 820
+        },
+        "upgradeCost": {
+          "gold": 1652000
+        },
+        "upgradeTime": "1d 1h",
+        "heroHutRequired": 14,
+        "instantCost": 823
+      },
+      "14": {
+        "stats": {
+          "health": 2720,
+          "dps": 146,
+          "damagePerShot": 28.5,
+          "grenadeDamage": 890
+        },
+        "upgradeCost": {
+          "gold": 2160000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 15,
+        "instantCost": 958
+      },
+      "15": {
+        "stats": {
+          "health": 2940,
+          "dps": 160,
+          "damagePerShot": 31.35,
+          "grenadeDamage": 960
+        },
+        "upgradeCost": {
+          "gold": 2160000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 16,
+        "instantCost": 958
+      },
+      "16": {
+        "stats": {
+          "health": 3170,
+          "dps": 176,
+          "damagePerShot": 34.42,
+          "grenadeDamage": 1040
+        },
+        "upgradeCost": {
+          "gold": 2160000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 16,
+        "instantCost": 958
+      },
+      "17": {
+        "stats": {
+          "health": 3430,
+          "dps": 194,
+          "damagePerShot": 37.87,
+          "grenadeDamage": 1130
+        },
+        "upgradeCost": {
+          "gold": 3020000
+        },
+        "upgradeTime": "1d 7h",
+        "heroHutRequired": 17,
+        "instantCost": 1173
+      },
+      "18": {
+        "stats": {
+          "health": 3700,
+          "dps": 213,
+          "damagePerShot": 41.7,
+          "grenadeDamage": 1220
+        },
+        "upgradeCost": {
+          "gold": 4100000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 18,
+        "instantCost": 1412
+      },
+      "19": {
+        "stats": {
+          "health": 4000,
+          "dps": 235,
+          "damagePerShot": 45.9,
+          "grenadeDamage": 1320
+        },
+        "upgradeCost": {
+          "gold": 4100000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 19,
+        "instantCost": 1412
+      },
+      "20": {
+        "stats": {
+          "health": 4320,
+          "dps": 258,
+          "damagePerShot": 50.47,
+          "grenadeDamage": 1430
+        },
+        "upgradeCost": {
+          "gold": 5080000
+        },
+        "upgradeTime": "1d 13h",
+        "heroHutRequired": 20,
+        "instantCost": 1615
+      },
+      "21": {
+        "stats": {
+          "health": 4660,
+          "dps": 284,
+          "damagePerShot": 55.5,
+          "grenadeDamage": 1550
+        },
+        "upgradeCost": {
+          "gold": 5780000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 21,
+        "instantCost": 1757
+      },
+      "22": {
+        "stats": {
+          "health": 5030,
+          "dps": 313,
+          "damagePerShot": 61.05,
+          "grenadeDamage": 1670
+        },
+        "upgradeCost": {
+          "gold": 6900000
+        },
+        "upgradeTime": "1d 17h",
+        "heroHutRequired": 22,
+        "instantCost": 1960
+      },
+      "23": {
+        "stats": {
+          "health": 5560,
+          "dps": 346,
+          "damagePerShot": 67.5,
+          "grenadeDamage": 1850
+        },
+        "upgradeCost": {
+          "gold": 7690000
+        },
+        "upgradeTime": "1d 19h",
+        "heroHutRequired": 22,
+        "instantCost": 2107
+      },
+      "24": {
+        "stats": {
+          "health": 6090,
+          "dps": 377,
+          "damagePerShot": 73.65,
+          "grenadeDamage": 2010
+        },
+        "upgradeCost": {
+          "gold": 8500000
+        },
+        "upgradeTime": "1d 21h",
+        "heroHutRequired": 25,
+        "instantCost": 2249
+      },
+      "25": {
+        "stats": {
+          "health": 6580,
+          "dps": 411,
+          "damagePerShot": 80.25,
+          "grenadeDamage": 2190
+        },
+        "upgradeCost": {
+          "gold": 9310000
+        },
+        "upgradeTime": "1d 23h",
+        "heroHutRequired": 26,
+        "instantCost": 2390
+      },
+      "26": {
+        "stats": {
+          "health": 7100,
+          "dps": 450,
+          "damagePerShot": 87.75,
+          "grenadeDamage": 2390
+        },
+        "upgradeCost": {
+          "gold": 10285000
+        },
+        "upgradeTime": "2d 2h",
+        "heroHutRequired": 27,
+        "instantCost": 2561
+      },
+      "27": {
+        "stats": {
+          "health": 7670,
+          "dps": 490,
+          "damagePerShot": 95.7,
+          "grenadeDamage": 2600
+        },
+        "upgradeCost": {
+          "gold": 11313000
+        },
+        "upgradeTime": "2d 4h",
+        "heroHutRequired": 28,
+        "instantCost": 2727
+      }
+    }
+  },
+  "corporal_kavan": {
+    "name": "Dr. Kavan",
+    "description": "Support healer hero with damage reduction perk and revival-focused utility.",
+    "image": "https://static.wikia.nocookie.net/boombeach/images/6/61/Kavan_Icon.png",
+    "heroHutUnlock": 7,
+    "maxLevel": 23,
+    "unitType": "Hero",
+    "attackType": "Healing Beam",
+    "attackRange": "3-6",
+    "attackSpeedLabel": "0.6s heal speed",
+    "movementSpeed": 2.7,
+    "levels": {
+      "1": {
+        "stats": {
+          "health": 800,
+          "healPerSecond": 36,
+          "damageReduction": "5%"
+        },
+        "upgradeCost": {
+          "gold": null
+        },
+        "upgradeTime": null,
+        "heroHutRequired": 7,
+        "instantCost": null
+      },
+      "2": {
+        "stats": {
+          "health": 850,
+          "healPerSecond": 37,
+          "damageReduction": "5.3%"
+        },
+        "upgradeCost": {
+          "gold": 360000
+        },
+        "upgradeTime": "15h",
+        "heroHutRequired": 7,
+        "instantCost": 377
+      },
+      "3": {
+        "stats": {
+          "health": 900,
+          "healPerSecond": 39,
+          "damageReduction": "5.6%"
+        },
+        "upgradeCost": {
+          "gold": 360000
+        },
+        "upgradeTime": "15h",
+        "heroHutRequired": 8,
+        "instantCost": 377
+      },
+      "4": {
+        "stats": {
+          "health": 950,
+          "healPerSecond": 40,
+          "damageReduction": "5.9%"
+        },
+        "upgradeCost": {
+          "gold": 535500
+        },
+        "upgradeTime": "17h",
+        "heroHutRequired": 9,
+        "instantCost": 451
+      },
+      "5": {
+        "stats": {
+          "health": 1010,
+          "healPerSecond": 42,
+          "damageReduction": "6.2%"
+        },
+        "upgradeCost": {
+          "gold": 759600
+        },
+        "upgradeTime": "19h",
+        "heroHutRequired": 10,
+        "instantCost": 538
+      },
+      "6": {
+        "stats": {
+          "health": 1070,
+          "healPerSecond": 44,
+          "damageReduction": "6.5%"
+        },
+        "upgradeCost": {
+          "gold": 759600
+        },
+        "upgradeTime": "19h",
+        "heroHutRequired": 11,
+        "instantCost": 538
+      },
+      "7": {
+        "stats": {
+          "health": 1130,
+          "healPerSecond": 46,
+          "damageReduction": "6.8%"
+        },
+        "upgradeCost": {
+          "gold": 945000
+        },
+        "upgradeTime": "21h",
+        "heroHutRequired": 12,
+        "instantCost": 610
+      },
+      "8": {
+        "stats": {
+          "health": 1200,
+          "healPerSecond": 47,
+          "damageReduction": "7.1%"
+        },
+        "upgradeCost": {
+          "gold": 1377000
+        },
+        "upgradeTime": "23h",
+        "heroHutRequired": 13,
+        "instantCost": 740
+      },
+      "9": {
+        "stats": {
+          "health": 1280,
+          "healPerSecond": 49,
+          "damageReduction": "7.4%"
+        },
+        "upgradeCost": {
+          "gold": 1800000
+        },
+        "upgradeTime": "1d 2h",
+        "heroHutRequired": 14,
+        "instantCost": 868
+      },
+      "10": {
+        "stats": {
+          "health": 1350,
+          "healPerSecond": 51,
+          "damageReduction": "7.7%"
+        },
+        "upgradeCost": {
+          "gold": 1800000
+        },
+        "upgradeTime": "1d 2h",
+        "heroHutRequired": 15,
+        "instantCost": 868
+      },
+      "11": {
+        "stats": {
+          "health": 1430,
+          "healPerSecond": 53,
+          "damageReduction": "8%"
+        },
+        "upgradeCost": {
+          "gold": 2520000
+        },
+        "upgradeTime": "1d 5h",
+        "heroHutRequired": 16,
+        "instantCost": 1051
+      },
+      "12": {
+        "stats": {
+          "health": 1520,
+          "healPerSecond": 55,
+          "damageReduction": "8.3%"
+        },
+        "upgradeCost": {
+          "gold": 3420000
+        },
+        "upgradeTime": "1d 8h",
+        "heroHutRequired": 16,
+        "instantCost": 1263
+      },
+      "13": {
+        "stats": {
+          "health": 1610,
+          "healPerSecond": 58,
+          "damageReduction": "8.6%"
+        },
+        "upgradeCost": {
+          "gold": 3420000
+        },
+        "upgradeTime": "1d 8h",
+        "heroHutRequired": 17,
+        "instantCost": 1263
+      },
+      "14": {
+        "stats": {
+          "health": 1710,
+          "healPerSecond": 60,
+          "damageReduction": "8.9%"
+        },
+        "upgradeCost": {
+          "gold": 4230000
+        },
+        "upgradeTime": "1d 11h",
+        "heroHutRequired": 18,
+        "instantCost": 1445
+      },
+      "15": {
+        "stats": {
+          "health": 1810,
+          "healPerSecond": 62,
+          "damageReduction": "9.2%"
+        },
+        "upgradeCost": {
+          "gold": 4815000
+        },
+        "upgradeTime": "1d 12h",
+        "heroHutRequired": 19,
+        "instantCost": 1559
+      },
+      "16": {
+        "stats": {
+          "health": 1920,
+          "healPerSecond": 65,
+          "damageReduction": "9.5%"
+        },
+        "upgradeCost": {
+          "gold": 4815000
+        },
+        "upgradeTime": "1d 12h",
+        "heroHutRequired": 20,
+        "instantCost": 1559
+      },
+      "17": {
+        "stats": {
+          "health": 2030,
+          "healPerSecond": 67,
+          "damageReduction": "9.8%"
+        },
+        "upgradeCost": {
+          "gold": 5751000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 21,
+        "instantCost": 1750
+      },
+      "18": {
+        "stats": {
+          "health": 2150,
+          "healPerSecond": 70,
+          "damageReduction": "10%"
+        },
+        "upgradeCost": {
+          "gold": 6408000
+        },
+        "upgradeTime": "1d 16h",
+        "heroHutRequired": 22,
+        "instantCost": 1869
+      },
+      "19": {
+        "stats": {
+          "health": 2610,
+          "healPerSecond": 85,
+          "damageReduction": "12%"
+        },
+        "upgradeCost": {
+          "gold": 6858000
+        },
+        "upgradeTime": "1d 17h",
+        "heroHutRequired": 22,
+        "instantCost": 1953
+      },
+      "20": {
+        "stats": {
+          "health": 2970,
+          "healPerSecond": 90,
+          "damageReduction": "13%"
+        },
+        "upgradeCost": {
+          "gold": 8328000
+        },
+        "upgradeTime": "1d 19h",
+        "heroHutRequired": 25,
+        "instantCost": 2209
+      },
+      "21": {
+        "stats": {
+          "health": 3160,
+          "healPerSecond": 95,
+          "damageReduction": "13.6%"
+        },
+        "upgradeCost": {
+          "gold": 8745000
+        },
+        "upgradeTime": "1d 21h",
+        "heroHutRequired": 26,
+        "instantCost": 2290
+      },
+      "22": {
+        "stats": {
+          "health": 3410,
+          "healPerSecond": 100,
+          "damageReduction": "14.3%"
+        },
+        "upgradeCost": {
+          "gold": 10080000
+        },
+        "upgradeTime": "2d",
+        "heroHutRequired": 27,
+        "instantCost": 2425
+      },
+      "23": {
+        "stats": {
+          "health": 3680,
+          "healPerSecond": 105,
+          "damageReduction": "15%"
+        },
+        "upgradeCost": {
+          "gold": 11090000
+        },
+        "upgradeTime": "2d 2h",
+        "heroHutRequired": 28,
+        "instantCost": 2683
+      }
+    }
+  },
+  "captain_everspark": {
+    "name": "Captain Everspark",
+    "description": "Long-range damage hero that continuously spawns critters via her perk.",
+    "image": "https://static.wikia.nocookie.net/boombeach/images/1/18/Everspark_Icon.png",
+    "heroHutUnlock": 15,
+    "maxLevel": 19,
+    "unitType": "Hero",
+    "attackType": "Ranged Shock Rifle",
+    "attackRange": 10.5,
+    "attackSpeedLabel": "0.8s listed (1.0s same-target cadence at low levels)",
+    "movementSpeed": 2.7,
+    "levels": {
+      "1": {
+        "stats": {
+          "health": 1500,
+          "inGameDps": 288,
+          "realDps": 104.73,
+          "damagePerShot": 288,
+          "critterSpawnRate": "5.5s"
+        },
+        "upgradeCost": {
+          "gold": null
+        },
+        "upgradeTime": null,
+        "heroHutRequired": 15,
+        "instantCost": null
+      },
+      "2": {
+        "stats": {
+          "health": 1590,
+          "inGameDps": 305,
+          "realDps": 113.19,
+          "damagePerShot": 305.6,
+          "critterSpawnRate": "5.4s"
+        },
+        "upgradeCost": {
+          "gold": 903000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 15,
+        "instantCost": 649
+      },
+      "3": {
+        "stats": {
+          "health": 1690,
+          "inGameDps": 323,
+          "realDps": 121.96,
+          "damagePerShot": 323.2,
+          "critterSpawnRate": "5.3s"
+        },
+        "upgradeCost": {
+          "gold": 1124000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 16,
+        "instantCost": 710
+      },
+      "4": {
+        "stats": {
+          "health": 1790,
+          "inGameDps": 343,
+          "realDps": 132,
+          "damagePerShot": 343.2,
+          "critterSpawnRate": "5.2s"
+        },
+        "upgradeCost": {
+          "gold": 1637000
+        },
+        "upgradeTime": "1d 3h",
+        "heroHutRequired": 16,
+        "instantCost": 836
+      },
+      "5": {
+        "stats": {
+          "health": 1890,
+          "inGameDps": 363,
+          "realDps": 142.43,
+          "damagePerShot": 363.2,
+          "critterSpawnRate": "5.1s"
+        },
+        "upgradeCost": {
+          "gold": 2140000
+        },
+        "upgradeTime": "1d 7h",
+        "heroHutRequired": 17,
+        "instantCost": 985
+      },
+      "6": {
+        "stats": {
+          "health": 2010,
+          "inGameDps": 385,
+          "realDps": 154.26,
+          "damagePerShot": 385.6,
+          "critterSpawnRate": "5.0s"
+        },
+        "upgradeCost": {
+          "gold": 2996000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 17,
+        "instantCost": 1193
+      },
+      "7": {
+        "stats": {
+          "health": 2130,
+          "inGameDps": 408,
+          "realDps": 166.86,
+          "damagePerShot": 408.8,
+          "critterSpawnRate": "4.9s"
+        },
+        "upgradeCost": {
+          "gold": 3680000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 18,
+        "instantCost": 1330
+      },
+      "8": {
+        "stats": {
+          "health": 2260,
+          "inGameDps": 432,
+          "realDps": 180.33,
+          "damagePerShot": 432.8,
+          "critterSpawnRate": "4.8s"
+        },
+        "upgradeCost": {
+          "gold": 4066000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 18,
+        "instantCost": 1406
+      },
+      "9": {
+        "stats": {
+          "health": 2390,
+          "inGameDps": 459,
+          "realDps": 195.4,
+          "damagePerShot": 459.2,
+          "critterSpawnRate": "4.7s"
+        },
+        "upgradeCost": {
+          "gold": 4880000
+        },
+        "upgradeTime": "1d 13h",
+        "heroHutRequired": 19,
+        "instantCost": 1580
+      },
+      "10": {
+        "stats": {
+          "health": 2530,
+          "inGameDps": 486,
+          "realDps": 211.48,
+          "damagePerShot": 486.4,
+          "critterSpawnRate": "4.6s"
+        },
+        "upgradeCost": {
+          "gold": 5486000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 19,
+        "instantCost": 1704
+      },
+      "11": {
+        "stats": {
+          "health": 2690,
+          "inGameDps": 516,
+          "realDps": 229.33,
+          "damagePerShot": 516,
+          "critterSpawnRate": "4.5s"
+        },
+        "upgradeCost": {
+          "gold": 5920000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 20,
+        "instantCost": 1781
+      },
+      "12": {
+        "stats": {
+          "health": 2850,
+          "inGameDps": 546,
+          "realDps": 248.36,
+          "damagePerShot": 546.4,
+          "critterSpawnRate": "4.4s"
+        },
+        "upgradeCost": {
+          "gold": 6380000
+        },
+        "upgradeTime": "1d 17h",
+        "heroHutRequired": 21,
+        "instantCost": 1873
+      },
+      "13": {
+        "stats": {
+          "health": 3020,
+          "inGameDps": 579,
+          "realDps": 134.7,
+          "damagePerShot": 579.2,
+          "critterSpawnRate": "4.3s"
+        },
+        "upgradeCost": {
+          "gold": 6840000
+        },
+        "upgradeTime": "1d 17h",
+        "heroHutRequired": 22,
+        "instantCost": 1949
+      },
+      "14": {
+        "stats": {
+          "health": 3190,
+          "inGameDps": 613,
+          "realDps": 146.1,
+          "damagePerShot": 613.6,
+          "critterSpawnRate": "4.2s"
+        },
+        "upgradeCost": {
+          "gold": 7620000
+        },
+        "upgradeTime": "1d 19h",
+        "heroHutRequired": 23,
+        "instantCost": 2097
+      },
+      "15": {
+        "stats": {
+          "health": 3370,
+          "inGameDps": 649,
+          "realDps": 158.44,
+          "damagePerShot": 649.6,
+          "critterSpawnRate": "4.1s"
+        },
+        "upgradeCost": {
+          "gold": 8400000
+        },
+        "upgradeTime": "1d 21h",
+        "heroHutRequired": 24,
+        "instantCost": 2234
+      },
+      "16": {
+        "stats": {
+          "health": 3550,
+          "inGameDps": 687,
+          "realDps": 171.8,
+          "damagePerShot": 687.2,
+          "critterSpawnRate": "4.0s"
+        },
+        "upgradeCost": {
+          "gold": 9180000
+        },
+        "upgradeTime": "1d 23h",
+        "heroHutRequired": 25,
+        "instantCost": 2371
+      },
+      "17": {
+        "stats": {
+          "health": 3760,
+          "inGameDps": 728,
+          "realDps": 186.87,
+          "damagePerShot": 728.8,
+          "critterSpawnRate": "3.9s"
+        },
+        "upgradeCost": {
+          "gold": 9960000
+        },
+        "upgradeTime": "2d 2h",
+        "heroHutRequired": 26,
+        "instantCost": 2504
+      },
+      "18": {
+        "stats": {
+          "health": 3990,
+          "inGameDps": 772,
+          "realDps": 203.16,
+          "damagePerShot": 772,
+          "critterSpawnRate": "3.8s"
+        },
+        "upgradeCost": {
+          "gold": 11110000
+        },
+        "upgradeTime": "2d 6h",
+        "heroHutRequired": 27,
+        "instantCost": 2715
+      },
+      "19": {
+        "stats": {
+          "health": 4230,
+          "inGameDps": 818,
+          "realDps": 221.19,
+          "damagePerShot": 818.4,
+          "critterSpawnRate": "3.7s"
+        },
+        "upgradeCost": {
+          "gold": 12220000
+        },
+        "upgradeTime": "2d 12h",
+        "heroHutRequired": 28,
+        "instantCost": 2917
+      }
+    }
+  },
+  "private_bullet": {
+    "name": "Pvt. Bullit",
+    "description": "Durable shotgun hero with damage limiter and taunt/solo potential.",
+    "image": "https://static.wikia.nocookie.net/boombeach/images/5/5f/Bullet_Icon.png",
+    "heroHutUnlock": 19,
+    "maxLevel": 14,
+    "unitType": "Hero",
+    "attackType": "Shotgun",
+    "attackRange": 3.3,
+    "attackSpeedLabel": "1s",
+    "movementSpeed": 2.3,
+    "levels": {
+      "1": {
+        "stats": {
+          "health": 18000,
+          "dps": 544,
+          "damageLimit": 2000
+        },
+        "upgradeCost": {
+          "gold": null
+        },
+        "upgradeTime": null,
+        "heroHutRequired": 19,
+        "instantCost": null
+      },
+      "2": {
+        "stats": {
+          "health": 19440,
+          "dps": 598,
+          "damageLimit": 1900
+        },
+        "upgradeCost": {
+          "gold": 5751000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 19,
+        "instantCost": 1750
+      },
+      "3": {
+        "stats": {
+          "health": 21000,
+          "dps": 658,
+          "damageLimit": 1800
+        },
+        "upgradeCost": {
+          "gold": 5751000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 20,
+        "instantCost": 1750
+      },
+      "4": {
+        "stats": {
+          "health": 22670,
+          "dps": 724,
+          "damageLimit": 1700
+        },
+        "upgradeCost": {
+          "gold": 5751000
+        },
+        "upgradeTime": "1d 15h",
+        "heroHutRequired": 20,
+        "instantCost": 1750
+      },
+      "5": {
+        "stats": {
+          "health": 24490,
+          "dps": 797,
+          "damageLimit": 1600
+        },
+        "upgradeCost": {
+          "gold": 6408000
+        },
+        "upgradeTime": "1d 16h",
+        "heroHutRequired": 21,
+        "instantCost": 1869
+      },
+      "6": {
+        "stats": {
+          "health": 26450,
+          "dps": 876,
+          "damageLimit": 1500
+        },
+        "upgradeCost": {
+          "gold": 6408000
+        },
+        "upgradeTime": "1d 16h",
+        "heroHutRequired": 21,
+        "instantCost": 1869
+      },
+      "7": {
+        "stats": {
+          "health": 28560,
+          "dps": 964,
+          "damageLimit": 1400
+        },
+        "upgradeCost": {
+          "gold": 6408000
+        },
+        "upgradeTime": "1d 16h",
+        "heroHutRequired": 22,
+        "instantCost": 1869
+      },
+      "8": {
+        "stats": {
+          "health": 30850,
+          "dps": 1060,
+          "damageLimit": 1300
+        },
+        "upgradeCost": {
+          "gold": 6858000
+        },
+        "upgradeTime": "1d 17h",
+        "heroHutRequired": 22,
+        "instantCost": 1953
+      },
+      "9": {
+        "stats": {
+          "health": 33350,
+          "dps": 1164,
+          "damageLimit": 1200
+        },
+        "upgradeCost": {
+          "gold": 7344000
+        },
+        "upgradeTime": "1d 18h",
+        "heroHutRequired": 23,
+        "instantCost": 2041
+      },
+      "10": {
+        "stats": {
+          "health": 36090,
+          "dps": 1276,
+          "damageLimit": 1100
+        },
+        "upgradeCost": {
+          "gold": 7834000
+        },
+        "upgradeTime": "1d 19h",
+        "heroHutRequired": 24,
+        "instantCost": 2129
+      },
+      "11": {
+        "stats": {
+          "health": 39100,
+          "dps": 1396,
+          "damageLimit": 1000
+        },
+        "upgradeCost": {
+          "gold": 8324000
+        },
+        "upgradeTime": "1d 20h",
+        "heroHutRequired": 25,
+        "instantCost": 2216
+      },
+      "12": {
+        "stats": {
+          "health": 42220,
+          "dps": 1529,
+          "damageLimit": 950
+        },
+        "upgradeCost": {
+          "gold": 8814000
+        },
+        "upgradeTime": "1d 21h",
+        "heroHutRequired": 26,
+        "instantCost": 2301
+      },
+      "13": {
+        "stats": {
+          "health": 45600,
+          "dps": 1674,
+          "damageLimit": 900
+        },
+        "upgradeCost": {
+          "gold": 10070000
+        },
+        "upgradeTime": "2d",
+        "heroHutRequired": 27,
+        "instantCost": 2425
+      },
+      "14": {
+        "stats": {
+          "health": 49250,
+          "dps": 1833,
+          "damageLimit": 850
+        },
+        "upgradeCost": {
+          "gold": 11080000
+        },
+        "upgradeTime": "2d 4h",
+        "heroHutRequired": 28,
+        "instantCost": 2696
+      }
+    }
+  },
+  "captain_ruddero": {
+    "name": "Cpt. Ruddero",
+    "description": "Air hero with wingmen support and ranged burst attacks.",
+    "image": "https://static.wikia.nocookie.net/boombeach/images/f/f0/Cpt_Ruddero_Icon.png",
+    "heroHutUnlock": 24,
+    "maxLevel": 18,
+    "unitType": "Hero (Flying)",
+    "attackType": "Burst Shots + Wingmen",
+    "attackRange": 9,
+    "attackSpeedLabel": "0.25s between salvos of 3; 1.5s in-salvo",
+    "movementSpeed": 5.0,
+    "levels": {
+      "1": {
+        "stats": {
+          "health": 1000,
+          "dps": 112,
+          "damagePerShot": 75
+        },
+        "upgradeCost": {
+          "gold": null
+        },
+        "upgradeTime": null,
+        "heroHutRequired": 24,
+        "instantCost": null
+      },
+      "2": {
+        "stats": {
+          "health": 1080,
+          "dps": 119,
+          "damagePerShot": 79.5
+        },
+        "upgradeCost": {
+          "gold": 1600000
+        },
+        "upgradeTime": "1d",
+        "heroHutRequired": 24,
+        "instantCost": 804
+      },
+      "3": {
+        "stats": {
+          "health": 1160,
+          "dps": 126,
+          "damagePerShot": 84.25
+        },
+        "upgradeCost": {
+          "gold": 1600000
+        },
+        "upgradeTime": "1d 2h",
+        "heroHutRequired": 24,
+        "instantCost": 821
+      },
+      "4": {
+        "stats": {
+          "health": 1240,
+          "dps": 133,
+          "damagePerShot": 89.25
+        },
+        "upgradeCost": {
+          "gold": 1818000
+        },
+        "upgradeTime": "1d 4h",
+        "heroHutRequired": 24,
+        "instantCost": 889
+      },
+      "5": {
+        "stats": {
+          "health": 1340,
+          "dps": 141,
+          "damagePerShot": 94.5
+        },
+        "upgradeCost": {
+          "gold": 2066000
+        },
+        "upgradeTime": "1d 6h",
+        "heroHutRequired": 24,
+        "instantCost": 962
+      },
+      "6": {
+        "stats": {
+          "health": 1440,
+          "dps": 150,
+          "damagePerShot": 100.25
+        },
+        "upgradeCost": {
+          "gold": 2350000
+        },
+        "upgradeTime": "1d 8h",
+        "heroHutRequired": 24,
+        "instantCost": 1040
+      },
+      "7": {
+        "stats": {
+          "health": 1550,
+          "dps": 159,
+          "damagePerShot": 106
+        },
+        "upgradeCost": {
+          "gold": 2670000
+        },
+        "upgradeTime": "1d 10h",
+        "heroHutRequired": 24,
+        "instantCost": 1125
+      },
+      "8": {
+        "stats": {
+          "health": 1670,
+          "dps": 168,
+          "damagePerShot": 112.5
+        },
+        "upgradeCost": {
+          "gold": 3033000
+        },
+        "upgradeTime": "1d 12h",
+        "heroHutRequired": 24,
+        "instantCost": 1216
+      },
+      "9": {
+        "stats": {
+          "health": 1790,
+          "dps": 178,
+          "damagePerShot": 119
+        },
+        "upgradeCost": {
+          "gold": 3448000
+        },
+        "upgradeTime": "1d 14h",
+        "heroHutRequired": 24,
+        "instantCost": 1315
+      },
+      "10": {
+        "stats": {
+          "health": 1930,
+          "dps": 189,
+          "damagePerShot": 126.25
+        },
+        "upgradeCost": {
+          "gold": 3920000
+        },
+        "upgradeTime": "1d 16h",
+        "heroHutRequired": 24,
+        "instantCost": 1421
+      },
+      "11": {
+        "stats": {
+          "health": 2070,
+          "dps": 200,
+          "damagePerShot": 133.75
+        },
+        "upgradeCost": {
+          "gold": 4450000
+        },
+        "upgradeTime": "1d 18h",
+        "heroHutRequired": 24,
+        "instantCost": 1537
+      },
+      "12": {
+        "stats": {
+          "health": 2230,
+          "dps": 212,
+          "damagePerShot": 141.75
+        },
+        "upgradeCost": {
+          "gold": 5060000
+        },
+        "upgradeTime": "1d 20h",
+        "heroHutRequired": 24,
+        "instantCost": 1665
+      },
+      "13": {
+        "stats": {
+          "health": 2400,
+          "dps": 225,
+          "damagePerShot": 150
+        },
+        "upgradeCost": {
+          "gold": 5750000
+        },
+        "upgradeTime": "1d 22h",
+        "heroHutRequired": 24,
+        "instantCost": 1801
+      },
+      "14": {
+        "stats": {
+          "health": 2580,
+          "dps": 238,
+          "damagePerShot": 159
+        },
+        "upgradeCost": {
+          "gold": 6537000
+        },
+        "upgradeTime": "2d",
+        "heroHutRequired": 24,
+        "instantCost": 1953
+      },
+      "15": {
+        "stats": {
+          "health": 2770,
+          "dps": 252,
+          "damagePerShot": 168.5
+        },
+        "upgradeCost": {
+          "gold": 7430000
+        },
+        "upgradeTime": "2d 4h",
+        "heroHutRequired": 25,
+        "instantCost": 2127
+      },
+      "16": {
+        "stats": {
+          "health": 2980,
+          "dps": 267,
+          "damagePerShot": 178.5
+        },
+        "upgradeCost": {
+          "gold": 8444000
+        },
+        "upgradeTime": "2d 8h",
+        "heroHutRequired": 26,
+        "instantCost": 2319
+      },
+      "17": {
+        "stats": {
+          "health": 3220,
+          "dps": 283,
+          "damagePerShot": 189.25
+        },
+        "upgradeCost": {
+          "gold": 9600000
+        },
+        "upgradeTime": "2d 12h",
+        "heroHutRequired": 27,
+        "instantCost": 2528
+      },
+      "18": {
+        "stats": {
+          "health": 3480,
+          "dps": 300,
+          "damagePerShot": 201.34
+        },
+        "upgradeCost": {
+          "gold": 12400000
+        },
+        "upgradeTime": "2d 16h",
+        "heroHutRequired": 28,
+        "instantCost": 2972
+      }
+    }
+  }
+}

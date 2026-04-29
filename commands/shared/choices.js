@@ -70,6 +70,15 @@ export const temporaryGunboatChoices = [
     { name: 'Crystal Critters', value: 'crystal_critters' },
 ];
 
+
+export const heroChoices = [
+    { name: 'Sergeant Brick', value: 'sergeant_brick' },
+    { name: 'Dr. Kavan', value: 'corporal_kavan' },
+    { name: 'Captain Everspark', value: 'captain_everspark' },
+    { name: 'Pvt. Bullit', value: 'private_bullet' },
+    { name: 'Cpt. Ruddero', value: 'captain_ruddero' },
+];
+
 export const prototypeDefenceChoices = [
     { name: 'Shock Blaster', value: 'shock_blaster' },
     { name: 'Lazor Beam', value: 'lazor_beam' },
